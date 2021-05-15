@@ -11,9 +11,9 @@
   <body>
     <div class="wrapper">
       <header class="header">
-        <div class="header__top-section">
+        <div class="tw-mb-2 header__top-section">
           <div class="tw-container tw-mx-auto tw-px-4">
-            <div class="header__top-section--mobile tw-flex tw-justify-between tw-items-center">
+            <div class="md:tw-hidden tw-flex tw-justify-between tw-items-center tw-h-11">
               <div class="tw-flex">
                 <img class="tw-mr-3" src="./assets/images/icons/near-me-icon.svg" alt="near-me-icon">
                 <div>Москва и МО</div>
@@ -31,7 +31,7 @@
                 </span>
               </div>
             </div>
-            <div class="header__top-section--desktop tw-flex tw-justify-between tw-items-center">
+            <div class="tw-hidden md:tw-flex tw-justify-between tw-items-center tw-h-24">
               <div class="tw-flex tw-items-center tw-justify-between tw-w-1/6">
                 <a class="tw-mr-3" href="#">
                   <img src="./assets/images/icons/instagram-icon.svg" alt="instagram-icon">
@@ -80,9 +80,36 @@
             </div>
           </div>
         </div>
-        <div class="header__bottom-section">
-          <div class="tw-container tw-mx-auto tw-px-4 tw-flex tw-justify-between">
-            bottom section
+        <div class="tw-relative header__bottom-section">
+          <div class="tw-container tw-mx-auto md:tw-hidden">
+            <div class="tw-flex md:tw-hidden tw-justify-between tw-items-center tw-h-12 tw-px-4">
+              <div class="tw-h-full">
+                <a class="tw-h-full tw-block" href="#">
+                  <img class="tw-h-full" src="./assets/images/logo.svg" alt="logo">
+                </a>
+              </div>
+              <div class="tw-absolute tw-right-0 tw-flex tw-items-center tw-h-full">
+                <div class="tw-flex tw-items-center tw-h-full tw-mr-6">
+                  <a class="tw-mr-4" href="#">
+                    <img src="./assets/images/icons/feedback-gold-bottom-icon.svg" alt="feedback">
+                  </a>
+                  <a href="#">
+                    <img src="./assets/images/icons/phone-icon.svg" alt="feedback">
+                  </a>
+                </div>
+                <div class="tw-h-full">
+                  <button class=" tw-h-full tw-w-14 tw-flex tw-justify-center tw-items-center header__open-sidebar-button">
+                    <img class="tw-h-5" src="./assets/images/icons/open-menu-icon.svg" alt="open-menu-icon">
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tw-container tw-mx-auto tw-hidden md:tw-block tw-h-32 tw-px-4">
+            <div class="tw-flex tw-justify-between tw-items-center tw-h-full">
+              <div>left</div> 
+              <div>right</div>
+            </div>
           </div>
         </div>
       </header>
