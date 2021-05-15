@@ -1,3 +1,5 @@
+const browsersync = require("browser-sync");
+
 const html = () => {
   const {src, dest} = require("gulp");
   const paths = require("./paths.config");
@@ -9,7 +11,8 @@ const html = () => {
       basepath: "@file",
       indent: true
     }))
-    .pipe(dest(paths.build.html));
+    .pipe(dest(paths.build.html))
+    .pipe(browsersync.stream());
 };
 
 const styles = () => {
@@ -22,7 +25,8 @@ const styles = () => {
     .pipe(sourcemaps.init())
     .pipe(postcss())
     .pipe(sourcemaps.write())
-    .pipe(dest(paths.build.styles));
+    .pipe(dest(paths.build.styles))
+    .pipe(browsersync.stream());
 };
 
 const scripts = () => {
@@ -40,28 +44,29 @@ const scripts = () => {
       presets: ['@babel/preset-env']
     }))
     .pipe(sourcemaps.write())
-    .pipe(dest(paths.build.scripts));
+    .pipe(dest(paths.build.scripts))
+    .pipe(browsersync.stream());
 };
 
 const images = () => {
   const {src, dest} = require("gulp");
   const paths = require("./paths.config");
 
-  return src(paths.src.images).pipe(dest(paths.build.images));
+  return src(paths.src.images).pipe(dest(paths.build.images)).pipe(browsersync.stream());
 };
 
 const fonts = () => {
   const {src, dest} = require("gulp");
   const paths = require("./paths.config");
 
-  return src(paths.src.fonts).pipe(dest(paths.build.fonts));
+  return src(paths.src.fonts).pipe(dest(paths.build.fonts)).pipe(browsersync.stream());
 };
 
 const videos = () => {
   const {src, dest} = require("gulp");
   const paths = require("./paths.config");
 
-  return src(paths.src.videos).pipe(dest(paths.build.videos));
+  return src(paths.src.videos).pipe(dest(paths.build.videos)).pipe(browsersync.stream());
 };
 
 const clean = done => {
@@ -70,8 +75,6 @@ const clean = done => {
   del.sync("./build/");
   done();
 };
-
-const browsersync = require("browser-sync");
 
 const browserSyncStart = done => {
   browsersync.init({
