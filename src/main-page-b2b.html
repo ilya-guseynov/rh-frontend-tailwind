@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./assets/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
     <title>RH | Main Page B2C</title>
   </head>
 
@@ -45,7 +46,7 @@
                       <div class="text-center text-xs opacity-50"><b>Club Privé</b></div>
                     </a>
                   </li>
-                  <li class="w-24 lg:w-32  mr-2">
+                  <li class="w-24 lg:w-32 mr-2">
                     <a class="flex flex-col items-center h-full" href="#">
                       <img class="h-8 mb-2" src="./assets/images/icons/account-icon.svg" alt="gold-manta-icon">
                       <div class="text-center text-xs opacity-50"><u>Личный кабинет агента</u></div>
@@ -130,6 +131,42 @@
         </div>
       </header>
       <main>
+        <div class="hidden md:block">
+          <div class="splide b2b-top-slider">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide relative bg-center bg-cover bg-no-repeat" style="background-image: url('./assets/images/b2b-slider-background.png');">
+                  <div class="absolute top-0 bottom-0 left-0 right-0">
+                    <div class="container mx-auto px-4 relative h-full">
+                      <div class="font-bold text-white tracking-widest uppercase text-7xl absolute left-0 top-2/4">Бронируй.</div>
+                    </div>
+                  </div>
+                </li>
+                <li class="splide__slide relative bg-center bg-cover bg-no-repeat" style="background-image: url('./assets/images/b2b-slider-background.png');">
+                  <div class="absolute top-0 bottom-0 left-0 right-0">
+                    <div class="container mx-auto px-4 relative h-full">
+                      <div class="font-bold text-white tracking-widest uppercase text-7xl absolute left-0 top-2/4">Бронируй.</div>
+                    </div>
+                  </div>
+                </li>
+                <li class="splide__slide relative bg-center bg-cover bg-no-repeat" style="background-image: url('./assets/images/b2b-slider-background.png');">
+                  <div class="absolute top-0 bottom-0 left-0 right-0">
+                    <div class="container mx-auto px-4 relative h-full">
+                      <div class="font-bold text-white tracking-widest uppercase text-7xl absolute left-0 top-2/4">Бронируй.</div>
+                    </div>
+                  </div>
+                </li>
+                <li class="splide__slide relative bg-center bg-cover bg-no-repeat" style="background-image: url('./assets/images/b2b-slider-background.png');">
+                  <div class="absolute top-0 bottom-0 left-0 right-0">
+                    <div class="container mx-auto px-4 relative h-full">
+                      <div class="font-bold text-white tracking-widest uppercase text-7xl absolute left-0 top-2/4">Бронируй.</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
         <div class="banner bg-no-repeat bg-cover bg-center">
           <div class="container mx-auto px-4">
             <form class="md:hidden pt-5 pb-7" action="#">
@@ -446,5 +483,6 @@
     </div>
 
     <script src="./assets/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
   </body>
 </html>
