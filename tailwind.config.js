@@ -68,6 +68,9 @@ module.exports = {
         ".rh-box-shadow-1": {
           boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1)"
         },
+        ".rh-box-shadow-2": {
+          boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.15)"
+        },
         ".b2b-menu-shadow": {
           boxShadow: "0px 2px 34px rgba(29, 37, 45, 0.1)",
           "@screen md": {

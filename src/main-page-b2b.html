@@ -399,8 +399,8 @@
             </div>
           </div>
         </div>
-        <div class="mb-16 flex justify-between container mx-auto px-4">
-          <aside class="hidden md:flex justify-between w-1/4">
+        <div class="mb-16 hidden md:flex justify-between container mx-auto px-4">
+          <aside class="flex justify-between w-1/4">
             <div>
               <h3 class="rh-text-black font-bold text-3xl uppercase mb-16">Новости</h3>
               <ul>
@@ -429,7 +429,7 @@
             <div class="rh-bg-gold w-px flex-shrink-0 ml-5"></div>
           </aside>
           <section class="md:w-2/3">
-            <div class="mb-20 hidden md:flex justify-between">
+            <div class="mb-20 flex justify-between">
               <div class="w-1/3 mr-4 flex flex-col">
                 <a 
                   class="flex flex-col justify-center items-center rounded-l-lg w-full h-1/2 mb-4 bg-center bg-cover bg-no-repeat" 
@@ -502,14 +502,80 @@
                 </li>
               </ul>
             </div>
-            <div class="block md:hidden">
-              list
-            </div>
-            <div class="block md:hidden">
-              slider
-            </div>
           </section>
         </div>
+        <section class="block md:hidden">
+          <div class="container mx-auto px-4">
+            <a
+              class="rh-box-shadow-2 flex flex-col justify-center items-center rounded-t-lg w-full h-60 mb-10 bg-center bg-cover bg-no-repeat" 
+              style="background-image: url('./assets/images/sales-background-image.jpg');"
+              href="#"
+            >
+              <img class="mb-2" src="./assets/images/icons/sales-icon.svg" alt="sales">
+              <div class="text-white font-medium text-xl uppercase">Акции</div>
+            </a>
+            <a
+              class="rh-box-shadow-2 flex flex-col justify-center items-center w-full h-60 mb-10 bg-center bg-cover bg-no-repeat" 
+              style="background-image: url('./assets/images/partnership-background-image.jpg');"
+              href="#"
+            >
+              <img class="mb-2" src="./assets/images/icons/partnership-icon.svg" alt="partnership">
+              <div class="text-white font-medium text-xl uppercase">Сотрудничество</div>
+            </a>
+            <a
+              class="rh-box-shadow-2 flex flex-col justify-center items-center w-full h-60 mb-10 bg-center bg-cover bg-no-repeat" 
+              style="background-image: url('./assets/images/micefit-background-image.jpg');"
+              href="#"
+            >
+              <img class="mb-2" src="./assets/images/icons/micefit-icon.svg" alt="micefit">
+              <div class="text-white font-medium text-xl uppercase">mice | fit</div>
+            </a>
+            <a
+              class="rh-box-shadow-2 flex flex-col justify-center items-center w-full h-60 mb-10 bg-center bg-cover bg-no-repeat" 
+              style="background-image: url('./assets/images/resort-expert-background-image.jpg');"
+              href="#"
+            >
+              <img class="mb-2" src="./assets/images/icons/resort-expert-icon.svg" alt="resort-expert">
+              <div class="text-white font-medium text-xl uppercase">resort expert</div>
+            </a>
+            <a
+              class="rh-box-shadow-2 flex flex-col justify-center items-center rounded-b-lg w-full h-60 mb-10 bg-center bg-cover bg-no-repeat" 
+              style="background-image: url('./assets/images/prive-background-image.svg');"
+              href="#"
+            >
+              <div class="text-white font-medium text-3xl uppercase">club Privé</div>
+            </a>
+          </div>
+          <div class="mb-20">
+            <div class="container mx-auto px-4 tracking-widest text-3xl font-semibold">Мы с вами</div>
+              <div class="splide with-you-slider mb-3">
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide flex justify-center items-center">
+                      <a class="flex flex-col justify-center items-center" href="#">
+                        <img src="./assets/images/with-you-team-image.png" alt="with-you-team-image">
+                        <div class="rh-text-gray font-medium text-3xl">Команда</div>
+                      </a>
+                    </li>
+                    <li class="splide__slide flex justify-center items-center">
+                      <a class="flex flex-col justify-center items-center" href="#">
+                        <img src="./assets/images/with-you-manta-image.png" alt="with-you-manta-image">
+                        <div class="rh-text-gray font-medium text-3xl">Club Privé</div>
+                      </a>
+                    </li>
+                    <li class="splide__slide flex justify-center items-center">
+                      <a class="flex flex-col justify-center items-center" href="#">
+                        <img src="./assets/images/with-you-events-image.png" alt="with-you-events-image">
+                        <div class="rh-text-gray font-medium text-3xl">Мероприятия</div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="h-0.5 rh-bg-gold"></div>
+            </div>              
+          </div>
+        </section>
         <div class="bg-no-repeat bg-cover bg-center" style="background-image: url('./assets/images/banner-background.svg');">
           <div class="container mx-auto px-4">
             <form class="md:hidden pt-5 pb-7" action="#">
