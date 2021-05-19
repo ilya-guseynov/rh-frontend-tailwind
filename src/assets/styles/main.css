@@ -1,5 +1,4 @@
 @import "./vendors/_dir";
-@import "./custom/_dir";
 
 html {
   font-family: "montserrat", sans-serif;
@@ -14,6 +13,7 @@ html {
   
   &__content {
     display: none;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
 
     & li {
       border-bottom: 1px solid #999999;
@@ -77,5 +77,28 @@ html {
 
   &__gray-text {
     color: rgba(0, 0, 0, .5);
+  }
+}
+
+.background-font-clip {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.b2b-top-slider {
+  & .splide__slide {
+    height: 780px;
+  }
+
+  & .splide__pagination {
+    bottom: 200px;
+
+    &__page {
+      &.is-active {
+        width: 16px;
+        transform: none;
+        border-radius: 4px;
+      }
+    }
   }
 }

@@ -53,6 +53,21 @@ module.exports = {
         ".rh-bg-green": {
           backgroundColor: "#2A5D2E"
         },
+        ".rh-bg-light-gray": {
+          backgroundColor: "#F9F9F9"
+        },
+        ".rh-text-black": {
+          color: "#252D27"
+        },
+        ".rh-text-gray": {
+          color: "#999999"
+        },
+        ".rh-text-green": {
+          color: "#285C2D"
+        },
+        ".rh-box-shadow-1": {
+          boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1)"
+        },
         ".b2b-menu-shadow": {
           boxShadow: "0px 2px 34px rgba(29, 37, 45, 0.1)",
           "@screen md": {
