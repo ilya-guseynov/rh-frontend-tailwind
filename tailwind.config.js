@@ -47,6 +47,9 @@ module.exports = {
             maxWidth: "1600px",
           }
         },
+        ".max-w-200px": {
+          maxWidth: "200px"
+        },
         ".border-b-1": {
           borderBottomWidth: "1px"
         },
@@ -65,11 +68,17 @@ module.exports = {
         ".rh-text-gray": {
           color: "#999999"
         },
+        ".rh-text-gray-2": {
+          color: "#828282"
+        },
         ".rh-text-dark-gray": {
           color: "#333333"
         },
         ".rh-text-green": {
           color: "#285C2D"
+        },
+        ".rh-text-shadow-1": {
+          textShadow: "0px 0px 5px rgba(0, 0, 0, 0.7)"
         },
         ".rh-box-shadow-1": {
           boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1)"

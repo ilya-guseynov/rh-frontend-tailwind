@@ -1,4 +1,4 @@
-document.addEventListener( "DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const sliderElementQuery = ".b2b-top-slider";
 
   if (document.querySelector(sliderElementQuery)) {

@@ -15,7 +15,9 @@
     "build:fonts": "gulp fonts",
     "build:videos": "gulp videos"
   },
-  "dependencies": {},
+  "dependencies": {
+    "gulp-exec": "^5.0.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.14.2",
     "@babel/preset-env": "^7.14.2",

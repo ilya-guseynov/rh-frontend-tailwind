@@ -71,8 +71,9 @@ const videos = () => {
 
 const clean = done => {
   const del = require("del");
+  const exec = require('child_process').exec;
 
-  del.sync("./build/");
+  exec("rm -rf ./build");
   done();
 };
 

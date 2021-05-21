@@ -249,7 +249,9 @@
           <img src="./assets/images/icons/close-icon.svg" alt="close">
         </button>
       </div>
+      <!-- MAIN -->
       <main class="relative">
+        <!-- MENU -->
         <div class="sticky mb-8 md:mb-0 top-0 h-20 hidden md:block z-20 b2c-menu-orientir">
           <div class="container--header mx-auto h-full flex justify-end items-center px-4 b2c-menu">
             <div class="flex items-center justify-center w-4/6 h-full rh-bg-green b2c-menu__content">
@@ -370,316 +372,291 @@
             </button>
           </div>
         </div>
-        <div class="md:-mt-20 flex justify-center items-center overflow-hidden b2c-main-page-video-container">
+        <!-- / MENU -->
+        <!-- VIDEO BLOCK -->
+        <section class="md:-mt-20 flex justify-center items-center overflow-hidden b2c-main-page-video-container">
           <video class="h-full max-w-none md:h-full 2xl:w-full xl:h-auto" src="./assets/videos/main-page-b2c-video.m4v" autoplay muted loop></video>
-        </div>
-        <div class="hidden md:block z-10 relative container mx-auto px-4">
-          <div class="h-40 -mt-40 bg-white bg-opacity-70 flex items-center pl-10 text-3xl uppercase font-bold" id="search-tour">
-            Поиск Тура
-          </div>
-          <div class="overflow-hidden mb-20">
-            <div class="flex items-center h-full">
-              <button
-                class="
-                  search-form-switch__button 
-                  search-form-switch__button_tour 
-                  search-form-switch__button--active
-                  flex justify-center items-center px-16 py-4 h-full
-                "
-              >
-                <img class="mr-8" src="./assets/images/icons/tour-search-gold-icon.svg" alt="tour-search-gold-icon">
-                <div class="text-xl font-medium tracking-wider">Туры</div>
-              </button>
-              <button 
-                class="
-                  search-form-switch__button 
-                  search-form-switch__button_hotel
-                  flex justify-center items-center px-16 py-4 transform -translate-x-5 h-full
-                "
-              >
-                <img class="mr-8" src="./assets/images/icons/hotel-search-gold-icon.svg" alt="hotel-search-gold-icon">
-                <div class="text-xl font-medium tracking-wider">Отель</div>
-              </button>
-            </div>
-            <div class="search-form-switch__top-shadow pt-7 px-7">
-              <form class="search-form-switch__form search-form-switch__form_tour search-form-switch__form--active" action="#">
-                <div class="flex justify-between">
-                  <div class="w-1/2 mr-10">
-                    <div class="border-b border-gray-700 px-4 py-3 flex items-center">
-                      <img class="mr-5" src="./assets/images/icons/search-location-gold-icon.svg" alt="search-location-gold-icon">
-                      <select class="w-full search-form-switch__gray-text" name="country-from" placeholder="Откуда" required>
-                        <option value="" disabled selected>Откуда</option>
-                        <option value="Москва">Москва</option>
-                        <option value="Москва2">Москва2</option>
-                      </select>
-                    </div>
-                    <div class="border-b border-gray-700 px-4 py-3 flex items-center">
-                      <img class="mr-5" src="./assets/images/icons/search-location-gold-icon.svg" alt="search-location-gold-icon">
-                      <select class="w-full search-form-switch__gray-text" name="country-from" placeholder="Откуда" required>
-                        <option value="" disabled selected>Отель</option>
-                        <option value="Отель1">Отель1</option>
-                        <option value="Отель2">Отель2</option>
-                      </select>
-                    </div>
-                    <div class="border-b border-gray-700 px-4 py-3 flex items-center">
-                      <img class="mr-4" src="./assets/images/icons/search-tourist-gold-icon.svg" alt="search-tourist-gold-icon">
-                      <input class="w-full text-xs lg:text-base search-form-switch__gray-text" type="number" placeholder="Туристы" required>
-                    </div>
-                  </div>
-                  <div class="w-1/2 flex flex-col justify-between">
-                    <div class="border-b border-gray-700 px-4 py-3 flex items-center">
-                      <img class="mr-5" src="./assets/images/icons/search-location-gold-icon.svg" alt="search-location-gold-icon">
-                      <select class="w-full search-form-switch__gray-text" name="country-to" placeholder="Куда" required>
-                        <option value="" disabled selected>Куда</option>
-                        <option value="Мальдивы">Мальдивы</option>
-                        <option value="Мальдивы2">Мальдивы2</option>
-                      </select>
-                    </div>
-                    <div class="flex justify-between items-center">
-                      <div class="border-b border-gray-700 px-3 py-3 flex items-center w-5/12 h-full">
-                        <img class="mr-4" src="./assets/images/icons/search-calendar-gold-icon.svg" alt="search-calendar-gold-icon">
-                        <input class="w-full text-xs lg:text-base search-form-switch__gray-text" type="text" id="date-picker-tour" required>
-                      </div>
-                      <div class="border-b border-gray-700 px-3 py-3 flex items-center w-6/12 h-full">
-                        <img class="mr-4" src="./assets/images/icons/search-calendar-gold-icon.svg" alt="search-calendar-gold-icon">
-                        <input class="w-full text-xs lg:text-base search-form-switch__gray-text" type="number" placeholder="Кол-во ночей" required min="1">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex justify-center items-center pt-16">
-                  <button class="rh-bg-gold uppercase text-white font-semibold text-base w-1/2 py-5" type="submit">Найти</button>
-                </div>
-              </form>
-              <form class="search-form-switch__form search-form-switch__form_hotel" action="#">
-                <div class="flex justify-between">
-                  <div class="w-1/2 mr-10">
-                    <div class="border-b border-gray-700 px-4 py-3 flex items-center">
-                      <img class="mr-5" src="./assets/images/icons/search-location-gold-icon.svg" alt="search-location-gold-icon">
-                      <select class="w-full search-form-switch__gray-text" name="country-from" placeholder="Откуда" required>
-                        <option value="" disabled selected>Откуда</option>
-                        <option value="Москва">Москва</option>
-                        <option value="Москва2">Москва2</option>
-                      </select>
-                    </div>
-                    <div class="border-b border-gray-700 px-4 py-3 flex items-center">
-                      <img class="mr-5" src="./assets/images/icons/search-location-gold-icon.svg" alt="search-location-gold-icon">
-                      <select class="w-full search-form-switch__gray-text" name="country-from" placeholder="Откуда" required>
-                        <option value="" disabled selected>Отель</option>
-                        <option value="Отель1">Отель1</option>
-                        <option value="Отель2">Отель2</option>
-                      </select>
-                    </div>
-                    <div class="border-b border-gray-700 px-4 py-3 flex items-center">
-                      <img class="mr-4" src="./assets/images/icons/search-tourist-gold-icon.svg" alt="search-tourist-gold-icon">
-                      <input class="w-full text-xs lg:text-base search-form-switch__gray-text" type="number" placeholder="Туристы" required>
-                    </div>
-                  </div>
-                  <div class="w-1/2 flex flex-col justify-between">
-                    <div class="border-b border-gray-700 px-4 py-3 flex items-center">
-                      <img class="mr-5" src="./assets/images/icons/search-location-gold-icon.svg" alt="search-location-gold-icon">
-                      <select class="w-full search-form-switch__gray-text" name="country-to" placeholder="Куда" required>
-                        <option value="" disabled selected>Куда</option>
-                        <option value="Мальдивы">Мальдивы</option>
-                        <option value="Мальдивы2">Мальдивы2</option>
-                      </select>
-                    </div>
-                    <div class="flex justify-between items-center">
-                      <div class="border-b border-gray-700 px-3 py-3 flex items-center w-5/12 h-full">
-                        <img class="mr-4" src="./assets/images/icons/search-calendar-gold-icon.svg" alt="search-calendar-gold-icon">
-                        <input class="w-full text-xs lg:text-base search-form-switch__gray-text" type="text" id="date-picker-hotel" required>
-                      </div>
-                      <div class="border-b border-gray-700 px-3 py-3 flex items-center w-6/12 h-full">
-                        <img class="mr-4" src="./assets/images/icons/search-calendar-gold-icon.svg" alt="search-calendar-gold-icon">
-                        <input class="w-full text-xs lg:text-base search-form-switch__gray-text" type="number" placeholder="Кол-во ночей" required min="1">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex justify-center items-center pt-16">
-                  <button class="rh-bg-gold uppercase text-white font-semibold text-base w-1/2 py-5" type="submit">Найти</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="mb-16 hidden md:flex justify-between container mx-auto px-4">
-          <aside class="flex justify-between w-1/4">
+        </section>
+        <!-- / VIDEO BLOCK -->
+        <!-- FORM AND HEAT SALES -->
+        <section class="container mx-auto px-4 flex justify-between z-10 mb-20">
+          <div class="w-6/12 pt-24">
+            <div class="font-bold text-3xl tracking-widest uppercase mb-16">Хиты Продаж</div>
             <div>
-              <h3 class="rh-text-black font-bold text-3xl uppercase mb-16">Новости</h3>
-              <ul>
-                <li class="mb-14">
-                  <h4 class="rh-text-black font-bold text-xl mb-5">Пока, Турция: в какие страны могут поехать россияне</h4>
-                  <p class="opacity-70 rh-text-black text-base mb-5">Сейшельские острова остаются недоступными для россиян, тогда как на Мальдивы можно отправится прямым рейсом компании «Аэрофлот».</p>
-                  <a class="rh-bg-gold background-font-clip font-semibold" href="#">Читать полностью</a>
-                </li>
-                <li class="mb-14">
-                  <h4 class="rh-text-black font-bold text-xl mb-5">Пока, Турция: в какие страны могут поехать россияне</h4>
-                  <p class="opacity-70 rh-text-black text-base mb-5">Сейшельские острова остаются недоступными для россиян, тогда как на Мальдивы можно отправится прямым рейсом компании «Аэрофлот».</p>
-                  <a class="rh-bg-gold background-font-clip font-semibold" href="#">Читать полностью</a>
-                </li>
-                <li class="mb-14">
-                  <h4 class="rh-text-black font-bold text-xl mb-5">Пока, Турция: в какие страны могут поехать россияне</h4>
-                  <p class="opacity-70 rh-text-black text-base mb-5">Сейшельские острова остаются недоступными для россиян, тогда как на Мальдивы можно отправится прямым рейсом компании «Аэрофлот».</p>
-                  <a class="rh-bg-gold background-font-clip font-semibold" href="#">Читать полностью</a>
-                </li>
-                <li class="mb-14">
-                  <h4 class="rh-text-black font-bold text-xl mb-5">Пока, Турция: в какие страны могут поехать россияне</h4>
-                  <p class="opacity-70 rh-text-black text-base mb-5">Сейшельские острова остаются недоступными для россиян, тогда как на Мальдивы можно отправится прямым рейсом компании «Аэрофлот».</p>
-                  <a class="rh-bg-gold background-font-clip font-semibold" href="#">Читать полностью</a>
-                </li>
-              </ul>
-            </div>
-            <div class="rh-bg-gold w-px flex-shrink-0 ml-5"></div>
-          </aside>
-          <section class="md:w-2/3">
-            <div class="mb-20 flex justify-between">
-              <div class="w-1/3 mr-4 flex flex-col">
-                <a 
-                  class="flex flex-col justify-center items-center rounded-l-lg w-full h-1/2 mb-4 bg-center bg-cover bg-no-repeat" 
-                  style="background-image: url('./assets/images/sales-background-image.jpg');"
-                  href="#"
-                >
-                  <img class="mb-2" src="./assets/images/icons/sales-icon.svg" alt="sales">
-                  <div class="text-white font-medium text-xl uppercase">Акции</div>
+              <div class="flex justify-between mb-5">
+                <a class="h-72 w-1/2 mr-5 block relative overflow-hidden sales-card" href="#">
+                  <img class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full max-w-none" src="./assets/images/1.jpg" alt="sales-image-1">
+                  <div class="flex flex-col justify-between absolute top-0 bottom-0 left-0 right-0">
+                    <div class="flex flex-col justify-between p-3 sales-card__info">
+                      <div class="flex flex-col items-end justify-center text-white rh-text-shadow-1">
+                        <div>
+                          <div class="font-bold text-xl">от 150 000 ₽</div>
+                          <div class="font-medium text-xs">за чел. 7 ночей AI</div>
+                        </div>
+                      </div>
+                      <div class="text-white tracking-widest font-semibold text-base rh-text-shadow-1">
+                        Мальдивы Sun Island Resort & SPA 4*
+                      </div>
+                    </div>
+                    <div class="bg-white text-sm font-medium flex justify-center items-center sales-card__popup overflow-hidden px-3">Наше лучшее предложение для любителей серфинга</div>
+                  </div>
                 </a>
-                <a 
-                  class="flex flex-col justify-center items-center rounded-l-lg w-full h-1/2 bg-center bg-cover bg-no-repeat" 
-                  style="background-image: url('./assets/images/resort-expert-background-image.jpg');"
-                  href="#"
-                >
-                  <img class="mb-2" src="./assets/images/icons/resort-expert-icon.svg" alt="resort-expert-icon">
-                  <div class="text-white font-medium text-lg uppercase text-center">Resort Expert</div>
+                <a class="h-72 w-1/2 block relative overflow-hidden sales-card" href="#">
+                  <img class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full max-w-none" src="./assets/images/2.jpg" alt="sales-image-2">
+                  <div class="flex flex-col justify-between absolute top-0 bottom-0 left-0 right-0">
+                    <div class="flex flex-col justify-between p-3 sales-card__info">
+                      <div class="flex flex-col items-end justify-center text-white rh-text-shadow-1">
+                        <div>
+                          <div class="font-bold text-xl">от 150 000 ₽</div>
+                          <div class="font-medium text-xs">за чел. 7 ночей AI</div>
+                        </div>
+                      </div>
+                      <div class="text-white tracking-widest font-semibold text-base rh-text-shadow-1">
+                        Мальдивы LUX* South Ari Atoll 5*
+                      </div>
+                    </div>
+                    <div class="bg-white text-sm font-medium flex justify-center items-center sales-card__popup overflow-hidden px-3">Наше лучшее предложение для любителей серфинга</div>
+                  </div>
                 </a>
               </div>
-              <div class="w-2/3">
-                <div class="flex justify-between items-center mb-4 h-24 lg:h-36 xl:h-40">
-                  <a 
-                    class="w-2/3 mr-4 flex flex-col justify-center items-center h-full bg-center bg-cover bg-no-repeat" 
-                    style="background-image: url('./assets/images/partnership-background-image.jpg');"
-                    href="#"
-                  >
-                    <img class="mb-2" src="./assets/images/icons/partnership-icon.svg" alt="partnership-icon">
-                    <div class="text-white font-medium text-lg uppercase text-center">Сотрудничество</div>
-                  </a>
-                  <a 
-                    class="w-1/3 flex flex-col justify-center items-center rounded-r-lg h-full bg-center bg-cover bg-no-repeat" 
-                    style="background-image: url('./assets/images/micefit-background-image.jpg');"
-                    href="#"
-                  >
-                    <img class="mb-2" src="./assets/images/icons/micefit-icon.svg" alt="micefit-icon">
-                    <div class="text-white font-medium text-lg uppercase text-center">mice | fit</div>
-                  </a>
-                </div>
-                <a
-                  class="w-full flex flex-col justify-center items-center rounded-r-lg h-48 lg:h-72 xl:h-80 bg-center bg-cover bg-no-repeat" 
-                  style="background-image: url('./assets/images/prive-background-image.svg');"
-                  href="#"
-                >
-                  <div class="text-white font-medium text-3xl uppercase text-center">Club Privé</div>
+              <div class="flex justify-between mb-5">
+                <a class="h-72 w-1/2 mr-5 block relative overflow-hidden sales-card" href="#">
+                  <img class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full max-w-none" src="./assets/images/3.jpg" alt="sales-image-3">
+                  <div class="flex flex-col justify-between absolute top-0 bottom-0 left-0 right-0">
+                    <div class="flex flex-col justify-between p-3 sales-card__info">
+                      <div class="flex flex-col items-end justify-center text-white rh-text-shadow-1">
+                        <div>
+                          <div class="font-bold text-xl">от 150 000 ₽</div>
+                          <div class="font-medium text-xs">за чел. 7 ночей AI</div>
+                        </div>
+                      </div>
+                      <div class="text-white tracking-widest font-semibold text-base rh-text-shadow-1">
+                        Мальдивы Kandima Maldives 5*
+                      </div>
+                    </div>
+                    <div class="bg-white text-sm font-medium flex justify-center items-center sales-card__popup overflow-hidden px-3">Наше лучшее предложение для любителей серфинга</div>
+                  </div>
+                </a>
+                <a class="h-72 w-1/2 block relative overflow-hidden sales-card" href="#">
+                  <img class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full max-w-none" src="./assets/images/4.jpg" alt="sales-image-4">
+                  <div class="flex flex-col justify-between absolute top-0 bottom-0 left-0 right-0">
+                    <div class="flex flex-col justify-between p-3 sales-card__info">
+                      <div class="flex flex-col items-end justify-center text-white rh-text-shadow-1">
+                        <div>
+                          <div class="font-bold text-xl">от 150 000 ₽</div>
+                          <div class="font-medium text-xs">за чел. 7 ночей AI</div>
+                        </div>
+                      </div>
+                      <div class="text-white tracking-widest font-semibold text-base rh-text-shadow-1">
+                        Мальдивы Heritance Aarah 5*
+                      </div>
+                    </div>
+                    <div class="bg-white text-sm font-medium flex justify-center items-center sales-card__popup overflow-hidden px-3">Наше лучшее предложение для любителей серфинга</div>
+                  </div>
                 </a>
               </div>
             </div>
-            <div class="hidden md:block">
-              <h3 class="mb-14 font-bold text-3xl tracking-widest uppercase">Мы с вами</h3>
-              <ul>
-                <li class="flex justify-between items-end">
-                  <img src="./assets/images/with-you-team-image.png" alt="team">
-                  <div class="w-1/2 flex flex-col justify-end items-end">
-                    <a class="mb-3 font-medium text-3xl rh-text-gray" href="#">Команда</a>
-                    <div class="h-px w-full rh-bg-gold flex-shrink-0"></div>
-                  </div>
-                </li>
-                <li class="flex justify-between items-end">
-                  <img src="./assets/images/with-you-manta-image.png" alt="manta">
-                  <div class="w-1/2 flex flex-col justify-end items-end">
-                    <a class="mb-3 font-medium text-3xl rh-text-gray" href="#">Club Privé</a>
-                    <div class="h-px w-full rh-bg-gold flex-shrink-0"></div>
-                  </div>
-                </li>
-                <li class="flex justify-between items-end">
-                  <img src="./assets/images/with-you-events-image.png" alt="events">
-                  <div class="w-1/2 flex flex-col justify-end items-end">
-                    <a class="mb-3 font-medium text-3xl rh-text-gray" href="#">Мероприятия</a>
-                    <div class="h-px w-full rh-bg-gold flex-shrink-0"></div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </section>
-        </div>
-        <section class="block md:hidden">
-          <div class="container mx-auto px-4">
-            <a
-              class="rh-box-shadow-2 flex flex-col justify-center items-center rounded-t-lg w-full h-60 mb-10 bg-center bg-cover bg-no-repeat" 
-              style="background-image: url('./assets/images/sales-background-image.jpg');"
-              href="#"
-            >
-              <img class="mb-2" src="./assets/images/icons/sales-icon.svg" alt="sales">
-              <div class="text-white font-medium text-xl uppercase">Акции</div>
-            </a>
-            <a
-              class="rh-box-shadow-2 flex flex-col justify-center items-center w-full h-60 mb-10 bg-center bg-cover bg-no-repeat" 
-              style="background-image: url('./assets/images/partnership-background-image.jpg');"
-              href="#"
-            >
-              <img class="mb-2" src="./assets/images/icons/partnership-icon.svg" alt="partnership">
-              <div class="text-white font-medium text-xl uppercase">Сотрудничество</div>
-            </a>
-            <a
-              class="rh-box-shadow-2 flex flex-col justify-center items-center w-full h-60 mb-10 bg-center bg-cover bg-no-repeat" 
-              style="background-image: url('./assets/images/micefit-background-image.jpg');"
-              href="#"
-            >
-              <img class="mb-2" src="./assets/images/icons/micefit-icon.svg" alt="micefit">
-              <div class="text-white font-medium text-xl uppercase">mice | fit</div>
-            </a>
-            <a
-              class="rh-box-shadow-2 flex flex-col justify-center items-center w-full h-60 mb-10 bg-center bg-cover bg-no-repeat" 
-              style="background-image: url('./assets/images/resort-expert-background-image.jpg');"
-              href="#"
-            >
-              <img class="mb-2" src="./assets/images/icons/resort-expert-icon.svg" alt="resort-expert">
-              <div class="text-white font-medium text-xl uppercase">resort expert</div>
-            </a>
-            <a
-              class="rh-box-shadow-2 flex flex-col justify-center items-center rounded-b-lg w-full h-60 mb-10 bg-center bg-cover bg-no-repeat" 
-              style="background-image: url('./assets/images/prive-background-image.svg');"
-              href="#"
-            >
-              <div class="text-white font-medium text-3xl uppercase">club Privé</div>
-            </a>
           </div>
-          <div class="mb-20">
-            <div class="container mx-auto px-4 tracking-widest text-3xl font-semibold">Мы с вами</div>
-              <div class="splide with-you-slider mb-3">
+          <div class="w-5/12 relative search-form-switch--half">
+            <div class="h-24 -mt-24 bg-white bg-opacity-70 flex items-center pl-10 text-xl uppercase font-bold" id="search-tour">
+              Поиск Тура
+            </div>
+            <div class="overflow-hidden mb-20">
+              <div class="flex items-center justify-between h-full">
+                <button
+                  class="
+                    search-form-switch__button 
+                    search-form-switch__button_tour 
+                    search-form-switch__button--active
+                    flex justify-center items-center h-full w-full
+                  "
+                >
+                  <img class="w-6 mr-3" src="./assets/images/icons/tour-search-gold-icon.svg" alt="tour-search-gold-icon">
+                  <div class="text-base font-medium tracking-wider">Туры</div>
+                </button>
+                <button 
+                  class="
+                    search-form-switch__button 
+                    search-form-switch__button_hotel
+                    flex justify-center items-center transform -translate-x-5 h-full w-full
+                  "
+                >
+                  <img class="w-6 mr-3" src="./assets/images/icons/hotel-search-gold-icon.svg" alt="hotel-search-gold-icon">
+                  <div class="text-base font-medium tracking-wider">Отель</div>
+                </button>
+              </div>
+              <div class="search-form-switch__top-shadow pt-7">
+                <form class="search-form-switch__form search-form-switch__form_tour search-form-switch__form--active" action="#">
+                  <div class="border-b border-gray-700 px-4 py-3 flex items-center">
+                    <img class="mr-5" src="./assets/images/icons/search-location-gold-icon.svg" alt="search-location-gold-icon">
+                    <select class="w-full search-form-switch__gray-text" name="country-from" placeholder="Откуда" required>
+                      <option value="" disabled selected>Откуда</option>
+                      <option value="Москва">Москва</option>
+                      <option value="Москва2">Москва2</option>
+                    </select>
+                  </div>
+                  <div class="border-b border-gray-700 px-4 py-3 flex items-center">
+                    <img class="mr-5" src="./assets/images/icons/search-location-gold-icon.svg" alt="search-location-gold-icon">
+                    <select class="w-full search-form-switch__gray-text" name="country-to" placeholder="Куда" required>
+                      <option value="" disabled selected>Куда</option>
+                      <option value="Мальдивы">Мальдивы</option>
+                      <option value="Мальдивы2">Мальдивы2</option>
+                    </select>
+                  </div>
+                  <div class="border-b border-gray-700 px-4 py-3 flex items-center">
+                    <img class="mr-5" src="./assets/images/icons/search-location-gold-icon.svg" alt="search-location-gold-icon">
+                    <select class="w-full search-form-switch__gray-text" name="country-from" placeholder="Откуда" required>
+                      <option value="" disabled selected>Отель</option>
+                      <option value="Отель1">Отель1</option>
+                      <option value="Отель2">Отель2</option>
+                    </select>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <div class="border-b border-gray-700 px-3 py-3 flex items-center w-5/12 h-full">
+                      <img class="mr-4" src="./assets/images/icons/search-calendar-gold-icon.svg" alt="search-calendar-gold-icon">
+                      <input class="w-full text-xs lg:text-base search-form-switch__gray-text" type="text" id="date-picker-tour" required>
+                    </div>
+                    <div class="border-b border-gray-700 px-3 py-3 flex items-center w-6/12 h-full">
+                      <img class="mr-4" src="./assets/images/icons/search-calendar-gold-icon.svg" alt="search-calendar-gold-icon">
+                      <input class="w-full text-xs lg:text-base search-form-switch__gray-text" type="number" placeholder="Кол-во ночей" required min="1">
+                    </div>
+                  </div>
+                  <div class="border-b border-gray-700 px-4 py-3 flex items-center">
+                    <img class="mr-4" src="./assets/images/icons/search-tourist-gold-icon.svg" alt="search-tourist-gold-icon">
+                    <input class="w-full text-xs lg:text-base search-form-switch__gray-text" type="number" placeholder="Туристы" required>
+                  </div>
+                  <div class="flex justify-center items-center pt-16">
+                    <button class="rh-bg-gold uppercase text-white font-semibold text-base w-1/2 py-5" type="submit">Найти</button>
+                  </div>
+                </form>
+                <form class="search-form-switch__form search-form-switch__form_hotel" action="#">
+                  <div class="border-b border-gray-700 px-4 py-3 flex items-center">
+                    <img class="mr-5" src="./assets/images/icons/search-location-gold-icon.svg" alt="search-location-gold-icon">
+                    <select class="w-full search-form-switch__gray-text" name="country-from" placeholder="Откуда" required>
+                      <option value="" disabled selected>Откуда</option>
+                      <option value="Москва">Москва</option>
+                      <option value="Москва2">Москва2</option>
+                    </select>
+                  </div>
+                  <div class="border-b border-gray-700 px-4 py-3 flex items-center">
+                    <img class="mr-5" src="./assets/images/icons/search-location-gold-icon.svg" alt="search-location-gold-icon">
+                    <select class="w-full search-form-switch__gray-text" name="country-to" placeholder="Куда" required>
+                      <option value="" disabled selected>Куда</option>
+                      <option value="Мальдивы">Мальдивы</option>
+                      <option value="Мальдивы2">Мальдивы2</option>
+                    </select>
+                  </div>
+                  <div class="border-b border-gray-700 px-4 py-3 flex items-center">
+                    <img class="mr-5" src="./assets/images/icons/search-location-gold-icon.svg" alt="search-location-gold-icon">
+                    <select class="w-full search-form-switch__gray-text" name="country-from" placeholder="Откуда" required>
+                      <option value="" disabled selected>Отель</option>
+                      <option value="Отель1">Отель1</option>
+                      <option value="Отель2">Отель2</option>
+                    </select>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <div class="border-b border-gray-700 px-3 py-3 flex items-center w-5/12 h-full">
+                      <img class="mr-4" src="./assets/images/icons/search-calendar-gold-icon.svg" alt="search-calendar-gold-hotel">
+                      <input class="w-full text-xs lg:text-base search-form-switch__gray-text" type="text" id="date-picker-hotel" required>
+                    </div>
+                    <div class="border-b border-gray-700 px-3 py-3 flex items-center w-6/12 h-full">
+                      <img class="mr-4" src="./assets/images/icons/search-calendar-gold-icon.svg" alt="search-calendar-gold-icon">
+                      <input class="w-full text-xs lg:text-base search-form-switch__gray-text" type="number" placeholder="Кол-во ночей" required min="1">
+                    </div>
+                  </div>
+                  <div class="border-b border-gray-700 px-4 py-3 flex items-center">
+                    <img class="mr-4" src="./assets/images/icons/search-tourist-gold-icon.svg" alt="search-tourist-gold-icon">
+                    <input class="w-full text-xs lg:text-base search-form-switch__gray-text" type="number" placeholder="Туристы" required>
+                  </div>
+                  <div class="flex justify-center items-center pt-16">
+                    <button class="rh-bg-gold uppercase text-white font-semibold text-base w-1/2 py-5" type="submit">Найти</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- / FORM AND HEAT SALES -->
+        <!-- OUR GOODS -->
+        <section class="bg-center bg-cover bg-no-repeat" style="background-image: url('./assets/images/cons-bg.svg');">
+          <div class="container mx-auto px-4 py-20">
+            <div class="mb-10 text-xl font-bold tracking-widest">В Resort Holiday мы:</div>
+            <!-- OUR GOODS DESKTOP -->
+            <div class="hidden md:block">
+              <ul class="flex items-start justify-between space-x-2">
+                <li class="max-w-200px flex flex-col items-center">
+                  <img src="./assets/images/icons/24-to-7-icon.svg" alt="24-to-7-icon">
+                  <div class="font-medium tracking-widest text-center mb-3 h-14">Сопровождаем</div>
+                  <div class="font-medium text-xs text-center rh-text-gray-2">
+                    Мы на связи 24/7 и оперативно решаем все ваши вопросы. Даже ночью. Даже если вы на самом отдаленном атолле. Даже если вы еще только задумались о поездке.
+                  </div>
+                </li>
+                <li class="max-w-200px flex flex-col items-center">
+                  <img src="./assets/images/icons/crown-icon.svg" alt="crown-icon">
+                  <div class="font-medium tracking-widest text-center mb-3 h-14">Предлагаем лучшее</div>
+                  <div class="font-medium text-xs text-center rh-text-gray-2">
+                    Вам не надо волноваться о деталях и организации! Мы делаем крутые путешествия на Мальдивы уже 10 лет и готовы предложить персональные решения именно для вас. Выбирайте и отправляйтесь в свой лучший отпуск без проблем!
+                  </div>
+                </li>
+                <li class="max-w-200px flex flex-col items-center">
+                  <img src="./assets/images/icons/heart-icon.svg" alt="heart-icon">
+                  <div class="font-medium tracking-widest text-center mb-3 h-14">Заботимся о вас</div>
+                  <div class="font-medium text-xs text-center rh-text-gray-2">
+                    Гость для нас – не просто номер брони. Мы видим ваше лицо и хотим, чтобы вы улыбались. Поэтому берем на себя заботы обо всех мелочах, которые обеспечат ваш комфорт и оставят лучшие впечатления об отдыхе. Мы знаем, что детали важны.
+                  </div>
+                </li>
+                <li class="max-w-200px flex flex-col items-center">
+                  <img src="./assets/images/icons/double-ok-icon.svg" alt="double-ok-icon">
+                  <div class="font-medium tracking-widest text-center mb-3 h-14">Работаем online</div>
+                  <div class="font-medium text-xs text-center rh-text-gray-2">
+                    Мы используем передовые технологии в туристской отрасли, лучшие программы и соц.сети для общения с вами, поэтому расстояния для нас не помеха. И мы всегда рады встретиться с вами лично в офисе, если вам это важно. 
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- / OUR GOODS DESKTOP -->
+            <!-- OUR GOODS MOBILE -->
+            <div class="block md:hidden">
+              <div class="splide our-goods-slider">
                 <div class="splide__track">
                   <ul class="splide__list">
-                    <li class="splide__slide flex justify-center items-center">
-                      <a class="flex flex-col justify-center items-center" href="#">
-                        <img src="./assets/images/with-you-team-image.png" alt="with-you-team-image">
-                        <div class="rh-text-gray font-medium text-3xl">Команда</div>
-                      </a>
+                    <li class="splide__slide flex flex-col items-center">
+                      <img src="./assets/images/icons/24-to-7-icon.svg" alt="24-to-7-icon">
+                      <div class="font-medium tracking-widest text-center mb-3 h-14">Сопровождаем</div>
+                      <div class="font-medium text-xs text-center rh-text-gray-2">
+                        Мы на связи 24/7 и оперативно решаем все ваши вопросы. Даже ночью. Даже если вы на самом отдаленном атолле. Даже если вы еще только задумались о поездке.
+                      </div>
                     </li>
-                    <li class="splide__slide flex justify-center items-center">
-                      <a class="flex flex-col justify-center items-center" href="#">
-                        <img src="./assets/images/with-you-manta-image.png" alt="with-you-manta-image">
-                        <div class="rh-text-gray font-medium text-3xl">Club Privé</div>
-                      </a>
+                    <li class="splide__slide flex flex-col items-center">
+                      <img src="./assets/images/icons/crown-icon.svg" alt="crown-icon">
+                      <div class="font-medium tracking-widest text-center mb-3 h-14">Предлагаем лучшее</div>
+                      <div class="font-medium text-xs text-center rh-text-gray-2">
+                        Вам не надо волноваться о деталях и организации! Мы делаем крутые путешествия на Мальдивы уже 10 лет и готовы предложить персональные решения именно для вас. Выбирайте и отправляйтесь в свой лучший отпуск без проблем!
+                      </div>
                     </li>
-                    <li class="splide__slide flex justify-center items-center">
-                      <a class="flex flex-col justify-center items-center" href="#">
-                        <img src="./assets/images/with-you-events-image.png" alt="with-you-events-image">
-                        <div class="rh-text-gray font-medium text-3xl">Мероприятия</div>
-                      </a>
+                    <li class="splide__slide flex flex-col items-center">
+                      <img src="./assets/images/icons/heart-icon.svg" alt="heart-icon">
+                      <div class="font-medium tracking-widest text-center mb-3 h-14">Заботимся о вас</div>
+                      <div class="font-medium text-xs text-center rh-text-gray-2">
+                        Гость для нас – не просто номер брони. Мы видим ваше лицо и хотим, чтобы вы улыбались. Поэтому берем на себя заботы обо всех мелочах, которые обеспечат ваш комфорт и оставят лучшие впечатления об отдыхе. Мы знаем, что детали важны.
+                      </div>
+                    </li>
+                    <li class="splide__slide flex flex-col items-center">
+                      <img src="./assets/images/icons/double-ok-icon.svg" alt="double-ok-icon">
+                      <div class="font-medium tracking-widest text-center mb-3 h-14">Работаем online</div>
+                      <div class="font-medium text-xs text-center rh-text-gray-2">
+                        Мы используем передовые технологии в туристской отрасли, лучшие программы и соц.сети для общения с вами, поэтому расстояния для нас не помеха. И мы всегда рады встретиться с вами лично в офисе, если вам это важно. 
+                      </div>
                     </li>
                   </ul>
                 </div>
               </div>
-              <div class="h-0.5 rh-bg-gold"></div>
-            </div>              
+            </div>
+            <!-- / OUR GOODS MOBILE -->
           </div>
         </section>
+        <!-- / OUR GOODS -->
+        <!-- BANNER -->
         <div class="bg-no-repeat bg-cover bg-center" style="background-image: url('./assets/images/banner-background.svg');">
           <div class="container mx-auto px-4">
             <form class="md:hidden pt-5 pb-7" action="#">
@@ -710,16 +687,20 @@
             </div>
           </form>
         </div>
+        <!-- /BANNER -->
       </main>
+      <!-- / MAIN -->
+      <!-- FOOTER -->
       <footer class="bg-no-repeat bg-center bg-cover relative" style="background-image: url('./assets/images/footer-bg-image.png');">
         <div class="absolute right-0 left-0 top-0 bottom-0" style="background: rgba(40, 92, 45, 0.5);"></div>
+        <!-- FOOTER MOBILE -->
         <div class="md:hidden pt-10 pb-4 relative">
           <div class="container px-4 mx-auto flex flex-col items-end mb-3">
             <div class="flex items-center mb-5">
               <img class="h-7 mr-5" src="./assets/images/icons/gold-phone-icon.svg" alt="phone">
               <div class="flex flex-col justify-center items-center">
-                <a class="font-bold text-xl uppercase text-white" href="#">+7 495 266-63-77</a>
-                <a class="font-bold text-xl uppercase text-white" href="#">+7 800 100-19-70</a>
+                <a class="font-bold text-xl uppercase text-white hover:text-gray-300 transition-all" href="#">+7 495 266-63-77</a>
+                <a class="font-bold text-xl uppercase text-white hover:text-gray-300 transition-all" href="#">+7 800 100-19-70</a>
               </div>
             </div>
             <div class="flex items-center justify-between">
@@ -737,11 +718,11 @@
           <div class="container px-4 mx-auto mb-10">
             <a class="flex items-center mb-3" href="#">
               <img class="mr-4 w-5" src="./assets/images/icons/move-gold-icon.svg" alt="move">
-              <div class="tracking-widest text-sm text-white">Агентствам</div>
+              <div class="tracking-widest text-sm text-white hover:text-gray-300 transition-all">Агентствам</div>
             </a>
             <a class="flex items-center" href="#">
               <img class="mr-4 w-5" src="./assets/images/icons/account-gold-icon.svg" alt="account-gold-icon">
-              <div class="tracking-widest text-sm text-white">Личный кабинет</div>
+              <div class="tracking-widest text-sm text-white hover:text-gray-300 transition-all">Личный кабинет</div>
             </a>
           </div>
           <div class="container px-4 mx-auto w-full">
@@ -749,9 +730,9 @@
               <div class="text-white text-sm mb-3">Страны</div>
               <ul>
                 <li>
-                  <a class="text-white text-xs" href="#">Мальдивы</a>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Мальдивы</a>
                 </li>
-                <li>
+                <!-- <li>
                   <a class="text-white text-xs" href="#">Турция</a>
                 </li>
                 <li>
@@ -759,35 +740,35 @@
                 </li>
                 <li>
                   <a class="text-white text-xs" href="#">Шри-Ланка</a>
-                </li>
+                </li> -->
               </ul>
             </div>
             <div class="inline-block w-1/3 align-top mb-8">
               <div class="text-white text-sm mb-3">О нас</div>
               <ul>
                 <li>
-                  <a class="text-white text-xs" href="#">Кто мы?</a>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Кто мы?</a>
                 </li>
                 <li>
-                  <a class="text-white text-xs" href="#">Почему мы?</a>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Почему мы?</a>
                 </li>
                 <li>
-                  <a class="text-white text-xs" href="#">Команда</a>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Команда</a>
                 </li>
                 <li>
-                  <a class="text-white text-xs" href="#">Пресс-центр</a>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Пресс-центр</a>
                 </li>
                 <li>
-                  <a class="text-white text-xs" href="#">Защита персональных данных</a>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Защита персональных данных</a>
                 </li>
                 <li>
-                  <a class="text-white text-xs" href="#">Реестр турагентств</a>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Реестр турагентств</a>
                 </li>
                 <li>
-                  <a class="text-white text-xs" href="#">Вакансии</a>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Вакансии</a>
                 </li>
                 <li>
-                  <a class="text-white text-xs" href="#">Контакты</a>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Контакты</a>
                 </li>
               </ul>
             </div>
@@ -795,25 +776,25 @@
               <div class="text-white text-sm mb-3">Купить тур</div>
               <ul>
                 <li>
-                  <a class="text-white text-xs" href="#">Как выбрать себе отель?</a>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Как выбрать себе отель?</a>
                 </li>
                 <li>
-                  <a class="text-white text-xs" href="#">Как купить тур?</a>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Как купить тур?</a>
                 </li>
                 <li>
-                  <a class="text-white text-xs" href="#">Где купить тур?</a>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Где купить тур?</a>
                 </li>
                 <li>
-                  <a class="text-white text-xs" href="#">Как оплатить тур?</a>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Как оплатить тур?</a>
                 </li>
                 <li>
-                  <a class="text-white text-xs" href="#">Документы</a>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Документы</a>
                 </li>
                 <li>
-                  <a class="text-white text-xs" href="#">Как изменить или аннулировать тур?</a>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Как изменить или аннулировать тур?</a>
                 </li>
                 <li>
-                  <a class="text-white text-xs" href="#">FAQ</a>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">FAQ</a>
                 </li>
               </ul>
             </div>
@@ -821,25 +802,25 @@
               <div class="text-white text-sm mb-3">Важное в поездке</div>
               <ul>
                 <li>
-                  <a class="text-white text-xs" href="#">Страхование</a>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Страхование</a>
                 </li>
                 <li>
-                  <a class="text-white text-xs" href="#">Визы</a>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Визы</a>
                 </li>
                 <li>
-                  <a class="text-white text-xs" href="#">Таможня</a>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Таможня</a>
                 </li>
                 <li>
-                  <a class="text-white text-xs" href="#">Covid-19</a>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Covid-19</a>
                 </li>
                 <li>
-                  <a class="text-white text-xs" href="#">Памятка</a>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Памятка</a>
                 </li>
                 <li>
-                  <a class="text-white text-xs" href="#">Трансферы</a>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Трансферы</a>
                 </li>
                 <li>
-                  <a class="text-white text-xs" href="#">Услуги</a>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Услуги</a>
                 </li>
               </ul>
             </div>
@@ -872,17 +853,19 @@
             </div>
           </div>
         </div>
+        <!-- / FOOTER MOBILE -->
+        <!-- FOOTER DESKTOP -->
         <div class="hidden md:block container mx-auto px-4 relative pb-10 pt-5">
           <div class="flex justify-between items-center mb-5">
             <a href="#">
               <img src="./assets/images/logo-white.svg" alt="">
             </a>
             <div class="flex justify-between items-center w-1/2">
-              <a class="flex items-center" href="#">
+              <a class="flex items-center hover:text-gray-300 transition-all" href="#">
                 <img class="mr-4 w-5" src="./assets/images/icons/move-gold-icon.svg" alt="move">
                 <div class="tracking-widest text-sm text-white">Агентствам</div>
               </a>
-              <a class="flex items-center" href="#">
+              <a class="flex items-center hover:text-gray-300 transition-all" href="#">
                 <img class="mr-4 w-5" src="./assets/images/icons/account-gold-icon.svg" alt="account-gold-icon">
                 <div class="tracking-widest text-sm text-white">Личный кабинет</div>
               </a>
@@ -895,9 +878,9 @@
                 <div class="text-white text-sm mb-3">Страны</div>
                 <ul>
                   <li>
-                    <a class="text-white text-xs" href="#">Мальдивы</a>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Мальдивы</a>
                   </li>
-                  <li>
+                  <!-- <li>
                     <a class="text-white text-xs" href="#">Турция</a>
                   </li>
                   <li>
@@ -905,35 +888,35 @@
                   </li>
                   <li>
                     <a class="text-white text-xs" href="#">Шри-Ланка</a>
-                  </li>
+                  </li> -->
                 </ul>
               </div>
               <div class="w-1/5">
                 <div class="text-white text-sm mb-3">О нас</div>
                 <ul>
                   <li>
-                    <a class="text-white text-xs" href="#">Кто мы?</a>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Кто мы?</a>
                   </li>
                   <li>
-                    <a class="text-white text-xs" href="#">Почему мы?</a>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Почему мы?</a>
                   </li>
                   <li>
-                    <a class="text-white text-xs" href="#">Команда</a>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Команда</a>
                   </li>
                   <li>
-                    <a class="text-white text-xs" href="#">Пресс-центр</a>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Пресс-центр</a>
                   </li>
                   <li>
-                    <a class="text-white text-xs" href="#">Защита персональных данных</a>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Защита персональных данных</a>
                   </li>
                   <li>
-                    <a class="text-white text-xs" href="#">Реестр турагентств</a>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Реестр турагентств</a>
                   </li>
                   <li>
-                    <a class="text-white text-xs" href="#">Вакансии</a>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Вакансии</a>
                   </li>
                   <li>
-                    <a class="text-white text-xs" href="#">Контакты</a>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Контакты</a>
                   </li>
                 </ul>
               </div>
@@ -941,22 +924,22 @@
                 <div class="text-white text-sm mb-3">Купить тур</div>
                 <ul>
                   <li>
-                    <a class="text-white text-xs" href="#">Как выбрать себе отель?</a>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Как выбрать себе отель?</a>
                   </li>
                   <li>
-                    <a class="text-white text-xs" href="#">Как купить тур?</a>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Как купить тур?</a>
                   </li>
                   <li>
-                    <a class="text-white text-xs" href="#">Как оплатить тур?</a>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Как оплатить тур?</a>
                   </li>
                   <li>
-                    <a class="text-white text-xs" href="#">Документы</a>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Документы</a>
                   </li>
                   <li>
-                    <a class="text-white text-xs" href="#">Как изменить или аннулировать тур?</a>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Как изменить или аннулировать тур?</a>
                   </li>
                   <li>
-                    <a class="text-white text-xs" href="#">FAQ</a>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">FAQ</a>
                   </li>
                 </ul>
               </div>
@@ -964,25 +947,25 @@
                 <div class="text-white text-sm mb-3">Важное в поездке</div>
                 <ul>
                   <li>
-                    <a class="text-white text-xs" href="#">Страхование</a>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Страхование</a>
                   </li>
                   <li>
-                    <a class="text-white text-xs" href="#">Визы</a>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Визы</a>
                   </li>
                   <li>
-                    <a class="text-white text-xs" href="#">Таможня</a>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Таможня</a>
                   </li>
                   <li>
-                    <a class="text-white text-xs" href="#">Covid-19</a>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Covid-19</a>
                   </li>
                   <li>
-                    <a class="text-white text-xs" href="#">Памятка</a>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Памятка</a>
                   </li>
                   <li>
-                    <a class="text-white text-xs" href="#">Трансферы</a>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Трансферы</a>
                   </li>
                   <li>
-                    <a class="text-white text-xs" href="#">Услуги</a>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Услуги</a>
                   </li>
                 </ul>
               </div>
@@ -991,8 +974,8 @@
               <div class="flex items-center justify-end mb-8">
                 <img class="h-7 mr-5" src="./assets/images/icons/gold-phone-icon.svg" alt="phone">
                 <div class="flex flex-col justify-center items-center">
-                  <a class="font-bold text-2xl uppercase text-white" href="#">+7 495 266-63-77</a>
-                  <a class="font-bold text-2xl uppercase text-white" href="#">+7 800 100-19-70</a>
+                  <a class="font-bold text-2xl uppercase text-white hover:text-gray-300 transition-all" href="#">+7 495 266-63-77</a>
+                  <a class="font-bold text-2xl uppercase text-white hover:text-gray-300 transition-all" href="#">+7 800 100-19-70</a>
                 </div>
               </div>
               <div class="flex items-end justify-center">
@@ -1033,7 +1016,9 @@
             </div>
           </div>
         </div>
+        <!-- / FOOTER DESKTOP -->
       </footer>
+      <!-- / FOOTER -->
     </div>
 
     <script src="./assets/main.js"></script>

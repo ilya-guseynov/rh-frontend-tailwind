@@ -13,9 +13,12 @@
 
   <body>
     <div class="wrapper">
+      <!-- HEADER -->
       <header class="header">
+        <!-- HEADER TOP SECTION -->
         <div class="mb-2 rh-bg-light-gray rh-box-shadow-1">
           <div class="container--header mx-auto px-4">
+            <!-- HEADER TOP SECTION MOBILE -->
             <div class="md:hidden flex justify-between items-center h-11">
               <div class="flex">
                 <img class="mr-3" src="./assets/images/icons/near-me-icon.svg" alt="near-me-icon">
@@ -28,6 +31,8 @@
                 <span><span>EUR</span> <span><b>91.30</b></span></span>
               </div>
             </div>
+            <!-- / HEADER TOP SECTION MOBILE -->
+            <!-- HEADER TOP SECTION DESKTOP -->
             <div class="hidden md:flex justify-between items-center h-24">
               <div class="flex items-center justify-between w-1/6">
                 <a class="mr-3" href="#">
@@ -75,9 +80,13 @@
                 </ul>
               </nav>
             </div>
+            <!-- / HEADER TOP SECTION DESKTOP -->
           </div>
         </div>
+        <!-- / HEADER TOP SECTION -->
+        <!-- HEADER BOTTOM SECTION -->
         <div class="relative header__bottom-section mb-8 md:mb-0">
+          <!-- HEADER BOTTOM SECTION MOBILE -->
           <div class="mx-auto md:hidden">
             <div class="flex md:hidden justify-between items-center h-12 px-4">
               <div class="h-full">
@@ -102,6 +111,8 @@
               </div>
             </div>
           </div>
+          <!-- / HEADER BOTTOM SECTION MOBILE -->
+          <!-- HEADER BOTTOM SECTION DESKTOP -->
           <div class="container--header mx-auto hidden md:block h-32 px-4">
             <div class="flex justify-between items-center h-full">
               <div class="flex items-center h-full">
@@ -130,8 +141,12 @@
               </div>
             </div>
           </div>
+          <!-- / HEADER BOTTOM SECTION DESKTOP -->
         </div>
+        <!-- / HEADER BOTTOM SECTION -->
       </header>
+      <!-- / HEADER -->
+      <!-- MOBILE SIDEBAR -->
       <div class="z-50 relative mobile-sidebar">
         <div class="fixed top-0 bottom-0 left-0 right-0 bg-black bg-opacity-10 mobile-sidebar__screenlock"></div>
         <div class="fixed top-0 bottom-0 left-0  bg-white rounded-r-2xl w-72 overflow-y-scroll mobile-sidebar__content">
@@ -261,7 +276,10 @@
           <img src="./assets/images/icons/close-icon.svg" alt="close">
         </button>
       </div>
+      <!-- / MOBILE SIDEBAR -->
+      <!-- MAIN -->
       <main class="relative">
+        <!-- MENU -->
         <div class="sticky container md:px-4 mx-auto mb-8 md:mb-0 top-0 h-20 flex justify-between items-center z-20">
           <a class="b2b-menu-shadow hidden md:flex items-center justify-center rh-bg-gold h-full w-full md:w-1/3 md:mr-10" href="#search-tour">
             <div class="font-bold uppercase text-lg md:text-xl tracking-widest text-white text-center">
@@ -362,6 +380,8 @@
             </ul>
           </div>
         </div>
+        <!-- / MENU -->
+        <!-- TOP SLIDER -->
         <div class="hidden md:block -mt-20">
           <div class="splide b2b-top-slider">
             <div class="splide__track">
@@ -398,6 +418,7 @@
             </div>
           </div>
         </div>
+        <!-- / TOP SLIDER -->
         <div class="hidden md:block z-10 relative container mx-auto px-4">
           <div class="h-40 -mt-40 bg-white bg-opacity-70 flex items-center pl-10 text-3xl uppercase font-bold" id="search-tour">
             Поиск Тура
@@ -677,33 +698,32 @@
           </div>
           <div class="mb-20">
             <div class="container mx-auto px-4 tracking-widest text-3xl font-semibold">Мы с вами</div>
-              <div class="splide with-you-slider mb-3">
-                <div class="splide__track">
-                  <ul class="splide__list">
-                    <li class="splide__slide flex justify-center items-center">
-                      <a class="flex flex-col justify-center items-center" href="#">
-                        <img src="./assets/images/with-you-team-image.png" alt="with-you-team-image">
-                        <div class="rh-text-gray font-medium text-3xl">Команда</div>
-                      </a>
-                    </li>
-                    <li class="splide__slide flex justify-center items-center">
-                      <a class="flex flex-col justify-center items-center" href="#">
-                        <img src="./assets/images/with-you-manta-image.png" alt="with-you-manta-image">
-                        <div class="rh-text-gray font-medium text-3xl">Club Privé</div>
-                      </a>
-                    </li>
-                    <li class="splide__slide flex justify-center items-center">
-                      <a class="flex flex-col justify-center items-center" href="#">
-                        <img src="./assets/images/with-you-events-image.png" alt="with-you-events-image">
-                        <div class="rh-text-gray font-medium text-3xl">Мероприятия</div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+            <div class="splide with-you-slider mb-3">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide flex justify-center items-center">
+                    <a class="flex flex-col justify-center items-center" href="#">
+                      <img src="./assets/images/with-you-team-image.png" alt="with-you-team-image">
+                      <div class="rh-text-gray font-medium text-3xl">Команда</div>
+                    </a>
+                  </li>
+                  <li class="splide__slide flex justify-center items-center">
+                    <a class="flex flex-col justify-center items-center" href="#">
+                      <img src="./assets/images/with-you-manta-image.png" alt="with-you-manta-image">
+                      <div class="rh-text-gray font-medium text-3xl">Club Privé</div>
+                    </a>
+                  </li>
+                  <li class="splide__slide flex justify-center items-center">
+                    <a class="flex flex-col justify-center items-center" href="#">
+                      <img src="./assets/images/with-you-events-image.png" alt="with-you-events-image">
+                      <div class="rh-text-gray font-medium text-3xl">Мероприятия</div>
+                    </a>
+                  </li>
+                </ul>
               </div>
-              <div class="h-0.5 rh-bg-gold"></div>
-            </div>              
-          </div>
+            </div>
+            <div class="h-0.5 rh-bg-gold"></div>
+          </div>        
         </section>
         <div class="bg-no-repeat bg-cover bg-center" style="background-image: url('./assets/images/banner-background.svg');">
           <div class="container mx-auto px-4">
@@ -736,6 +756,8 @@
           </form>
         </div>
       </main>
+      <!-- / MAIN -->
+      <!-- FOOTER -->
       <footer class="bg-no-repeat bg-center bg-cover relative" style="background-image: url('./assets/images/footer-bg-image.png');">
         <div class="absolute right-0 left-0 top-0 bottom-0" style="background: rgba(40, 92, 45, 0.5);"></div>
         <div class="md:hidden pt-10 pb-4 relative">
@@ -1022,6 +1044,7 @@
           </div>
         </div>
       </footer>
+      <!-- / FOOTER -->
     </div>
 
     <script src="./assets/main.js"></script>
