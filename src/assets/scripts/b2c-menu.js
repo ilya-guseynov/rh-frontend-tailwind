@@ -17,7 +17,6 @@
   b2cMenuContentElement.style.animation = "none";
   
   const handleScroll = () => {
-    console.log(window.scrollY);
     if (window.scrollY - 232 > 0) {
       b2cMenuElement.classList.add(b2cMenuToRightClass);
     } else {
