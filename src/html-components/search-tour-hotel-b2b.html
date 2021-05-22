@@ -1,0 +1,130 @@
+<section class="hidden md:block z-10 relative container mx-auto px-4">
+  <div class="h-40 -mt-40 bg-white bg-opacity-70 flex items-center pl-10 text-3xl uppercase font-bold" id="search-tour">
+    Поиск Тура
+  </div>
+  <div class="overflow-hidden mb-20">
+    <div class="flex items-center h-full">
+      <button
+        class="
+          search-form-switch__button 
+          search-form-switch__button_tour 
+          search-form-switch__button--active
+          flex justify-center items-center px-16 py-4 h-full
+        "
+      >
+        <img class="mr-8" src="./assets/images/icons/tour-search-gold-icon.svg" alt="tour-search-gold-icon">
+        <div class="text-xl font-medium tracking-wider">Туры</div>
+      </button>
+      <button 
+        class="
+          search-form-switch__button 
+          search-form-switch__button_hotel
+          flex justify-center items-center px-16 py-4 transform -translate-x-5 h-full
+        "
+      >
+        <img class="mr-8" src="./assets/images/icons/hotel-search-gold-icon.svg" alt="hotel-search-gold-icon">
+        <div class="text-xl font-medium tracking-wider">Отель</div>
+      </button>
+    </div>
+    <div class="search-form-switch__top-shadow pt-7 px-7">
+      <form class="search-form-switch__form search-form-switch__form_tour search-form-switch__form--active" action="#">
+        <div class="flex justify-between">
+          <div class="w-1/2 mr-10">
+            <div class="border-b border-gray-700 px-4 py-3 flex items-center">
+              <img class="mr-5" src="./assets/images/icons/search-location-gold-icon.svg" alt="search-location-gold-icon">
+              <select class="w-full search-form-switch__gray-text" name="country-from" placeholder="Откуда" required>
+                <option value="" disabled selected>Откуда</option>
+                <option value="Москва">Москва</option>
+                <option value="Москва2">Москва2</option>
+              </select>
+            </div>
+            <div class="border-b border-gray-700 px-4 py-3 flex items-center">
+              <img class="mr-5" src="./assets/images/icons/search-location-gold-icon.svg" alt="search-location-gold-icon">
+              <select class="w-full search-form-switch__gray-text" name="country-from" placeholder="Откуда" required>
+                <option value="" disabled selected>Отель</option>
+                <option value="Отель1">Отель1</option>
+                <option value="Отель2">Отель2</option>
+              </select>
+            </div>
+            <div class="border-b border-gray-700 px-4 py-3 flex items-center">
+              <img class="mr-4" src="./assets/images/icons/search-tourist-gold-icon.svg" alt="search-tourist-gold-icon">
+              <input class="w-full text-xs lg:text-base search-form-switch__gray-text" type="number" placeholder="Туристы" required>
+            </div>
+          </div>
+          <div class="w-1/2 flex flex-col justify-between">
+            <div class="border-b border-gray-700 px-4 py-3 flex items-center">
+              <img class="mr-5" src="./assets/images/icons/search-location-gold-icon.svg" alt="search-location-gold-icon">
+              <select class="w-full search-form-switch__gray-text" name="country-to" placeholder="Куда" required>
+                <option value="" disabled selected>Куда</option>
+                <option value="Мальдивы">Мальдивы</option>
+                <option value="Мальдивы2">Мальдивы2</option>
+              </select>
+            </div>
+            <div class="flex justify-between items-center">
+              <div class="border-b border-gray-700 px-3 py-3 flex items-center w-5/12 h-full">
+                <img class="mr-4" src="./assets/images/icons/search-calendar-gold-icon.svg" alt="search-calendar-gold-icon">
+                <input class="w-full text-xs lg:text-base search-form-switch__gray-text" type="text" id="date-picker-tour" required>
+              </div>
+              <div class="border-b border-gray-700 px-3 py-3 flex items-center w-6/12 h-full">
+                <img class="mr-4" src="./assets/images/icons/search-calendar-gold-icon.svg" alt="search-calendar-gold-icon">
+                <input class="w-full text-xs lg:text-base search-form-switch__gray-text" type="number" placeholder="Кол-во ночей" required min="1">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center items-center pt-16">
+          <button class="rh-bg-gold uppercase text-white font-semibold text-base w-1/2 py-5" type="submit">Найти</button>
+        </div>
+      </form>
+      <form class="search-form-switch__form search-form-switch__form_hotel" action="#">
+        <div class="flex justify-between">
+          <div class="w-1/2 mr-10">
+            <div class="border-b border-gray-700 px-4 py-3 flex items-center">
+              <img class="mr-5" src="./assets/images/icons/search-location-gold-icon.svg" alt="search-location-gold-icon">
+              <select class="w-full search-form-switch__gray-text" name="country-from" placeholder="Откуда" required>
+                <option value="" disabled selected>Откуда</option>
+                <option value="Москва">Москва</option>
+                <option value="Москва2">Москва2</option>
+              </select>
+            </div>
+            <div class="border-b border-gray-700 px-4 py-3 flex items-center">
+              <img class="mr-5" src="./assets/images/icons/search-location-gold-icon.svg" alt="search-location-gold-icon">
+              <select class="w-full search-form-switch__gray-text" name="country-from" placeholder="Откуда" required>
+                <option value="" disabled selected>Отель</option>
+                <option value="Отель1">Отель1</option>
+                <option value="Отель2">Отель2</option>
+              </select>
+            </div>
+            <div class="border-b border-gray-700 px-4 py-3 flex items-center">
+              <img class="mr-4" src="./assets/images/icons/search-tourist-gold-icon.svg" alt="search-tourist-gold-icon">
+              <input class="w-full text-xs lg:text-base search-form-switch__gray-text" type="number" placeholder="Туристы" required>
+            </div>
+          </div>
+          <div class="w-1/2 flex flex-col justify-between">
+            <div class="border-b border-gray-700 px-4 py-3 flex items-center">
+              <img class="mr-5" src="./assets/images/icons/search-location-gold-icon.svg" alt="search-location-gold-icon">
+              <select class="w-full search-form-switch__gray-text" name="country-to" placeholder="Куда" required>
+                <option value="" disabled selected>Куда</option>
+                <option value="Мальдивы">Мальдивы</option>
+                <option value="Мальдивы2">Мальдивы2</option>
+              </select>
+            </div>
+            <div class="flex justify-between items-center">
+              <div class="border-b border-gray-700 px-3 py-3 flex items-center w-5/12 h-full">
+                <img class="mr-4" src="./assets/images/icons/search-calendar-gold-icon.svg" alt="search-calendar-gold-icon">
+                <input class="w-full text-xs lg:text-base search-form-switch__gray-text" type="text" id="date-picker-hotel" required>
+              </div>
+              <div class="border-b border-gray-700 px-3 py-3 flex items-center w-6/12 h-full">
+                <img class="mr-4" src="./assets/images/icons/search-calendar-gold-icon.svg" alt="search-calendar-gold-icon">
+                <input class="w-full text-xs lg:text-base search-form-switch__gray-text" type="number" placeholder="Кол-во ночей" required min="1">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center items-center pt-16">
+          <button class="rh-bg-gold uppercase text-white font-semibold text-base w-1/2 py-5" type="submit">Найти</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
