@@ -1,0 +1,47 @@
+.mobile-sidebar {
+  &--active {
+    & .mobile-sidebar__screenlock {
+      display: block;
+    }
+
+    & .mobile-sidebar__content {
+      left: 0;
+    }
+
+    & .mobile-sidebar__close-trigger {
+      left: 240px;
+    }
+  }
+
+  &__screenlock {
+    display: none;
+  }
+  
+  &__content {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    left: -200vw;
+    transition: all .5s;
+  }
+
+  &__close-trigger {
+    left: -200vw;
+    transition: all .5s;
+  }
+
+  &__item {
+
+  }
+
+  &__submenu-trigger {}
+
+  &__submenu {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+}

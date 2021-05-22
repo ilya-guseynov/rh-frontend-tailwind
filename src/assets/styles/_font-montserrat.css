@@ -123,3 +123,7 @@
   font-weight: 900;
   font-style: italic;
 }
+
+html {
+  font-family: "montserrat", sans-serif;
+}

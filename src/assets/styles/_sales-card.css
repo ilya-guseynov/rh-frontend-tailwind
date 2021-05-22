@@ -1,0 +1,23 @@
+.sales-card {
+  &__info {
+    transition: all .5s;
+    height: 100%;
+  }
+
+  &__popup {
+    transition: all .5s;
+    height: 0%;
+  }
+
+  &:hover {
+    .sales-card {
+      &__info {
+        height: 66%;
+      }
+
+      &__popup {
+        height: 33%;
+      }
+    }
+  }
+}
