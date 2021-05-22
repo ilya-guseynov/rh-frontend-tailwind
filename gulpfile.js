@@ -35,7 +35,7 @@ const scripts = () => {
   const sourcemaps = require("gulp-sourcemaps");
   const concat = require("gulp-concat");
   const babel = require("gulp-babel");
-  // const uglify = require("gulp-uglify");
+  const uglify = require("gulp-uglify");
 
   return src(paths.src.scripts)
     .pipe(sourcemaps.init())
@@ -43,6 +43,7 @@ const scripts = () => {
     .pipe(babel({
       presets: ['@babel/preset-env']
     }))
+    .pipe(uglify())
     .pipe(sourcemaps.write())
     .pipe(dest(paths.build.scripts))
     .pipe(browsersync.stream());
