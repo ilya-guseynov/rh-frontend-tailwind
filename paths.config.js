@@ -1,7 +1,7 @@
 module.exports = {
   src: {
     html: "./src/*.html",
-    styles: "./src/assets/styles/main.css",
+    styles: "./src/assets/styles/customer.css",
     scripts: "./src/assets/scripts/**/*.js",
     images: "./src/assets/images/**/*",
     fonts: "./src/assets/fonts/**/*",
