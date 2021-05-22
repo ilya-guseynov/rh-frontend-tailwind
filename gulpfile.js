@@ -39,7 +39,7 @@ const scripts = () => {
 
   return src(paths.src.scripts)
     .pipe(sourcemaps.init())
-    .pipe(concat("main.js"))
+    .pipe(concat("customer.js"))
     .pipe(babel({
       presets: ['@babel/preset-env']
     }))
@@ -70,7 +70,6 @@ const videos = () => {
 };
 
 const clean = done => {
-  const del = require("del");
   const exec = require('child_process').exec;
 
   exec("rm -rf ./build");
