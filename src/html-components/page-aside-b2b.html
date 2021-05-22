@@ -1,0 +1,86 @@
+<!-- PAGE ASIDE -->
+<aside class="w-1/3 xl:w-1/4 flex justify-between mr-5">
+  <div class="w-full pb-40">
+    <ul class="mb-24">
+      @@if (remove !== 'sales') {
+        <li>
+          <a 
+            class="flex flex-col justify-center items-center w-full mb-4 h-36 bg-center bg-cover bg-no-repeat" 
+            style="background-image: url('./assets/images/sales-background-image.jpg');"
+            href="#"
+          >
+            <img class="mb-2" src="./assets/images/icons/sales-icon.svg" alt="sales">
+            <div class="text-white font-medium text-xl uppercase">Акции</div>
+          </a>    
+        </li>
+      }
+      @@if (remove !== 'partnership') {
+        <li>
+          <a 
+            class="flex flex-col justify-center items-center w-full mb-4 h-36 bg-center bg-cover bg-no-repeat" 
+            style="background-image: url('./assets/images/partnership-background-image.jpg');"
+            href="#"
+          >
+            <img class="mb-2" src="./assets/images/icons/partnership-icon.svg" alt="partnership">
+            <div class="text-white font-medium text-xl uppercase">Сотрудничество</div>
+          </a>    
+        </li>
+      }
+      @@if (remove !== 'micefit') {
+        <li>
+          <a 
+            class="flex flex-col justify-center items-center w-full mb-4 h-36 bg-center bg-cover bg-no-repeat" 
+            style="background-image: url('./assets/images/micefit-background-image.jpg');"
+            href="#"
+          >
+            <img class="mb-2" src="./assets/images/icons/micefit-icon.svg" alt="micefit">
+            <div class="text-white font-medium text-xl uppercase">mice | fit</div>
+          </a>    
+        </li>
+      }
+      @@if (remove !== 'resort-expert') {
+        <li>
+          <a 
+            class="flex flex-col justify-center items-center w-full mb-4 h-36 bg-center bg-cover bg-no-repeat" 
+            style="background-image: url('./assets/images/resort-expert-background-image.jpg');"
+            href="#"
+          >
+            <img class="mb-2" src="./assets/images/icons/resort-expert-icon.svg" alt="resort-expert">
+            <div class="text-white font-medium text-xl uppercase">Resort Expert</div>
+          </a>    
+        </li>
+      }
+      @@if (remove !== 'prive') {
+        <li>
+          <a 
+            class="flex flex-col justify-center items-center w-full mb-4 h-36 bg-center bg-cover bg-no-repeat" 
+            style="background-image: url('./assets/images/prive-background-image.svg');"
+            href="#"
+          >
+            <div class="text-white font-medium text-xl uppercase">Club Privé</div>
+          </a>    
+        </li>
+      }
+    </ul>
+    <div>
+      <h3 class="font-semibold tracking-wider text-2xl">Мы с вами</h3>
+      <a class="flex flex-col items-center justify-center mb-5" href="#">
+        <img src="./assets/images/with-you-team-image.png" alt="team">
+        <div class="rh-text-gray text-2xl text-center mb-5">Команда</div>
+        <div class="h-0.5 rh-bg-gold w-full flex-shrink-0"></div>
+      </a>
+      <a class="flex flex-col items-center justify-center mb-5" href="#">
+        <img src="./assets/images/with-you-manta-image.png" alt="manta">
+        <div class="rh-text-gray text-2xl text-center mb-5">Club Privé</div>
+        <div class="h-0.5 rh-bg-gold w-full flex-shrink-0"></div>
+      </a>
+      <a class="flex flex-col items-center justify-center mb-5" href="#">
+        <img src="./assets/images/with-you-events-image.png" alt="events">
+        <div class="rh-text-gray text-2xl text-center mb-5">Мероприятия</div>
+        <div class="h-0.5 rh-bg-gold w-full flex-shrink-0"></div>
+      </a>
+    </div>
+  </div>
+  <div class="rh-bg-gold w-0.5 ml-5 flex-shrink-0"></div>
+</aside>
+<!-- / PAGE ASIDE -->
