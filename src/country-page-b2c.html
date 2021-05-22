@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    @@include('./html-components/head-imports.html')
+
+    <title>RH | Main Page B2C</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      @@include('./html-components/header-b2c.html')
+      @@include('./html-components/mobile-sidebar-b2c.html')
+      <!-- MAIN -->
+      <main class="relative">
+        @@include('./html-components/menu-b2c.html')
+        <!-- MEDIA INTRO -->
+        <section class="md:-mt-20 country-top-media-block relative flex justify-center items-center overflow-hidden">
+          <img class="max-w-none h-full 2xl:h-auto 2xl:w-full" src="./assets/images/maldive-bg.png" alt="maldive-bg">
+          <div class="absolute top-0 bottom-0 left-0 right-0 flex items-center">
+            <div class="container mx-auto px-4">
+              <h1 class="font-bold text-6xl text-white uppercase tracking-wider">Мальдивы</h1>
+            </div>
+          </div>
+        </section>
+        <!-- / MEDIA INTRO -->
+        <!-- FORM -->
+        <section class="mb-40">form</section>
+        <!-- / FORM -->
+        <section class="container mx-auto px-4 rh-hidden md:block">
+          squares
+        </section>
+        <section class="container md:hidden">
+          mobile
+        </section>
+      </main>
+      <!-- / MAIN -->
+      @@include('./html-components/footer-b2c.html')
+    </div>
+    @@include('./html-components/scripts.html')
+  </body>
+</html>

@@ -53,6 +53,9 @@ module.exports = {
         ".border-b-1": {
           borderBottomWidth: "1px"
         },
+        ".rh-hidden": {
+          display: "none"
+        },
         ".rh-bg-gold": {
           background: "linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E9CC65 4.9%, #CEA53A 56.52%, #C99F33 64.39%)"
         },
