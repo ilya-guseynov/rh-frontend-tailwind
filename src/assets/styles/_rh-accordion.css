@@ -1,0 +1,44 @@
+.rh-accordion {
+  &__trigger {
+    cursor: pointer;
+  }
+
+  &__content {
+    overflow: hidden;
+    max-height: 0;
+  }
+
+  &__active-show {
+    display: none;
+  }
+
+  &__active-hidden {
+    display: block;
+  }
+
+  &--active {
+    .rh-accordion {
+      &__trigger {}
+
+      &__content {
+        max-height: max-content;
+      }
+
+      &__active-show {
+        display: block;
+      }
+
+      &__active-hidden {
+        display: none;
+      }
+
+      &__active-rotate-180 {
+        transform: rotate(180deg);
+      }
+
+      &__active-text-black {
+        color: black;
+      }
+    }
+  }
+}
