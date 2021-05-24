@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
 
-    <title>RH | Main Page B2C</title>
+    <title>RH | COUNTRY Page</title>
   </head>
 
   <body>
@@ -33,7 +33,7 @@
             </div>
             <!-- / HEADER TOP SECTION MOBILE -->
             <!-- HEADER TOP SECTION DESKTOP -->
-            <div class="hidden md:flex justify-between items-center h-24">
+            <div class="rh-hidden md:flex justify-between items-center h-24">
               <div class="flex items-center justify-between w-1/6">
                 <a class="mr-3" href="#">
                   <img src="./assets/images/icons/instagram-icon.svg" alt="instagram-icon">
@@ -46,23 +46,35 @@
                 </a>
               </div>
               <nav>
-                <ul class="flex">
-                  <li class="w-24 lg:w-32 mr-2">
-                    <a class="flex flex-col items-center h-full" href="#">
-                      <img class="h-8 mb-2" src="./assets/images/icons/feedback-icon.svg" alt="gold-manta-icon">
-                      <div class="text-center text-xs opacity-50">Обратная связь</div>
+                <ul class="flex justify-between space-x-8 pt-2">
+                  <li class="">
+                    <a class="group flex flex-col items-center h-full" href="#">
+                      <img class="h-6 mb-2" src="./assets/images/icons/gold-manta-icon.svg" alt="gold-manta-icon">
+                      <div class="group-hover:opacity-100 group-hover:text-green-900 transition-all text-center text-xs opacity-50">Club Privé</div>
                     </a>
                   </li>
-                  <li class="w-24 lg:w-32 mr-2">
-                    <a class="flex flex-col items-center h-full" href="#">
-                      <img class="h-8 mb-2" src="./assets/images/icons/account-icon.svg" alt="gold-manta-icon">
-                      <div class="text-center text-xs opacity-50"><u>Личный кабинет</u></div>
+                  <li class="">
+                    <a class="group flex flex-col items-center h-full" href="#">
+                      <img class="h-6 mb-2" src="./assets/images/icons/account-icon.svg" alt="gold-manta-icon">
+                      <div class="group-hover:opacity-100 group-hover:text-green-900 transition-all text-center text-xs opacity-50">Личный кабинет агента</div>
                     </a>
                   </li>
-                  <li class="w-24 lg:w-32">
-                    <a class="flex flex-col items-center h-full" href="#">
-                      <img class="h-8 mb-2" src="./assets/images/icons/move-icon.svg" alt="gold-manta-icon">
-                      <div class="text-center text-xs opacity-50"><u>Агентствам</u></div>
+                  <li class="">
+                    <a class="group flex flex-col items-center h-full" href="#">
+                      <img class="h-6 mb-2" src="./assets/images/icons/telegram-icon.svg" alt="gold-manta-icon">
+                      <div class="group-hover:opacity-100 group-hover:text-green-900 transition-all text-center text-xs opacity-50">TELEGRAM для агентов</div>
+                    </a>
+                  </li>
+                  <li class="">
+                    <a class="group flex flex-col items-center h-full" href="#">
+                      <img class="h-6 mb-2" src="./assets/images/icons/feedback-icon.svg" alt="gold-manta-icon">
+                      <div class="group-hover:opacity-100 group-hover:text-green-900 transition-all text-center text-xs opacity-50">Обратная связь</div>
+                    </a>
+                  </li>
+                  <li class="">
+                    <a class="group flex flex-col items-center h-full" href="#">
+                      <img class="h-6 mb-2" src="./assets/images/icons/move-icon.svg" alt="gold-manta-icon">
+                      <div class="group-hover:opacity-100 group-hover:text-green-900 transition-all text-center text-xs opacity-50">Туристам</div>
                     </a>
                   </li>
                 </ul>
@@ -73,7 +85,7 @@
         </div>
         <!-- / HEADER TOP SECTION -->
         <!-- HEADER BOTTOM SECTION -->
-        <div class="relative mb-8 md:mb-0">
+        <div class="relative header__bottom-section mb-8 md:mb-0">
           <!-- HEADER BOTTOM SECTION MOBILE -->
           <div class="mx-auto md:hidden">
             <div class="flex md:hidden justify-between items-center h-12 px-4">
@@ -110,8 +122,8 @@
                 <div class="flex items-center">
                   <img class="h-10 mr-5" src="./assets/images/icons/gold-phone-icon.svg" alt="phone">
                   <div class="flex flex-col justify-center items-center">
-                    <a class="font-bold text-2xl uppercase rh-text-green" href="#">+7 495 266-63-77</a>
-                    <a class="font-bold text-2xl uppercase rh-text-green" href="#">+7 800 100-19-70</a>
+                    <a class="hover:opacity-60 transition-all font-bold text-2xl uppercase rh-text-green" href="#">+7 495 266-63-77</a>
+                    <a class="hover:opacity-60 transition-all font-bold text-2xl uppercase rh-text-green" href="#">+7 800 100-19-70</a>
                   </div>
                 </div>
               </div>
@@ -173,7 +185,7 @@
                 </li>
               </ul>
             </div>
-            <nav>
+            <div>
               <ul>
                 <li class="border-gray-300 border-b-1 mobile-sidebar__item">
                   <button class="rh-text-dark-gray  text-base font-medium my-3 mobile-sidebar__submenu-trigger">Страны</button>
@@ -257,7 +269,7 @@
                   <a class="rh-text-dark-gray  text-base font-medium mt-3 block" href="#">Контакты</a>
                 </li>
               </ul>
-            </nav>
+            </div>
           </div>
         </div>
         <button class="fixed top-2 left-60 mobile-sidebar__close-trigger">
@@ -265,130 +277,110 @@
         </button>
       </div>
       <!-- / MOBILE SIDEBAR -->
+      <!-- MENU -->
+      <div class="sticky container md:px-4 mx-auto mb-8 md:mb-0 top-0 h-20 flex justify-between items-center z-20">
+        <a class="group b2b-menu-shadow rh-hidden md:flex items-center justify-center rh-bg-gold h-full w-full md:w-1/3 md:mr-10" href="#search-tour">
+          <div class="font-bold uppercase text-lg md:text-xl text-white text-center group-hover:text-gray-100">
+            Поиск Тура
+          </div>
+        </a>
+        <button class="group b2b-menu-shadow flex md:hidden items-center justify-center rh-bg-gold h-full w-full">
+          <div class="font-bold uppercase text-lg md:text-xl text-white text-center group-hover:text-gray-100 transition-all">
+            Поиск Тура
+          </div>
+        </button>
+        <nav class="hidden md:flex items-center justify-center h-full w-2/3 rh-bg-green">
+          <ul class="flex justify-evenly items-center w-full h-full">
+            <li class="h-full relative menu-dropdown-item">
+              <div class="h-full flex justify-center items-center px-3">
+                <div class="text-base text-white uppercase cursor-default">Страны</div>
+                <img class="ml-4" src="./assets/images/icons/down-arrow-icon.svg" alt="down-arrow-icon">
+              </div>
+              <div class="menu-dropdown-item__content absolute top-20 left-1/2 -translate-x-1/2 transform bg-white p-8">
+                <ul>
+                  <li class="py-3 w-52">
+                    <a class="hover:text-green-900 transition-all block w-full" href="#">Мальдивы</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="h-full relative menu-dropdown-item">
+              <div class="h-full flex justify-center items-center px-3">
+                <div class="text-base text-white uppercase cursor-default">О нас</div>
+                <img class="ml-4" src="./assets/images/icons/down-arrow-icon.svg" alt="down-arrow-icon">
+              </div>
+              <div class="menu-dropdown-item__content absolute top-20 left-1/2 -translate-x-1/2 transform bg-white p-8">
+                <ul>
+                  <li class="py-3 w-52">
+                    <a class="hover:text-green-900 transition-all block w-full" href="#">Кто мы?</a>
+                  </li>
+                  <li class="py-3 w-52">
+                    <a class="hover:text-green-900 transition-all block w-full" href="#">Почему мы?</a>
+                  </li>
+                  <li class="py-3 w-52">
+                    <a class="hover:text-green-900 transition-all block w-full" href="#">Команда</a>
+                  </li>
+                  <li class="py-3 w-52">
+                    <a class="hover:text-green-900 transition-all block w-full" href="#">Пресс-центр</a>
+                  </li>
+                  <li class="py-3 w-52">
+                    <a class="hover:text-green-900 transition-all block w-full" href="#">Защита персональных данных</a>
+                  </li>
+                  <li class="py-3 w-52">
+                    <a class="hover:text-green-900 transition-all block w-full" href="#">Реестр турагентств</a>
+                  </li>
+                  <li class="py-3 w-52">
+                    <a class="hover:text-green-900 transition-all block w-full" href="#">Вакансии</a>
+                  </li>
+                  <li class="py-3 w-52">
+                    <a class="hover:text-green-900 transition-all block w-full" href="#">Контакты</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="h-full relative menu-dropdown-item">
+              <div class="h-full flex justify-center items-center px-3">
+                <div class="text-base text-white uppercase cursor-default">Агентствам</div>
+                <img class="ml-4" src="./assets/images/icons/down-arrow-icon.svg" alt="down-arrow-icon">
+              </div>
+              <div class="menu-dropdown-item__content absolute top-20 left-1/2 -translate-x-1/2 transform bg-white p-8">
+                <ul>
+                  <li class="py-3 w-52">
+                    <a class="hover:text-green-900 transition-all block w-full" href="#">Сотрудничество</a>
+                  </li>
+                  <li class="py-3 w-52">
+                    <a class="hover:text-green-900 transition-all block w-full" href="#">Акции</a>
+                  </li>
+                  <li class="py-3 w-52">
+                    <a class="hover:text-green-900 transition-all block w-full" href="#">Resort Expert</a>
+                  </li>
+                  <li class="py-3 w-52">
+                    <a class="hover:text-green-900 transition-all block w-full" href="#">Club Privé</a>
+                  </li>
+                  <li class="py-3 w-52">
+                    <a class="hover:text-green-900 transition-all block w-full" href="#">Финансовые гарантии</a>
+                  </li>
+                  <li class="py-3 w-52">
+                    <a class="hover:text-green-900 transition-all block w-full" href="#">Оплата туров</a>
+                  </li>
+                  <li class="py-3 w-52">
+                    <a class="hover:text-green-900 transition-all block w-full" href="#">Страхование</a>
+                  </li>
+                  <li class="py-3 w-52">
+                    <a class="hover:text-green-900 transition-all block w-full" href="#">FIT | MICE</a>
+                  </li>
+                  <li class="py-3 w-52">
+                    <a class="hover:text-green-900 transition-all block w-full" href="#">Проверить срок действия паспорта</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- / MENU -->
       <!-- MAIN -->
       <main class="relative">
-        <!-- MENU -->
-        <div class="sticky mb-8 md:mb-0 top-0 h-20 rh-hidden md:block z-20 b2c-menu-orientir">
-          <div class="container--header mx-auto h-full flex justify-end items-center px-4 b2c-menu">
-            <div class="flex items-center justify-center w-4/6 h-full rh-bg-green b2c-menu__content">
-              <ul class="flex justify-evenly items-center w-full h-full">
-                <li class="h-full relative menu-dropdown-item">
-                  <div class="h-full flex justify-center items-center px-3">
-                    <div class="text-xs lg:text-base text-white uppercase">Страны</div>
-                    <img class="ml-2" src="./assets/images/icons/down-arrow-icon.svg" alt="down-arrow-icon">
-                  </div>
-                  <div class="menu-dropdown-item__content absolute top-20 left-1/2 -translate-x-1/2 transform bg-white p-8">
-                    <ul>
-                      <li class="py-3 w-52">
-                        <a href="#">Мальдивы</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li class="h-full relative menu-dropdown-item">
-                  <div class="h-full flex justify-center items-center px-3">
-                    <div class="text-xs lg:text-base text-white uppercase">О нас</div>
-                    <img class="ml-2" src="./assets/images/icons/down-arrow-icon.svg" alt="down-arrow-icon">
-                  </div>
-                  <div class="menu-dropdown-item__content absolute top-20 left-1/2 -translate-x-1/2 transform bg-white p-8">
-                    <ul>
-                      <li class="py-3 w-52">
-                        <a href="#">Кто мы?</a>
-                      </li>
-                      <li class="py-3 w-52">
-                        <a href="#">Почему мы?</a>
-                      </li>
-                      <li class="py-3 w-52">
-                        <a href="#">Команда</a>
-                      </li>
-                      <li class="py-3 w-52">
-                        <a href="#">Пресс-центр</a>
-                      </li>
-                      <li class="py-3 w-52">
-                        <a href="#">Защита персональных данных</a>
-                      </li>
-                      <li class="py-3 w-52">
-                        <a href="#">Реестр турагентств</a>
-                      </li>
-                      <li class="py-3 w-52">
-                        <a href="#">Вакансии</a>
-                      </li>
-                      <li class="py-3 w-52">
-                        <a href="#">Контакты</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li class="h-full relative menu-dropdown-item">
-                  <div class="h-full flex justify-center items-center px-3">
-                    <div class="text-xs lg:text-base text-white uppercase">Купить тур</div>
-                    <img class="ml-2" src="./assets/images/icons/down-arrow-icon.svg" alt="down-arrow-icon">
-                  </div>
-                  <div class="menu-dropdown-item__content absolute top-20 left-1/2 -translate-x-1/2 transform bg-white p-8">
-                    <ul>
-                      <li class="py-3 w-52">
-                        <a href="#">Как выбрать себе отель?</a>
-                      </li>
-                      <li class="py-3 w-52">
-                        <a href="#">Как купить тур?</a>
-                      </li>
-                      <li class="py-3 w-52">
-                        <a href="#">Как оплатить тур?</a>
-                      </li>
-                      <li class="py-3 w-52">
-                        <a href="#">Документы</a>
-                      </li>
-                      <li class="py-3 w-52">
-                        <a href="#">Как изменить или аннулировать тур?</a>
-                      </li>
-                      <li class="py-3 w-52">
-                        <a href="#">FAQ</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li class="h-full relative menu-dropdown-item">
-                  <div class="h-full flex justify-center items-center px-3">
-                    <div class="text-xs lg:text-base text-white uppercase">Важное в поездке</div>
-                    <img class="ml-1 lg:ml-2" src="./assets/images/icons/down-arrow-icon.svg" alt="down-arrow-icon">
-                  </div>
-                  <div class="menu-dropdown-item__content absolute top-20 left-1/2 -translate-x-1/2 transform bg-white p-8">
-                    <ul>
-                      <li class="py-3 w-52">
-                        <a href="#">Страхование</a>
-                      </li>
-                      <li class="py-3 w-52">
-                        <a href="#">Визы</a>
-                      </li>
-                      <li class="py-3 w-52">
-                        <a href="#">Таможня</a>
-                      </li>
-                      <li class="py-3 w-52">
-                        <a href="#">Covid-19</a>
-                      </li>
-                      <li class="py-3 w-52">
-                        <a href="#">Памятка</a>
-                      </li>
-                      <li class="py-3 w-52">
-                        <a href="#">Трансферы</a>
-                      </li>
-                      <li class="py-3 w-52">
-                        <a href="#">Услуги</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <button class="w-40 h-full rh-bg-gold flex justify-center items-center b2c-menu__trigger px-1">
-              <img class="b2c-menu__open-image" class="mr-3" src="./assets/images/icons/open-menu-icon.svg" alt="open-menu-icon">
-              <img class="b2c-menu__close-image" class="mr-3" src="./assets/images/icons/close-menu-icon.svg" alt="close-menu-icon">
-              <div class="uppercase text-white font-semibold text-base ml-2">Меню</div>
-              <img class="b2c-menu__close-arrow ml-2" src="./assets/images/icons/white-arrow-up-icon.svg" alt="white-arrow-up-icon">
-            </button>
-          </div>
-        </div>
-        <!-- / MENU -->
         <!-- MEDIA INTRO -->
         <section class="md:-mt-20 country-top-media-block relative flex justify-center items-center overflow-hidden">
           <img class="max-w-none h-full 2xl:h-auto 2xl:w-full" src="./assets/images/maldive-bg.png" alt="maldive-bg">
@@ -419,8 +411,8 @@
             <div class="flex items-center mb-5">
               <img class="h-7 mr-5" src="./assets/images/icons/gold-phone-icon.svg" alt="phone">
               <div class="flex flex-col justify-center items-center">
-                <a class="font-bold text-xl uppercase text-white hover:text-gray-300 transition-all" href="#">+7 495 266-63-77</a>
-                <a class="font-bold text-xl uppercase text-white hover:text-gray-300 transition-all" href="#">+7 800 100-19-70</a>
+                <a class="font-bold text-xl uppercase text-white" href="#">+7 495 266-63-77</a>
+                <a class="font-bold text-xl uppercase text-white" href="#">+7 800 100-19-70</a>
               </div>
             </div>
             <div class="flex items-center justify-between">
@@ -438,32 +430,64 @@
           <div class="container px-4 mx-auto mb-10">
             <a class="flex items-center mb-3" href="#">
               <img class="mr-4 w-5" src="./assets/images/icons/move-gold-icon.svg" alt="move">
-              <div class=" text-sm text-white hover:text-gray-300 transition-all">Агентствам</div>
+              <div class=" text-sm text-white">Туристам</div>
             </a>
             <a class="flex items-center" href="#">
               <img class="mr-4 w-5" src="./assets/images/icons/account-gold-icon.svg" alt="account-gold-icon">
-              <div class=" text-sm text-white hover:text-gray-300 transition-all">Личный кабинет</div>
+              <div class=" text-sm text-white">Личный кабинет</div>
             </a>
           </div>
           <div class="container px-4 mx-auto w-full">
-            <div class="inline-block w-1/2 align-top mb-8">
+            <div class="inline-block w-1/2 align-top">
               <div class="text-white text-sm mb-3">Страны</div>
               <ul>
                 <li>
                   <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Мальдивы</a>
                 </li>
-                <!-- <li>
-                  <a class="text-white text-xs" href="#">Турция</a>
+                <li>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Турция</a>
                 </li>
                 <li>
-                  <a class="text-white text-xs" href="#">Танзания</a>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Танзания</a>
                 </li>
                 <li>
-                  <a class="text-white text-xs" href="#">Шри-Ланка</a>
-                </li> -->
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Шри-Ланка</a>
+                </li>
               </ul>
             </div>
-            <div class="inline-block w-1/3 align-top mb-8">
+            <div class="inline-block w-1/3 align-top">
+              <div class="text-white text-sm mb-3">Агентствам</div>
+              <ul>
+                <li>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Сотрудничество</a>
+                </li>
+                <li>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Акции</a>
+                </li>
+                <li>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Resort Expert</a>
+                </li>
+                <li>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Club Privé</a>
+                </li>
+                <li>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Финансовые гарантии</a>
+                </li>
+                <li>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Оплата туров</a>
+                </li>
+                <li>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Страхование</a>
+                </li>
+                <li>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">FIT | MICE</a>
+                </li>
+                <li>
+                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Проверить срок действия паспорта</a>
+                </li>
+              </ul>
+            </div>
+            <div class="inline-block w-1/2 align-top">
               <div class="text-white text-sm mb-3">О нас</div>
               <ul>
                 <li>
@@ -489,58 +513,6 @@
                 </li>
                 <li>
                   <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Контакты</a>
-                </li>
-              </ul>
-            </div>
-            <div class="inline-block w-1/2 align-top">
-              <div class="text-white text-sm mb-3">Купить тур</div>
-              <ul>
-                <li>
-                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Как выбрать себе отель?</a>
-                </li>
-                <li>
-                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Как купить тур?</a>
-                </li>
-                <li>
-                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Где купить тур?</a>
-                </li>
-                <li>
-                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Как оплатить тур?</a>
-                </li>
-                <li>
-                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Документы</a>
-                </li>
-                <li>
-                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Как изменить или аннулировать тур?</a>
-                </li>
-                <li>
-                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">FAQ</a>
-                </li>
-              </ul>
-            </div>
-            <div class="inline-block w-1/3 align-top">
-              <div class="text-white text-sm mb-3">Важное в поездке</div>
-              <ul>
-                <li>
-                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Страхование</a>
-                </li>
-                <li>
-                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Визы</a>
-                </li>
-                <li>
-                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Таможня</a>
-                </li>
-                <li>
-                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Covid-19</a>
-                </li>
-                <li>
-                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Памятка</a>
-                </li>
-                <li>
-                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Трансферы</a>
-                </li>
-                <li>
-                  <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Услуги</a>
                 </li>
               </ul>
             </div>
@@ -581,37 +553,69 @@
               <img src="./assets/images/logo-white.svg" alt="">
             </a>
             <div class="flex justify-between items-center w-1/2">
-              <a class="flex items-center hover:text-gray-300 transition-all" href="#">
+              <a class="group flex items-center" href="#">
                 <img class="mr-4 w-5" src="./assets/images/icons/move-gold-icon.svg" alt="move">
-                <div class=" text-sm text-white">Агентствам</div>
+                <div class=" text-sm text-white group-hover:text-gray-300 transition-all">Туристам</div>
               </a>
-              <a class="flex items-center hover:text-gray-300 transition-all" href="#">
+              <a class="group flex items-center" href="#">
                 <img class="mr-4 w-5" src="./assets/images/icons/account-gold-icon.svg" alt="account-gold-icon">
-                <div class=" text-sm text-white">Личный кабинет</div>
+                <div class=" text-sm text-white group-hover:text-gray-300 transition-all">Личный кабинет</div>
               </a>
             </div>
           </div>
           <div class="mb-5 h-0.5 rh-bg-gold"></div>
           <div class="mb-5 flex justify-between">
             <div class="flex justify-between w-2/3">
-              <div class="w-1/5">
+              <div class="w-1/4">
                 <div class="text-white text-sm mb-3">Страны</div>
                 <ul>
                   <li>
                     <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Мальдивы</a>
                   </li>
-                  <!-- <li>
-                    <a class="text-white text-xs" href="#">Турция</a>
+                  <li>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Турция</a>
                   </li>
                   <li>
-                    <a class="text-white text-xs" href="#">Танзания</a>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Танзания</a>
                   </li>
                   <li>
-                    <a class="text-white text-xs" href="#">Шри-Ланка</a>
-                  </li> -->
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Шри-Ланка</a>
+                  </li>
                 </ul>
               </div>
-              <div class="w-1/5">
+              <div class="w-1/4">
+                <div class="text-white text-sm mb-3">Агентствам</div>
+                <ul>
+                  <li>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Сотрудничество</a>
+                  </li>
+                  <li>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Акции</a>
+                  </li>
+                  <li>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Resort Expert</a>
+                  </li>
+                  <li>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Club Privé</a>
+                  </li>
+                  <li>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Финансовые гарантии</a>
+                  </li>
+                  <li>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Оплата туров</a>
+                  </li>
+                  <li>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Страхование</a>
+                  </li>
+                  <li>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">FIT | MICE</a>
+                  </li>
+                  <li>
+                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Проверить срок действия паспорта</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="w-1/4">
                 <div class="text-white text-sm mb-3">О нас</div>
                 <ul>
                   <li>
@@ -637,55 +641,6 @@
                   </li>
                   <li>
                     <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Контакты</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="w-1/5">
-                <div class="text-white text-sm mb-3">Купить тур</div>
-                <ul>
-                  <li>
-                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Как выбрать себе отель?</a>
-                  </li>
-                  <li>
-                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Как купить тур?</a>
-                  </li>
-                  <li>
-                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Как оплатить тур?</a>
-                  </li>
-                  <li>
-                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Документы</a>
-                  </li>
-                  <li>
-                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Как изменить или аннулировать тур?</a>
-                  </li>
-                  <li>
-                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">FAQ</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="w-1/5">
-                <div class="text-white text-sm mb-3">Важное в поездке</div>
-                <ul>
-                  <li>
-                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Страхование</a>
-                  </li>
-                  <li>
-                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Визы</a>
-                  </li>
-                  <li>
-                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Таможня</a>
-                  </li>
-                  <li>
-                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Covid-19</a>
-                  </li>
-                  <li>
-                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Памятка</a>
-                  </li>
-                  <li>
-                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Трансферы</a>
-                  </li>
-                  <li>
-                    <a class="text-white text-xs hover:text-gray-300 transition-all" href="#">Услуги</a>
                   </li>
                 </ul>
               </div>
