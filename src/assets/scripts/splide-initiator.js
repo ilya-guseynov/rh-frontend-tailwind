@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.querySelector(sliderElementQuery)) {
     new Splide(sliderElementQuery, {
       type: "loop",
-      autoplay: false,
+      autoplay: true,
       arrows: false
     }).mount();
   }
