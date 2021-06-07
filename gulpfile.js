@@ -77,6 +77,13 @@ const clean = done => {
   done();
 };
 
+const copyToSamo = done => {
+  const exec = require("child_process").exec;
+
+  exec("rm -rf ../samo/public/css/customer.css && cp ./build/assets/customer.css ../samo/public/css/customer.css");
+  done();
+};
+
 const browserSyncStart = done => {
   browsersync.init({
     server: {
@@ -95,7 +102,8 @@ const browserSyncReload = done => {
 
 const {parallel, series} = require("gulp");
 
-const build = series(clean, parallel(html, styles, scripts, images, fonts, videos))
+const build = series(clean, parallel(html, styles, scripts, images, fonts, videos));
+const buildAndCopyToSamo = series(clean, parallel(html, styles, scripts, images, fonts, videos), copyToSamo);
 
 const watchFiles = () => {
   const {watch, series} = require("gulp");
@@ -105,6 +113,8 @@ const watchFiles = () => {
 
 const watch = parallel(browserSyncStart, watchFiles);
 
+module.exports.buildsamo = buildAndCopyToSamo;
+module.exports.copyToSamo = copyToSamo;
 module.exports.html = html;
 module.exports.styles = styles;
 module.exports.scripts = scripts;
