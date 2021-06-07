@@ -43,7 +43,7 @@ const scripts = () => {
     .pipe(babel({
       presets: ['@babel/preset-env']
     }))
-    // .pipe(uglify())
+    .pipe(uglify())
     .pipe(sourcemaps.write())
     .pipe(dest(paths.build.scripts))
     .pipe(browsersync.stream());
