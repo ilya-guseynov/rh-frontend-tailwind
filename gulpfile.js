@@ -81,6 +81,7 @@ const copyToSamo = done => {
   const exec = require("child_process").exec;
 
   exec("rm -rf ../samo/public/css/customer.css && cp ./build/assets/customer.css ../samo/public/css/customer.css");
+  exec("rm -rf ../customer.js && cp ./build/assets/customer.js ../customer.js");
   done();
 };
 
