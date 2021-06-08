@@ -679,6 +679,10 @@ div.eraser .overlays .motto .welcomeText {
   background-image: none;
 }
 
+.wrapper .rh-fast-search-as-line .samo_container .panel {
+  background-image: none;
+}
+
 #modalContainer a.modalCloseImg, #logonContainer a.modalCloseImg {background-image: url('../pict/close-bg.png');background-repeat: no-repeat; width:16px; height:16px;float: right; cursor:pointer;}
 #modalContainer div.modalTitle, #logonContainer div.modalTitle {border-bottom: 1px solid #366383; color: black; font-size: 11px; font-weight: bold; height: 16px; line-height:14px; text-align:center; width: 100%;}
 #modalContainer a.modalCloseImg:hover, #logonContainer a.modalCloseImg:hover { background-position: -16px 0;}
