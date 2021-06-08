@@ -1,4 +1,4 @@
-.wrapper .samo_container .panel,
+.wrapper .wrapper .samo_container .panel,
 #modalContainer div.modalTitle,
 #logonContainer div.modalTitle {
   background-color: white;
@@ -12,7 +12,7 @@
 .searchmodes .searchmode_hotel {
   width: 250px;
 }
-.samo_container .searchmodes .searchmode .searchmode_button {
+.wrapper .samo_container .searchmodes .searchmode .searchmode_button {
   background-color: #2a5d2e;
   color: white;
   box-shadow: none;
@@ -128,9 +128,9 @@
 .wrapper #fast_search .active-result.highlighted {
 }
 
-.wrapper .samo_container .yesnoplace,
-.wrapper .samo_container .even .yesnoplace,
-.samo_container .odd .yesnoplace {
+.wrapper .wrapper .samo_container .yesnoplace,
+.wrapper .wrapper .samo_container .even .yesnoplace,
+.wrapper .samo_container .odd .yesnoplace {
   background-color: #007355 !important;
   color: white !important;
 }
@@ -169,3 +169,1059 @@
     display: block;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.wrapper .samo_container table.std {
+  border-spacing: 15px;
+  width: 960px !important;
+  ruby-align: expression( runtimeStyle.rubyAlign = 'auto', cellSpacing = 15);
+}
+
+.wrapper .samo_container table.std table {
+  width: 100%;
+}
+
+.wrapper .samo_container .n2 {
+  width: 50%;
+}
+
+.wrapper .samo_container .n3 {
+  width: 50%;
+}
+
+.wrapper .samo_container .n4 td {
+  border-right: 1px solid #e4e4e4;
+}
+
+.wrapper .samo_container .n4 .tdl {
+  border-right: 0 !important;
+}
+
+.wrapper .samo_container .div_hotel_param table tbody td {
+  padding-top: 0;
+}
+
+.wrapper #search_tour .stats .fr_place_l, .wrapper #search_tour .stats .fr_place_r {
+  cursor: pointer;
+}
+
+.wrapper #search_tour span.R {
+  background-position: -42px 0;
+}
+
+.wrapper #search_tour span.F {
+  background-position: -63px 0;
+}
+
+.wrapper #search_tour span.N {
+  background-position: -21px 0;
+}
+
+.wrapper .samo_container table.res th.w42 {
+  width: 155px;
+}
+
+.wrapper .samo_container .price_legend {
+  width: 910px;
+  margin: auto;
+}
+
+.wrapper .samo_container .price_legend td {
+  vertical-align: middle;
+  text-align: left;
+}
+
+.wrapper .samo_container .price_legend span {
+  vertical-align: middle;
+  line-height: 30px;
+  display: inline-block;
+}
+
+.wrapper .samo_container .places {
+  width: 78px;
+  height: 30px;
+  background: url('../../pict/icons_ver.2016.07.png') no-repeat 0 0;
+}
+
+.wrapper .samo_container .confirm_now_img {
+  width: 56px;
+  height: 20px;
+  background: #007355;
+}
+
+.wrapper .samo_container .stop_sale_img {
+  width: 56px;
+  height: 20px;
+  background: #cf4848;
+}
+
+.wrapper .samo_container .best_price_img {
+  width: 56px;
+  height: 20px;
+  background-color: #ffe874;
+  border-bottom: 1px solid #aa8430;
+}
+
+.wrapper .samo_container .price_stats_img {
+  width: 56px;
+  height: 30px;
+  background: url('../../pict/stats.png') no-repeat 50% 50%;
+}
+
+.wrapper .samo_container .stopsale, .wrapper .samo_container table.res tr.red_row td, .price_legend .red_row {
+  border-bottom: 1px solid #CC5050 !important;
+  background: #F1AFAF;
+  color: #9F4D4D !important;
+}
+
+.wrapper .samo_container .stopsale, .wrapper .samo_container .resultset tr.red_row td a {
+  color: #9F4D4D !important;
+}
+
+.red_row td {
+  color: #ffffff !important;
+  border-top: 1px solid #aaaaaa !important;
+  border-bottom: 1px solid #aaaaaa !important;
+}
+
+.red_row a {
+  color: #ffffff !important;
+}
+
+.red_row a:hover {
+  color: #ffffff !important;
+}
+
+.wrapper .samo_container .confirm_now, .wrapper .samo_container table.res tr.green_row td, .wrapper .samo_container .price_legend .green_row {
+  border-bottom: 1px solid #007355 !important;
+  background: #b4ddac !important;
+}
+
+.conform_now_img {
+  width: 30px;
+  height: 30px;
+  background: url('../../pict/icons_ver.2016.07.png') no-repeat -380px 0;
+}
+
+.wrapper #search_tour td.td_price .price {
+  font-style: italic;
+}
+
+.wrapper #search_tour td.td_price .bron, span.all_prices {
+  font-weight: bold;
+  font-style: normal;
+}
+
+.wrapper #search_tour td.td_price .bron, .wrapper #search_tour td.td_price .stop, .wrapper #search_tour td.all_prices {
+  cursor: pointer;
+}
+
+.wrapper #search_tour td.link-hotel img, .wrapper #search_tour .type_price img {
+  margin-bottom: -3px;
+}
+
+.wrapper .samo_container .div_hotel_param {
+  width: 100%;
+  clear: both;
+}
+
+.wrapper #search_tour input.hotelsearch {
+  font-size: 13px;
+  width: 150px;
+  line-height: 18px;
+  color: #333333;
+  border: 1px solid #999999;
+  border-radius: 4px;
+  margin-bottom: 3px;
+  padding: 1px;
+  height: 17px;
+}
+
+.wrapper #search_tour input.hotelsearch[type='search'] {
+  box-sizing: content-box;
+}
+
+.wrapper #search_tour select.spin {
+
+}
+
+.wrapper #search_tour .n5 {
+  border-bottom: 1px solid #333333 !important;
+}
+
+.wrapper #search_tour .n5 label {
+  display: block;
+  float: left;
+  width: 33%;
+  text-align: left !important;
+}
+
+.wrapper #search_tour .n5 label input {
+  margin-right: 10px;
+}
+
+.wrapper .samo_container {
+  display: block !important;
+}
+
+.wrapper #search_tour .child_ages, .wrapper #search_tour .child_ages .age {
+  visibility: hidden;
+}
+
+.wrapper #search_tour .child_ages .age {
+  width: 43px;
+}
+
+.wrapper #search_tour .child_ages_container .chosen-container .chosen-results li.active-result {
+  font-size: 11px;
+}
+
+.wrapper #search_tour td.panel {
+  vertical-align: middle;
+  border: 0 !important;
+}
+
+.wrapper .samo_container td.c {
+  width: auto;
+}
+
+.wrapper #search_tour .additional {
+  background: url('../../pict/packet_info.png') no-repeat;
+  cursor: pointer;
+  display: inline-block;
+  height: 16px;
+  vertical-align: middle;
+  width: 16px;
+}
+
+.wrapper .samo_container .resultset .percent {
+  cursor: pointer;
+  background: url('../../pict/percent.png') no-repeat rgba(0, 0, 0, 0);
+  top: 0;
+  width: 15px;
+}
+
+.wrapper #search_tour label.hidden {
+  visibility: hidden;
+}
+
+.wrapper #search_tour .groupbox label {
+  display: block;
+}
+
+.wrapper #search_tour .groupbox label.hidden {
+  display: none !important;
+}
+
+.wrapper #search_tour .groupbox.expanded label.hidden {
+  display: block !important;
+  visibility: visible;
+}
+
+.wrapper #search_tour .nw .attr, .wrapper #search_tour .nw .recommend, .wrapper #search_tour .nw .vip, .wrapper #search_tour .nw .best, .wrapper #search_tour .nw .stats {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: url('../../pict/icons_ver.2016.07.png') no-repeat -380px 0;
+}
+
+.wrapper #search_tour .nw .attr {
+  background-image: none;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 20px;
+}
+
+.wrapper #search_tour .nw .vip {
+  background: url('../../pict/icons_ver.2016.07.png') no-repeat -345px 0;
+}
+
+.wrapper #search_tour .nw .stats {
+  width: 20px;
+  height: 30px;
+  margin: 0;
+  background: url('../../pict/stats.png') no-repeat 0 50%;
+  cursor: pointer;
+}
+
+.wrapper #search_tour .tour-select {
+  width: 382px !important;
+}
+
+.wrapper #search_tour .hotels-container {
+  width: 341px !important;
+}
+
+.wrapper #search_tour .TOWNS {
+  width: 153px !important;
+}
+
+.wrapper #search_tour .STARS hr {
+  border: 0;
+  background-color: silver;
+  color: silver;
+  height: 1px;
+  padding: 0;
+}
+
+.wrapper #search_tour div.transport, .wrapper #search_tour th.transport {
+  white-space: nowrap;
+  line-height: 17px;
+}
+
+.wrapper #search_tour th.transport {
+  width: 95px;
+}
+
+.wrapper #search_tour div.transport span {
+  display: inline-block;
+  line-height: 16px;
+  white-space: nowrap;
+  vertical-align: text-bottom;
+  margin-right: 1px;
+}
+
+.wrapper #search_tour div.transport span.name {
+  width: 62px;
+}
+
+.wrapper #search_tour table.res span.mealnote {
+  white-space: nowrap;
+}
+
+#search_stat {
+
+}
+
+#search_stat .td_price {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#search_stat .td_price .bron {
+  cursor: pointer;
+}
+
+#freights table.freights {
+  margin: auto;
+  width: 752px !important;
+}
+
+#freights table.freights td.td_freights {
+  padding: 0 3px 0 0;
+  width: 50%;
+}
+
+#freights table.freights td.td_freights.right {
+  padding-right: 0;
+  padding-left: 3px;
+}
+
+#freights table.res, table.nb {
+  width: 100% !important;
+}
+
+#freights table.nb td, #freights td.nb {
+  border: 0 !important;
+  line-height: normal !important;
+  white-space: nowrap;
+}
+
+#freights td.st_pl {
+  width: 75px !important;
+  min-width: 75px;
+}
+
+#freights table.res td {
+  line-height: 1.7em;
+}
+
+#freights table.res td.no_wrap {
+  white-space: nowrap;
+}
+
+.wrapper #search_tour .std {
+  margin: auto;
+  width: 910px;
+  border-spacing: 0 !important;
+}
+
+.wrapper #search_tour table td, .wrapper .samo_container table th {
+  font-family: inherit;
+  vertical-align: middle;
+}
+
+.wrapper #search_tour table.res {
+  border: 0;
+}
+
+.wrapper #search_tour .direction {
+  width: 910px;
+}
+
+.wrapper #search_tour .direction td {
+  padding: 5px 10px !important;
+}
+
+.wrapper #search_tour .direction .direction_left {
+  width: 30% !important;
+  text-align: right;
+}
+
+.wrapper #search_tour .direction .direction_right {
+  width: 70%;
+  text-align: left;
+}
+
+.wrapper #search_tour .direction .tour_left {
+  width: 20% !important;
+  text-align: right;
+}
+
+.wrapper #search_tour .direction .tour_right {
+  width: 80%;
+  text-align: left;
+}
+
+.wrapper #search_tour .note_container {
+  color: #6688aa;
+}
+
+.wrapper #search_tour .blank-note {
+  display: none;
+}
+
+.wrapper #search_tour .user_info {
+  width: 910px;
+}
+
+.wrapper #search_tour .user_info td {
+  padding: 3px 10px;
+}
+
+.wrapper #search_tour .description, .wrapper #search_tour .description2, .wrapper #search_tour .description3, .wrapper #search_tour .description4 {
+  width: 85px;
+  text-align: right;
+}
+
+.wrapper #search_tour .description2 {
+  width: 95px;
+}
+
+.wrapper #search_tour .description3 {
+  width: 65px;
+}
+
+.wrapper #search_tour .description4 {
+  width: 50px;
+}
+
+.wrapper #search_tour .user_info .col, .wrapper #search_tour .user_info .empty {
+  padding: 0;
+}
+
+.wrapper #search_tour .user_info .col {
+  width: 445px;
+}
+
+.wrapper #search_tour .user_info .child_ages_container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.wrapper #search_tour .child_ages input.age {
+  display: inline-block;
+  width: 35px;
+}
+
+.wrapper #search_tour .from {
+  width: 20px;
+  text-align: right;
+}
+
+.wrapper #search_tour .calendar {
+  width: 125px !important;
+}
+
+.wrapper #search_tour .nights {
+  width: 60px;
+}
+
+.wrapper #search_tour .tourists {
+  width: 60px;
+}
+
+.wrapper #search_tour .child_ages {
+  width: 120px;
+}
+
+.wrapper #search_tour .cost {
+  width: 60px;
+}
+
+.wrapper #search_tour .cost .select_span {
+  display: block;
+}
+
+.wrapper #search_tour .count {
+  width: 70px;
+}
+
+.wrapper #search_tour td.shadow {
+  padding: 0;
+}
+
+.wrapper #search_tour .programm_filter {
+  width: 100%;
+}
+
+.wrapper #search_tour .programm_type_length {
+  width: 200px;
+}
+
+.wrapper #search_tour .programm_filter td {
+  padding: 5px 10px;
+}
+
+.wrapper #search_tour .programm_filter td label {
+  display: block;
+  float: left;
+  width: 25%;
+  text-align: left !important;
+  vertical-align: middle;
+  white-space: nowrap;
+  height: 20px;
+  line-height: 20px;
+  margin-left: 30px;
+}
+
+.wrapper #search_tour .programm_filter td label input {
+  margin: 0 5px 2px 0;
+  padding: 0;
+}
+
+.wrapper #search_tour .hotels_container .checklistbox {
+  height: 13em;
+}
+
+.wrapper #search_tour .hotels_container {
+  width: 100%;
+}
+
+.wrapper #search_tour .hotels_container td {
+  padding: 5px;
+  text-align: center;
+}
+
+.wrapper #search_tour .header {
+  height: 22px;
+  line-height: 22px;
+  vertical-align: middle;
+  padding: 2px 0;
+}
+
+.wrapper #search_tour .header input {
+  margin-right: 5px;
+}
+
+.wrapper #search_tour .header .left {
+  float: left;
+  display: inline-block;
+}
+
+.wrapper #search_tour .header .right {
+  float: right;
+  display: inline-block;
+}
+
+.wrapper #search_tour .footer {
+  vertical-align: middle;
+  padding: 5px 0;
+}
+
+.wrapper #search_tour .footer input {
+  margin-right: 5px;
+}
+
+.wrapper #search_tour .footer .left {
+  display: inline-block;
+  margin-right: 20px;
+  margin-top: 5px;
+
+}
+
+.wrapper #search_tour .footer .right {
+  float: right;
+  display: inline-block;
+}
+
+.wrapper #search_tour .control_townto {
+  text-align: center;
+  width: 165px !important;
+  vertical-align: top;
+  padding-left: 5px !important;
+}
+
+.wrapper #search_tour .control_stars {
+  width: 165px;
+  vertical-align: top;
+}
+
+.wrapper #search_tour .control_hotels {
+  width: 375px;
+  vertical-align: top;
+  overflow: hidden !important;
+}
+
+.wrapper #search_tour .control_meal {
+  vertical-align: top;
+}
+
+.wrapper #search_tour .MEALS, .wrapper #search_tour .ROOMS {
+  width: 138px;
+}
+
+.wrapper #search_tour .small_meal, .wrapper #search_tour .ROOMS {
+  height: 5em !important;
+}
+
+.wrapper #search_tour td.td_price {
+  white-space: nowrap;
+}
+
+.wrapper #search_tour .statistic {
+  width: 30px;
+  text-align: center;
+}
+
+.wrapper #search_tour .w380 {
+  width: 380px;
+  overflow-x: hidden;
+}
+
+.wrapper #search_tour .empty_cell {
+  width: 10px;
+}
+
+.wrapper #search_tour .sortie {
+  white-space: nowrap;
+}
+
+.wrapper #search_tour .sortie img {
+  position: relative;
+  bottom: -3px;
+}
+
+.wrapper #search_tour .sortie span {
+  background: url('../../pict/freight.gif') 0 2px no-repeat;
+  padding: 0 0 0 15px;
+  cursor: default;
+}
+
+.wrapper #search_tour td .popup-note.ui-icon-info {
+  margin-bottom: -3px;
+}
+
+.wrapper #search_tour .incoming-slider {
+  position: absolute;
+  overflow: hidden;
+  right: 0;
+}
+
+.wrapper #search_tour .incoming-slider .btn {
+  position: absolute;
+  height: 172px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.wrapper #search_tour .incoming-slider .btn div {
+  float: left;
+  position: relative;
+  padding-top: 8px;
+  width: 172px;
+  height: 23px;
+  top: 70px;
+  left: -70px;
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.wrapper #search_tour .incoming-slider .btn div span {
+  background: url('../../pict/icons_256x240.png') no-repeat -3px -17px;
+  margin-left: 2px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+}
+
+.wrapper #search_tour .incoming-slider.open .btn div span {
+  background-position: -68px -17px;
+}
+
+.wrapper #search_tour .incoming-slider .panel {
+  margin-right: -155px;
+  width: 150px;
+  padding: 5px 5px 5px 30px;
+  border-left: 1px solid #6688aa;
+}
+
+.wrapper #search_tour .incoming-slider.open .panel {
+  margin-right: 0;
+}
+
+.wrapper #search_tour .incoming-slider .checklistbox {
+  height: 150px;
+}
+
+.wrapper #search_tour .ptype_filter .PROGRAMGROUPINC {
+  display: none;
+}
+
+.wrapper #search_tour .ptype_filter.with_groups .PROGRAMGROUPINC {
+  display: block;
+}
+
+.wrapper #search_tour .resultset .attributes {
+  font-size: 0;
+  padding-right: 0;
+}
+
+#ADDITIONAL_SERVICES .price {
+  text-align: right;
+}
+
+#basicModalContent {
+  max-height: 500px;
+  overflow: auto;
+}
+
+.wrapper #search_tour .prgt, #search_stat .prgt {
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  width: 66px;
+  height: 33px;
+}
+
+.wrapper .samo_container .res .caption {
+  width: 22%;
+  white-space: nowrap;
+}
+
+.wrapper #search_tour td.td_price {
+  width: 120px;
+}
+
+.wrapper #search_tour td.td_price .price_old {
+  background-position: 5px 5px;
+  margin-bottom: 3px;
+  margin-top: 3px;
+  padding-bottom: 1px;
+  padding-top: 1px;
+}
+
+.wrapper #search_tour .price_button {
+  display: block;
+}
+
+.wrapper #search_tour td.td_price .price_old::before {
+  color: #787979;
+  content: attr(data-converted_price_old);
+  display: block;
+  font-size: 11px;
+  font-weight: normal;
+  text-decoration: line-through;
+}
+
+.wrapper #search_tour .with-hotelssel .checklistbox {
+  height: 17em;
+  max-height: 17em;
+}
+
+.wrapper #search_tour .with-hotelssel .checklistbox.HOTELSSEL {
+  max-height: 0;
+  padding: 0;
+  border: 1px #D0DFED;
+}
+
+.wrapper #search_tour .with-hotelssel .checklistbox.HOTELSSEL.shown {
+  max-height: 6em;
+  padding: 5px;
+  border-top: 1px solid silver;
+  border-left: 1px solid silver;
+  border-right: 1px solid #e4e4e4;
+}
+
+.wrapper #search_tour .with-hotelssel .checklistbox.HOTELSSEL.shown + .checklistbox.HOTELS {
+  max-height: 10em;
+}
+
+.wrapper #search_tour .with-hotelssel .checklistbox.HOTELSSEL + .checklistbox.HOTELS label.sel {
+  display: none;
+}
+
+.wrapper #search_tour .with-hotelssel .control_hotels .header label:nth-child(2) {
+  display: none;
+}
+
+.wrapper #search_tour .with-hotelssel .control_hotels .header .hotelsearch {
+  width: 260px;
+}
+
+.wrapper #search_tour .with-hotelssel .control_meal .small_meal {
+  height: 9em !important;
+}
+
+#hotel_monitor .noplace, #hotel_monitor .yesnoplace, #hotel_monitor .yesplace, #hotel_monitor .requestplace, #hotel_monitor th {
+  white-space: nowrap;
+  text-align: center;
+}
+
+.wrapper .samo_container #search_stat .noplace, .wrapper .samo_container #search_stat .yesnoplace, .wrapper .samo_container #search_stat .yesplace, .wrapper .samo_container #search_stat .requestplace {
+  border: black 1px solid;
+}
+
+#hotel_monitor {
+  overflow: auto;
+  width: 755px !important;
+}
+
+#search_stat .hotel_monitor {
+  width: 100% !important;
+}
+
+#search_stat .h_monitor_inactive_day {
+  opacity: 0.5;
+}
+
+#search_stat .h_monitor_day_title, #search_stat .h_monitor_day {
+  font-size: 10px;
+  border-right: 1px solid gray;
+  padding: 0 4px;
+}
+
+#search_stat .h_monitor_day_title:last-child, #search_stat .h_monitor_day:last-child {
+  border-right: none;
+}
+
+#search_stat .h_monitor_day_tick {
+  border: none;
+  height: 0;
+  visibility: hidden;
+}
+
+.AGE1_chosen, .AGE2_chosen, .AGE3_chosen {
+  max-width: 52px;
+}
+
+.NIGHTS_FROM_chosen, .NIGHTS_TILL_chosen, .ADULT_chosen, .CHILD_chosen {
+  max-width: 55px;
+}
+
+.CURRENCY_chosen {
+  max-width: 65px;
+}
+
+.chosen-drop, .search-choice {
+  word-wrap: break-word;
+}
+
+.wrapper .samo_container table.panel td .chosen-drop {
+  white-space: normal;
+}
+
+.TOWNFROMINC_chosen, .STATEINC_chosen, .INCOMINGPARTNER_chosen, .TOURTYPE_chosen, .TOURINC_chosen, .PROGRAMGROUPINC_chosen, .PROGRAMINC_chosen, .NIGHTS_FROM_chosen, .NIGHTS_TILL_chosen, .STATEFROM_chosen {
+  max-width: 290px;
+}
+
+#search_stat .chartBar {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  color: #cedfec;
+  border-color: #aec2d1;
+}
+
+#search_stat .chartBarRed {
+  display: none;
+  color: #FFAFB6;
+}
+
+#search_stat .chartBarGreen {
+  display: none;
+  color: #a8cfab;
+}
+
+#search_stat .chartBarPink {
+  display: none;
+  color: #F5BFB2;
+}
+
+#search_stat .chartBarHover {
+  display: none;
+  color: #00008b;
+}
+
+#search_stat .chartToolType {
+  display: none;
+  background: #cedfec;
+}
+
+#search_stat .chartToolTypeGreen {
+  display: none;
+  background: #A8CFAB;
+  color: #0b3c13;
+}
+
+#search_stat .chartToolTypeRed {
+  display: none;
+  background: #FFAFB6;
+  color: #620308;
+}
+
+#search_stat .chartToolTypePink {
+  display: none;
+  background: #F5BFB2;
+  color: #87642b;
+}
+
+.wrapper #search_tour .btn-group {
+  cursor: pointer;
+  text-align: center;
+  width: 21px;
+  border: outset 2px;
+  padding: 3px 1px 1px;
+  margin-top: 2px;
+  background-image: url('../../pict/gr.png');
+  height: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.wrapper #search_tour .btn-group.rotating {
+  border: inset 2px;
+}
+
+.wrapper .samo_container table.res td.gR {
+  padding-left: 30px;
+}
+
+.wrapper #search_tour .hotelgroup {
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.wrapper #search_tour .filters-panel .checklistbox {
+  height: 7em;
+}
+
+.wrapper #search_tour .checklistbox label.with_icon {
+  line-height: 22px;
+}
+
+.wrapper #search_tour span.c-icon {
+  padding-left: 20px;
+  background-position: 18px;
+}
+
+.wrapper #search_tour span.c-icon input {
+  float: left;
+  margin-top: 4px;
+  margin-left: -20px;
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.wrapper #search_tour .filters-panel.no-ufilter .checklistbox label {
+  min-width: 32%;
+  float: left !important;
+  clear: none !important;
+}
+
+.wrapper #search_tour .filters-panel.no-ufilter .checklistbox {
+  height: 30px !important;
+  overflow-y: hidden;
+  border: none;
+  background-color: transparent;
+}
+
+.wrapper #search_tour .filters-panel.no-ufilter .header {
+  display: none;
+}
+
+.wrapper #search_tour .formError .formErrorContent.info {
+  max-width: 150px;
+  white-space: normal;
+}
+
+#basicModalContent table.res .th-head {
+  border-bottom: solid 1px #333;
+  font-weight: bold;
+  text-align: center;
+}
+
+#search_stat .show_boarding {
+  display: inline-block;
+  background: url('../../pict/seat.empty.png') center center no-repeat;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+#search_stat #freights .transport .name {
+  display: inline-block;
+  padding: 2px;
+  border: 0;
+  width: 170px;
+  text-align: center;
+}
+
+#search_stat #freights .transport.nw {
+  padding: 0;
+  vertical-align: top;
+  width: 170px;
+}
+
+#search_stat #freights .boarding-container {
+  display: none;
+
+}
+
+#search_stat #freights .boarding-container #frplacement_container {
+  width: 880px !important;
+  max-width: 880px !important;
+  overflow: auto;
+}
+
+.wrapper .samo_container h3.frplacement {
+  margin: 0px 0px 4px 0px;
+}
+
+
+
+
+
