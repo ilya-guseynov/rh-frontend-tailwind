@@ -1,0 +1,10 @@
+.Container {
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 1200px;
+}
+
+.Container--Large {
+  max-width: 1600px;
+}

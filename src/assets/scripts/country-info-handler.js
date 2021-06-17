@@ -61,9 +61,19 @@
       dataSections.forEach(dataSection => hideElement(dataSection));
       dataTitles.forEach(dataTitle => dataTitle.classList.remove(goldBgClass));
 
-      showElement(document.querySelector(createQueryForDataById(dataTrigger.getAttribute(dataTriggerAttributeName))));
-      showElement(document.querySelector(createQueryForDataSectionById(dataTrigger.getAttribute(dataSectionTriggerAttributeName))));
-      document.querySelectorAll(createQueryForDataTitleById(dataTrigger.getAttribute(dataTriggerAttributeName))).forEach(dataTitle => dataTitle.classList.add(goldBgClass));
+      showElement(
+        document.querySelector(
+          createQueryForDataById(dataTrigger.getAttribute(dataTriggerAttributeName))
+        )
+      );
+      showElement(
+        document.querySelector(createQueryForDataSectionById(
+          dataTrigger.getAttribute(dataSectionTriggerAttributeName)
+        ))
+      );
+      document.querySelectorAll(createQueryForDataTitleById(
+        dataTrigger.getAttribute(dataTriggerAttributeName)
+      )).forEach(dataTitle => dataTitle.classList.add(goldBgClass));
     });
   });
 })();

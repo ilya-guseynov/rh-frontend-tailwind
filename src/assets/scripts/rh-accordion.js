@@ -15,3 +15,21 @@
     });
   });
 })();
+
+(() => {
+  const accordionQuery = ".RHAccordion";
+  const accordionTriggerQuery = ".RHAccordion__Trigger";
+  const accordionActiveClass = "RHAccordion--Active";
+
+  const accordionElements = document.querySelectorAll(accordionQuery);
+
+  if (!accordionElements) {
+    return;
+  }
+
+  accordionElements.forEach(accordion => {
+    accordion.querySelector(accordionTriggerQuery).addEventListener("click", () => {
+      accordion.classList.toggle(accordionActiveClass);
+    });
+  });
+})();

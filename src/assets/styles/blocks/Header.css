@@ -1,0 +1,271 @@
+.Header {}
+
+.Header__TopSection {
+  background: #F9F9F9;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.Header__TopSectionInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+.Header__TopSectionInner--Mobile {
+  height: 42px;
+}
+
+.Header__TopSectionInner--Desktop {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .Header__TopSectionInner--Mobile {
+    display: none;
+  }
+  
+  .Header__TopSectionInner--Desktop {
+    height: 100px;
+    display: flex;
+  }
+}
+
+.Header__Location {
+  display: flex;
+  align-items: center;
+}
+
+.Header__Location--TopSection {}
+
+.Header__LocationIcon {
+  margin-right: 11px;
+}
+
+.Header__LocationText {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.Header__Currency {}
+
+.Header__Currency--TopSection {}
+
+.Header__Currency--BottomSection {
+  margin-bottom: 14px;
+}
+
+.Header__CurrencyTitle {
+  margin-right: 10px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.Header__CurrencyTicker {}
+
+.Header__CurrencyTickerName {
+  color: black;
+}
+
+.Header__CurrencyTickerValue {
+  color: black;
+  font-weight: bold;
+}
+
+.Header__CurrencyTickerDivider {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.Header__Socials {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 10%;
+  font-size: 0;
+}
+
+.Header__SocialsLink {
+  display: block;
+}
+
+.Header__SocialsIcon {
+  transition: all .5s;
+}
+
+.Header__SocialsLink:hover .Header__SocialsIcon {
+  opacity: .8;
+}
+
+.Header__Navigation {}
+
+.Header__NavigationList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Header__NavigationItem {}
+
+.Header__NavigationItem:not(:last-child) {
+  margin-right: 30px;
+}
+
+.Header__NavigationLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.Header__NavigationIcon {
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+.Header__NavigationLinkText {
+  color: rgba(0, 0, 0, 0.5);
+  transition: all .5s;
+}
+
+.Header__NavigationLink:hover .Header__NavigationLinkText {
+  color: black;
+}
+
+.Header__BottomSection {}
+
+.Header__BottomSectionInner {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Header__BottomSectionInner--Mobile {
+  height: 70px;
+  display: flex;
+  margin-right: -20px;
+}
+
+.Header__BottomSectionInner--Desktop {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .Header__BottomSectionInner--Mobile {
+    display: none;
+  }
+
+  .Header__BottomSectionInner--Desktop {
+    height: 120px;
+    display: flex;
+  }
+}
+
+.Header__LogoLink {
+  font-size: 0;
+  display: flex;
+  align-items: center;
+}
+
+.Header__LogoLink--Desktop {
+  margin-right: 60px;
+}
+
+.Header__LogoImage {
+  height: 45px;
+}
+
+.Header__LogoLink--Desktop .Header__LogoImage {
+  height: 71px;
+}
+
+.Header__BottomSectionMobileTriggers {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Header__BottomSectionMobileContacts {
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+}
+
+.Header__BottomSectionContactTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.Header__BottomSectionContactTrigger--Feedback {
+  background: none;
+  border: none;
+  outline: none;
+  margin-right: 16px;
+}
+
+.Header__BottomSectionContactTrigger--Phone {}
+
+.Header__BottomSectionContactIcon {}
+
+.Header__BottomSectionMobileSidebarTrigger {
+  height: 50px;
+  width: 58px;
+  border: none;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+  background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E9CC65 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
+  border-radius: 15px 0px 0px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Header__BottomSectionMobileSidebarTriggerIcon {
+  width: 24px;
+}
+
+.Header__BottomSectionDesktopRight {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.Header__BottomSectionDesktopLeft {
+  display: flex;
+  align-items: center;
+}
+
+.Header__BottomSectionContacts {
+  display: flex;
+  align-items: center;
+}
+
+.Header__BottomSectionDesktopContactsIcon {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.Header__BottomSectionPhones {
+  display: flex;
+  flex-direction: column;
+}
+
+.Header__BottomSectionPhoneLink {
+  font-weight: bold;
+  font-size: 24px;
+  color: #285C2D;
+  text-decoration: none;
+  transition: all .5s;
+}
+
+.Header__BottomSectionPhoneLink:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.Header__BottomSectionPhoneLink:hover {
+  opacity: .8;
+}

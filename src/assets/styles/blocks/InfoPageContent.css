@@ -1,0 +1,47 @@
+.InfoPageContent {
+  margin-bottom: 230px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.InfoPageContent__Aside {
+  width: 30%;
+  display: none;
+  justify-content: space-between;
+}
+
+@media (min-width: 769px) {
+  .InfoPageContent__Aside {
+    display: flex;
+  }
+}
+
+.InfoPageContent--NoAside .InfoPageContent__Aside {
+  display: none;
+}
+
+.InfoPageContent__AsideContent {
+  margin-right: 23px;
+  width: 100%;
+}
+
+.InfoPageContent__AsideBorder {
+  flex-shrink: 0;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E9CC65 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
+}
+
+.InfoPageContent__Main {
+  width: 100%;
+}
+
+@media (min-width: 769px) {
+  .InfoPageContent__Main {
+    width: 65%;
+  }
+}
+
+.InfoPageContent--NoAside .InfoPageContent__Main {
+  width: 100%;
+}

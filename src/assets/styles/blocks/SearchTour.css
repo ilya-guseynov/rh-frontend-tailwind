@@ -1,0 +1,10 @@
+.SearchTour {
+  margin-bottom: 130px;
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .SearchTour {
+    display: block;
+  }
+}

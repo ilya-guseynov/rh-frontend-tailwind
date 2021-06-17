@@ -1,4 +1,4 @@
-@import "_tailwind-vendor";
+/* @import "_tailwind-vendor";
 @import "_font-montserrat";
 @import "_b2b-top-slider";
 @import "_b2c-blog-slider";
@@ -14,4 +14,7 @@
 @import "_with-you-slider";
 @import "_country-top-media-block";
 @import "_custom-common-samo.css";
-@import "_rh-accordion.css";
+@import "_rh-accordion.css"; */
+
+
+@import "blocks/_dir.css";

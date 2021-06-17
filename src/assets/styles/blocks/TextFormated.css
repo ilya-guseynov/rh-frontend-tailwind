@@ -1,0 +1,72 @@
+.TextFormated {
+  color: #252D27;
+  line-height: 180%;
+}
+
+.TextFormated--LightGray {
+  color: #999999;
+}
+
+.TextFormated h2 {
+  color: #252D27;
+  font-weight: bold;
+  font-size: 32px;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  line-height: normal;
+}
+
+.TextFormated h3 {
+  color: #252D27;
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 40px;
+}
+
+.TextFormated p {
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.TextFormated a {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all .5s;
+}
+
+.TextFormated a:hover {
+  color: #112713;
+}
+
+.TextFormated ul {
+  margin: 0;
+  margin-bottom: 40px;
+  padding: 0 0 0 20px;
+}
+
+.TextFormated ol {
+  margin: 0;
+  margin-bottom: 40px;
+  padding: 0 0 0 20px;
+}
+
+.TextFormated ol li {
+  margin: 0;
+  padding: 0 0 0 10px;
+}
+
+.TextFormated ol li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.TextFormated .Warning {
+  color: red;
+}
+
+.GoldText {
+  font-weight: 600;
+  background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E9CC65 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

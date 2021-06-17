@@ -1,0 +1,134 @@
+.Menub2b {
+  position: relative;
+  z-index: 3;
+}
+
+.Menub2b__Inner {
+  height: 86px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 -20px;
+}
+
+@media (min-width: 769px) {
+  .Menub2b__Inner {
+    margin: 0;
+  }
+}
+
+.Menub2b__BigSearchTourLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E9CC65 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
+  box-shadow: 0px 2px 34px rgba(29, 37, 45, 0.1);
+  border-radius: 2px;
+  font-weight: bold;
+  font-size: 22px;
+  text-align: center;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: opacity .5s;
+}
+
+.Menub2b__BigSearchTourLink:hover {
+  opacity: .8;
+}
+
+@media (min-width: 769px) {
+  .Menub2b__BigSearchTourLink {
+    width: 35%;
+    max-width: 450px;
+    margin: 0;
+  }
+}
+
+.Menub2b__Navigation {
+  display: none;
+  width: 0%;
+  background: #285C2D;
+}
+
+@media (min-width: 769px) {
+  .Menub2b__Navigation {
+    display: block;
+    width: 63%;
+    background: #285C2D;
+  }
+}
+
+.Menub2b__NavigationList {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.Menub2b__NavigationItem {
+  height: 100%;
+  position: relative;
+}
+
+.Menub2b__NavigationDropdownTrigger {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  cursor: pointer;
+}
+
+.Menub2b__NavigationDropdownTitle {
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.Menub2b__NavigationDropdownArrowIcon {
+  margin-left: 10px;
+}
+
+.Menub2b__NavigationDropdownBlock {
+  display: none;
+  position: absolute;
+  right: -30px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  padding: 32px;
+  width: 270px;
+  z-index: 10;
+}
+
+.Menub2b__NavigationItem:hover .Menub2b__NavigationDropdownBlock {
+  display: block;
+}
+
+.Menub2b__NavigationDropdownList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Menub2b__NavigationDropdownItem {
+  border-bottom: 1px solid #99999980;
+}
+
+.Menub2b__NavigationDropdownLink {
+  display: block;
+  padding: 16px 0;
+  font-weight: 500;
+  font-size: 14px;
+  color: #999999;
+  text-decoration: none;
+  transition: all .5s;
+}
+
+.Menub2b__NavigationDropdownLink:hover {
+  color: #285C2D;
+}

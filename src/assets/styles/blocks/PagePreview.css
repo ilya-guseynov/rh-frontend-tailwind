@@ -1,0 +1,41 @@
+.PagePreview {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 364px;
+  margin-top: -86px;
+}
+
+.PagePreview--Prive {
+  background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E9CC65 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
+}
+
+.PagePreview__Inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.PagePreview__Title {
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  font-weight: 500;
+  font-size: 60px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.PagePreview--Prive .PagePreview__Title {
+  font-size: 80px;
+}
+
+.PagePreview__Manta {
+  position: absolute;
+  left: -23%;
+  top: 8px;
+  z-index: 1;
+}

@@ -1,0 +1,135 @@
+.Banner {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 80px;
+}
+
+.Banner__Inner {}
+
+.Banner__Mobile {
+  padding: 40px 0 50px;
+}
+
+@media (min-width: 769px) {
+  .Banner__Mobile {
+    display: none;
+  }
+}
+
+.Banner__Desktop {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .Banner__Desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+  }
+}
+
+.Banner__DesktopTextBlock {
+  margin-right: 30px;
+  width: 60%;
+}
+
+.Banner__DesktopTextBig {
+  font-weight: 600;
+  font-size: 32px;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
+}
+
+.Banner__DesktopTextSmall {
+  font-weight: 600;
+  font-size: 24px;
+  color: #FFFFFF;
+  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.Banner__DesktopEmailBlock {
+  width: 30%;
+}
+
+.Banner__DesktopEmailContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border: 2px solid #F5F5F5;
+  border-radius: 6px;
+  padding: 23px 27px;
+}
+
+.Banner__DesktopEmailIcon {}
+
+.Banner__DesktopEmailInput {
+  border: none;
+  outline: none;
+  padding: 0 18px;
+  font-size: 14px;
+  max-width: 300px;
+  width: 100%;
+  letter-spacing: -0.118461px;
+  color: #868686;
+}
+
+.Banner__DesktopSendButton {
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.Banner__DesktopSendImage {}
+
+.Banner__MobileTextBig {
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 17px;
+}
+
+.Banner__MobileEmailContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border: 2px solid #F5F5F5;
+  border-radius: 6px;
+  padding: 23px 27px;
+  margin-bottom: 24px;
+}
+
+.Banner__MobileEmailIcon {}
+
+.Banner__MobileEmailInput {
+  border: none;
+  outline: none;
+  padding: 0 18px;
+  font-size: 14px;
+  width: 100%;
+  letter-spacing: -0.118461px;
+  color: #868686;
+}
+
+.Banner__MobileButton {
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.Banner__MobileSendIcon {}
+
+.Banner__MobileTextSmall {
+  font-size: 12px;
+  color: #333333;
+  text-align: center;
+}

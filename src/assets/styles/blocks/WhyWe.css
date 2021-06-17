@@ -1,0 +1,60 @@
+.WhyWe {}
+
+.WhyWe__List {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0;
+}
+
+.WhyWe__Item {
+  width: 100%;
+  padding: 5% 0%;
+  box-sizing: border-box;
+  vertical-align: top;
+  display: inline-block;
+}
+
+@media (min-width: 1041px) {
+  .WhyWe__Item {
+    width: 50%;
+    padding: 2%;
+  }
+}
+
+.WhyWe__TopBlock {}
+
+.WhyWe__TitleBlock {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  height: 100px;
+}
+
+.WhyWe__TitleIcon {
+  margin-right: 17px;
+  width: 60px;
+}
+
+.WhyWe__TitleText {
+  font-weight: bold;
+  font-size: 30px;
+  color: #000000;
+}
+
+.WhyWe__SubTitle {
+  background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E9CC65 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  padding: 8px 46px;
+}
+
+.WhyWe__Info {
+  padding: 41px 46px 0;
+  font-size: 14px;
+  line-height: 24px;
+  color: #868686;
+}

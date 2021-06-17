@@ -1,0 +1,25 @@
+/* @import "Fonts.css"; */
+@import "FontsLocal.css";
+@import "Container.css";
+@import "Header.css";
+@import "Menub2b.css";
+@import "Footer.css";
+@import "PagePreview.css";
+@import "SearchTour.css";
+@import "InfoPageContent.css";
+@import "InfoPageAside.css";
+@import "RHAccordion.css";
+@import "TextFormated.css";
+@import "Banner.css";
+@import "MobileSidebar.css";
+@import "WhyWe.css";
+@import "MainB2b.css";
+
+.RH__Page {
+  font-family: "montserrat", sans-serif !important;
+}
+
+.RH__Body {
+  font-family: "montserrat", sans-serif !important;
+  margin: 0;
+}

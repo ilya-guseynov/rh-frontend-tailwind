@@ -1,0 +1,63 @@
+.RHAccordion {
+  margin-bottom: 35px;
+}
+
+.RHAccordion__Trigger {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.RHAccordion__Content {
+  overflow: hidden;
+  max-height: 0;
+  transition: all .5s;
+  padding-left: 50px;
+}
+
+.RHAccordion__ActiveShow {
+  display: none;
+  width: 30px;
+  margin-right: 20px;
+}
+
+.RHAccordion__ActiveHidden {
+  display: block;
+  width: 30px;
+  margin-right: 20px;
+}
+
+.RHAccordion__ActiveRotate {
+  margin-left: 20px;
+  transition: all .2s;
+}
+
+.RHAccordion--Active .RHAccordion__Trigger {}
+
+.RHAccordion--Active .RHAccordion__Content {
+  max-height: max-content;
+}
+
+.RHAccordion--Active .RHAccordion__ActiveShow {
+  display: block;
+}
+
+.RHAccordion--Active .RHAccordion__ActiveHidden {
+  display: none;
+}
+
+.RHAccordion--Active .RHAccordion__ActiveRotate {
+  transform: rotate(180deg);
+  margin-right: 20px;
+}
+
+.RHAccordion h2.RHAccordion__ActiveTextBlack {
+  font-size: 20px;
+  color: #999999;
+  transition: all .3s;
+  margin: 0;
+}
+
+.RHAccordion--Active h2.RHAccordion__ActiveTextBlack {
+  color: black;
+}
