@@ -65,10 +65,10 @@
                     </a>
                   </li>
                   <li class="Header__NavigationItem">
-                    <a class="Header__NavigationLink" href="#">
+                    <button class="Header__NavigationLink Feedback__Trigger" href="#">
                       <img class="Header__NavigationIcon" src="./assets/images/icons/feedback-icon.svg" alt="feedback-icon">
                       <div class="Header__NavigationLinkText">Обратная связь</div>
-                    </a>
+                    </button>
                   </li>
                   <li class="Header__NavigationItem">
                     <a class="Header__NavigationLink" href="#">
@@ -358,6 +358,65 @@
           <button class="MobileSidebar__CloseTrigger">
             <img class="MobileSidebar__CloseIcon" src="./assets/images/icons/close-icon.svg" alt="close">
           </button>
+        </div>
+        <div class="Feedback">
+          <div class="Feedback__Screenlock"></div>
+          <div class="Feedback__Content">
+            <div class="Feedback__ContentLeft">
+              <img class="Feedback__LeftLogo" src="./assets/images/logo.svg" alt="logo">
+              <div class="Feedback__LeftCountry">Россия</div>
+              <div class="Feedback__LeftAddress">Москва, Новодмитровская 2, кор. 1<br>Савеловский Сити, башня Goodman</div>
+              <div class="Feedback__LeftPhonesBlock">
+                <img class="Feedback__LeftPhoneIcon" src="./assets/images/icons/gold-phone-icon.svg" alt="phone">
+                <div class="Feedback__LeftPhones">
+                  <a class="Feedback__LeftPhone" href="#">+7 495 266-63-77</a>
+                  <a class="Feedback__LeftPhone" href="#">+7 800 100-19-70</a>
+                </div>
+              </div>
+              <a class="Feedback__LeftLink" href="#">info@resort-holiday.com</a>
+            </div>
+            <div class="Feedback__ContentRight">
+              <div class="Feedback__RightTitle">
+                <div class="Feedback__RightTitleText">Напишите нам</div>
+                <button class="Feedback__RightTitleClose Feedback__CloseTrigger">
+                  <img src="./assets/images/icons/close-icon.svg" alt="close">
+                </button>
+              </div>
+              <form class="Feedback__Form">
+                <input class="Feedback__TextInput" type="text" name="username" placeholder="*Ваше имя">
+                <input class="Feedback__TextInput" type="text" name="useragency" placeholder="*Ваше агентство">
+                <input class="Feedback__TextInput" type="email" name="useremail" placeholder="*Ваш email">
+                <div class="Feedback__CheckboxContainer">
+                  <input class="Feedback__Checkbox" type="checkbox" name="want-to-feedback">
+                  <label class="Feedback__CheckboxLabel" for="want-to-feedback">Я хочу оставить отзыв</label>
+                </div>
+                <div class="Feedback__CheckboxContainer">
+                  <input class="Feedback__Checkbox" type="checkbox" name="want-to-thank">
+                  <label class="Feedback__CheckboxLabel" for="want-to-thank">Я хочу оставить благодарность</label>
+                </div>
+                <div class="Feedback__CheckboxContainer">
+                  <input class="Feedback__Checkbox" type="checkbox" name="want-to-help">
+                  <label class="Feedback__CheckboxLabel" for="want-to-help">Я хочу помочь вам стать лучше</label>
+                </div>
+                <div class="Feedback__CheckboxContainer">
+                  <input class="Feedback__Checkbox" type="checkbox" name="want-to-ask">
+                  <label class="Feedback__CheckboxLabel" for="want-to-ask">Я хочу задать вопрос, т.к. не нашла / нашел ответ на сайте</label>
+                </div>
+                <div class="Feedback__CheckboxContainer">
+                  <input class="Feedback__Checkbox" type="checkbox" name="want-to-ask-by-number">
+                  <label class="Feedback__CheckboxLabel" for="want-to-ask-by-number">Я хочу задать вопрос по заявке</label>
+                </div>
+                <div class="Feedback__SevenNumberInputContainer">
+                  <div class="Feedback__SevenNumberInputText">№</div>
+                  <div class="SevenBg" style="background-image: url('./assets/images/seven-bg.svg');">
+                    <input class="Feedback__SevenNumberInput"  type="number" minlength="7" maxlength="7" max="9999999">
+                  </div>
+                </div>
+                <textarea class="Feedback__Textarea" name="usermessage" cols="30" rows="5" placeholder="Введите текст сообщения"></textarea>
+                <button class="Feedback__SubmitButton" type="submit">Отправить</button>
+              </form>
+            </div>
+          </div>
         </div>
       </header>
       <main class="RH__Main MainB2b">
