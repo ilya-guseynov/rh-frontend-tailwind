@@ -13,6 +13,7 @@
   max-height: 0;
   transition: all .5s;
   padding-left: 50px;
+  padding-top: 20px;
 }
 
 .RHAccordion__ActiveShow {

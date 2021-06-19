@@ -10,7 +10,7 @@
 
 @media (min-width: 769px) {
   .MainB2b__VideoBlock {
-    display: block;
+    display: flex;
     margin-top: -86px;
   }
 }
@@ -111,7 +111,15 @@
   text-decoration: none;
 }
 
-.MainB2b__Mosaic {}
+.MainB2b__Mosaic.B2bMosaic {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .MainB2b__Mosaic.B2bMosaic {
+    display: flex;
+  }
+}
 
 .B2bMosaic {
   display: flex;
@@ -234,7 +242,15 @@
   }
 }
 
-.MainB2b__DesktopWe {}
+.MainB2b__DesktopWe {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .MainB2b__DesktopWe {
+    display: block;
+  }
+}
 
 .B2bDesktopWe {}
 
@@ -283,4 +299,158 @@
   background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E9CC65 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
   height: 2px;
   width: 100%;
+}
+
+.MainB2b__MobilePagesList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-bottom: 100px;
+}
+
+@media (min-width: 769px) {
+  .MainB2b__MobilePagesList {
+    display: none;
+  }
+}
+
+.MainB2b__MobilePagesItem {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.MainB2b__MobilePagesItem:not(:last-child) {
+  margin-bottom: 45px;
+}
+
+.MainB2b__MobilePagesLink {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 260px;
+  text-decoration: none;
+}
+
+.MainB2b__MobilePagesIcon {
+  margin-bottom: 18px;
+}
+
+.MainB2b__MobilePagesTitle {
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 28px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.MainB2b__MobilePagesLink--1 {
+  border-radius: 10px 10px 0 0;
+}
+
+.MainB2b__MobilePagesLink--2 {}
+
+.MainB2b__MobilePagesLink--3 {}
+
+.MainB2b__MobilePagesLink--4 {}
+
+.MainB2b__MobilePagesLink--5 {
+  border-radius: 0 0 10px 10px;
+}
+
+.MainB2b__MobilePagesLink--2 .MainB2b__MobilePagesTitle {
+  font-size: 24px;
+}
+
+.MainB2b__MobilePagesLink--3 .MainB2b__MobilePagesTitle {
+  font-size: 24px;
+}
+
+.MainB2b__MobilePagesLink--4 .MainB2b__MobilePagesTitle {
+  font-size: 24px;
+}
+
+.MainB2b__MobilePagesLink--5 .MainB2b__MobilePagesTitle {
+  font-weight: 600;
+}
+
+.MainB2b__MobileWithYou {
+  margin: 0 -20px 30px;
+}
+
+@media (min-width: 769px) {
+  .MainB2b__MobileWithYou {
+    display: none;
+  }
+}
+
+.MobileWithYou {}
+
+.MobileWithYou__Title {
+  padding: 0 20px;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 120%;
+  letter-spacing: 1px;
+  color: #000000;
+  margin-bottom: 50px;
+}
+
+.MobileWithYou__SplideRoot {
+  padding: 0 20px;
+}
+
+.MobileWithYou__SplideTrack {}
+
+.MobileWithYou__SplideList {}
+
+.MobileWithYou__SplideSlide {}
+
+.MobileWithYou__Link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 15px;
+}
+
+.MobileWithYou__Image {}
+
+.MobileWithYou__Text {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 31px;
+  letter-spacing: -0.7px;
+  color: #999999;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.MobileWithYou__GoldBottom {
+  background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E9CC65 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
+  height: 2px;
+  width: 100%;
+}
+
+.MobileWithYou .splide__arrows {}
+
+.MobileWithYou .splide__arrow {
+  background-color: white;
+  background: #FFFFFF;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  top: 330px;
+  width: 32px;
+  height: 32px;
+}
+
+.MobileWithYou .splide__arrow.splide__arrow--prev {
+  left: 40%;
+}
+
+.MobileWithYou .splide__arrow.splide__arrow--next {
+  right: 40%;
 }
