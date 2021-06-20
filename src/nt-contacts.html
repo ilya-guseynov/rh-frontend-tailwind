@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html class="RH__Page" lang="ru">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    @@include("./blocks/head-imports.html")
+
+    <title>RH | Контакты</title>
+  </head>
+
+  <body class="RH__Body">
+    <div class="RH__Wrapper">
+      @@include("./blocks/header-b2b.html")
+      <main class="RH__Main">
+        <section class="PagePreview" style="background-image: url('./assets/images/why-we-bg.jpeg');">
+          <div class="PagePreview__Inner Container">
+            <h1 class="PagePreview__Title">Контакты</h1>
+          </div>
+        </section>
+        <section class="SearchTour Container">
+          Search Tour
+        </section>
+        <section class="MapPageContent">
+          <iframe class="MapPageContent__MapIframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17944.997224862644!2d37.588423080098124!3d55.79107336613811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdcc746b0e98d674f!2sRESORT%20HOLIDAY!5e0!3m2!1sen!2sru!4v1624209129751!5m2!1sen!2sru" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          <div class="MapPageContent__Card">
+            <div class="MapPageContent__CardTitle">Контакты</div>
+            <div class="MapPageContent__CardSubtitle">Адрес:</div>
+            <div class="MapPageContent__CardText">Москва, Новодмитровская 2, кор. 1 Савеловский Сити, башня Goodman</div>
+            <div class="MapPageContent__CardText">9.00-19.00</div>
+            <div class="MapPageContent__CardSubtitle">Телефон:</div>
+            <div class="MapPageContent__CardText">
+              <a href="#">+7 495 266-63-77</a>
+            </div>
+            <div class="MapPageContent__CardSubtitle">E-mail:</div>
+            <div class="MapPageContent__CardText">
+              <a href="#">info@resort-holiday.com</a>
+            </div>
+            <a class="MapPageContent__CardButton" href="#">Отправить Сообщение</a>
+          </div>
+        </section>
+        @@include("./blocks/banner-b2b.html")
+      </main>
+      @@include("./blocks/footer-b2b.html")
+    </div>
+
+    @@include('./blocks/scripts.html')
+  </body>
+
+</html>

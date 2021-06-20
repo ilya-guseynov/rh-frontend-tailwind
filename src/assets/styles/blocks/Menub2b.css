@@ -31,11 +31,11 @@
   text-transform: uppercase;
   color: #FFFFFF;
   text-decoration: none;
-  transition: opacity .5s;
+  transition: all .5s;
 }
 
 .Menub2b__BigSearchTourLink:hover {
-  opacity: .8;
+  color: #e4e4e4;
 }
 
 @media (min-width: 769px) {

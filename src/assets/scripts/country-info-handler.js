@@ -4,7 +4,7 @@
   const dataTriggerAttributeName = "rh-country-data-trigger";
   const dataAttributeName = "rh-country-data";
   const dataTitleAttributeName = "rh-country-data-title";
-  const goldBgClass = "rh-bg-gold";
+  const goldBgClass = "CountryPage__TabLink--Active";
 
   /**
    * @param {string} attributeName
