@@ -1,20 +1,2 @@
-/* @import "_tailwind-vendor";
-@import "_font-montserrat";
-@import "_b2b-top-slider";
-@import "_b2c-blog-slider";
-@import "_b2c-main-page-video-container";
-@import "_b2c-menu";
-@import "_background-font-clip";
-@import "_menu-dropdown-item";
-@import "_mobile-sidebar";
-@import "_our-goods-slider";
-@import "_our-guests-slider";
-@import "_sales-card";
-@import "_search-form-switch";
-@import "_with-you-slider";
-@import "_country-top-media-block";
-@import "_custom-common-samo.css";
-@import "_rh-accordion.css"; */
-
-
 @import "blocks/_dir.css";
+@import "samo/CustomSamo.css";

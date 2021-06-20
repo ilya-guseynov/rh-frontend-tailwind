@@ -2094,11 +2094,6 @@ doesnotexist:-o-prefocus, .wrapper .samo_container #samo-notification-badge.open
     font-size: 13px;
     display: inline-block;
     background-color: #f5f5f5;
-    background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
-    background-image: -moz-linear-gradient(top,#f5f5f5,#f1f1f1);
-    background-image: -ms-linear-gradient(top,#f5f5f5,#f1f1f1);
-    background-image: -o-linear-gradient(top,#f5f5f5,#f1f1f1);
-    background-image: linear-gradient(top,#f5f5f5,#f1f1f1);
     color: #444;
 
     border: 1px solid #dcdcdc;
@@ -2126,12 +2121,6 @@ doesnotexist:-o-prefocus, .wrapper .samo_container #samo-notification-badge.open
 
 .wrapper .samo_container #samo-notification-bar .button:hover {
     background-color: #F8F8F8;
-    background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
-    background-image: -moz-linear-gradient(top,#f8f8f8,#f1f1f1);
-    background-image: -ms-linear-gradient(top,#f8f8f8,#f1f1f1);
-    background-image: -o-linear-gradient(top,#f8f8f8,#f1f1f1);
-    background-image: linear-gradient(top,#f8f8f8,#f1f1f1);
-
     border: 1px solid #C6C6C6;
     color: #333;
 
@@ -2370,12 +2359,6 @@ doesnotexist:-o-prefocus, .wrapper .samo_container #messages-popup.close {
     line-height: 22px;
     font-size: 13px;
     background: #ffffff;
-    background: -moz-linear-gradient(top, #ffffff 1%, #eaeaea 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#ffffff), color-stop(100%,#eaeaea));
-    background: -webkit-linear-gradient(top, #ffffff 1%,#eaeaea 100%);
-    background: -o-linear-gradient(top, #ffffff 1%,#eaeaea 100%);
-    background: -ms-linear-gradient(top, #ffffff 1%,#eaeaea 100%);
-    background: linear-gradient(top, #ffffff 1%,#eaeaea 100%);
     box-shadow: 0px 0px 0px 1px rgba(155,155,155,0.3), 0px 2px 2px rgba(0,0,0,0.1);
     text-align: left;
 }
@@ -2675,8 +2658,6 @@ doesnotexist:-o-prefocus, .wrapper .samo_container #messages-popup.close {
     background-color: #fff;
 
     background: white;
-    background: -o-linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
-    background: linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
     background-clip: padding-box;
     box-shadow: none;
     color: #444;
@@ -2900,11 +2881,6 @@ doesnotexist:-o-prefocus, .wrapper .samo_container #messages-popup.close {
     padding-right: 5px;
     border: 1px solid #ccc;
     background-color: #e4e4e4;
-    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
-    background-image: -webkit-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-    background-image: -moz-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-    background-image: -o-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-    background-image: linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
     color: #666;
 }
 .chosen-container-multi .chosen-choices li.search-choice-focus {

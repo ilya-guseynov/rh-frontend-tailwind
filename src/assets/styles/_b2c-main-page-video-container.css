@@ -1,7 +1,0 @@
-.b2c-main-page-video-container {
-  height: 400px;
-  
-  @media (min-width: 768px) {
-    height: 780px;
-  }
-}
