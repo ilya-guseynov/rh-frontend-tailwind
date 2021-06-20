@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html class="RH__Page" lang="ru">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    @@include("./blocks/head-imports.html")
+
+    <title>RH | Акции</title>
+  </head>
+
+  <body class="RH__Body">
+    <div class="RH__Wrapper">
+      @@include("./blocks/header-b2b.html")
+      <main class="RH__Main">
+        <section class="PagePreview" style="background-image: url('./assets/images/sales-background-image.jpg');">
+          <div class="PagePreview__Inner Container">
+            <h1 class="PagePreview__Title">Акции</h1>
+          </div>
+        </section>
+        <section class="SearchTour Container">
+          Search Tour
+        </section>
+        <section class="InfoPageContent Container">
+          <div class="InfoPageContent__Aside">
+            <div class="InfoPageContent__AsideContent">
+              @@include("./blocks/infopage-aside.html")
+            </div>
+            <div class="InfoPageContent__AsideBorder"></div>
+          </div>
+          <div class="InfoPageContent__Main SalesPage">
+            <h2 class="SalesPage__Title">Акции отелей. Мальдивы</h2>
+            <ul class="SalesPage__List">
+              <li class="SalesPage__Item">
+                <a class="SalesPage__Link" href="#">
+                  <img class="SalesPage__ItemImage" src="./assets/images/2_LUX South2.jpg" alt="sales-image-1">
+                  <div class="SalesPage__ItemPreview">
+                    <div class="SalesPage__ItemPreviewTitle">ADAARAN SELECT MEEDHUPPARU 4*</div>
+                    <div class="SalesPage__ItemPreviewGoldBottom"></div>
+                  </div>
+                  <div class="SalesPage__ItemContent">
+                    <div class="SalesPage__ItemContentTitle">ADAARAN Select Meedhupparu 4*</div>
+                    <div class="SalesPage__ItemContentSubtitle">Скидка 50% при бронировании вилл любой категории</div>
+                  </div>
+                </a>
+              </li>
+              <li class="SalesPage__Item">
+                <a class="SalesPage__Link" href="#">
+                  <img class="SalesPage__ItemImage" src="./assets/images/2_LUX South2.jpg" alt="sales-image-1">
+                  <div class="SalesPage__ItemPreview">
+                    <div class="SalesPage__ItemPreviewTitle">ADAARAN SELECT MEEDHUPPARU 4*</div>
+                    <div class="SalesPage__ItemPreviewGoldBottom"></div>
+                  </div>
+                  <div class="SalesPage__ItemContent">
+                    <div class="SalesPage__ItemContentTitle">ADAARAN Select Meedhupparu 4*</div>
+                    <div class="SalesPage__ItemContentSubtitle">Скидка 50% при бронировании вилл любой категории</div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+      @@include("./blocks/footer-b2b.html")
+    </div>
+
+    @@include('./html-components/scripts.html')
+  </body>
+
+</html>

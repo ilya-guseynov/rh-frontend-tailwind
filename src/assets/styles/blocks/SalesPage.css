@@ -1,0 +1,114 @@
+.SalesPage {}
+
+.SalesPage__Title {
+  font-weight: 600;
+  font-size: 32px;
+  letter-spacing: 1px;
+  color: #000000;
+  margin: 0;
+  margin-top: 35px;
+  margin-bottom: 45px;
+}
+
+.SalesPage__List {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.SalesPage__Item {
+  display: inline-block;
+  vertical-align: top;
+  padding: 15px;
+}
+
+.SalesPage__Link {
+  overflow: hidden;
+  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.06);
+  border-radius: 6px;
+  display: block;
+  position: relative;
+  height: 230px;
+  width: 290px;
+  text-decoration: none;
+}
+
+.SalesPage__ItemImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.SalesPage__ItemPreview {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  transition: all .5s;
+}
+
+.SalesPage__Link:hover .SalesPage__ItemPreview {
+  opacity: 0;
+}
+
+.SalesPage__ItemPreviewTitle {
+  text-align: left;
+  padding: 0 20px 15px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 31px;
+  letter-spacing: -0.7px;
+  color: #FFFFFF;
+}
+
+.SalesPage__ItemPreviewGoldBottom {
+  width: 100%;
+  height: 6px;
+  flex-shrink: 0;
+  background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E9CC65 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
+}
+
+.SalesPage__ItemContent {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #285c2de3;
+  opacity: 0;
+  transition: all .5s;
+}
+
+.SalesPage__Link:hover .SalesPage__ItemContent {
+  opacity: 1;
+}
+
+.SalesPage__ItemContentTitle {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 31px;
+  letter-spacing: -0.7px;
+  color: #FFFFFF;
+  margin-bottom: 30px;
+}
+
+.SalesPage__ItemContentSubtitle {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 25px;
+  text-align: center;
+  color: #FFFFFF;
+}
