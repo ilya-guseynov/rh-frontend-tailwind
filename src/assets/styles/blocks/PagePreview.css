@@ -27,6 +27,7 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #FFFFFF;
+  text-align: right;
 }
 
 .PagePreview--Prive .PagePreview__Title {

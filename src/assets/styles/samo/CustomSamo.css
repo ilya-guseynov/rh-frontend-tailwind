@@ -5231,11 +5231,7 @@ modal
     padding-top: 20px;
 }
 
-body {
-    background-image: url(../lotiAssets/images/aboutusSlider2.jpg);
-    background-position: bottom;
-    background-repeat: no-repeat;
-}
+body {}
 
 
 
