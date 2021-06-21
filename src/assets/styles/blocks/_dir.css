@@ -1,5 +1,5 @@
-/* @import "Fonts.css"; */
-@import "FontsLocal.css";
+@import "Fonts.css";
+/* @import "FontsLocal.css"; */
 @import "Container.css";
 @import "Header.css";
 @import "Menub2b.css";
@@ -17,6 +17,7 @@
 @import "Feedback.css";
 @import "SalesPage.css";
 @import "CountryPage.css";
+@import "HotelPage.css";
 @import "MapPageContent.css";
 
 

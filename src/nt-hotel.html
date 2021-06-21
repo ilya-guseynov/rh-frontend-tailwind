@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html class="RH__Page" lang="ru">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    @@include("./blocks/head-imports.html")
+
+    <title>RH | Оформление отеля</title>
+  </head>
+
+  <body class="RH__Body">
+    <div class="RH__Wrapper">
+      @@include("./blocks/header-b2b.html")
+      <main class="RH__Main HotelPage">
+        <section class="PagePreview HotelPage__PagePreview" style="background-image: url('./assets/images/hotel-big-pic.jpg');">
+          <div class="PagePreview__Inner Container">
+            <h1 class="PagePreview__Title">KANDIMA MALDIVES Dhaalu Atoll 5*</h1>
+          </div>
+        </section>
+        <section class="SearchTour Container">
+          Search Tour
+        </section>
+        <section class="HotelPage__Content Container">
+          <div class="HotelPage__PhotoSlider">
+            photo slider
+          </div>
+          <div class="HotelPage__Info">
+            info
+          </div>
+          <div class="HotelPage__ContentSlider">
+            content slider
+          </div>
+        </section>
+        @@include("./blocks/banner-b2b.html")
+      </main>
+      @@include("./blocks/footer-b2b.html")
+    </div>
+
+    @@include('./blocks/scripts.html')
+  </body>
+
+</html>

@@ -1,0 +1,12 @@
+.HotelPage {
+  margin-bottom: 100px;
+}
+
+.HotelPage__PagePreview {
+  height: 780px;
+}
+
+.HotelPage__PagePreview .PagePreview__Title {
+  text-align: left;
+  padding-top: 140px;
+}
