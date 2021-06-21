@@ -56,7 +56,16 @@
   padding: 0 0 0 10px;
 }
 
+.TextFormated ul li {
+  margin: 0;
+  padding: 0 0 0 10px;
+}
+
 .TextFormated ol li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.TextFormated ul li:not(:last-child) {
   margin-bottom: 20px;
 }
 

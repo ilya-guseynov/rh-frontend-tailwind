@@ -12,6 +12,35 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+  const sliderElementQuery = ".HotelPage__TabsContainer--Scroll";
+
+  if (document.querySelector(sliderElementQuery)) {
+    new Splide(sliderElementQuery, {
+      autoplay: false,
+      arrows: false,
+      perMove: 1,
+      pagination: false,
+      autoWidth: true,
+    }).mount();
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sliderElementQuery = ".HotelPage__PhotoSlider";
+
+  if (document.querySelector(sliderElementQuery)) {
+    new Splide(sliderElementQuery, {
+      type: "loop",
+      autoplay: true,
+      perPage: 5,
+      autoWidth: true,
+      perMove: 1,
+      pagination: false
+    }).mount();
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
   const sliderElementQuery = ".b2b-top-slider";
 
   if (document.querySelector(sliderElementQuery)) {

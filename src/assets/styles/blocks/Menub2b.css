@@ -85,7 +85,7 @@
 
 .Menub2b__NavigationDropdownTitle {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   text-transform: uppercase;
   color: #FFFFFF;
 }
@@ -97,12 +97,14 @@
 .Menub2b__NavigationDropdownBlock {
   display: none;
   position: absolute;
-  right: -30px;
+  left: 50%;
+  transform: translateX(-50%);
   background: #FFFFFF;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
   padding: 32px;
   width: 270px;
   z-index: 10;
+  box-sizing: border-box;
 }
 
 .Menub2b__NavigationItem:hover .Menub2b__NavigationDropdownBlock {
@@ -123,7 +125,7 @@
   display: block;
   padding: 16px 0;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   color: #999999;
   text-decoration: none;
   transition: all .5s;

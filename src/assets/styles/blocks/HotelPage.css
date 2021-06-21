@@ -1,12 +1,141 @@
-.HotelPage {
-  margin-bottom: 100px;
-}
+.HotelPage {}
 
 .HotelPage__PagePreview {
   height: 780px;
 }
 
+.HotelPage__Content {
+  margin-bottom: 100px;
+}
+
 .HotelPage__PagePreview .PagePreview__Title {
   text-align: left;
   padding-top: 140px;
+}
+
+.HotelPage__PhotoSlider {
+  height: 200px;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+  .HotelPage__PhotoSlider {
+    margin: 0 -20px 60px;
+    padding-top: 34px;
+  }
+}
+
+.HotelPage__PhotoSliderTrack {
+  height: 100%;
+}
+
+.HotelPage__PhotoSliderList {
+  height: 100%;
+}
+
+.HotelPage__PhotoSliderSlide {
+  height: 100%;
+  width: 270px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px !important;
+  overflow: hidden;
+  border-radius: 2px;
+  position: relative;
+}
+
+.HotelPage__PhotoSliderImage {
+  height: 150%;
+}
+
+.HotelPage__PhotoInnerShadow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.613882) 0%, rgba(0, 0, 0, 0.0001) 50%);
+}
+
+.HotelPage__Info {
+  max-width: 500px;
+}
+
+.HotelPage__Stars {
+  padding-bottom: 17px;
+  border-bottom: 1px solid #9999998a;
+}
+
+.HotelPage__Star {
+  margin-right: 10px;
+}
+
+.HotelPage__Name {
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 39px;
+  color: #252D27;
+  margin-bottom: 40px;
+}
+
+.HotelPage__TabsContainer--Scroll {
+  margin: 0 -20px;
+}
+
+@media (min-width: 769px) {
+  .HotelPage__TabsContainer--Scroll {
+    margin: 0;
+  } 
+}
+
+.HotelPage__TabsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #285C2D;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.HotelPage__TabsContainer--Scroll .HotelPage__TabsList {
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  justify-content: flex-start;
+}
+
+.HotelPage__TabsContainer--Scroll .HotelPage__TabsList::-webkit-scrollbar {
+  display: none;
+}
+
+.HotelPage__TabItem {
+  width: 100%;
+}
+
+.HotelPage__TabsContainer--Scroll .HotelPage__TabItem {
+  width: auto;
+}
+
+.HotelPage__TabLink {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 18px;
+  text-align: center;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 15px 5px;
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.HotelPage__TabsContainerInfinite .HotelPage__TabLink {
+  padding: 15px 30px;
+}
+
+.HotelPage__TabLink--Active {
+  background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E9CC65 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
 }
