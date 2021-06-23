@@ -7,6 +7,10 @@
   color: #999999;
 }
 
+.TextFormated--WhoWeAre {
+  padding-bottom: 80px;
+}
+
 .TextFormated h2 {
   color: #252D27;
   font-weight: bold;
