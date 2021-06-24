@@ -36,6 +36,12 @@
   background-position: center;
 }
 
+@media (max-width: 1260px) {
+  .CountryMosaic__Item {
+    height: 30vw;
+  }
+}
+
 .CountryMosaic__Item--1 {
   border-radius: 10px 0px 0px 0;
 }
@@ -70,7 +76,7 @@
 
 .CountryMosaic__ItemPreviewTitle {
   font-weight: bold;
-  font-size: 35px;
+  font-size: 25px;
   line-height: 40px;
   text-align: center;
   text-transform: uppercase;
