@@ -20,8 +20,7 @@
 
 @media (max-width: 768px) {
   .HotelPage__PhotoSlider {
-    margin: 0 -20px 60px;
-    padding-top: 34px;
+    margin: 34px -20px 60px;
   }
 }
 
