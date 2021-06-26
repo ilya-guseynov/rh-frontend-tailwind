@@ -79,12 +79,12 @@
 }
 
 .HotelPage__TabsContainer--Scroll {
-  margin: 0 -20px;
+  margin: 0 -20px 50px;
 }
 
 @media (min-width: 769px) {
   .HotelPage__TabsContainer--Scroll {
-    margin: 0;
+    margin: 0 0 100px;
   } 
 }
 
@@ -138,3 +138,122 @@
 .HotelPage__TabLink--Active {
   background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E9CC65 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
 }
+
+.HotelPage__TabData {
+  padding: 0 30px;
+  color: #333333;
+}
+
+.HotelPage__Quote {}
+
+.HotelPage__QuoteTitleBlock {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.HotelPage__QuoteIconContainer {
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.HotelPage__QuoteTitle {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.HotelPage__QuoteText {
+  padding: 0 50px;
+  font-size: 16px;
+  line-height: 180%;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .HotelPage__QuoteText {
+    padding: 0;
+  }
+}
+
+.HotelPage__QuoteAuthorBlock {
+  padding: 0 50px;
+}
+
+@media (max-width: 768px) {
+  .HotelPage__QuoteAuthorBlock {
+    padding: 0;
+  }
+}
+
+.HotelPage__QuoteAuthor {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 180%;
+}
+
+.HotelPage__ImageDataContainer {
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .HotelPage__ImageDataContainer {
+    padding: 0;
+  }
+}
+
+.HotelPage__ImageData {
+  width: 100%;
+}
+
+.HotelPage__Nomer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 120px;
+}
+
+.HotelPage__NomerPhotoSliderContainer {
+  width: 300px;
+  flex-shrink: 0;
+  margin-right: 45px;
+}
+
+.HotelPage__NomerPhotoSlider {
+  width: 100%;
+}
+
+.HotelPage__NomerPhotoSliderTrack {}
+
+.HotelPage__NomerPhotoSliderList {}
+
+.HotelPage__NomerPhotoSliderSlide {
+  position: relative;
+}
+
+.HotelPage__NomerPhotoGoldBg {
+  position: absolute;
+  height: 95%;
+  width: 95%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E9CC65 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
+}
+
+.HotelPage__NomerPhotoSliderImageContainer {
+  position: absolute;
+  height: 95%;
+  width: 95%;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.HotelPage__NomerPhotoSliderImage {
+  height: 150%;
+}
+
+.HotelPage__NomerTextContainer {}

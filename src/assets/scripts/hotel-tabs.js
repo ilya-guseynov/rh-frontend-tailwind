@@ -9,6 +9,8 @@
   const hideElement = element => { element.style.display = "none"; };
   const showElement = element => { element.style.display = "block"; };
 
+  let hotelPhotosInited = false;
+
   const datas = document.querySelectorAll(attributeNameToQuery(dataAttributeName));
   const dataTriggers = document.querySelectorAll(attributeNameToQuery(dataTriggerAttributeName));
 
@@ -30,6 +32,27 @@
           createQueryForDataById(dataTrigger.getAttribute(dataTriggerAttributeName))
         )
       );
+
+      if (dataTrigger.getAttribute(dataTriggerAttributeName) === "6" && !hotelPhotosInited) {
+        hotelPhotosInited = true;
+
+        setTimeout(() => {
+          const sliderElementQuery = ".HotelPage__NomerPhotoSlider";
+      
+          document.querySelectorAll(sliderElementQuery).forEach(elem => {
+            new Splide(elem, {
+              type: "loop",
+              autoplay: true,
+              perPage: 3,
+              perMove: 1,
+              direction: "ttb",
+              height: "675px",
+              pagination: false,
+              lazyLoad: "nearby"
+            }).mount();
+          });
+        }, 100);
+      }
     });
   });
 })();

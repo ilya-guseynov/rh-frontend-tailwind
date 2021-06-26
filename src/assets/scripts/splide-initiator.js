@@ -41,6 +41,25 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// document.addEventListener("DOMContentLoaded", () => {
+//   setTimeout(() => {
+//     const sliderElementQuery = ".HotelPage__NomerPhotoSlider";
+
+//     document.querySelectorAll(sliderElementQuery).forEach(elem => {
+//       new Splide(elem, {
+//         type: "loop",
+//         autoplay: true,
+//         perPage: 3,
+//         perMove: 1,
+//         direction: "ttb",
+//         height: "675px",
+//         pagination: false,
+//         lazyLoad: "nearby"
+//       }).mount();
+//     });
+//   }, 100);
+// });
+
 document.addEventListener("DOMContentLoaded", () => {
   const sliderElementQuery = ".b2b-top-slider";
 
