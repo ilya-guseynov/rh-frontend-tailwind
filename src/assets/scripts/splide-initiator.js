@@ -36,7 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
       autoWidth: true,
       perMove: 1,
       pagination: false,
-      lazyLoad: "nearby"
+      lazyLoad: "nearby",
+      preloadPages: 3,
     }).mount();
   }
 });
