@@ -38,9 +38,9 @@
 
         setTimeout(() => {
           const sliderElementQuery = ".HotelPage__NomerPhotoSlider";
-      
+          
           document.querySelectorAll(sliderElementQuery).forEach(elem => {
-            new Splide(elem, {
+            const splide = new Splide(elem, {
               type: "loop",
               autoplay: true,
               perPage: 3,
