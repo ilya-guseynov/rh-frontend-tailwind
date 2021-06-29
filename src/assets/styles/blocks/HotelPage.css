@@ -246,6 +246,12 @@
   color: #333333;
 }
 
+@media (max-width: 768px) {
+  .HotelPage__TabData {
+    padding: 0;
+  } 
+}
+
 .HotelPage__Quote {}
 
 .HotelPage__QuoteTitleBlock {
@@ -315,10 +321,31 @@
   margin-bottom: 120px;
 }
 
+@media (max-width: 768px) {
+  .HotelPage__Nomer {
+    justify-content: flex-start;
+    flex-direction: column-reverse;
+  } 
+}
+
 .HotelPage__NomerPhotoSliderContainer {
   width: 300px;
   flex-shrink: 0;
   margin-right: 45px;
+}
+
+.HotelPage__NomerMobilePhotoSliderContainer {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .HotelPage__NomerPhotoSliderContainer {
+    display: none;
+  }
+
+  .HotelPage__NomerMobilePhotoSliderContainer {
+    display: block;
+  }
 }
 
 .HotelPage__NomerPhotoSlider {
@@ -326,6 +353,27 @@
 }
 
 .HotelPage__NomerPhotoSlider {}
+
+.HotelPage__NomerMobilePhotoSlider {
+  height: 50vw;
+}
+
+.HotelPage__NomerMobilePhotoSlider .HotelPage__NomerPhotoSliderTrack {
+  height: 100%;
+}
+
+.HotelPage__NomerMobilePhotoSlider .HotelPage__NomerPhotoSliderList {
+  height: 100%;
+}
+
+.HotelPage__NomerMobilePhotoSlider .HotelPage__NomerPhotoSliderSlide {
+  height: 100%;
+}
+
+.HotelPage__NomerMobilePhotoSlider .HotelPage__NomerPhotoSliderImage {
+  height: auto;
+  width: 110%;
+}
 
 .HotelPage__NomerPhotoSlider .splide__arrow {
   background: none;
@@ -380,8 +428,60 @@
   justify-content: center;
 }
 
+.HotelPage__NomerMobilePhotoSlider .HotelPage__NomerPhotoGoldBg, .HotelPage__NomerMobilePhotoSlider .HotelPage__NomerPhotoSliderImageContainer {
+  height: 93%;
+  width: 96%;
+}
+
 .HotelPage__NomerPhotoSliderImage {
   height: 150%;
 }
 
 .HotelPage__NomerTextContainer {}
+
+
+.HotelPage__NomerMobilePhotoSlider .splide__arrow {
+  background: none;
+}
+
+.HotelPage__NomerMobilePhotoSlider .splide__arrow > svg {
+  fill: white;
+}
+
+.HotelPage__NomerMobilePhotoSlider .splide__arrow.splide__arrow--prev {
+  left: 3em;
+}
+
+.HotelPage__NomerMobilePhotoSlider .splide__arrow.splide__arrow--prev > svg {
+  transform: scale(-5);
+}
+
+.HotelPage__NomerMobilePhotoSlider .splide__arrow.splide__arrow--next {
+  right: 7em;
+}
+
+.HotelPage__NomerMobilePhotoSliderContainer--Active .HotelPage__NomerMobilePhotoSlider .splide__arrow.splide__arrow--next {
+  right: 3em;
+}
+
+.HotelPage__NomerMobilePhotoSlider .splide__arrow.splide__arrow--next > svg {
+  transform: scale(5);
+}
+
+@media (max-width: 768px) {
+  .HotelPage__NomerMobilePhotoSlider .splide__arrow.splide__arrow--prev {
+    left: 1em;
+  }
+
+  .HotelPage__NomerMobilePhotoSlider .splide__arrow.splide__arrow--prev > svg {
+    transform: scale(-3);
+  }
+
+  .HotelPage__NomerMobilePhotoSlider .splide__arrow.splide__arrow--next, .HotelPage__NomerMobilePhotoSliderContainer--Active .HotelPage__NomerMobilePhotoSlider .splide__arrow.splide__arrow--next {
+    right: 1em;
+  }
+
+  .HotelPage__NomerMobilePhotoSlider .splide__arrow.splide__arrow--next > svg {
+    transform: scale(3);
+  }
+}
