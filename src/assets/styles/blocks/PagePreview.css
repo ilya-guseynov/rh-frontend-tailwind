@@ -19,6 +19,7 @@
 @media (max-width: 768px) {
   .PagePreview--Country {
     height: 456px;
+    margin-bottom: 0;
   }
 }
 
@@ -124,4 +125,41 @@
 
 .PagePreview__MediaLink:hover .PagePreview__MediaText {
   color: #e4e4e4;
+}
+
+.PagePreview--Country .PagePreview__HotelLink {
+  display: flex;
+  margin-bottom: 50px;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .PagePreview--Country .PagePreview__HotelLink {
+    display: none;
+  } 
+}
+
+.PagePreview__HotelLinkImageContainer {
+  width: 54px;
+  z-index: 3;
+}
+
+.PagePreview--Country .PagePreview__HotelLinkImage {
+
+}
+
+.PagePreview--Country .PagePreview__HotelLinkText {
+  background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E9CC65 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
+  font-weight: bold;
+  font-size: 28px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  margin-top: 13px;
+  text-decoration: none;
 }
