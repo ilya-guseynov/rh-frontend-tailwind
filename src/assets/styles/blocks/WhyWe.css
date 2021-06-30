@@ -1,11 +1,24 @@
 .WhyWe {}
 
+.WhyWe__Title {
+  font-weight: bold;
+  font-size: 32px;
+  letter-spacing: 1px;
+  color: #000000;
+}
+
 .WhyWe__List {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 -2%;
   font-size: 0;
   padding-bottom: 80px;
+}
+
+@media (max-width: 1040px) {
+  .WhyWe__List {
+    margin: 0;
+  }
 }
 
 .WhyWe__Item {
