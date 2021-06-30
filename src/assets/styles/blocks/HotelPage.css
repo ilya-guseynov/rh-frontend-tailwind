@@ -17,12 +17,6 @@
   padding-top: 140px;
 }
 
-.HotelPage__PhotoSliderContainer {
-  
-}
-
-.HotelPage__PhotoSliderContainer--Active {}
-
 .HotelPage__PhotoSliderScreenLock {
   display: none;
   position: fixed;
@@ -38,35 +32,10 @@
   display: block;
 }
 
-.HotelPage__PhotoSliderInner {
-  position: static;
-  top: auto;
-  left: auto;
-  transform: none;
-  width: 100%;
-  z-index: 91;
-}
-
-.HotelPage__PhotoSliderContainer--Active .HotelPage__PhotoSliderInner {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80vw;
-  max-width: 1000px;
-  z-index: 91;
-}
-
 .HotelPage__PhotoSlider {
   position: relative;
   height: 200px;
   margin-bottom: 60px;
-}
-
-.HotelPage__PhotoSliderContainer--Active .HotelPage__PhotoSlider {
-  max-height: 600px;
-  height: 50vw;
-  margin-bottom: 0;
 }
 
 .HotelPage__PhotoSlider .splide__arrow {
@@ -89,10 +58,6 @@
   right: 7em;
 }
 
-.HotelPage__PhotoSliderContainer--Active .HotelPage__PhotoSlider .splide__arrow.splide__arrow--next {
-  right: 3em;
-}
-
 .HotelPage__PhotoSlider .splide__arrow.splide__arrow--next > svg {
   transform: scale(5);
 }
@@ -106,7 +71,7 @@
     transform: scale(-3);
   }
 
-  .HotelPage__PhotoSlider .splide__arrow.splide__arrow--next, .HotelPage__PhotoSliderContainer--Active .HotelPage__PhotoSlider .splide__arrow.splide__arrow--next {
+  .HotelPage__PhotoSlider .splide__arrow.splide__arrow--next {
     right: 1em;
   }
 
@@ -139,11 +104,6 @@
   overflow: hidden;
   border-radius: 2px;
   position: relative;
-}
-
-.HotelPage__PhotoSliderContainer--Active .HotelPage__PhotoSliderSlide {
-  width: 80vw;
-  max-width: 1000px;
 }
 
 .HotelPage__PhotoSliderImage  {
