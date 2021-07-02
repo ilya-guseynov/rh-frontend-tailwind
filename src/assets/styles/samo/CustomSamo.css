@@ -86,7 +86,6 @@ doesnotexists:-o-prefocus, .wrapper .samo_container select, .wrapper .samo_conta
 /* default colors */
 .wrapper .samo_container.search_tour {
     background: transparent;
-    margin-top:284px;
 }
 
 .wrapper .samo_container, .wrapper .samo_container table, .wrapper .samo_container button, .wrapper .samo_container input, .wrapper .samo_container select {
@@ -110,6 +109,11 @@ doesnotexists:-o-prefocus, .wrapper .samo_container select, .wrapper .samo_conta
 }
 
 .wrapper .samo_container .panel {
+    background-image: url("./images/Spis-60.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
     /*
     margin-bottom: 15px;
     background-color: rgba(255,255,255,0.7);
@@ -122,7 +126,7 @@ doesnotexists:-o-prefocus, .wrapper .samo_container select, .wrapper .samo_conta
 }
 
 .wrapper  .samo_container .even {
-  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ECD26Ebb -33.86%, #F4DB76bb -21.39%, #E9CC65bb 4.9%, #CEA53Abb 56.52%, #C99F33bb 64.39%);
+  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
 }
 
 
@@ -152,7 +156,7 @@ doesnotexists:-o-prefocus, .wrapper .samo_container select, .wrapper .samo_conta
     padding: 10px 5px;
 }
 .wrapper .samo_container table.res .odd td {
-  padding: 10px 0;
+  padding: 10px 5px;
 }
 
 .wrapper .samo_container table.res .highlight td, .wrapper .samo_container .even.highlight {
@@ -350,7 +354,6 @@ doesnotexists:-o-prefocus, .wrapper .samo_container select, .wrapper .samo_conta
 
 
 .wrapper .samo_container input.spin-button {
-    background-image: url('/public/lotiAssets/images/arrows.png');
     padding-right: 20px;
 }
 
@@ -602,7 +605,7 @@ span.delta {
     padding-right: 3px;
 }
 
-div.eraser {
+/* div.eraser {
 
     position: absolute;
 
@@ -613,7 +616,7 @@ div.eraser {
     z-index: -1;
     overflow: hidden;
     border-bottom: 1px solid #4d514d;
-}
+} */
 
 div.eraser video{
     width: 100%;
@@ -655,7 +658,7 @@ div.eraser .overlays .motto .welcomeText {
 }
 
 .wrapper #cl_wizard .std.container {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 /* Overlay */
@@ -671,8 +674,11 @@ div.eraser .overlays .motto .welcomeText {
     position: absolute;
 }
 
-.wrapper .samo_container .panel, #modalContainer  div.modalTitle, #logonContainer  div.modalTitle {
-  background-image: url(http://demo.loti.ru/Assets/images/cardBackgroud.jpg);
+#modalContainer  div.modalTitle, #logonContainer  div.modalTitle {
+  background-image: url("./images/Spis-60.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .wrapper .rh-fast-search-big .samo_container .panel {
@@ -3933,7 +3939,10 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 
 .wrapper #search_tour .direction.panel {
     margin-bottom: 0px; 
-    background-image: url(http://demo.loti.ru/Assets/images/cardBackgroud.jpg);
+    background-image: url("./images/Spis-60.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     border-radius: 0px;
     box-shadow: none; 
     -moz-box-shadow: none;
@@ -3960,7 +3969,10 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 
 .HOTELSCONTAINER {
 
-    background-image: url(http://demo.loti.ru/Assets/images/cardBackgroud.jpg);
+    background-image: url("./images/Spis-60.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
 }
 
@@ -4002,7 +4014,10 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 28%);
     border-radius: 0 !important;
     background-color: #fbf8f3 !important;
-    background-image: url(http://demo.loti.ru/Assets/images/cardBackgroud.jpg);
+    background-image: url("./images/Spis-60.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .wrapper #search_tour .user_info select,
@@ -4041,7 +4056,10 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 }
 
 .userBackground {
-    background-image: url(http://demo.loti.ru/Assets/images/cardBackgroud.jpg);
+    background-image: url("./images/Spis-60.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     left: 0;
     right: 0;
     height: 230px;
@@ -4058,11 +4076,17 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 }
 
 .wrapper #search_tour .filters-panel {
-    background-image: url(http://demo.loti.ru/Assets/images/cardBackgroud.jpg); 
+    background-image: url("./images/Spis-60.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
 }
 
 .wrapper #search_tour .footer {
-    background-image: url(http://demo.loti.ru/Assets/images/cardBackgroud.jpg); 
+    background-image: url("./images/Spis-60.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
 }
 
 .wrapper #search_tour .MEALS, .wrapper #search_tour .ROOMS {
@@ -4077,14 +4101,16 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     background-color: transparent !important;
 }
 #register_agency {
-    margin-top: 300px !important;
 }
 
 #register_agency .panel {
     border-radius: 0 !important;
     box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
     background-color: #fbf8f3 !important;
-    background-image: url(http://demo.loti.ru/Assets/images/cardBackgroud.jpg);
+    background-image: url("./images/Spis-60.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
 }
 
@@ -4145,7 +4171,10 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 }
 
 
-
+.samo_container div.logon-wrapper {
+    max-height: none;
+    margin-top: none;
+}
 
 .wrapper .samo_container div.logon-wrapper div.panel select,
 .wrapper .samo_container div.logon-wrapper div.panel textarea,
@@ -4193,6 +4222,21 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     width: 100%;
 }
 
+.row.show-password {
+    margin-top: 0;
+}
+
+#loginbox label[for="showpasswd"] {
+    display: flex!important;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#showpasswd {
+    height: auto!important;
+    width: auto!important;
+}
+
 .wrapper .samo_container div.logon-wrapper div.panel, .wrapper .samo_container div.logon-wrapper.person div.panel {
     padding: 24px;
     clear: both;
@@ -4201,12 +4245,15 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     border-radius: 0 !important;
 
     background-color: #fbf8f3 !important;
-    background-image: url(http://demo.loti.ru/Assets/images/cardBackgroud.jpg);
+    background-image: url("./images/Spis-60.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
 }
 
 .wrapper .samo_container div.logon-wrapper div.header div.legend {
-    font-size: 24px;
+    font-size: inherit;
     color: #666;
     padding-top: 25px;
     padding-bottom: 20px;
@@ -4244,7 +4291,8 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 }
 
 .wrapper .samo_container.hotel_stopsale {
-    margin-top: 360px;
+    margin-top: 100px;
+    margin-bottom: 100px;
     background-color: transparent;
 }
 
@@ -4254,7 +4302,10 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 
 
     background-color: #fbf8f3 !important;
-    background-image: url(http://demo.loti.ru/Assets/images/cardBackgroud.jpg);
+    background-image: url("./images/Spis-60.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .hotel_stopsale  .panel .load {
     padding: 8px 16px;
@@ -4285,7 +4336,6 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 
 
 .wrapper .samo_container.freight_monitor {
-    margin-top: 350px;
     background-color: transparent;
 }
 
@@ -4293,7 +4343,10 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     border-radius: 0px;
     box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
     background-color: #fbf8f3 !important;
-    background-image: url(http://demo.loti.ru/Assets/images/cardBackgroud.jpg);
+    background-image: url("./images/Spis-60.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     width: 960px !important;
 }
 
@@ -4354,7 +4407,6 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 
 
 .wrapper .samo_container.freight_time {
-    margin-top: 390px;
     background-color: transparent;
 }
 
@@ -4362,7 +4414,10 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     border-radius: 0px;
     box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
     background-color: #fbf8f3 !important;
-    background-image: url(http://demo.loti.ru/Assets/images/cardBackgroud.jpg);
+    background-image: url("./images/Spis-60.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     width: 960px !important;
 }
 
@@ -4421,7 +4476,6 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 
 .wrapper .samo_container.cl_refer {
     background: transparent;
-    margin-top: 240px;
     margin-bottom: 100px;
 }
 
@@ -4500,19 +4554,17 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 	background-color: transparent !important;
 }
 
-.wrapper #search_tour {
-	margin-top: 271px !important;
-}
-
 #registration {
-    margin-top: 300px !important;
 }
 
 #registration .panel {
     border-radius: 0 !important;
     box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
     background-color: #fbf8f3 !important;
-    background-image: url(http://demo.loti.ru/Assets/images/cardBackgroud.jpg);
+    background-image: url("./images/Spis-60.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
 }
 
@@ -4586,7 +4638,10 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     border-radius: 0 !important;
     box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
     background-color: #fbf8f3 !important;
-    background-image: url(http://demo.loti.ru/Assets/images/cardBackgroud.jpg);
+    background-image: url("./images/Spis-60.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
 }
 
@@ -4693,7 +4748,6 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 }
 
 #agreement {
-    margin-top: 396px;
 }
 #claim_unpaid {
     margin-top: 408px;
@@ -4714,7 +4768,10 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     border-radius: 0 !important;
     box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
     background-color: #fbf8f3 !important;
-    background-image: url(http://demo.loti.ru/Assets/images/cardBackgroud.jpg);
+    background-image: url("./images/Spis-60.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
 }
 
@@ -4777,7 +4834,10 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     border-radius: 0 !important;
     box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
     background-color: #fbf8f3 !important;
-    background-image: url(http://demo.loti.ru/Assets/images/cardBackgroud.jpg);
+    background-image: url("./images/Spis-60.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
 }
 
@@ -4855,7 +4915,10 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     border-radius: 0 !important;
     box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
     background-color: #fbf8f3 !important;
-    background-image: url(http://demo.loti.ru/Assets/images/cardBackgroud.jpg);
+    background-image: url("./images/Spis-60.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
 }
 
@@ -4934,7 +4997,10 @@ modal
 .modalTitle {
     border-bottom: 1px solid #cccccc !important;
     height: 40px !important;
-    background-image: url(http://demo.loti.ru/Assets/images/cardBackgroud.jpg);
+    background-image: url("./images/Spis-60.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     font-size: 14px !important;
     padding-top: 13px;
 }
@@ -4943,7 +5009,10 @@ modal
     border-radius: 0 !important;
     box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
     background-color: #fbf8f3 !important;
-    background-image: url(http://demo.loti.ru/Assets/images/cardBackgroud.jpg);
+    background-image: url("./images/Spis-60.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     padding-bottom: 15px;
 
 }
@@ -4991,7 +5060,10 @@ modal
     border-radius: 0 !important;
     box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
     background-color: #fbf8f3 !important;
-    background-image: url(http://demo.loti.ru/Assets/images/cardBackgroud.jpg);
+    background-image: url("./images/Spis-60.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     padding-bottom: 15px;
 
 }
@@ -5165,7 +5237,6 @@ modal
 
 
 .wrapper .samo_container.hotels {
-    margin-top: 354px;
     background-color: transparent; 
 }
 
@@ -5181,7 +5252,10 @@ modal
     border-radius: 0 !important;
     box-shadow: none;
     background-color: #fbf8f3 !important;
-    background-image: url(http://demo.loti.ru/Assets/images/cardBackgroud.jpg);
+    background-image: url("./images/Spis-60.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
 }
 
@@ -5483,7 +5557,6 @@ body {}
 
 .wrapper .samo_container table.std {
   border-spacing: 15px;
-  width: 960px !important;
   ruby-align: expression( runtimeStyle.rubyAlign = 'auto', cellSpacing = 15);
 }
 
