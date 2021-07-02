@@ -62,7 +62,7 @@ const browserSyncReload = done => {
   done()
 }
 
-const build = series(clean, parallel(html, styles, scripts, images, fonts, videos))
+const build = parallel(html, styles, scripts, images, fonts, videos)
 
 const watchFiles = () => watch("./src/**/*", series(build, browserSyncReload))
 

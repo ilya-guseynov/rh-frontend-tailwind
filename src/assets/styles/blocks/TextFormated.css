@@ -7,6 +7,29 @@
   color: #999999;
 }
 
+.TextFormated--LightGray b {
+  color: #252D27;
+}
+
+.TextFormated__LinkWithDowloadIcon {
+  display: flex;
+  align-items: center;
+
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.TextFormated__LinkWithDowloadIcon span {
+  margin-right: 20px;
+}
+
+.TextFormated a.TextFormated__BigGreenLink {
+  font-weight: bold;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: #285C2D;
+}
+
 .TextFormated--WhoWeAre {
   padding-bottom: 80px;
 }
