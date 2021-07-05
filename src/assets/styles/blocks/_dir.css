@@ -1,5 +1,5 @@
-@import "Fonts.css";
-/* @import "FontsLocal.css"; */
+/* @import "Fonts.css"; */
+@import "FontsLocal.css";
 @import "Container.css";
 @import "Header.css";
 @import "Menub2b.css";
@@ -28,4 +28,19 @@
 .RH__Body {
   font-family: "montserrat", sans-serif !important;
   margin: 0;
+}
+
+.RH__Wrapper {
+  min-height: 100vh;
+  position: relative;
+}
+
+.RH__Main {
+  padding-bottom: 550px;
+}
+
+@media (max-width: 768px) {
+  .RH__Main {
+    padding-bottom: 860px;
+  } 
 }
