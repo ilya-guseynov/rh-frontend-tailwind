@@ -109,7 +109,8 @@ doesnotexists:-o-prefocus, .wrapper .samo_container select, .wrapper .samo_conta
 }
 
 .wrapper .samo_container .panel {
-    background-image: url("./images/Spis-60.jpg");
+  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -675,7 +676,8 @@ div.eraser .overlays .motto .welcomeText {
 }
 
 #modalContainer  div.modalTitle, #logonContainer  div.modalTitle {
-  background-image: url("./images/Spis-60.jpg");
+  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
+  
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -3939,7 +3941,8 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 
 .wrapper #search_tour .direction.panel {
     margin-bottom: 0px; 
-    background-image: url("./images/Spis-60.jpg");
+  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -3969,7 +3972,8 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 
 .HOTELSCONTAINER {
 
-    background-image: url("./images/Spis-60.jpg");
+  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -4014,7 +4018,8 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 28%);
     border-radius: 0 !important;
     background-color: #fbf8f3 !important;
-    background-image: url("./images/Spis-60.jpg");
+  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -4056,7 +4061,8 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 }
 
 .userBackground {
-    background-image: url("./images/Spis-60.jpg");
+  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -4076,14 +4082,16 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 }
 
 .wrapper #search_tour .filters-panel {
-    background-image: url("./images/Spis-60.jpg");
+  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center; 
 }
 
 .wrapper #search_tour .footer {
-    background-image: url("./images/Spis-60.jpg");
+  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center; 
@@ -4107,7 +4115,8 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     border-radius: 0 !important;
     box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
     background-color: #fbf8f3 !important;
-    background-image: url("./images/Spis-60.jpg");
+  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -4245,7 +4254,8 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     border-radius: 0 !important;
 
     background-color: #fbf8f3 !important;
-    background-image: url("./images/Spis-60.jpg");
+  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -4302,7 +4312,8 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 
 
     background-color: #fbf8f3 !important;
-    background-image: url("./images/Spis-60.jpg");
+  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -4343,7 +4354,8 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     border-radius: 0px;
     box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
     background-color: #fbf8f3 !important;
-    background-image: url("./images/Spis-60.jpg");
+  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -4414,7 +4426,8 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     border-radius: 0px;
     box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
     background-color: #fbf8f3 !important;
-    background-image: url("./images/Spis-60.jpg");
+  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -4561,7 +4574,8 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     border-radius: 0 !important;
     box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
     background-color: #fbf8f3 !important;
-    background-image: url("./images/Spis-60.jpg");
+  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -4638,7 +4652,8 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     border-radius: 0 !important;
     box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
     background-color: #fbf8f3 !important;
-    background-image: url("./images/Spis-60.jpg");
+  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -4768,7 +4783,8 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     border-radius: 0 !important;
     box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
     background-color: #fbf8f3 !important;
-    background-image: url("./images/Spis-60.jpg");
+  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -4834,7 +4850,8 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     border-radius: 0 !important;
     box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
     background-color: #fbf8f3 !important;
-    background-image: url("./images/Spis-60.jpg");
+  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -4915,7 +4932,8 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     border-radius: 0 !important;
     box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
     background-color: #fbf8f3 !important;
-    background-image: url("./images/Spis-60.jpg");
+  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -4997,7 +5015,8 @@ modal
 .modalTitle {
     border-bottom: 1px solid #cccccc !important;
     height: 40px !important;
-    background-image: url("./images/Spis-60.jpg");
+  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -5009,7 +5028,8 @@ modal
     border-radius: 0 !important;
     box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
     background-color: #fbf8f3 !important;
-    background-image: url("./images/Spis-60.jpg");
+  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -5060,7 +5080,8 @@ modal
     border-radius: 0 !important;
     box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
     background-color: #fbf8f3 !important;
-    background-image: url("./images/Spis-60.jpg");
+  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -5252,7 +5273,8 @@ modal
     border-radius: 0 !important;
     box-shadow: none;
     background-color: #fbf8f3 !important;
-    background-image: url("./images/Spis-60.jpg");
+  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -5769,14 +5791,14 @@ body {}
   width: auto;
 }
 
-.wrapper #search_tour .additional {
+/* .wrapper #search_tour .additional {
   background: url('../../pict/packet_info.png') no-repeat;
   cursor: pointer;
   display: inline-block;
   height: 16px;
   vertical-align: middle;
   width: 16px;
-}
+} */
 
 .wrapper .samo_container .resultset .percent {
   cursor: pointer;
