@@ -1,0 +1,31 @@
+.ResortExpert__ContentPage {
+  margin-top: -60px;
+}
+
+@media (max-width: 768px) {
+  .ResortExpert__ContentPage {
+    margin-top: 0;
+  }
+}
+
+.ResortExpert__BackLinkContainer {}
+
+.ResortExpert__BackLink {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: #999999;
+}
+
+.ResortExpert__BackLink:hover {
+  color: #818181;
+}
+
+.ResortExpert__BackLinkIcon {
+  margin-right: 15px;
+}
+
+.ResortExpert__BackLinkText {
+  font-size: 16px;
+  line-height: 150%;
+}
