@@ -16,6 +16,17 @@
   transform: scaleX(-1);
 }
 
+.PagePreview--ResortExpert {
+  background-position-x: center;
+  background-position-y: 10%;
+}
+
+@media (max-width: 768px) {
+  .PagePreview--ResortExpert {
+    margin-bottom: 0;
+  }
+}
+
 @media (max-width: 768px) {
   .PagePreview--Country {
     height: 456px;
