@@ -106,3 +106,69 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.TextFormated p.TextFormated__BigText {
+  font-size: 22px;
+}
+
+.TextFormated table {
+  width: 100%;
+}
+
+.TextFormated__TableHeading {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 150%;
+  color: #000000;
+  border: 1px solid #C4C4C4;
+  padding: 20px 3%;
+}
+
+.TextFormated__TableHeading--Green {
+  background: #DFEDD6;
+  text-align: left;
+  width: 65%;
+}
+
+.TextFormated__TableHeading--Red {
+  background: #F8D6BC;
+  text-align: right;
+}
+
+.TextFormated td {
+  border: 1px solid #C4C4C4;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 150%;
+  color: black;
+  padding: 20px 3%;
+  text-align: right;
+}
+
+.TextFormated td:first-child {
+  color: #285C2D;
+  padding: 0 3%;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .TextFormated td, .TextFormated th {
+    font-size: 12px;
+  } 
+}
+
+.TextFormated__Table--MoreThanTwo .TextFormated__TableHeading--Green {
+  width: auto;
+}
+
+.TextFormated .TextFormated__Table--MoreThanTwo td {
+  text-align: center;
+}
+
+.TextFormated .TextFormated__Table--MoreThanTwo td:first-child {
+  text-align: left;
+}
+
+.TextFormated .TextFormated__Table--MoreThanTwo .TextFormated__TableHeading--Red {
+  text-align: center;
+}

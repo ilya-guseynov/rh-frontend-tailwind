@@ -62,3 +62,7 @@
 .RHAccordion--Active h2.RHAccordion__ActiveTextBlack {
   color: black;
 }
+
+.RHAccordion__RemoveLeftPadding {
+  margin-left: -50px;
+}
