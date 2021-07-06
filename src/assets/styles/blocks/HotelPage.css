@@ -24,7 +24,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background-color: rgba(0,0,0, .5);
+  background-color: rgba(0,0,0, .7);
   z-index: 90;
 }
 
@@ -45,21 +45,28 @@
   margin-bottom: 60px;
 }
 
-.HotelPage__PhotoSlider--Popup {
+.HotelPage__PhotoSliderPopupInner {
+  display: block;
   position: fixed!important;
   top: 150vh;
   left: 50%;
   z-index: 91;
   transform: translate(-50%, -50%);
   width: 90vw;
-  max-width: 800px;
-  height: 50vw;
-  max-height: 600px;
+  max-width: 1300px;
+  height: 90vw;
+  max-height: 1200px;
   transition: all .5s;
   opacity: 0;
 }
 
-.HotelPage__PhotoSliderContainer--Active .HotelPage__PhotoSlider--Popup {
+.HotelPage__PhotoSlider--Popup {
+  width: 100%;
+  height: 55vw;
+  max-height: 740px;
+}
+
+.HotelPage__PhotoSliderContainer--Active .HotelPage__PhotoSliderPopupInner {
   top: 50%;
   opacity: 1;
 }
@@ -142,7 +149,7 @@
 
 .HotelPage__PhotoSlider--Popup .HotelPage__PhotoSliderSlide {
   width: 90vw;
-  max-width: 800px;
+  max-width: 1300px;
   margin-right: 0!important;
 }
 
@@ -590,4 +597,68 @@
   .HotelPage__NomerPopupPhotoSlider .splide__arrow.splide__arrow--next > svg {
     transform: scale(3);
   }
+}
+
+.HotelPage__PhotoSliderCloseButtonContainer {
+  display: none;
+}
+
+.HotelPage__PhotoSliderContainer--Active .HotelPage__PhotoSliderCloseButtonContainer {
+  display: block;
+}
+
+.HotelPage__PhotoSliderCloseButton {
+  border: none;
+  outline: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+  position: fixed;
+  top: 65px;
+  right: 65px;
+  z-index: 91;
+  cursor: pointer;
+}
+
+.HotelPage__PhotoSliderCloseButtonImage {}
+
+.HotelPage__PhotoSliderSlideMedia {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.HotelPage__PhotoSliderSlideDescription {
+  background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E9CC65 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
+  font-weight: bold;
+  font-size: 20px;
+  text-align: right;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+  padding: 12px 52px 14px 0;
+  width: 100%;
+} 
+
+.HotelPage__PhotoSlider--Popup .HotelPage__PhotoSliderSlide {
+  display: flex;
+  flex-direction: column;
+}
+
+.HotelPage__PhotoSlider--PopupBottom .HotelPage__PhotoInnerShadow {
+  background: rgba(255,255,255, 0.6);
+}
+
+.HotelPage__PhotoSlider--PopupBottom .HotelPage__PhotoSliderSlide.is-active .HotelPage__PhotoInnerShadow {
+  background: none;
+}
+
+.HotelPage__PhotoSliderPopupTitle {
+  font-weight: 500;
+  font-size: 48px;
+  letter-spacing: -0.406154px;
+  color: #FFFFFF;
+  margin-bottom: 46px;
 }
