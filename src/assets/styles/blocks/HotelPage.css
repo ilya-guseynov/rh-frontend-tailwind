@@ -75,12 +75,41 @@
   background: none;
 }
 
+.HotelPage__PhotoSlider--Popup .splide__arrow {
+  top: 62vw;
+}
+
+@media (min-width: 1040px) {
+  .HotelPage__PhotoSlider--Popup .splide__arrow {
+    top: 62vw;
+  }
+}
+
+@media (min-width: 1340px) {
+  .HotelPage__PhotoSlider--Popup .splide__arrow {
+    top: 810px;
+  }
+}
+
 .HotelPage__PhotoSlider .splide__arrow > svg {
   fill: white;
 }
 
+.HotelPage__PhotoSlider--Popup .splide__arrow > svg {
+  fill: #333333;
+}
+
 .HotelPage__PhotoSlider .splide__arrow.splide__arrow--prev {
   left: 3em;
+}
+
+.HotelPage__PhotoSlider--Popup .splide__arrow.splide__arrow--prev {
+  left: 38%;
+  background: #FFFFFF;
+  width: 50px;
+  height: 50px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  padding-right: 10px;
 }
 
 .HotelPage__PhotoSlider .splide__arrow.splide__arrow--prev > svg {
@@ -92,11 +121,24 @@
 }
 
 .HotelPage__PhotoSlider--Popup .splide__arrow.splide__arrow--next {
-  right: 3em;
+  right: 38%;
+  background: #FFFFFF;
+  width: 50px;
+  height: 50px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  padding-left: 10px;
 }
 
 .HotelPage__PhotoSlider .splide__arrow.splide__arrow--next > svg {
   transform: scale(5);
+}
+
+.HotelPage__PhotoSlider--Popup .splide__arrow.splide__arrow--prev > svg {
+  transform: scale(-1);
+}
+
+.HotelPage__PhotoSlider--Popup .splide__arrow.splide__arrow--next > svg {
+  transform: scale(1);
 }
 
 @media (max-width: 768px) {
@@ -661,4 +703,13 @@
   letter-spacing: -0.406154px;
   color: #FFFFFF;
   margin-bottom: 46px;
+}
+
+.HotelPage__PhotoSliderPopupCounter {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 60px;
 }

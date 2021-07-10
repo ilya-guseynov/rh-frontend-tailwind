@@ -58,5 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
     splide.mount();
     splidePopup.mount();
     splidePopupBottom.mount();
+
+    splidePopup.on("move", () => {
+      document.querySelector(".HotelPage__PhotoSliderPopupCounter").innerHTML = `${ splidePopup.index + 1 }/${ splidePopup.length }`;
+    });
   }
 });
