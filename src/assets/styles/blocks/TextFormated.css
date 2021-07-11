@@ -172,3 +172,22 @@
 .TextFormated .TextFormated__Table--MoreThanTwo .TextFormated__TableHeading--Red {
   text-align: center;
 }
+
+.TextFormated__MantaList {
+  padding-left: 25px;
+}
+
+.TextFormated__MantaListItem {
+  display: flex;
+  align-items: center;
+}
+
+.TextFormated__MantaListItem:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.TextFormated__MantaListImage {
+  margin-right: 20px;
+}
+
+.TextFormated__MantaListText {}
