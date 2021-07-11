@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html class="RH__Page" lang="ru">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    @@include("./blocks/head-imports.html")
+
+    <title>RH | УДОБНЫЕ МЕТОДИЧКИ</title>
+  </head>
+
+  <body class="RH__Body">
+    <div class="RH__Wrapper">
+      @@include("./blocks/header-b2b.html")
+      <main class="RH__Main">
+        <section class="PagePreview PagePreview--ResortExpert" style="background-image: url('./assets/images/resort-expert-background-image.jpg');">
+          <div class="PagePreview__Inner Container">
+            <h1 class="PagePreview__Title">УДОБНЫЕ МЕТОДИЧКИ</h1>
+          </div>
+        </section>
+        <section class="InfoPageContent Container">
+          <div class="InfoPageContent__Aside">
+            <div class="InfoPageContent__AsideContent">
+              @@include("./blocks/infopage-aside.html")
+            </div>
+            <div class="InfoPageContent__AsideBorder"></div>
+          </div>
+          <div class="InfoPageContent__Main ResortExpert__ContentPage">
+            <div class="ResortExpert__BackLinkContainer">
+              <a class="ResortExpert__BackLink" href="#">
+                <img class="ResortExpert__BackLinkIcon" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta">
+                <div class="ResortExpert__BackLinkText">На главную RESORT EXPERT</div>
+              </a>
+            </div>
+            <div class="ResortExpert__ContentPageText TextFormated">
+              <h2>УДОБНЫЕ МЕТОДИЧКИ</h2>
+              <p><b>Иногда нужно переключаться.</b><br>
+                Мы все профессионалы, и в последние 1,5 года просто обязаны держать руку на пульсе 24\7.<br>
+                А еще мы все – личности с разносторонними интересами.<br>
+                Неформальное общение, где можно познакомиться и подружится, потому что вы любите одни и те же книги, одинаково увлекаетесь психологией, любите ландшафтный дизайн или что угодно другое – на наших неформальных мероприятиях мы сможем узнать друг друга с личной стороны, дарить друг другу положительные эмоции, немного отвлечься от туризма (или наоборот, найти решение своих вопросов) и строить бизнес на взаимном уважении, бизнес с человеческим лицом.</p>
+            </div>
+            <div class="TextFormated">
+              <h3>Предстоящие мероприятия</h3>
+            </div>
+            @@include("./blocks/re-events.html")
+          </div>
+        </section>
+        @@include("./blocks/banner-b2b.html")
+      </main>
+      @@include("./blocks/footer-b2b.html")
+    </div>
+
+    @@include('./blocks/scripts.html')
+  </body>
+
+</html>

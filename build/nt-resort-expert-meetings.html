@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="./assets/customer.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
 
     <title>RH | ВСТРЕЧИ И ОБЩЕНИЕ</title>
   </head>
@@ -481,9 +482,105 @@
             <div class="TextFormated">
               <h3>Предстоящие мероприятия</h3>
             </div>
-            <div>
-              RESORT EXPERT EVENTS
+            <div class="REEvents" id="resort-expert-events">
+              {{ city }}
             </div>
+            <script>
+              new Vue({
+                el: "#resort-expert-events",
+
+                data: function() {
+                  return {
+                    events: [
+                      {
+                        date: new Date(1, 1, 2021),
+                        time: "16:00",
+                        expertName: "Анна Володина",
+                        type: "Вебинар",
+                        title: "Правда и мифы о Мальдивах",
+                        country: "Мальдивы",
+                        city: "Москва",
+                      },
+                      {
+                        date: new Date(2, 3, 2021),
+                        time: "16:00",
+                        expertName: "Анна Володина",
+                        type: "Вебинар",
+                        title: "Правда и мифы о Мальдивах",
+                        country: "Мальдивы",
+                        city: "Москва",
+                      },
+                      {
+                        date: new Date(3, 2, 2021),
+                        time: "16:00",
+                        expertName: "Анна Володина",
+                        type: "Вебинар",
+                        title: "Правда и мифы о Мальдивах",
+                        country: "Мальдивы",
+                        city: "Москва",
+                      },
+                    ],
+                    city: "Город",
+                    asCalendar: false,
+                    currentMonthDisplay: new Date().getMonth(),
+                    currentYearDisplay: new Date().getFullYear(),
+                  };
+                },
+
+                computed: {
+                  cityOptions() {
+                    const cities = [];
+
+                    for (let event of this.events) {
+                      if (cities.indexOf(event.cities) < 0) {
+                        cities.push(event.city);
+                      }
+                    }
+
+                    return cities;
+                  },
+                },
+
+                methods: {
+                  monthNumberToString(monthNumber) {
+                    if (monthNumber > 11 || monthNumber < 0) {
+                      return `Месяц номер ${ monthNumber }`;
+                    }
+
+                    if (monthNumber === 0) {
+                      return "Январь";
+                    } else if (monthNumber === 1) {
+                      return "Февраль";
+                    } else if (monthNumber === 2) {
+                      return "Март";
+                    } else if (monthNumber === 3) {
+                      return "Апрель";
+                    } else if (monthNumber === 4) {
+                      return "Май";
+                    } else if (monthNumber === 5) {
+                      return "Июнь";
+                    } else if (monthNumber === 6) {
+                      return "Июль";
+                    } else if (monthNumber === 7) {
+                      return "Август";
+                    } else if (monthNumber === 8) {
+                      return "Сентябрь";
+                    } else if (monthNumber === 9) {
+                      return "Октябрь";
+                    } else if (monthNumber === 10) {
+                      return "Ноябрь";
+                    } else if (monthNumber === 11) {
+                      return "Декабрь";
+                    }
+                  },
+                },
+
+                mounted() {
+                  this.city = this.cityOptions[0];
+                  console.log(this.monthNumberToString(this.currentMonthDisplay), this.currentYearDisplay);
+                },
+              });
+            </script>
           </div>
         </section>
         <section class="Banner" style="background-image: url('./assets/images/banner-background.svg');">
