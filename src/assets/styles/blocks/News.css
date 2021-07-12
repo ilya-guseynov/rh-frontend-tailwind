@@ -55,3 +55,45 @@
   font-size: 16px;
   color: #999999;
 }
+
+ul.News__ArchiveList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 500px;
+}
+
+.News__ArchiveItem {
+  margin-bottom: 20px;
+}
+
+.News__ArchiveLink {
+  display: flex;
+  align-items: center;
+}
+
+a.News__ArchiveLink:hover {
+  color: #999999;
+}
+
+.News__ArchiveManta {
+  width: 32px;
+}
+
+.News__ArchiveTitle {}
+
+.News__ArchiveDate {
+  font-weight: 500;
+  font-size: 16px;
+  color: #999999;
+}
+
+.News__ArchiveReadMore {
+  font-weight: 500;
+  font-size: 16px;
+  color: #285C2D;
+}
+
+.News__ArchiveLink > *:not(:last-child) {
+  margin-right: 10px;
+}
