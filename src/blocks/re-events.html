@@ -1,5 +1,90 @@
 <div class="REEvents" id="resort-expert-events">
-  {{ city }}
+  <div class="REEvents__Controls">
+    <div class="REEvents__Month">
+      <div class="REEvents__MonthSwitchButtons">
+        <button @click="switchToPrevMonth" class="REEvents__MonthSwitchButton REEvents__MonthSwithButton--Prev">
+          <img class="REEvents__MonthSwitchButtonImage" src="./assets/images/to-left-month-arrow.svg" alt="to-left-month-arrow">
+        </button>
+        <button @click="switchToNextMonth" class="REEvents__MonthSwitchButton REEvents__MonthSwithButton--Next">
+          <img class="REEvents__MonthSwitchButtonImage" src="./assets/images/to-right-month-arrow.svg" alt="to-right-month-arrow">
+        </button>
+      </div>
+      <div class="REEvents__MonthDisplay">{{ currentMonthAndYearDisplay }}</div>
+    </div>
+    <div class="REEvents__CityAndDisplay">
+      <div class="REEvents__City">
+        <select v-model="city" class="REEvents__CitySelect">
+          <option v-for="city in cityOptions" :key="city" :value="city">{{ city }}</option>
+        </select>
+      </div>
+      <div class="REEvents__DisplaySwitchButtons">
+        <button v-if="asCalendar" @click="switchToShowAsCalendar" class="REEvents__DisplaySwitchButton">
+          <img class="REEvents__DisplaySwitchButtonImage" src="../assets/images/re-calendar-active.svg" alt="re-calendar-active">
+        </button>
+        <button v-else @click="switchToShowAsCalendar" class="REEvents__DisplaySwitchButton">
+          <img class="REEvents__DisplaySwitchButtonImage" src="../assets/images/re-calendar-inactive.svg" alt="re-calendar-inactive">
+        </button>
+        <button v-if="!asCalendar" @click="switchToShowAsList" class="REEvents__DisplaySwitchButton">
+          <img class="REEvents__DisplaySwitchButtonImage" src="../assets/images/re-list-active.svg" alt="re-list-active">
+        </button>
+        <button v-else @click="switchToShowAsList" class="REEvents__DisplaySwitchButton">
+          <img class="REEvents__DisplaySwitchButtonImage" src="../assets/images/re-list-inactive.svg" alt="re-list-inactive">
+        </button>
+      </div>
+    </div>
+  </div>
+  <div v-if="asCalendar" class="REEvents__Calendar">
+    <div v-for="displayDate in currentMonthDaysToDisplay" :key="displayDate.id" class="REEvents__CalendarItem">
+      <div class="REEvents__CalendarItemInner">
+        <div v-if="!displayDate.empty" class="REEvents__CalendarItemInfo">
+          <div class="REEvents__CalendarItemDayInfo">
+            <div class="REEvents__CalendarItemWeekDay">{{ weekDayNumberoString(displayDate.weekDayNumber) }}</div>
+            <div class="REEvents__CalendarItemDayNumber">{{ dayNumberToZeroNotation(displayDate.dayNumber) }}</div>
+          </div>
+          <div v-if="displayDate.hasEvent" class="REEvents__CalendarItemEventInfo">
+            <div class="REEvents__CalendarItemEventTime">{{ displayDate.event.time }}</div>
+            <div class="REEvents__CalendarItemEventType">{{ displayDate.event.type }}</div>
+          </div>
+        </div>
+        <div v-else style="opacity: 0; height: 100%; width: 100%;">empty</div>
+      </div>
+    </div>
+  </div>
+  <div v-else class="REEvents__ListContainer">
+    <ul class="REEvents__List">
+      <li v-for="item in itemsToDisplayAsList" class="REEvents__ListItem">  
+        <div class="REEvent__ListItemTop">
+          <div class="REEvent__ListItemNameBlock">
+            <img class="REEvent__ListItemMantaImage" src="../assets/images/re-list-manta.svg" alt="re-list-manta">
+            <div class="REEvent__ListItemNameContainer">
+              <div class="REEvent__ListItemName">{{ item.expertName }}</div>
+              <div class="REEvent__ListItemExpertSubTitle">Эксперт Направления</div>
+            </div>
+          </div>
+          <div class="REEvent__ListItemDateBlock">
+            <div class="REEvent__ListItemDateContainer">
+              <span class="REEvent__ListItemDate">{{ dayNumberToZeroNotation(item.date.getDate()) }}</span>
+              <span class="REEvent__ListItemDay">{{ weekDayNumberoString(item.date.getUTCDay() ) }}</span>
+            </div>
+            <div class="REvent__ListItemTimeContainer">{{ item.time }}</div>
+          </div>
+        </div>
+        <div class="REEvent__ListItemType">{{ item.type }}</div>
+        <div class="REEvent__ListItemEventBlock">
+          <div class="REEvent__ListItemEventCountry">{{ item.country }}</div>
+          <div class="REEvent__ListItemEventTitle">{{ item.title }}</div>
+        </div>
+        <div class="REEvent__ListItemSignupBlock">
+          <button class="REEvent__ListItemSignupButton">Участвовать</button>
+        </div>
+      </li>
+    </ul>
+    <div v-if="canShowMore" class="REEvents__ShowMoreButtonContainer">
+      <button @click="showMore" class="REEvents__ShowMoreButton">
+        <div class="REEvents__ShowMoreButtonInner">Показать больше</div>
+      </button>
+    </div>
+  </div>
 </div>
 <script>
   new Vue({
@@ -9,7 +94,7 @@
       return {
         events: [
           {
-            date: new Date(1, 1, 2021),
+            date: new Date(2021, 6, 2),
             time: "16:00",
             expertName: "Анна Володина",
             type: "Вебинар",
@@ -18,7 +103,7 @@
             city: "Москва",
           },
           {
-            date: new Date(2, 3, 2021),
+            date: new Date(2021, 6, 3),
             time: "16:00",
             expertName: "Анна Володина",
             type: "Вебинар",
@@ -27,37 +112,148 @@
             city: "Москва",
           },
           {
-            date: new Date(3, 2, 2021),
+            date: new Date(2021, 6, 4),
             time: "16:00",
             expertName: "Анна Володина",
             type: "Вебинар",
             title: "Правда и мифы о Мальдивах",
             country: "Мальдивы",
             city: "Москва",
+          },
+          {
+            date: new Date(2021, 6, 10),
+            time: "16:00",
+            expertName: "Анна Володина",
+            type: "Вебинар",
+            title: "Правда и мифы о Мальдивах",
+            country: "Мальдивы",
+            city: "Не Москва",
+          },
+          {
+            date: new Date(2021, 6, 12),
+            time: "16:00",
+            expertName: "Анна Володина",
+            type: "Вебинар",
+            title: "Правда и мифы о Мальдивах",
+            country: "Мальдивы",
+            city: "Не Москва",
           },
         ],
         city: "Город",
         asCalendar: false,
+        listShowCount: 3,
         currentMonthDisplay: new Date().getMonth(),
         currentYearDisplay: new Date().getFullYear(),
       };
     },
 
     computed: {
+      canShowMore() {
+        return this.listShowCount < this.events.length;
+      },
+
+      itemsToDisplayAsList() {
+        return this.events.filter((event, index) => index < this.listShowCount);
+      },
+
       cityOptions() {
         const cities = [];
 
         for (let event of this.events) {
-          if (cities.indexOf(event.cities) < 0) {
+          if (cities.indexOf(event.city) < 0) {
             cities.push(event.city);
           }
         }
 
         return cities;
       },
+
+      currentMonthAndYearDisplay() {
+        return `${ this.monthNumberToString(this.currentMonthDisplay) } ${ this.currentYearDisplay }`;
+      },
+
+      currentMonthDaysToDisplay() {
+        const daysCountInCurrentMonth = new Date(this.currentYearDisplay, this.currentMonthDisplay, 0).getDate();
+        const days = [];
+
+        for (let dayNumber = 1; dayNumber <= daysCountInCurrentMonth; dayNumber++) {
+          const dateToDisplay = new Date(this.currentYearDisplay, this.currentMonthDisplay, dayNumber);
+
+          const dayData = {
+            empty: false,
+            id: Math.random().toString(),
+            weekDayNumber: dateToDisplay.getUTCDay(),
+            dayNumber,
+          };
+
+          dayData.hasEvent = false;
+          dayData.event = null;
+
+          this.events.forEach(e => {
+            if (e.date.toString() === dateToDisplay.toString()) {
+              dayData.hasEvent = true;
+              dayData.event = e;
+            }
+          });
+
+          days.push(dayData);
+        }
+
+        for (let weekDayNumber = 6; weekDayNumber >= 0; weekDayNumber--) {
+          if (days[0].weekDayNumber > weekDayNumber) {
+            days.unshift({
+              empty: true,
+              id: Math.random().toString(),
+              weekDayNumber: weekDayNumber,
+            });
+          }
+        }
+
+        for (let weekDayNumber = 0; weekDayNumber <= 6; weekDayNumber++) {
+          if (days[days.length - 1].weekDayNumber < weekDayNumber) {
+            days.push({
+              empty: true,
+              id: Math.random().toString(),
+              weekDayNumber: weekDayNumber,
+            });
+          }
+        }
+
+        return days;
+      },
     },
 
     methods: {
+      showMore() {
+        this.listShowCount += 1;
+      },
+
+      dayNumberToZeroNotation(dayNumber) {
+        if (dayNumber < 10) {
+          return `0${ dayNumber }`;
+        } else {
+          return `${ dayNumber }`;
+        }
+      },
+
+      weekDayNumberoString(weekDayNumber) {
+        if (weekDayNumber === 0) {
+          return "Пн";
+        } else if (weekDayNumber === 1) {
+          return "Вт";
+        } else if (weekDayNumber === 2) {
+          return "Ср";
+        } else if (weekDayNumber === 3) {
+          return "Чт";
+        } else if (weekDayNumber === 4) {
+          return "Пт";
+        } else if (weekDayNumber === 5) {
+          return "Сб";
+        } else if (weekDayNumber === 6) {
+          return "Вс";
+        }
+      },
+
       monthNumberToString(monthNumber) {
         if (monthNumber > 11 || monthNumber < 0) {
           return `Месяц номер ${ monthNumber }`;
@@ -89,11 +285,36 @@
           return "Декабрь";
         }
       },
+
+      switchToNextMonth() {
+        if (this.currentMonthDisplay === 11) {
+          this.currentMonthDisplay = 0;
+          this.currentYearDisplay += 1;
+        } else {
+          this.currentMonthDisplay += 1;
+        }
+      },
+
+      switchToPrevMonth() {
+        if (this.currentMonthDisplay === 0) {
+          this.currentMonthDisplay = 11;
+          this.currentYearDisplay -= 1;
+        } else {
+          this.currentMonthDisplay -= 1;
+        }
+      },
+
+      switchToShowAsCalendar() {
+        this.asCalendar = true;
+      },
+
+      switchToShowAsList() {
+        this.asCalendar = false;
+      },
     },
 
     mounted() {
       this.city = this.cityOptions[0];
-      console.log(this.monthNumberToString(this.currentMonthDisplay), this.currentYearDisplay);
     },
   });
 </script>

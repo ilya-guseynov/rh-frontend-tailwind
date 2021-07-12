@@ -1,0 +1,291 @@
+.REEvents {
+  margin-bottom: 400px;
+}
+
+.REEvents__Controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.REEvents__Month {
+  display: flex;
+  align-items: center;
+}
+
+.REEvents__MonthSwitchButtons {
+  margin-right: 18px;
+}
+
+.REEvents__MonthSwitchButton {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+.REEvents__MonthSwitchButton--Prev {}
+
+.REEvents__MonthSwitchButton--Next {}
+
+.REEvents__MonthSwitchButtonImage {}
+
+.REEvents__MonthDisplay {
+  font-weight: bold;
+  font-size: 21px;
+  color: #000000;
+}
+
+.REEvents__CityAndDisplay {
+  display: flex;
+  align-items: center;
+}
+
+.REEvents__City {
+  margin-right: 30px;
+}
+
+.REEvents__CitySelect {
+  font-weight: bold;
+  font-size: 17px;
+  color: #999999;
+  border: none;
+  outline: none;
+  background: none;
+  padding-right: 30px;
+  font-family: inherit;
+}
+
+.REEvents__DisplaySwitchButtons {
+  display: flex;
+  align-items: center;
+}
+
+.REEvents__DisplaySwitchButton {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.REEvents__DisplaySwitchButton:not(:last-child) {
+  margin-right: 25px;
+}
+
+.REEvents__DisplaySwitchButtonImage {}
+
+.REEvents__Calendar {
+  font-size: 0;
+  text-align: center;
+}
+
+.REEvents__CalendarItem {
+  width: 14%;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .5px;
+  flex-shrink: 0;
+  vertical-align: top;
+}
+
+.REEvents__CalendarItemInner {
+  border: 1px solid #efefef;
+  width: 100%;
+  height: 8vw;
+  max-height: 108px;
+  padding: 6px 12px;
+  box-sizing: border-box;
+}
+
+.REEvents__CalendarItemInfo {
+  cursor: pointer;
+}
+
+.REEvents__CalendarItemDayInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.REEvents__CalendarItemWeekDay {
+  font-size: 11px;
+  line-height: 13px;
+  color: #606060;
+}
+
+.REEvents__CalendarItemDayNumber {
+  font-weight: 300;
+  font-size: 18px;
+  color: #767676;
+}
+
+.REEvents__CalendarItemEventInfo {}
+
+
+.REEvents__CalendarItemEventTime {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 14px;
+  color: #CACACA;
+  margin-bottom: 5px;
+  transition: all .2s;
+}
+
+.REEvents__CalendarItemEventType {
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 14px;
+  color: #CACACA;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: all .2s;
+}
+
+.REEvents__CalendarItem:hover .REEvents__CalendarItemEventTime, 
+.REEvents__CalendarItem:hover .REEvents__CalendarItemEventType {
+  font-weight: bold;
+  color: #285C2D;
+}
+
+.REEvents__ListContainer {}
+
+.REEvents__List {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.REEvents__ListItem {
+  margin-bottom: 80px;
+}
+
+.REEvent__ListItemTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.REEvent__ListItemNameBlock {
+  display: flex;
+  align-items: center;
+}
+
+.REEvent__ListItemMantaImage {
+  margin-right: 25px;
+  width: 85px;
+}
+
+.REEvent__ListItemNameContainer {}
+
+.REEvent__ListItemName {
+  font-weight: bold;
+  font-size: 30px;
+  color: #000000;
+}
+
+.REEvent__ListItemExpertSubTitle {
+  font-weight: bold;
+  font-size: 15px;
+  color: #999999;
+}
+
+.REEvent__ListItemDateBlock {}
+
+.REEvent__ListItemDateContainer {}
+
+.REEvent__ListItemDate {
+  font-weight: bold;
+  font-size: 24px;
+  color: #333333;
+}
+
+.REEvent__ListItemDay {
+  font-size: 14px;
+  color: #606060;
+}
+
+.REvent__ListItemTimeContainer {
+  font-weight: bold;
+  font-size: 24px;
+  color: #333333;
+}
+
+.REEvent__ListItemType {
+  background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E9CC65 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  padding: 13px 46px;
+  margin-bottom: 40px;
+}
+
+.REEvent__ListItemEventBlock {
+  padding-left: 110px;
+  margin-bottom: 50px;
+}
+
+.REEvent__ListItemEventCountry {
+  font-weight: bold;
+  font-size: 20px;
+  color: #333333;
+}
+
+.REEvent__ListItemEventTitle {
+  font-size: 20px;
+  color: #868686;
+}
+
+.REEvent__ListItemSignupBlock {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.REEvent__ListItemSignupButton {
+  background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E9CC65 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 270px;
+  font-family: inherit;
+}
+
+.REEvents__ShowMoreButtonContainer {}
+
+.REEvents__ShowMoreButton {
+  width: 100%;
+  background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E9CC65 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
+  padding: 2px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.REEvents__ShowMoreButtonInner {
+  background: white;
+  font-weight: bold;
+  font-size: 16px;
+  color: #999999;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
