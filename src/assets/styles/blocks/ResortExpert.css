@@ -33,3 +33,81 @@
 .ResortExpert__ContentPageText {
   margin-bottom: 60px;
 }
+
+.ResortExpert__TitleWithManta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.ResortExpert__TitleWithMantaImage {
+  margin-right: 32px;
+}
+
+.ResortExpert__TitleWithMantaText {
+  font-weight: bold;
+  font-size: 24px;
+  color: #333333;
+}
+
+.ResortExpert__MetodicsListContainer {
+  display: flex;
+  justify-content: space-between;
+  max-height: 500px;
+}
+
+@media (max-width: 768px) {
+  .ResortExpert__MetodicsListContainer {
+    display: block;
+    max-height: none;
+  } 
+}
+
+.ResortExpert__MetodicsListImageContainer {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: none;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .ResortExpert__MetodicsListImageContainer {
+    width: 100%;
+    margin-bottom: 60px;
+  } 
+}
+
+.ResortExpert__MetodicsListImage {
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .ResortExpert__MetodicsListImage {
+    width: 100%;
+    height: auto;
+  } 
+}
+
+.ResortExpert__ContentPage ul.ResortExpert__MetodicsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ResortExpert__ContentPage li.ResortExpert__MetodicsListItem {
+  display: flex;
+  justify-content: center;
+}
+
+.ResortExpert_MetodicsListLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 230px;
+}
+
+.ResortExpert__MetodicsListText {}
+
+.ResortExpert__MetodicsListPdfIcon {}
