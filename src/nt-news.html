@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html class="RH__Page" lang="ru">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    @@include("./blocks/head-imports.html")
+
+    <title>RH | Новости</title>
+  </head>
+
+  <body class="RH__Body">
+    <div class="RH__Wrapper">
+      @@include("./blocks/header-b2b.html")
+      <main class="RH__Main">
+        <section class="PagePreview PagePreview--ResortExpert" style="background-image: url('./assets/images/news-bg.jpg');">
+          <div class="PagePreview__Inner Container">
+            <h1 class="PagePreview__Title">Новости</h1>
+          </div>
+        </section>
+        <section class="InfoPageContent Container">
+          <div class="InfoPageContent__Aside">
+            <div class="InfoPageContent__AsideContent">
+              @@include("./blocks/infopage-aside.html")
+            </div>
+            <div class="InfoPageContent__AsideBorder"></div>
+          </div>
+          <div class="InfoPageContent__Main ResortExpert__ContentPage">
+            <div class="ResortExpert__BackLinkContainer">
+              <a class="ResortExpert__BackLink" href="#">
+                <img class="ResortExpert__BackLinkIcon" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta">
+                <div class="ResortExpert__BackLinkText">На главную</div>
+              </a>
+            </div>
+            <div class="ResortExpert__ContentPageText TextFormated TextFormated--LightGray">
+              <h2>Новости</h2>
+              <div class="News__TitleBlock">
+                <div class="News__TitleBlockLeft">
+                  <img class="News__TitleBlockImage" src="./assets/images/re-list-manta.svg" alt="manta">
+                  <div class="News__TitleBlockText">Мальдивы становятся ближе</div>
+                </div>
+                <div class="News__TitleBlockRight">22.05.2021</div>
+              </div>
+              <p>26-го мая 2021 года компания Resort Life Travel объявила о запуске нового проекта – туристического оператора в Москве. Современный офис площадью 259 кв. м. в деловом центре “Савеловский-Сити” уже начал работу.</p>
+              <p>Resort Life Travel – компания, которая 15 лет занимается приемом туристов на Мальдивах и на данный момент обслуживает 80% организованного туризма из России и стран СНГ. Вслед за офисами в Украине, Индии и Малайзии, компания выходит на новый уровень и открывает первый офис в России. Он сосредоточится не только на приеме гостей на Мальдивах, но и возьмет на себя все функции организации на стороне отправки туристов.</p>
+              <p>Коллектив Resort Holiday составляют профессионалы туриндустрии: средний стаж работы руководящего менеджмента в сфере организации путешествий - 30 лет, а каждый член команды работает в туризме минимум 5 лет. Тесное взаимодействие с офисом в Мале позволит оперативно разрешать любые вопросы на благо гостей и клиентов.</p>
+              <p>Флагманское направление компании – Мальдивы, но не смотря на это Resort Holiday намеревается развивать и другие экзотические направления. У компании амбициозные цели: Resort Holiday планирует вести туристический бизнес на российском рынке по-новому, предоставлять высокий уровень сервиса на всех этапах работы с клиентом – от подбора тура до возвращения клиента домой.</p>
+              <p>Уже сейчас можно забронировать поездки с датой заезда начиная с 27.05.2021 до 31.03.2022 включительно. Resort Holiday ведет работу над выводом туров на базу регулярной перевозки, а также расширением ассортимента направлений.</p>
+              <p>Первые клиенты, улетевшие на Мальдивы с Resort Holiday, уже успели насладиться островами и оставить первые отзывы о своем отдыхе.</p>
+              <p>С интервью ТОП-менеджмента компании можно ознакомиться здесь.</p>
+              <div class="News__GoldDivider"></div>
+              <a class="News__FullWidthLink" href="#">
+                <div class="News__FullWidthLinkInner">Архив новостей</div>
+              </a>
+            </div>
+          </div>
+        </section>
+        @@include("./blocks/banner-b2b.html")
+      </main>
+      @@include("./blocks/footer-b2b.html")
+    </div>
+
+    @@include('./blocks/scripts.html')
+  </body>
+
+</html>
