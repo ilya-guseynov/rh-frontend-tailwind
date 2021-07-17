@@ -557,9 +557,9 @@
   z-index: 91;
   transform: translate(-50%, -50%);
   width: 90vw;
-  max-width: 800px;
+  max-width: 1000px;
   height: 50vw;
-  max-height: 600px;
+  max-height: 800px;
   transition: all .5s;
   opacity: 0;
 }
