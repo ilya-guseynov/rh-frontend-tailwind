@@ -40,9 +40,13 @@ document.addEventListener("DOMContentLoaded", () => {
     splidePopupBottom.sync(splidePopup);
 
     splide.on("click", () => {
-      splidePopup.go(splide.index);
-      splidePopupBottom.go(splide.index);
-      document.querySelector(".HotelPage__PhotoSliderContainer").classList.add("HotelPage__PhotoSliderContainer--Active");      
+      const mobileWidthLimit = 769;
+
+      if (window.innerWidth >= mobileWidthLimit) {
+        splidePopup.go(splide.index);
+        splidePopupBottom.go(splide.index);
+        document.querySelector(".HotelPage__PhotoSliderContainer").classList.add("HotelPage__PhotoSliderContainer--Active");      
+      }
     });
 
     document.querySelector(".HotelPage__PhotoSliderScreenLock").addEventListener("click", () => {
