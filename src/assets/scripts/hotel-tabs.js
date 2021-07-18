@@ -97,5 +97,7 @@
     });
   });
 
-  document.querySelector("[hotel-tab-trigger-index='1']").click();
+  if (document.querySelector("[hotel-tab-trigger-index='1']")) {
+    document.querySelector("[hotel-tab-trigger-index='1']").click();
+  }
 })();
