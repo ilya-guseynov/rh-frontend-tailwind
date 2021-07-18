@@ -96,4 +96,6 @@
       }
     });
   });
+
+  document.querySelector("[hotel-tab-trigger-index='1']").click();
 })();
