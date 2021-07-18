@@ -2,6 +2,24 @@
   margin-bottom: 110px;
 }
 
+.Team__Heading {
+  padding-left: 5%;
+  margin-bottom: 90px;
+  display: flex;
+  align-items: center;
+}
+
+.Team__HeadingText {
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 39px;
+  text-transform: uppercase;
+  color: #252D27;
+  margin-right: 30px;
+}
+
+.Team__HeadingIcon {}
+
 .Team__List {
   list-style: none;
   margin: 0;
