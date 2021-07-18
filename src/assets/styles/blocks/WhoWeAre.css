@@ -1,0 +1,80 @@
+.WhoWeAre {}
+
+.WhoWeAre__Section {
+  margin-bottom: 140px;
+}
+
+.WhoWeAre__SectionHeading {
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 120%;
+  letter-spacing: 1px;
+  color: #000000;
+  margin-bottom: 86px;
+}
+
+.WhoWeAre__SectionContent {
+  display: flex;
+  justify-content: space-between;
+}
+
+.WhoWeAre__Speaker {
+  width: 360px;
+  margin-right: 55px;
+  flex-shrink: 0;
+}
+
+.WhoWeAre__ImageContainer {
+  position: relative;
+  height: 470px;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.WhoWeAre__ImageBackground, .WhoWeAre__ImageWrapper {
+  position: absolute;
+  height: 95%;
+}
+
+.WhoWeAre__ImageBackground {
+  width: 85%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E9CC65 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
+}
+
+.WhoWeAre__ImageWrapper {
+  width: 95%;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.WhoWeAre__Image {
+  height: 110%;
+}
+
+.WhoWeAre__SpeakerInfo {}
+
+.WhoWeAre__SpeakerName {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #285C2D;
+}
+
+.WhoWeAre__SpeakerJob {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #285C2D;
+  }
+
+.WhoWeAre__Text {
+  font-size: 16px;
+  line-height: 170%;
+  color: #999999;
+}
