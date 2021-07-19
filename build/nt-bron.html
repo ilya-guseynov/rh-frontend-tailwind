@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html class="RH__Page" lang="ru">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./assets/customer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+
+    <title>RH | Правила Бронирования</title>
+  </head>
+
+  <body class="RH__Body">
+    <div class="RH__Wrapper">
+      <header class="Header">
+        <div class="Header__TopSection">
+          <div class="Container Container--Large">
+            <div class="Header__TopSectionInner Header__TopSectionInner--Mobile">
+              <div class="Header__Location Header__Location--TopSection">
+                <img class="Header__LocationIcon" src="./assets/images/icons/near-me-icon.svg" alt="near-me-icon">
+                <div class="Header__LocationText">Москва и МО</div>
+              </div>
+              <div class="Header__Currency Header__Currency--TopSection">
+                <span class="Header__CurrencyTitle">Курс</span>
+                <span class="Header__CurrencyTicker">
+                  <span class="Header__CurrencyTickerName">USD</span> <span class="Header__CurrencyTickerValue">74.90</span>
+                </span>
+                <span class="Header__CurrencyTickerDivider">|</span>
+                <span class="Header__CurrencyTicker">
+                  <span class="Header__CurrencyTickerName">EUR</span> <span class="Header__CurrencyTickerValue">91.30</span>
+                </span>
+              </div>
+            </div>
+            <div class="Header__TopSectionInner Header__TopSectionInner--Desktop">
+              <div class="Header__Socials">
+                <a class="Header__SocialsLink" href="#">
+                  <img class="Header__SocialsIcon" src="./assets/images/icons/instagram-icon.svg" alt="instagram-icon">
+                </a>
+                <a class="Header__SocialsLink" href="#">
+                  <img class="Header__SocialsIcon" src="./assets/images/icons/facebook-icon.svg" alt="facebook-icon">
+                </a>
+                <a class="Header__SocialsLink" href="#">
+                  <img class="Header__SocialsIcon" src="./assets/images/icons/youtube-icon.svg" alt="youtube-icon">
+                </a>
+              </div>
+              <div class="Header__Navigation">
+                <ul class="Header__NavigationList">
+                  <li class="Header__NavigationItem">
+                    <a class="Header__NavigationLink" href="#">
+                      <img class="Header__NavigationIcon" src="./assets/images/icons/gold-manta-icon.svg" alt="gold-manta-icon">
+                      <div class="Header__NavigationLinkText">Club Privé</div>
+                    </a>
+                  </li>
+                  <li class="Header__NavigationItem">
+                    <a class="Header__NavigationLink" href="#">
+                      <img class="Header__NavigationIcon" src="./assets/images/icons/account-icon.svg" alt="account-icon">
+                      <div class="Header__NavigationLinkText">Личный кабинет агента</div>
+                    </a>
+                  </li>
+                  <li class="Header__NavigationItem">
+                    <a class="Header__NavigationLink" href="#">
+                      <img class="Header__NavigationIcon" src="./assets/images/icons/telegram-icon.svg" alt="telegram-icon">
+                      <div class="Header__NavigationLinkText">TELEGRAM для агентов</div>
+                    </a>
+                  </li>
+                  <li class="Header__NavigationItem">
+                    <button class="Header__NavigationLink Feedback__Trigger" href="#">
+                      <img class="Header__NavigationIcon" src="./assets/images/icons/feedback-icon.svg" alt="feedback-icon">
+                      <div class="Header__NavigationLinkText">Обратная связь</div>
+                    </button>
+                  </li>
+                  <li class="Header__NavigationItem">
+                    <a class="Header__NavigationLink" href="#">
+                      <img class="Header__NavigationIcon" src="./assets/images/icons/move-icon.svg" alt="move-icon">
+                      <div class="Header__NavigationLinkText">Туристам</div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="Header__BottomSection">
+          <div class="Container Container--Large">
+            <div class="Header__BottomSectionInner Header__BottomSectionInner--Mobile">
+              <a class="Header__LogoLink" href="#">
+                <img class="Header__LogoImage" src="./assets/images/logo.svg" alt="logo">
+              </a>
+              <div class="Header__BottomSectionMobileTriggers">
+                <div class="Header__BottomSectionMobileContacts">
+                  <button class="Header__BottomSectionContactTrigger Header__BottomSectionContactTrigger--Feedback">
+                    <img class="Header__BottomSectionContactIcon" src="./assets/images/icons/feedback-gold-bottom-icon.svg" alt="feedback">
+                  </button>
+                  <a class="Header__BottomSectionContactTrigger Header__BottomSectionContactTrigger--Phone" href="#">
+                    <img class="Header__BottomSectionContactIcon" src="./assets/images/icons/phone-icon.svg" alt="feedback">
+                  </a>
+                </div>
+                <button class="Header__BottomSectionMobileSidebarTrigger mobile-sidebar-trigger">
+                  <img class="Header__BottomSectionMobileSidebarTriggerIcon" src="./assets/images/icons/open-menu-icon.svg" alt="open-menu-icon">
+                </button>
+              </div>
+            </div>
+            <div class="Header__BottomSectionInner Header__BottomSectionInner--Desktop">
+              <div class="Header__BottomSectionDesktopLeft">
+                <a class="Header__LogoLink Header__LogoLink--Desktop" href="#">
+                  <img class="Header__LogoImage" src="./assets/images/logo.svg" alt="logo">
+                </a>
+                <div class="Header__BottomSectionContacts">
+                  <img class="Header__BottomSectionDesktopContactsIcon" src="./assets/images/icons/gold-phone-icon.svg" alt="phone">
+                  <div class="Header__BottomSectionPhones">
+                    <a class="Header__BottomSectionPhoneLink" href="#">+7 495 266-63-77</a>
+                    <a class="Header__BottomSectionPhoneLink" href="#">+7 800 100-19-70</a>
+                  </div>
+                </div>
+              </div>
+              <div class="Header__BottomSectionDesktopRight">
+                <div class="Header__Currency Header__Currency--BottomSection">
+                  <span class="Header__CurrencyTitle">Курс</span>
+                  <span class="Header__CurrencyTicker">
+                    <span class="Header__CurrencyTickerName">USD</span> <span class="Header__CurrencyTickerValue">74.90</span>
+                  </span>
+                  <span class="Header__CurrencyTickerDivider">|</span>
+                  <span class="Header__CurrencyTicker">
+                    <span class="Header__CurrencyTickerName">EUR</span> <span class="Header__CurrencyTickerValue">91.30</span>
+                  </span>
+                </div>
+                <div class="Header__Location Header__Location--BottomSection">
+                  <img class="Header__LocationIcon" src="./assets/images/icons/near-me-icon.svg" alt="near-me-icon">
+                  <div class="Header__LocationText">Москва и МО</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="MobileSidebar">
+          <div class="MobileSidebar__ScreenLock"></div>
+          <div class="MobileSidebar__Content">
+            <div class="MobileSidebar__Inner">
+              <div class="MobileSidebar__FirstContentBlock">
+                <ul class="MobileSidebar__FirstContentList">
+                  <li class="MobileSidebar__FirstContentItem">
+                    <a class="MobileSidebar__FirstContentLink" href="#">
+                      <img class="MobileSidebar__FirstContentIcon" src="./assets/images/icons/move-icon.svg" alt="move">
+                      <div class="MobileSidebar__FirstContentText">Туристам</div>
+                    </a>
+                  </li>
+                  <li class="MobileSidebar__FirstContentItem">
+                    <a class="MobileSidebar__FirstContentLink href="#">
+                      <img class="MobileSidebar__FirstContentIcon" src="./assets/images/icons/account-icon.svg" alt="move">
+                      <div class="MobileSidebar__FirstContentText">Личный кабинет агента</div>
+                    </a>
+                  </li>
+                  <li class="MobileSidebar__FirstContentItem">
+                    <a class="MobileSidebar__FirstContentLink" href="#">
+                      <img class="MobileSidebar__FirstContentIcon" src="./assets/images/icons/telegram-icon.svg" alt="move">
+                      <div class="MobileSidebar__FirstContentText">TELEGRAM для агентов</div>
+                    </a>
+                  </li>
+                  <li class="MobileSidebar__FirstContentItem">
+                    <a class="MobileSidebar__FirstContentLink" href="#">
+                      <img class="MobileSidebar__FirstContentIcon" src="./assets/images/icons/feedback-icon.svg" alt="move">
+                      <div class="MobileSidebar__FirstContentText">Обратная связь</div>
+                    </a>
+                  </li>
+                  <li class="MobileSidebar__FirstContentItem">
+                    <a class="MobileSidebar__FirstContentLink" href="#">
+                      <img class="MobileSidebar__FirstContentIcon" src="./assets/images/icons/gold-manta-icon.svg" alt="move">
+                      <div class="MobileSidebar__FirstContentText">CLUB Privé</div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="MobileSidebar__SecondContentBlock">
+                <ul class="MobileSidebar__SecondContentList">
+                  <li class="MobileSidebar__SecondContentItem">
+                    <button class="MobileSidebar__SecondContentSubmenuTrigger">Страны</button>
+                    <ul class="MobileSidebar__SecondContentSubmenu">
+                      <li class="MobileSidebar__SecondContentSubmenuItem">
+                        <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Мальдивы</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="MobileSidebar__SecondContentItem">
+                    <button class="MobileSidebar__SecondContentSubmenuTrigger">О нас</button>
+                    <ul class="MobileSidebar__SecondContentSubmenu">
+                      <li class="MobileSidebar__SecondContentSubmenuItem">
+                        <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Кто мы?</a>
+                      </li>
+                      <li class="MobileSidebar__SecondContentSubmenuItem">
+                        <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Почему мы?</a>
+                      </li>
+                      <li class="MobileSidebar__SecondContentSubmenuItem">
+                        <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Команда</a>
+                      </li>
+                      <li class="MobileSidebar__SecondContentSubmenuItem">
+                        <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Пресс-центр</a>
+                      </li>
+                      <li class="MobileSidebar__SecondContentSubmenuItem">
+                        <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Защита персональных данных</a>
+                      </li>
+                      <li class="MobileSidebar__SecondContentSubmenuItem">
+                        <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Вакансии</a>
+                      </li>
+                      <li class="MobileSidebar__SecondContentSubmenuItem">
+                        <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Контакты</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="MobileSidebar__SecondContentItem">
+                    <button class="MobileSidebar__SecondContentSubmenuTrigger">Агентствам</button>
+                    <ul class="MobileSidebar__SecondContentSubmenu">
+                      <li class="MobileSidebar__SecondContentSubmenuItem">
+                        <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Сотрудничество</a>
+                      </li>
+                      <li class="MobileSidebar__SecondContentSubmenuItem">
+                        <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Акции</a>
+                      </li>
+                      <li class="MobileSidebar__SecondContentSubmenuItem">
+                        <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Resort Expert</a>
+                      </li>
+                      <li class="MobileSidebar__SecondContentSubmenuItem">
+                        <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Club Privé</a>
+                      </li>
+                      <li class="MobileSidebar__SecondContentSubmenuItem">
+                        <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Финансовые гарантии</a>
+                      </li>
+                      <li class="MobileSidebar__SecondContentSubmenuItem">
+                        <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Оплата туров</a>
+                      </li>
+                      <li class="MobileSidebar__SecondContentSubmenuItem">
+                        <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Страхование</a>
+                      </li>
+                      <li class="MobileSidebar__SecondContentSubmenuItem">
+                        <a class="MobileSidebar__SecondContentSubmenuLink" href="#">FIT | MICE</a>
+                      </li>
+                      <li class="MobileSidebar__SecondContentSubmenuItem">
+                        <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Проверить срок действия паспорта</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <button class="MobileSidebar__CloseTrigger">
+            <img class="MobileSidebar__CloseIcon" src="./assets/images/icons/close-icon.svg" alt="close">
+          </button>
+        </div>
+        <div class="Feedback">
+          <div class="Feedback__Screenlock"></div>
+          <div class="Feedback__Content">
+            <div class="Feedback__ContentLeft">
+              <img class="Feedback__LeftLogo" src="./assets/images/logo.svg" alt="logo">
+              <div class="Feedback__LeftCountry">Россия</div>
+              <div class="Feedback__LeftAddress">Москва, Новодмитровская 2, кор. 1<br>Савеловский Сити, башня Goodman</div>
+              <div class="Feedback__LeftPhonesBlock">
+                <img class="Feedback__LeftPhoneIcon" src="./assets/images/icons/gold-phone-icon.svg" alt="phone">
+                <div class="Feedback__LeftPhones">
+                  <a class="Feedback__LeftPhone" href="#">+7 495 266-63-77</a>
+                  <a class="Feedback__LeftPhone" href="#">+7 800 100-19-70</a>
+                </div>
+              </div>
+              <a class="Feedback__LeftLink" href="#">info@resort-holiday.com</a>
+            </div>
+            <div class="Feedback__ContentRight">
+              <div class="Feedback__RightTitle">
+                <div class="Feedback__RightTitleText">Напишите нам</div>
+                <button class="Feedback__RightTitleClose Feedback__CloseTrigger">
+                  <img src="./assets/images/icons/close-icon.svg" alt="close">
+                </button>
+              </div>
+              <form class="Feedback__Form">
+                <input class="Feedback__TextInput" type="text" name="username" placeholder="*Ваше имя">
+                <input class="Feedback__TextInput" type="text" name="useragency" placeholder="*Ваше агентство">
+                <input class="Feedback__TextInput" type="email" name="useremail" placeholder="*Ваш email">
+                <div class="Feedback__CheckboxContainer">
+                  <input class="Feedback__Checkbox" type="checkbox" name="want-to-feedback">
+                  <label class="Feedback__CheckboxLabel" for="want-to-feedback">Я хочу оставить отзыв</label>
+                </div>
+                <div class="Feedback__CheckboxContainer">
+                  <input class="Feedback__Checkbox" type="checkbox" name="want-to-thank">
+                  <label class="Feedback__CheckboxLabel" for="want-to-thank">Я хочу оставить благодарность</label>
+                </div>
+                <div class="Feedback__CheckboxContainer">
+                  <input class="Feedback__Checkbox" type="checkbox" name="want-to-help">
+                  <label class="Feedback__CheckboxLabel" for="want-to-help">Я хочу помочь вам стать лучше</label>
+                </div>
+                <div class="Feedback__CheckboxContainer">
+                  <input class="Feedback__Checkbox" type="checkbox" name="want-to-ask">
+                  <label class="Feedback__CheckboxLabel" for="want-to-ask">Я хочу задать вопрос, т.к. не нашла / нашел ответ на сайте</label>
+                </div>
+                <div class="Feedback__CheckboxContainer">
+                  <input class="Feedback__Checkbox" type="checkbox" name="want-to-ask-by-number">
+                  <label class="Feedback__CheckboxLabel" for="want-to-ask-by-number">Я хочу задать вопрос по заявке</label>
+                </div>
+                <div class="Feedback__SevenNumberInputContainer">
+                  <div class="Feedback__SevenNumberInputText">№</div>
+                  <div class="SevenBg" style="background-image: url('./assets/images/seven-bg.svg');">
+                    <input class="Feedback__SevenNumberInput"  type="number" minlength="7" maxlength="7" max="9999999">
+                  </div>
+                </div>
+                <textarea class="Feedback__Textarea" name="usermessage" cols="30" rows="5" placeholder="Введите текст сообщения"></textarea>
+                <button class="Feedback__SubmitButton" type="submit">Отправить</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="Menub2b">
+        <div class="Container">
+          <div class="Menub2b__Inner">
+            <a class="Menub2b__BigSearchTourLink" href="#">
+              Поиск<br>Тура
+            </a>
+            <nav class="Menub2b__Navigation">
+              <ul class="Menub2b__NavigationList">
+                <li class="Menub2b__NavigationItem">
+                  <div class="Menub2b__NavigationDropdownTrigger">
+                    <div class="Menub2b__NavigationDropdownTitle">Страны</div>
+                    <img class="Menub2b__NavigationDropdownArrowIcon" src="./assets/images/icons/down-arrow-icon.svg" alt="down-arrow-icon">
+                  </div>
+                  <div class="Menub2b__NavigationDropdownBlock">
+                    <ul class="Menub2b__NavigationDropdownList">
+                      <li class="Menub2b__NavigationDropdownItem">
+                        <a class="Menub2b__NavigationDropdownLink" href="#">Мальдивы</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="Menub2b__NavigationItem">
+                  <div class="Menub2b__NavigationDropdownTrigger">
+                    <div class="Menub2b__NavigationDropdownTitle">О нас</div>
+                    <img class="Menub2b__NavigationDropdownArrowIcon" src="./assets/images/icons/down-arrow-icon.svg" alt="down-arrow-icon">
+                  </div>
+                  <div class="Menub2b__NavigationDropdownBlock">
+                    <ul class="Menub2b__NavigationDropdownList">
+                      <li class="Menub2b__NavigationDropdownItem">
+                        <a class="Menub2b__NavigationDropdownLink" href="#">Кто мы?</a>
+                      </li>
+                      <li class="Menub2b__NavigationDropdownItem">
+                        <a class="Menub2b__NavigationDropdownLink" href="#">Почему мы?</a>
+                      </li>
+                      <li class="Menub2b__NavigationDropdownItem">
+                        <a class="Menub2b__NavigationDropdownLink" href="#">Команда</a>
+                      </li>
+                      <li class="Menub2b__NavigationDropdownItem">
+                        <a class="Menub2b__NavigationDropdownLink" href="#">Пресс-центр</a>
+                      </li>
+                      <li class="Menub2b__NavigationDropdownItem">
+                        <a class="Menub2b__NavigationDropdownLink" href="#">Защита персональных данных</a>
+                      </li>
+                      <li class="Menub2b__NavigationDropdownItem">
+                        <a class="Menub2b__NavigationDropdownLink" href="#">Вакансии</a>
+                      </li>
+                      <li class="Menub2b__NavigationDropdownItem">
+                        <a class="Menub2b__NavigationDropdownLink" href="#">Контакты</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="Menub2b__NavigationItem">
+                  <div class="Menub2b__NavigationDropdownTrigger">
+                    <div class="Menub2b__NavigationDropdownTitle">Агентствам</div>
+                    <img class="Menub2b__NavigationDropdownArrowIcon" src="./assets/images/icons/down-arrow-icon.svg" alt="down-arrow-icon">
+                  </div>
+                  <div class="Menub2b__NavigationDropdownBlock">
+                    <ul class="Menub2b__NavigationDropdownList">
+                      <li class="Menub2b__NavigationDropdownItem">
+                        <a class="Menub2b__NavigationDropdownLink" href="#">Сотрудничество</a>
+                      </li>
+                      <li class="Menub2b__NavigationDropdownItem">
+                        <a class="Menub2b__NavigationDropdownLink" href="#">Акции</a>
+                      </li>
+                      <li class="Menub2b__NavigationDropdownItem">
+                        <a class="Menub2b__NavigationDropdownLink" href="#">Resort Expert</a>
+                      </li>
+                      <li class="Menub2b__NavigationDropdownItem">
+                        <a class="Menub2b__NavigationDropdownLink" href="#">Club Privé</a>
+                      </li>
+                      <li class="Menub2b__NavigationDropdownItem">
+                        <a class="Menub2b__NavigationDropdownLink" href="#">Финансовые гарантии</a>
+                      </li>
+                      <li class="Menub2b__NavigationDropdownItem">
+                        <a class="Menub2b__NavigationDropdownLink" href="#">Оплата туров</a>
+                      </li>
+                      <li class="Menub2b__NavigationDropdownItem">
+                        <a class="Menub2b__NavigationDropdownLink" href="#">Страхование</a>
+                      </li>
+                      <li class="Menub2b__NavigationDropdownItem">
+                        <a class="Menub2b__NavigationDropdownLink" href="#">FIT | MICE</a>
+                      </li>
+                      <li class="Menub2b__NavigationDropdownItem">
+                        <a class="Menub2b__NavigationDropdownLink" href="#">Проверить срок действия паспорта</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <main class="RH__Main">
+        <section class="PagePreview" style="background-image: url('./assets/images/komanda-1.jpg');">
+          <div class="PagePreview__Inner Container">
+            <h1 class="PagePreview__Title">Правила Бронирования</h1>
+          </div>
+        </section>
+        <section class="InfoPageContent InfoPageContent--NoAside Container">
+          <div class="InfoPageContent__Main Bron">
+            <div class="Bron__Switch">
+              <button class="Bron__SwitchButton" bron-switch-trigger="1">CHECK LIST</button>
+              <button class="Bron__SwitchButton" bron-switch-trigger="2">FAQ</button>
+            </div>
+            <div class="Bron__Intro">Уважаемые коллеги!</div>
+            <div class="Bron__IntroText">Для комфортной совместной работы, мы подготовили для Вас удобный <b>CHECK LIST</b> при бронировании тура на сайте <b>Resort Holiday</b> и ответы на самые распространенные вопросы.</div>
+            <div class="Bron__Content" bron-content="1">
+              <h2 class="Bron__ContentHeading">CHECK LIST ПРИ БРОНИРОВАНИИ</h2>
+              <div class="Bron__CheckboxContainer">
+                <input class="Bron__Checkbox" type="checkbox" name="want-to-Bron">
+                <div class="Bron__CheckContent">
+                  <div class="Bron__CheckText">Проверить актуальность контактных данных, занесенных в «Личный кабинет» (далее ЛК) в системе бронирования Resort Holiday.</div>
+                  <div class="Bron__CheckQuestion">Зачем? Это необходимо для своевременного получения уведомлений о произведенных действиях в заявке и оперативной связи. При необходимости вы всегда можете самостоятельно изменить данные.</div>
+                  <div class="Bron__Hint"><b>Подсказка, чтобы наша коммуникация шла быстрее:</b><br>При бронировании просим указывать в примечании данные менеджера, добавочные и любые средства связи, чтобы в случае каких-либо срочных вопросов мы могли сразу связаться с сотрудником агентства, ведущим заявку.</div>
+                </div>
+              </div>
+              <div class="Bron__CheckboxContainer">
+                <input class="Bron__Checkbox" type="checkbox" name="want-to-Bron">
+                <div class="Bron__CheckContent">
+                  <div class="Bron__CheckText">Проверить корректность паспортных данных и параметров в заявке при бронировании.</div>
+                  <div class="Bron__CheckQuestion">Зачем? Чтобы после подтверждении заявки, избежать возможных ФПР в связи с изменением данных по отелю, дате вылета или имен клиентов.</div>
+                </div>
+              </div>
+              <div class="Bron__CheckboxContainer">
+                <input class="Bron__Checkbox" type="checkbox" name="want-to-Bron">
+                <div class="Bron__CheckContent">
+                  <div class="Bron__CheckText">Указать пожелания клиентов в примечании к заявке.</div>
+                  <div class="Bron__CheckQuestion">Зачем? Так мы сможем максимально посодействовать в выполнение пожеланий клиентов. Обращаем ваше внимание, что указание пожеланий при бронировании заявки не гарантирует их выполнение, все пожелания выполняются только на усмотрение отеля.</div>
+                </div>
+              </div>
+              <div class="Bron__CheckboxContainer">
+                <input class="Bron__Checkbox" type="checkbox" name="want-to-Bron">
+                <div class="Bron__CheckContent">
+                  <div class="Bron__CheckText">Проверить стоимость заявки и условия агентской скидки.</div>
+                  <div class="Bron__CheckQuestion">Зачем? Бронируя заявку, вы соглашаетесь с опубликованными ценами в заявке и условиями агентской скидки. Изменение итоговой стоимости заявки, если это не согласовано заранее с компанией Resort Holiday, невозможно.</div>
+                </div>
+              </div>
+              <div class="Bron__CheckboxContainer">
+                <input class="Bron__Checkbox" type="checkbox" name="want-to-Bron">
+                <div class="Bron__CheckContent">
+                  <div class="Bron__CheckText">При бронировании только отеля и трансферов, указать в примечании к заявке полетные данные клиентов.</div>
+                  <div class="Bron__CheckQuestion">Зачем? Эти данные необходимы для четкой организации трансфера. Без полетных данных трансфер не может быть предоставлен.</div>
+                </div>
+              </div>
+              <div class="Bron__CheckboxContainer">
+                <input class="Bron__Checkbox" type="checkbox" name="want-to-Bron">
+                <div class="Bron__CheckContent">
+                  <div class="Bron__CheckText">Отслеживать Статус Заказа в ЛК и комментарии к заказу.</div>
+                  <div class="Bron__CheckQuestion">Зачем? Письма иногда попадают в СПАМ, поэтому чтобы сразу видеть и сообщить туристу о подтверждении или актуальном статусе заказа, рекомендуем проверять ЛК. На обработку заявки с нашей стороны уходит до 48 часов, но, как правило, быстрее.</div>
+                  <div class="Bron__Extra">*в период праздничных дней или высоких дат поездки, когда свободных номеров очень мало, срок ответа по заявке может быть увеличен</div>
+                </div>
+              </div>
+              <div class="Bron__CheckboxContainer">
+                <input class="Bron__Checkbox" type="checkbox" name="want-to-Bron">
+                <div class="Bron__CheckContent">
+                  <div class="Bron__CheckText">В случае неподтверждения заявки своевременно дать ответ по предложенным альтернативам.</div>
+                  <div class="Bron__CheckQuestion">Зачем? Предложенная альтернатива отображается в ЛК. Вам необходимо дать ответ в течение 48 часов (если в комментарии к заказу не указано иное), иначе заявка автоматически аннулируется. Обращаем внимание, что мы не держим на опции номера или рейсы, предложенные как альтернативные, в случае, если это не согласовано заранее.</div>
+                </div>
+              </div>
+              <div class="Bron__CheckboxContainer">
+                <input class="Bron__Checkbox" type="checkbox" name="want-to-Bron">
+                <div class="Bron__CheckContent">
+                  <div class="Bron__CheckText">Проверить тайм-лимит и сроки оплаты авиабилетов на регулярных рейсах.</div>
+                  <div class="Bron__CheckQuestion">Зачем? Для выписки забронированных авиабилетов необходимо оплатить их полную стоимость. В случае неоплаты, по истечении тайм-лимита бронирование авиабилетов аннулируется автоматически и восстановление их по прежней стоимости, а также наличие мест на рейсах, не гарантировано.</div>
+                  <div class="Bron__Hint"><b>Подсказка по тайм-лимиту:</b><br>Узнать тайм-лимит можно на этапе поиска авиабилетов или после бронирования в ЛК в заявке.  Авиакомпании вправе менять тайм-лимит, особенно если вылет в ближайшие 3-5 дней, либо при бронировании высоких дат отдыха.</div>
+                </div>
+              </div>
+              <div class="Bron__CheckboxContainer">
+                <input class="Bron__Checkbox" type="checkbox" name="want-to-Bron">
+                <div class="Bron__CheckContent">
+                  <div class="Bron__CheckText">Проверить и выполнить установленные сроки оплат.</div>
+                  <div class="Bron__CheckQuestion">Зачем? При несоблюдении сроков оплаты заявка может быть автоматически аннулирована в соответствии с условиями ФПР.  При невозможности произвести оплату в срок, указанный в ЛК в заявке, пожалуйста, связывайтесь заранее с сотрудниками компании Resort Holiday для урегулирования ситуации, если это возможно.</div>
+                </div>
+              </div>
+              <div class="Bron__CheckboxContainer">
+                <input class="Bron__Checkbox" type="checkbox" name="want-to-Bron">
+                <div class="Bron__CheckContent">
+                  <div class="Bron__CheckText">Заранее ознакомиться с возможными ФПР, предупредить об этом клиентов и взять предоплату.</div>
+                  <div class="Bron__CheckQuestion">Зачем? В случае аннуляции заявки в срок, предусматривающий ФПР, они могут быть применены вне зависимости от того, была ли заявка оплачена. Просим информировать об этом клиентов и направлять бронирование только после получения предоплаты. Узнать ФПР можно до аннуляции при отправлении запроса через обратную связь нашим менеджерам или в соответствующем разделе на сайте.</div>
+                </div>
+              </div>
+              <div class="Bron__CheckboxContainer">
+                <input class="Bron__Checkbox" type="checkbox" name="want-to-Bron">
+                <div class="Bron__CheckContent">
+                  <div class="Bron__CheckText">Своевременно выдать документы по туру и проверить их корректность.</div>
+                  <div class="Bron__CheckQuestion">Зачем? Документы по туру доступны после полной оплаты и могут быть выгружены напрямую из ЛК агента.  Рекомендуем проверять правильность выданных документов клиентам, чтобы в случае необходимости иметь возможность их исправить.</div>
+                </div>
+              </div>
+            </div>
+            <div class="Bron__Content" bron-content="2"> 
+              <h2 class="Bron__ContentHeading">FAQ</h2>
+              <div class="RHAccordion TextFormated TextFormated--LightGray">
+                <div class="RHAccordion__Trigger">
+                  <img class="RHAccordion__ActiveHidden" src="./assets/images/icons/manta-status-icon-disable.svg" alt="manta-status-icon-disable">
+                  <img class="RHAccordion__ActiveShow" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta-status-icon-active">
+                  <h2 class="RHAccordion__ActiveTextBlack">Не могу зайти в ЛК или забронировать заявку</h2>
+                  <img class="RHAccordion__ActiveRotate" src="./assets/images/icons/black-down-arrow-icon.svg" alt="black-down-arrow-icon">
+                </div>
+                <div class="RHAccordion__Content">
+                  <p>Если вы столкнулись с какими-то техническими вопросами при бронировании заявки или авторизации в ЛК, напишите нам через обратную связь о проблеме и параметры вашего заказа. Пока наши технические специалисты занимаются решением этого вопроса, наши менеджеры заведут заказ в систему самостоятельно.</p>
+                </div>
+              </div>
+              <div class="RHAccordion TextFormated TextFormated--LightGray">
+                <div class="RHAccordion__Trigger">
+                  <img class="RHAccordion__ActiveHidden" src="./assets/images/icons/manta-status-icon-disable.svg" alt="manta-status-icon-disable">
+                  <img class="RHAccordion__ActiveShow" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta-status-icon-active">
+                  <h2 class="RHAccordion__ActiveTextBlack">Что такое предварительная заявка</h2>
+                  <img class="RHAccordion__ActiveRotate" src="./assets/images/icons/black-down-arrow-icon.svg" alt="black-down-arrow-icon">
+                </div>
+                <div class="RHAccordion__Content">
+                  <p>Эта функция дает возможность зафиксировать стоимость тура по действующему на момент бронирования тарифу.<br>Бронирование предварительной заявки доступно не менее, чем за 7 ночей до начала тура. </p>
+                  <p>Срок активации предварительной заявки:</p>
+                  <ul>
+                    <li>Наземное обслуживание - 48 часов.</li>
+                    <li>Туры с перелетом на регулярных рейсах -24 часа.</li>
+                  </ul>
+                  <p>По истечению срока, заявка аннулируется автоматически, ФПР не выставляются.</p>
+                  <p><i>*Для туров на регулярных рейсах, в случае изменения авиакомпанией тайм-лимита, срок активации заявки может быть сокращен.</i></p>
+                </div>
+              </div>
+              <div class="RHAccordion TextFormated TextFormated--LightGray">
+                <div class="RHAccordion__Trigger">
+                  <img class="RHAccordion__ActiveHidden" src="./assets/images/icons/manta-status-icon-disable.svg" alt="manta-status-icon-disable">
+                  <img class="RHAccordion__ActiveShow" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta-status-icon-active">
+                  <h2 class="RHAccordion__ActiveTextBlack">Как внести изменения в заявку</h2>
+                  <img class="RHAccordion__ActiveRotate" src="./assets/images/icons/black-down-arrow-icon.svg" alt="black-down-arrow-icon">
+                </div>
+                <div class="RHAccordion__Content">
+                  <p><b>Отель / тип номера / тип питания / трансфер / даты проживания в отеле:</b> для того, чтобы изменить отель / тип номера / тип питания / трансфер / даты проживания, нужно отправить запрос на внесение изменений с новыми параметрами тура. В случае выставления ФПР, мы о них проинформируем заранее. При согласии с ФПР и новой стоимостью заявки – сделаем перебронь.</p>
+                  <p><b>Замена дат перелета на регулярных рейсах:</b> замена дат считается добровольным обменом билета и требует подтверждения авиакомпании. Если обмен подтвержден, то взимается доплата по актуальной стоимости билета.  Если обмен не подтвержден, то необходимо аннулировать текущий билет и приобрести новый. </p>
+                </div>
+              </div>
+              <div class="RHAccordion TextFormated TextFormated--LightGray">
+                <div class="RHAccordion__Trigger">
+                  <img class="RHAccordion__ActiveHidden" src="./assets/images/icons/manta-status-icon-disable.svg" alt="manta-status-icon-disable">
+                  <img class="RHAccordion__ActiveShow" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta-status-icon-active">
+                  <h2 class="RHAccordion__ActiveTextBlack">Что делать, если допустили ошибку при внесении данных в заявке</h2>
+                  <img class="RHAccordion__ActiveRotate" src="./assets/images/icons/black-down-arrow-icon.svg" alt="black-down-arrow-icon">
+                </div>
+                <div class="RHAccordion__Content">
+                  <p>Если после бронирования и подтверждения заявки вы обнаружили, что при внесении данных клиента допустили ошибку в написании фамилии / имени или паспортных данных, наши сотрудники внесут изменения без штрафов*. Создайте запрос к заказу из ЛК с указанием корректных данных клиента в текстовом формате. В некоторых случаях может потребоваться копия документа.</p>
+                  <p><i>*Не распространяется на туры GDS и бронирование билетов. В данном случае мы вынуждены действовать в соответствии с правилами авиакомпании.</i></p>
+                  <ul>
+                    <li>ошибка в поле клиента MR / MRS – по нормам авиакомпаний, не считается критической ошибкой и не требует исправления.</li>
+                    <li>ошибки, допущенные в фамилии / имени, номере паспорта, дате рождения – являются существенными и требуют перевыписки авиабилета за доплату по нормам авиакомпании.</li>
+                    <li>в случае изменения фамилии/имени клиента полностью – требуется перебронирование авиабилета по актуальному тарифу авиакомпании с возможными ФПР по правилам авиакомпании по старому билету.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="RHAccordion TextFormated TextFormated--LightGray">
+                <div class="RHAccordion__Trigger">
+                  <img class="RHAccordion__ActiveHidden" src="./assets/images/icons/manta-status-icon-disable.svg" alt="manta-status-icon-disable">
+                  <img class="RHAccordion__ActiveShow" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta-status-icon-active">
+                  <h2 class="RHAccordion__ActiveTextBlack">Как происходит автоматическая выписка авиабилетов</h2>
+                  <img class="RHAccordion__ActiveRotate" src="./assets/images/icons/black-down-arrow-icon.svg" alt="black-down-arrow-icon">
+                </div>
+                <div class="RHAccordion__Content">
+                  <p>Автоматическая выписка билета производится только в случае полностью подтвержденной заявки (по всем составляющим) и только если сумма оплаты равна или больше стоимости билетов, указанной в подтверждении.</p>
+                </div>
+              </div>
+              <div class="RHAccordion TextFormated TextFormated--LightGray">
+                <div class="RHAccordion__Trigger">
+                  <img class="RHAccordion__ActiveHidden" src="./assets/images/icons/manta-status-icon-disable.svg" alt="manta-status-icon-disable">
+                  <img class="RHAccordion__ActiveShow" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta-status-icon-active">
+                  <h2 class="RHAccordion__ActiveTextBlack">Что делать если не выписали билет в рамках тайм-лимита</h2>
+                  <img class="RHAccordion__ActiveRotate" src="./assets/images/icons/black-down-arrow-icon.svg" alt="black-down-arrow-icon">
+                </div>
+                <div class="RHAccordion__Content">
+                  <p>Если тайм лимит истек, а билет не выписан, то восстановление бронирования по первоначальной стоимости не гарантируется, стоимость авиабилетов может быть пересчитана по актуальному тарифу авиакомпании.</p>
+                </div>
+              </div>
+              <div class="RHAccordion TextFormated TextFormated--LightGray">
+                <div class="RHAccordion__Trigger">
+                  <img class="RHAccordion__ActiveHidden" src="./assets/images/icons/manta-status-icon-disable.svg" alt="manta-status-icon-disable">
+                  <img class="RHAccordion__ActiveShow" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta-status-icon-active">
+                  <h2 class="RHAccordion__ActiveTextBlack">Что делать если отель еще не подтвердили, а тайм-лимит заканчивается</h2>
+                  <img class="RHAccordion__ActiveRotate" src="./assets/images/icons/black-down-arrow-icon.svg" alt="black-down-arrow-icon">
+                </div>
+                <div class="RHAccordion__Content">
+                  <p>В данной ситуации у нас есть несколько опций:</p>
+                  <ul>
+                    <li>по согласованию с вами мы открываем для вас возможность оплаты билета. После оплаты выписываем авиабилет и параллельно ожидаем подтверждение отеля. В случае отказа, выбираем аналогичный продукт по актуальной стоимости. Если клиент не соглашается на альтернативные варианты отелей, билеты остаются за вами. В случае аннуляции действуют ФПР согласно условиям авиакомпании.</li>
+                    <li>после того, как тайм-лимит истек, мы перебронируем билеты его по новой стоимости (она может остаться такой же, а может измениться) и ожидаем ответ от отеля.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="RHAccordion TextFormated TextFormated--LightGray">
+                <div class="RHAccordion__Trigger">
+                  <img class="RHAccordion__ActiveHidden" src="./assets/images/icons/manta-status-icon-disable.svg" alt="manta-status-icon-disable">
+                  <img class="RHAccordion__ActiveShow" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta-status-icon-active">
+                  <h2 class="RHAccordion__ActiveTextBlack">Как забронировать билет на инфанта, если ребенку исполняется 2 года непосредственно в путешествии</h2>
+                  <img class="RHAccordion__ActiveRotate" src="./assets/images/icons/black-down-arrow-icon.svg" alt="black-down-arrow-icon">
+                </div>
+                <div class="RHAccordion__Content">
+                  <p>Допускается бронирование авиабилетов в обе стороны, как на инфанта - без предоставления отдельного места в салоне самолета.</p>
+                </div>
+              </div>
+              <div class="RHAccordion TextFormated TextFormated--LightGray">
+                <div class="RHAccordion__Trigger">
+                  <img class="RHAccordion__ActiveHidden" src="./assets/images/icons/manta-status-icon-disable.svg" alt="manta-status-icon-disable">
+                  <img class="RHAccordion__ActiveShow" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta-status-icon-active">
+                  <h2 class="RHAccordion__ActiveTextBlack">Как оформить авиабилет на младенца (инфанта) с местом</h2>
+                  <img class="RHAccordion__ActiveRotate" src="./assets/images/icons/black-down-arrow-icon.svg" alt="black-down-arrow-icon">
+                </div>
+                <div class="RHAccordion__Content">
+                  <p>Для бронирования младенца с местом забронируйте младенца как ребенка, указав дату рождения, соответствующую возрасту 2 года. Не выписывая билет, создайте комментарий к заказу в ЛК, указав верную дату рождения. Билет будет забронирован с местом, а  корректная дата рождения будет вручную проставлена нашими менеджерами.</p>
+                </div>
+              </div>
+              <div class="RHAccordion TextFormated TextFormated--LightGray">
+                <div class="RHAccordion__Trigger">
+                  <img class="RHAccordion__ActiveHidden" src="./assets/images/icons/manta-status-icon-disable.svg" alt="manta-status-icon-disable">
+                  <img class="RHAccordion__ActiveShow" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta-status-icon-active">
+                  <h2 class="RHAccordion__ActiveTextBlack">Как добавить багаж в выписанный заказ</h2>
+                  <img class="RHAccordion__ActiveRotate" src="./assets/images/icons/black-down-arrow-icon.svg" alt="black-down-arrow-icon">
+                </div>
+                <div class="RHAccordion__Content">
+                  <p>Направьте комментарий к заказу в ЛК с с указанием веса, количества и фамилии пассажира, на которого требуется добавить багаж, а также согласие с установленной доплатой.</p>
+                </div>
+              </div>
+              <div class="RHAccordion TextFormated TextFormated--LightGray">
+                <div class="RHAccordion__Trigger">
+                  <img class="RHAccordion__ActiveHidden" src="./assets/images/icons/manta-status-icon-disable.svg" alt="manta-status-icon-disable">
+                  <img class="RHAccordion__ActiveShow" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta-status-icon-active">
+                  <h2 class="RHAccordion__ActiveTextBlack">У туриста еще нет паспорта/паспорт на замене, но хотим приобрести уже сейчас тур на регулярном перелете</h2>
+                  <img class="RHAccordion__ActiveRotate" src="./assets/images/icons/black-down-arrow-icon.svg" alt="black-down-arrow-icon">
+                </div>
+                <div class="RHAccordion__Content">
+                  <p>Перед бронированием необходимо отправить запрос через обратную связь с указанием авиакомпании и точных дат перелета.После согласования с авиакомпанией и согласием клиентов с указанными условиями, можно будет забронировать авиабилет по данным  старого паспорта. После получения нового паспорта прислать скан документа вложенным файлом к заказу для оформления перевыписки билета.</p>
+                  <p><b><i>Внимание! Нельзя бронировать на фиктивные данные паспорта, такие как 1111, 2222, и прочее.</i></b></p>
+                </div>
+              </div>
+              <div class="RHAccordion TextFormated TextFormated--LightGray">
+                <div class="RHAccordion__Trigger">
+                  <img class="RHAccordion__ActiveHidden" src="./assets/images/icons/manta-status-icon-disable.svg" alt="manta-status-icon-disable">
+                  <img class="RHAccordion__ActiveShow" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta-status-icon-active">
+                  <h2 class="RHAccordion__ActiveTextBlack">Как отправить запрос на минимизацию ФПР</h2>
+                  <img class="RHAccordion__ActiveRotate" src="./assets/images/icons/black-down-arrow-icon.svg" alt="black-down-arrow-icon">
+                </div>
+                <div class="RHAccordion__Content">
+                  <p>С целью минимизации ФПР, в частности, если в состав входит авиабилет на регулярных рейсах, в случае вынужденного отказа, медицинские документы необходимо предоставить в течение 7-ми календарных дней с даты аннуляции. В случае непредставления документов в указанный срок - аннуляция авиабилетов производится согласно правилам примененного тарифа.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="Banner" style="background-image: url('./assets/images/banner-background.svg');">
+          <div class="Banner__Inner Container">
+            <form class="Banner__Mobile" action="#">
+              <div class="Banner__MobileTextBig">Подпишитесь и узнавайте первыми!</div>
+              <div class="Banner__MobileEmailContainer">
+                <img class="Banner__MobileEmailIcon" src="./assets/images/icons/email-icon.svg" alt="email-icon">
+                <input class="Banner__MobileEmailInput" type="email" name="subscription-email" placeholder="Введите ваш email" required>
+                <button class="Banner__MobileButton" type="submit">
+                  <img class="Banner__MobileSendIcon" src="./assets/images/icons/send-email-icon.svg" alt="send-email-icon">
+                </button>
+              </div>
+              <div class="Banner__MobileTextSmall">Высылаем только важное, новое и интересное</div>
+            </form>
+            <form class="Banner__Desktop" action="#">
+              <div class="Banner__DesktopTextBlock">
+                <div class="Banner__DesktopTextBig">Подпишитесь и узнавайте первыми!</div>
+                <div class="Banner__DesktopTextSmall">Высылаем только важное, новое и интересное</div>
+              </div>
+              <div class="Banner__DesktopEmailBlock">
+                <div class="Banner__DesktopEmailContainer">
+                  <img class="Banner__DesktopEmailIcon" src="./assets/images/icons/email-icon.svg" alt="email-icon">
+                  <input class="Banner__DesktopEmailInput" type="email" name="subscription-email" placeholder="Введите ваш email" required>
+                  <button class="Banner__DesktopSendButton" type="submit">
+                    <img class="Banner__DesktopSendImage" src="./assets/images/icons/send-email-icon.svg" alt="send-email-icon">
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+      <footer class="Footer" style="background-image: url('./assets/images/footer-bg-image.png');">
+        <div class="Footer__BgOver"></div>
+        <div class="Footer__Inner">
+          <div class="Footer__MobileContent">
+            <div class="Footer__MobileContacts Container">
+              <div class="Footer__MobilePhones">
+                <img class="Footer__MobilePhonesIcon" src="./assets/images/icons/gold-phone-icon.svg" alt="phone">
+                <div class="Footer__MobilePhonesList">
+                  <a class="Footer__MobilePhonesLink" href="#">+7 495 266-63-77</a>
+                  <a class="Footer__MobilePhonesLink" href="#">+7 800 100-19-70</a>
+                </div>
+              </div>
+              <div class="Footer__MobileSocials">
+                <a class="Footer__MobileSocialsLink" href="#">
+                  <img class="Footer__MobileSocialsIcon" src="./assets/images/icons/instagram-white-icon.svg" alt="instagram-icon">
+                </a>
+                <a class="Footer__MobileSocialsLink" href="#">
+                  <img class="Footer__MobileSocialsIcon" src="./assets/images/icons/facebook-white-icon.svg" alt="facebook-icon">
+                </a>
+                <a class="Footer__MobileSocialsLink" href="#">
+                  <img class="Footer__MobileSocialsIcon" src="./assets/images/icons/youtube-white-icon.svg" alt="youtube-icon">
+                </a>
+              </div>
+            </div>
+            <div class="Footer__MobileNavigation Container">
+              <a class="Footer__MobileNavigationLink" href="#">
+                <img class="Footer__MobileNavigationImage" src="./assets/images/icons/move-gold-icon.svg" alt="move">
+                <div class="Footer__MobileNavigationText">Туристам</div>
+              </a>
+              <a class="Footer__MobileNavigationLink" href="#">
+                <img class="Footer__MobileNavigationImage" src="./assets/images/icons/account-gold-icon.svg" alt="account-gold-icon">
+                <div class="Footer__MobileNavigationText">Личный кабинет</div>
+              </a>
+            </div>
+            <div class="Footer__MobileLinks Container">
+              <div class="Footer__MobileLinksLeft">
+                <div class="Footer__MobileLinksBlock">
+                  <div class="Footer__MobileLinksTitle">Страны</div>
+                  <ul class="Footer__MobileLinksList">
+                    <li class="Footer__MobileLinksItem">
+                      <a class="Footer__MobileLinksLink" href="#">Мальдивы</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="Footer__MobileLinksBlock">
+                  <div class="Footer__MobileLinksTitle">Агентствам</div>
+                  <ul class="Footer__MobileLinksList">
+                    <li class="Footer__MobileLinksItem">
+                      <a class="Footer__MobileLinksLink" href="#">Сотрудничество</a>
+                    </li>
+                    <li class="Footer__MobileLinksItem">
+                      <a class="Footer__MobileLinksLink" href="#">Акции</a>
+                    </li>
+                    <li class="Footer__MobileLinksItem">
+                      <a class="Footer__MobileLinksLink" href="#">Resort Expert</a>
+                    </li>
+                    <li class="Footer__MobileLinksItem">
+                      <a class="Footer__MobileLinksLink" href="#">Club Privé</a>
+                    </li>
+                    <li class="Footer__MobileLinksItem">
+                      <a class="Footer__MobileLinksLink" href="#">Финансовые гарантии</a>
+                    </li>
+                    <li class="Footer__MobileLinksItem">
+                      <a class="Footer__MobileLinksLink" href="#">Оплата туров</a>
+                    </li>
+                    <li class="Footer__MobileLinksItem">
+                      <a class="Footer__MobileLinksLink" href="#">Страхование</a>
+                    </li>
+                    <li class="Footer__MobileLinksItem">
+                      <a class="Footer__MobileLinksLink" href="#">FIT | MICE</a>
+                    </li>
+                    <li class="Footer__MobileLinksItem">
+                      <a class="Footer__MobileLinksLink" href="#">Проверить срок действия паспорта</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="Footer__MobileLinksRight">
+                <div class="Footer__MobileLinksBlock">
+                  <div class="Footer__MobileLinksTitle">О нас</div>
+                  <ul class="Footer__MobileLinksList">
+                    <li class="Footer__MobileLinksItem">
+                      <a class="Footer__MobileLinksLink" href="#">Кто мы?</a>
+                    </li>
+                    <li class="Footer__MobileLinksItem">
+                      <a class="Footer__MobileLinksLink" href="#">Почему мы?</a>
+                    </li>
+                    <li class="Footer__MobileLinksItem">
+                      <a class="Footer__MobileLinksLink" href="#">Команда</a>
+                    </li>
+                    <li class="Footer__MobileLinksItem">
+                      <a class="Footer__MobileLinksLink" href="#">Пресс-центр</a>
+                    </li>
+                    <li class="Footer__MobileLinksItem">
+                      <a class="Footer__MobileLinksLink" href="#">Защита персональных данных</a>
+                    </li>
+                    <li class="Footer__MobileLinksItem">
+                      <a class="Footer__MobileLinksLink" href="#">Вакансии</a>
+                    </li>
+                    <li class="Footer__MobileLinksItem">
+                      <a class="Footer__MobileLinksLink" href="#">Контакты</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="Footer__MobileRTO Container">
+              <div class="Footer__MobileRTOInner">
+                <img class="Footer__MobileRTOImage" src="./assets/images/ros-tourism-logo.svg" alt="rostourism">
+                <div class="Footer__MobileRTOText">
+                  Мы в реестре туроператоров<br>ООО «Резорт Холидей»<br>РТО ?????????
+                </div>
+              </div>
+            </div>
+            <div class="Footer__MobilePartners Container">
+              <div class="Footer__MobilePartnersTitle">Партнеры</div>
+              <div class="Footer__MobilePartnersList">
+                <a class="Footer__MobilePartnersLink" href="#">
+                  <img class="Footer__MobilePartnersImage" src="./assets/images/resort-life-travel-logo.svg" alt="resort-life-travel-logo">
+                </a>
+                <a class="Footer__MobilePartnersLink" href="#">
+                  <img class="Footer__MobilePartnersImage" src="./assets/images/sber-logo.svg" alt="sber-logo">
+                </a>
+              </div>
+            </div>
+            <div class="Footer__MobileBottom">
+              <div class="Footer__MobileBottomInner Container">
+                <img class="Footer__MobileBottomLogo" src="./assets/images/logo-white.svg" alt="logo">
+                <div class="Footer__MobileBottomCopyright">© 2021 Resort Holiday | Все права защищены</div>
+              </div>
+            </div>
+          </div>
+          <div class="Footer__DesktopContent Container">
+            <div class="Footer__DesktopTopSection">
+              <a class="Footer__DesktopTopLogoLink" href="#">
+                <img class="Footer__DesktopTopLogoLinkImage" src="./assets/images/logo-white.svg" alt="logo-white">
+              </a>
+              <div class="Footer__DesktopTopLinks">
+                <a class="Footer__DesktopTopLink" href="#">
+                  <img class="Footer__DesktopTopLinkIcon" src="./assets/images/icons/move-gold-icon.svg" alt="move">
+                  <div class="Footer__DesktopTopLinkText">Туристам</div>
+                </a>
+                <a class="Footer__DesktopTopLink" href="#">
+                  <img class="Footer__DesktopTopLinkIcon" src="./assets/images/icons/account-gold-icon.svg" alt="account-gold-icon">
+                  <div class="Footer__DesktopTopLinkText">Личный кабинет</div>
+                </a>
+              </div>
+            </div>
+            <div class="Footer__DesktopSectionsDivider"></div>
+            <div class="Footer__DesktopMiddleSection">
+              <div class="Footer__DesktopMiddleLinks">
+                <div class="Footer__DesktopMiddleLinksBlock">
+                  <div class="Footer__DesktopMiddleLinksTitle">Страны</div>
+                  <ul class="Footer__DesktopMiddleLinksList">
+                    <li class="Footer__DesktopMiddleLinksItem">
+                      <a class="Footer__DesktopMiddleLink" href="#">Мальдивы</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="Footer__DesktopMiddleLinksBlock">
+                  <div class="Footer__DesktopMiddleLinksTitle">Агентствам</div>
+                  <ul class="Footer__DesktopMiddleLinksList">
+                    <li class="Footer__DesktopMiddleLinksItem">
+                      <a class="Footer__DesktopMiddleLink" href="#">Сотрудничество</a>
+                    </li>
+                    <li class="Footer__DesktopMiddleLinksItem">
+                      <a class="Footer__DesktopMiddleLink" href="#">Акции</a>
+                    </li>
+                    <li class="Footer__DesktopMiddleLinksItem">
+                      <a class="Footer__DesktopMiddleLink" href="#">Resort Expert</a>
+                    </li>
+                    <li class="Footer__DesktopMiddleLinksItem">
+                      <a class="Footer__DesktopMiddleLink" href="#">Club Privé</a>
+                    </li>
+                    <li class="Footer__DesktopMiddleLinksItem">
+                      <a class="Footer__DesktopMiddleLink" href="#">Финансовые гарантии</a>
+                    </li>
+                    <li class="Footer__DesktopMiddleLinksItem">
+                      <a class="Footer__DesktopMiddleLink" href="#">Оплата туров</a>
+                    </li>
+                    <li class="Footer__DesktopMiddleLinksItem">
+                      <a class="Footer__DesktopMiddleLink" href="#">Страхование</a>
+                    </li>
+                    <li class="Footer__DesktopMiddleLinksItem">
+                      <a class="Footer__DesktopMiddleLink" href="#">FIT | MICE</a>
+                    </li>
+                    <li class="Footer__DesktopMiddleLinksItem">
+                      <a class="Footer__DesktopMiddleLink" href="#">Проверить срок действия паспорта</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="Footer__DesktopMiddleLinksBlock">
+                  <div class="Footer__DesktopMiddleLinksTitle">О нас</div>
+                  <ul class="Footer__DesktopMiddleLinksList">
+                    <li class="Footer__DesktopMiddleLinksItem">
+                      <a class="Footer__DesktopMiddleLink" href="#">Кто мы?</a>
+                    </li>
+                    <li class="Footer__DesktopMiddleLinksItem">
+                      <a class="Footer__DesktopMiddleLink" href="#">Почему мы?</a>
+                    </li>
+                    <li class="Footer__DesktopMiddleLinksItem">
+                      <a class="Footer__DesktopMiddleLink" href="#">Команда</a>
+                    </li>
+                    <li class="Footer__DesktopMiddleLinksItem">
+                      <a class="Footer__DesktopMiddleLink" href="#">Пресс-центр</a>
+                    </li>
+                    <li class="Footer__DesktopMiddleLinksItem">
+                      <a class="Footer__DesktopMiddleLink" href="#">Защита персональных данных</a>
+                    </li>
+                    <li class="Footer__DesktopMiddleLinksItem">
+                      <a class="Footer__DesktopMiddleLink" href="#">Вакансии</a>
+                    </li>
+                    <li class="Footer__DesktopMiddleLinksItem">
+                      <a class="Footer__DesktopMiddleLink" href="#">Контакты</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="Footer__DesktopMiddleContacts">
+                <div class="Footer__DesktopMiddlePhonesBlock">
+                  <img class="Footer__DesktopMiddlePhoneIcon" src="./assets/images/icons/gold-phone-icon.svg" alt="phone">
+                  <div class="Footer__DesktopMiddlePhones">
+                    <a class="Footer__DesktopMiddlePhone" href="#">+7 495 266-63-77</a>
+                    <a class="Footer__DesktopMiddlePhone" href="#">+7 800 100-19-70</a>
+                  </div>
+                </div>
+                <div class="Footer__DesktopMiddleRTO">
+                  <img class="Footer__DesktopMiddleRTOImage" src="./assets/images/ros-tourism-logo.svg" alt="rostourism">
+                  <div class="Footer__DesktopMiddleRTOText">
+                    Мы в реестре туроператоров<br>ООО «Резорт Холидей»<br>РТО ?????????
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="Footer__DesktopBottomSection">
+              <div class="Footer__DesktopBottomSectionLeft">
+                <div class="Footer__DesktopBottomSectionSocials">
+                  <a class="Footer__DesktopBottomSectionSocialLink" href="#">
+                    <img class="Footer__DesktopBottomSectionSocialIcon" src="./assets/images/icons/instagram-white-icon.svg" alt="instagram-icon">
+                  </a>
+                  <a class="Footer__DesktopBottomSectionSocialLink" href="#">
+                    <img class="Footer__DesktopBottomSectionSocialIcon" src="./assets/images/icons/facebook-white-icon.svg" alt="facebook-icon">
+                  </a>
+                  <a class="Footer__DesktopBottomSectionSocialLink" href="#">
+                    <img class="Footer__DesktopBottomSectionSocialIcon" src="./assets/images/icons/youtube-white-icon.svg" alt="youtube-icon">
+                  </a>
+                </div>
+                <div class="Footer__DesktopBottomSectionCopyright">© 2021 Resort Holiday | Все права защищены</div>
+              </div>
+              <div class="Footer__DesktopBottomSectionRight">
+                <div class="Footer__DesktopBottomSectionPartnersTitle">Партнеры</div>
+                <div class="Footer__DesktopBottomSectionPartners">
+                  <a class="Footer__DesktopBottomSectionPartnerLink" href="#">
+                    <img class="Footer__DesktopBottomSectionPartnerImage" src="./assets/images/resort-life-travel-logo.svg" alt="resort-life-travel-logo">
+                  </a>
+                  <a class="Footer__DesktopBottomSectionPartnerLink" href="#">
+                    <img class="Footer__DesktopBottomSectionPartnerImage" src="./assets/images/sber-logo.svg" alt="sber-logo">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="./assets/customer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+  </body>
+
+</html>

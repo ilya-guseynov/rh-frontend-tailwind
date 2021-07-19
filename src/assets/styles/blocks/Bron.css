@@ -1,0 +1,156 @@
+.Bron {
+  margin-bottom: 80px;
+}
+
+.Bron__Switch {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.Bron__SwitchButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+  height: 50px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 18px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #FFFFFF;
+  background: #285C2D;
+}
+
+.Bron__SwitchButton--Active {
+  background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E4BD32 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
+}
+
+.Bron__Intro {
+  font-weight: bold;
+  font-size: 32px;
+  letter-spacing: 1px;
+  color: #000000;
+  margin-bottom: 50px;
+}
+
+.Bron__IntroText {
+  font-size: 16px;
+  line-height: 150%;
+  color: #999999;
+  margin-bottom: 70px;
+}
+
+.Bron__IntroText b {
+  color: #000000;
+}
+
+.Bron__Content {
+  display: none;
+}
+
+.Bron__Content--Active {
+  display: block;
+}
+
+.Bron__ContentHeading {
+  font-weight: bold;
+  font-size: 22px;
+  color: #999999;
+  margin-bottom: 50px;
+}
+
+.Bron__CheckboxContainer {
+  display: flex;
+  padding: 0 5%;
+  margin-top: 30px;
+}
+
+.Bron__Checkbox {
+  position: relative;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  margin-right: 25px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.Bron__Checkbox::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  border: 1px solid #CCCCCC;
+  border-radius: 2px;
+  background-color: white;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.122254);
+  transition: background-color .5s;
+}
+
+.Bron__Checkbox:checked::before {
+  background-color: #285C2D;
+}
+
+.Bron__Checkbox:checked::after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 3px;
+  left: 8px;
+}
+
+.Bron__Checkbox:checked ~ .Bron__CheckContent {
+  text-decoration: line-through;
+}
+
+.Bron__CheckText {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 150%;
+  color: #000000;
+  margin-bottom: 30px;
+}
+
+.Bron__CheckQuestion {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #285C2D;
+  margin-bottom: 30px;
+}
+
+.Bron__Hint {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #000000;
+  margin-bottom: 30px;
+}
+
+.Bron__Extra {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #000000;
+  margin-bottom: 30px;
+}
