@@ -23,5 +23,7 @@
     });
   });
 
-  bronSwtichTriggerButtons[0].click();
+  if (bronSwtichTriggerButtons[0]) {
+    bronSwtichTriggerButtons[0].click();
+  }
 })();
