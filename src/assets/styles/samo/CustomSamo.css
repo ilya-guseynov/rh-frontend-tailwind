@@ -42,7 +42,7 @@
 }
 
 .wrapper .samo_container select, .wrapper .samo_container textarea, .wrapper .samo_container .textinput, .wrapper .samo_container input.frm-value, .wrapper .samo_container input.frm-input {
-    height: 45px;
+    height: 20px;
     border: 0px;
     border-radius: 0px;
     color: #858585;
@@ -106,6 +106,13 @@ doesnotexists:-o-prefocus, .wrapper .samo_container select, .wrapper .samo_conta
 }
 .wrapper .samo_container th a:hover {
     color: #ffffff;
+}
+.wrapper .samo_container.search_tour .panel {
+    background: transparent;
+}
+
+.wrapper .samo_container.search_hotel .panel {
+    background: transparent;
 }
 
 .wrapper .samo_container .panel {
@@ -187,9 +194,8 @@ doesnotexists:-o-prefocus, .wrapper .samo_container select, .wrapper .samo_conta
 }
 
 .wrapper .samo_container fieldset legend {
-    background: none repeat scroll 0 0 #E3E7EA;
-    border: 1px solid #366383;
-    color: #366383;
+    background: none repeat scroll 0 0 #2a5d2e;
+    color: white;
     border-radius: 5px;
 }
 
@@ -340,6 +346,10 @@ doesnotexists:-o-prefocus, .wrapper .samo_container select, .wrapper .samo_conta
 .wrapper .samo_container input.date, .wrapper .samo_container input.spin-button {
     background-repeat: no-repeat;
     background-position: right top;
+}
+
+.wrapper .samo_container.edit_agency input.date {
+    width: auto;
 }
 
 .wrapper .samo_container input.date {
@@ -870,6 +880,10 @@ div.eraser .overlays .motto .welcomeText {
 
 /****************************************** new datepicker end   ********************************************/
 
+.wrapper #freight_monitor .controllers {
+    width: auto;
+    padding: 5px 10px !important;
+}
 
 .wrapper .samo_container .date-active-btn {
     cursor: pointer;
@@ -879,8 +893,102 @@ div.eraser .overlays .motto .welcomeText {
     background-color:  #ffcccc;
 }
 
+#bron_info .CLAIMINFO .claim_info_note.small {
+    height: 200px;
+}
+
 .wrapper .samo_container .ORDER_AWAITING {
     background-color:  #ffff00;
+}
+
+#basicModalContent .searchmodes {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 45px;
+}
+
+#basicModalContent .panel.searchmode._freightPlanTabPanel {
+    margin-bottom: 0;
+    padding: 0;
+    width: auto;
+    float: none;
+    width: 100%;
+    box-shadow: none;
+    border: none;
+    font-size: 10px;
+    background: none;
+    color: white;
+    background-color: #2a5d2e!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+ 
+#bron_info .delete_additional_service, #bron_info .delete_additional_insure {
+    background: #2a5d2e;
+}
+
+#bron_info .offered_additional_service, #bron_info .offered_additional_insure {
+    background: #2a5d2e;
+}
+
+#basicModalContent .panel.searchmode._freightPlanTabPanel.searchmode_selected {
+    background-color: inherit!important;
+    color: black;
+}
+
+.agree_processing_personal_data p, .agree_processing_personal_data a, .agree_processing_personal_data span {
+    background-color: transparent!important;
+    font-family: inherit!important;
+}
+
+#basicModalContent .panel.searchmode._freightPlanTabPanel > * {
+    padding: 0;
+    box-shadow: none;
+    border: none;
+    background: none;
+    font-size: 10px;
+}
+
+.wrapper .wrapper .samo_container .panel, #modalContainer div.modalTitle, #logonContainer div.modalTitle {
+    font-family: inherit;
+}
+#bron_info .freightTable tr.yellow td, #bron_info .freightTable tr.checked td {
+    background: none;
+}
+
+.freightTable {
+    background: white;
+}
+
+.wrapper .samo_container table.res .freightTable tr.odd {
+    background: white;
+}
+
+.wrapper .samo_container table.res .freightTable .odd td {
+    padding: 0 5px;
+}
+
+.wrapper .samo_container table.res .freightTable tr.even {
+    background: white;
+}
+
+.wrapper .samo_container table.res .freightTable .even td {
+    padding: 0 5px;
+}
+
+.wrapper .GEOFILTER .chosen-container.chosen-container-single {
+    width: auto!important;
+}
+
+#bron_info .additional_services, #bron_info .additional_insures, #bron_info .calc, #bron_info .bron, #bron_info #btnTownsFreight {
+    background: #2a5d2e;
+}
+
+.wrapper #bron_info .FREIGHTINFO_TIME {
+    width: 50px!important;
 }
 
 .wrapper .samo_container .ORDER_CONFIRMED {
@@ -3175,6 +3283,8 @@ doesnotexist:-o-prefocus, .wrapper .samo_container #messages-popup.close {
 #nprogress{pointer-events:none}#nprogress .bar{background:#29d;position:fixed;z-index:1031;top:0;left:0;width:100%;height:2px}#nprogress .peg{display:block;position:absolute;right:0;width:100px;height:100%;box-shadow:0 0 10px #29d,0 0 5px #29d;opacity:1;-webkit-transform:rotate(3deg) translate(0,-4px);-ms-transform:rotate(3deg) translate(0,-4px);transform:rotate(3deg) translate(0,-4px)}#nprogress .spinner{display:block;position:fixed;z-index:1031;top:15px;right:15px}#nprogress .spinner-icon{width:18px;height:18px;box-sizing:border-box;border:2px solid transparent;border-top-color:#29d;border-left-color:#29d;border-radius:50%;-webkit-animation:nprogress-spinner .4s linear infinite;animation:nprogress-spinner .4s linear infinite}.nprogress-custom-parent{overflow:hidden;position:relative}.nprogress-custom-parent #nprogress .bar,.nprogress-custom-parent #nprogress .spinner{position:absolute}@-webkit-keyframes nprogress-spinner{0%{-webkit-transform:rotate(0)}100%{-webkit-transform:rotate(360deg)}}@keyframes nprogress-spinner{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
 /** ---NANO PRELOADER END--- **/
 
+
+
 /** ---REGISTER|EDIT AGENCY MAP BLOCK START--- **/
 #basicModalContent .googleMap {display: block;margin: 13px;box-sizing: padding-box;border: 1px solid #d7d7d7;width: 742px;height: 400px;}#basicModalContent div.closeMapButton{display:block;margin: 13px;}
 /** ---REGISTER|EDIT AGENCY MAP BLOCK END--- **/
@@ -3434,7 +3544,6 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 .wrapper .samo_container span.icon {
     width: 20px;
     height: 20px;
-    background-image: url('http://demo.loti.ru/assets/images/stars.jpg');
     background-repeat: no-repeat;
     display: inline-block;
     cursor: default;
@@ -3717,21 +3826,6 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     position: absolute;
 }
 
-.loadingStart .iconparent .lotiLogo {
-    width: 300px;
-    float: left;
-    height: 133px;
-}
-
-.loadingStart .iconparent  .lotiLine {
-    margin-left: 44px;
-    margin-right: 44px;
-    padding-top: 30px;
-    float: left;
-    height: 133px;
-    width: 5px;
-}
-
 .loadingStart .iconparent .justToMost {
     padding-top: 30px;
     width: 151px;
@@ -3757,22 +3851,6 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     top: 50%;
     transform: translate(-50%, -85%);
     position: absolute;
-}
-.eraser .overlayWhite  .iconparent .lotiLogo {
-    width: 300px;
-    float: left;
-    height: 133px;
-    animation-delay: 2s;
-}
-
-.eraser .overlayWhite  .iconparent .lotiLine {
-    margin-left: 44px;
-    margin-right: 44px;
-    padding-top: 30px;
-    float: left;
-    height: 133px;
-    width: 5px;
-    animation-delay: 3s;
 }
 
 
@@ -3963,7 +4041,8 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 .wrapper #search_tour .user_info .panel {
     background-color: rgba(255,255,255,0);
     border-radius: 0px;
-    box-shadow:none !important; 
+    box-shadow:none !important;
+    margin-bottom: 0;
 }
 
 
@@ -4030,7 +4109,6 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 .wrapper #search_tour .user_info textinput, 
 .wrapper #search_tour .user_info input.frm-value, 
 .wrapper #search_tour .user_info input {
-    height: 40px;
     border: 1px solid #e4e4e4;
     border-radius: 0px;
     color: #858585;
@@ -4040,7 +4118,7 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     /* border-radius: 5px; */
     padding: 1px 2px;
     font-size: 13px;
-    /* height: 22px; */
+    height: 22px;
     line-height: 18px;
     width: 100%;
     margin-bottom: 4px;
@@ -4052,12 +4130,6 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     -o-transition: background-color 1200ms linear;
     -ms-transition: background-color 1200ms linear;
     transition: background-color 1200ms linear;
-}
-
-.wrapper #search_tour .user_info  .chosen-container-single .chosen-single {
-    height: 40px;
-    margin-bottom: 5px;
-    border: 1px solid #e4e4e4 !important;
 }
 
 .userBackground {
@@ -4152,6 +4224,10 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     transition: background-color 1200ms linear;
 }
 
+.wrapper #register_agency select, #register_agency textarea, #register_agency textinput, #register_agency input.frm-value, #register_agency input.frm-input {
+    height: 22px;
+}
+
 #register_agency fieldset legend {
     font-weight: bold;
     font-size: 14px;
@@ -4159,15 +4235,16 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     /* margin-top: -10px; */
     padding: 12px;
     text-align: left;
-    background: none repeat scroll 0 0 #fff;
+    background: none repeat scroll 0 0 #2a5d2e;
     border: 1px solid #e4e4e4;
-    color: #585858;
+    color: white;
+
     border-radius: 0px;
 }
 
 #register_agency .chosen-container-single .chosen-single {
 
-    height: 40px;
+    height: 32px;
     margin-bottom: 5px;
     border: 1px solid #e4e4e4 !important;
 }
@@ -4223,7 +4300,7 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 
 .wrapper .samo_container.profile {
     background-color: transparent;
-    margin-top: 240px;
+    margin-top: 110px;
     margin-bottom: 100px;
 
 }
@@ -4262,10 +4339,18 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 
 }
 
+.wrapper .samo_container div.logon-wrapper div.header a.button {
+    color: white;
+    background: #2a5d2e;
+}
+
 .wrapper .samo_container div.logon-wrapper div.header div.legend {
     font-size: inherit;
-    color: #666;
+    color: black;
+    background: white;
+    background-color: white!important;
     padding-top: 25px;
+    box-shadow: none;
     padding-bottom: 20px;
 }
 
@@ -4326,10 +4411,8 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 }
 
 .hotel_stopsale .chosen-container-single .chosen-single {
-
-    height: 40px;
+    height: 32px;
     margin-bottom: 5px;
-    border: 1px solid #e4e4e4 !important;
 }
 
 .formError .formErrorContent {
@@ -4363,10 +4446,7 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 }
 
 .freight_monitor .chosen-container-single .chosen-single {
-
-    height: 40px;
-    margin-bottom: 5px;
-    border: 1px solid #e4e4e4 !important;
+    height: 32px;
 }
 
 .freight_monitor select,
@@ -4415,11 +4495,12 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     padding: 8px 16px !important;
 }
 
-
-
-
 .wrapper .samo_container.freight_time {
     background-color: transparent;
+}
+
+.wrapper .samo_container.freight_time table.std table {
+    margin-bottom: 0;
 }
 
 .freight_time  .panel {
@@ -4436,8 +4517,8 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 
 .freight_time .chosen-container-single .chosen-single {
 
-    height: 40px;
-    margin-bottom: 5px;
+    height: 32px;
+    margin-bottom: 0;
     border: 1px solid #e4e4e4 !important;
 }
 
@@ -4494,67 +4575,67 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 
 .wrapper .samo_container.messages {
     background: transparent;
-    margin-top: 240px;
+    margin-top: 110px;
     margin-bottom: 100px;
 }
 
 .wrapper .samo_container.cancel_claim {
     background: transparent;
-    margin-top: 240px;
+    margin-top: 110px;
     margin-bottom: 100px;
 }
 
 .wrapper .samo_container.visa_status {
     background: transparent;
-    margin-top: 240px;
+    margin-top: 110px;
     margin-bottom: 100px;
 }
 
 .wrapper .samo_container.edit_tourist {
     background: transparent;
-    margin-top: 240px;
+    margin-top: 110px;
     margin-bottom: 100px;
 }
 
 .wrapper .samo_container.edit_agency {
     background: transparent;
-    margin-top: 240px;
+    margin-top: 110px;
     margin-bottom: 100px;
 }
 
 .wrapper .samo_container.bron {
     background: transparent;
-    margin-top: 240px;
+    margin-top: 110px;
     margin-bottom: 100px;
 }
 
 .wrapper .samo_container.invoice {
     background: transparent;
-    margin-top: 240px;
+    margin-top: 110px;
     margin-bottom: 100px;
 }
 
 .wrapper .samo_container.pay_variant {
     background: transparent;
-    margin-top: 240px;
+    margin-top: 110px;
     margin-bottom: 100px;
 }
 
 .wrapper .samo_container.agreement {
     background: transparent;
-    margin-top: 240px;
+    margin-top: 110px;
     margin-bottom: 100px;
 }
 
 .wrapper .samo_container.claim_unpaid {
     background: transparent;
-    margin-top: 240px;
+    margin-top: 110px;
     margin-bottom: 100px;
 }
 
 .wrapper .samo_container.aviaticket_cost {
     background: transparent;
-    margin-top: 240px;
+    margin-top: 110px;
     margin-bottom: 100px;
 }
 
@@ -4618,17 +4699,27 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     /* margin-top: -10px; */
     padding: 12px;
     text-align: left;
-    background: none repeat scroll 0 0 #fff;
+    background: none repeat scroll 0 0 #2a5d2e;
     border: 1px solid #e4e4e4;
-    color: #585858;
+    color: white;
     border-radius: 0px;
 }
 
 #registration .chosen-container-single .chosen-single {
-
-    height: 40px;
+    height: 32px;
     margin-bottom: 5px;
-    border: 1px solid #e4e4e4 !important;
+}
+
+#check_passport {
+    width: 500px;
+}
+
+.samo_container.check_passport #check_passport .panel.controls {
+    border-radius: 0;
+}
+
+.wrapper #cl_refer .controls {
+    width: 1110px;
 }
 
 #registration label.required, #register_agency .register_by_inn {
@@ -4746,8 +4837,22 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     /* color: white; */
 }
 
+.wrapper #div_logout {
+    top: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: rgba(255,255,255,0.5);
+    width: 100%;
+    padding: 5px; 
+}
+
 #div_logout {
-    top: 130px;
+    top: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     background-color: rgba(255,255,255,0.5);
     width: 100%;
@@ -4755,7 +4860,7 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 }
 
 #edit_agency {
-    margin-top: 408px;  
+    margin-top: 0;  
 }
 
 #edit_agency  table.res thead th{
@@ -4765,11 +4870,11 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 #agreement {
 }
 #claim_unpaid {
-    margin-top: 408px;
+    margin-top: 0;
 }
 
 #cl_refer {
-    margin-top: 408px;
+    margin-top: 100px;
 }
 
 #agreement #system-error {
@@ -4910,12 +5015,20 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     height: 40px !important;
 }
 
+.samo_container.warrant {
+    margin-top: 110px;
+}
+
+.samo_container.claim_act {
+    margin-top: 110px;
+}
+
+.samo_container.reports {
+    margin-top: 110px;
+}
 
 #claim_unpaid .chosen-container-single .chosen-single {
-
-    height: 40px;
-    margin-bottom: 5px;
-    border: 1px solid #e4e4e4 !important;
+    height: 32px;
 }
 
 
@@ -4932,12 +5045,59 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
     border-radius: 0 !important;
     box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
     background-color: #fbf8f3 !important;
-  background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
-    
+    background: linear-gradient(89.36deg, #D8BB58bb -53.59%, #ecd36e81 -33.86%, #F4DB7681 -21.39%, #E9CC6581 4.9%, #CEA53A81 56.52%, #C99F3381 64.39%);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 
+}
+
+.samo_container.warrant #warrant .searchmodes .panel{
+    border-radius: 0 !important;
+    box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.samo_container.profile #profile .searchmodes .panel{
+    border-radius: 0 !important;
+    box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.samo_container.profile #partner_discount .searchmodes .panel{
+    border-radius: 0 !important;
+    box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.samo_container.edit_agency #edit_agency .searchmodes .panel{
+    border-radius: 0 !important;
+    box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.samo_container.claim_act #claim_act .searchmodes .panel{
+    border-radius: 0 !important;
+    box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.samo_container.reports #reports .searchmodes .panel{
+    border-radius: 0 !important;
+    box-shadow: 0px 2px 8px hsl(0deg 5% 73% / 58%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #cl_refer fieldset legend {
@@ -4994,18 +5154,11 @@ body[dir=rtl] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {
 
 
 #cl_refer .chosen-container-single .chosen-single {
-
-    height: 40px;
-    margin-bottom: 5px;
-    border: 1px solid #e4e4e4 !important;
+    height: 32px;
 }
 
 #cl_refer .Zebra_DatePicker_Icon_Wrapper {
     width: 100%;
-}
-
-#cl_refer .Zebra_DatePicker_Icon_Inside{
-    left:164px !important;
 }
 
 /*
@@ -5034,7 +5187,7 @@ modal
     background-repeat: no-repeat;
     background-position: center;
     padding-bottom: 15px;
-
+    margin-bottom: 30px;
 }
 #basicModalContent .panel legend {
     font-weight: bold;
@@ -5043,9 +5196,9 @@ modal
     /* margin-top: -10px; */
     padding: 12px;
     text-align: left;
-    background: none repeat scroll 0 0 #fff;
+    background: none repeat scroll 0 0 #2a5d2e;
     border: 1px solid #e4e4e4;
-    color: #585858;
+    color: white;
     border-radius: 0px;
 
 }
@@ -5095,9 +5248,9 @@ modal
     /* margin-top: -10px; */
     padding: 12px;
     text-align: left;
-    background: none repeat scroll 0 0 #fff;
+    background: none repeat scroll 0 0 #2a5d2e;
     border: 1px solid #e4e4e4;
-    color: #585858;
+    color: white;
     border-radius: 0px;
 
 }
@@ -5153,7 +5306,7 @@ modal
     font-size: 13px;
     /* height: 22px; */
     line-height: 18px;
-    width: 100%;
+    width: auto;
     margin-bottom: 4px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -5166,10 +5319,7 @@ modal
 }
 
 #bron_info .chosen-container-single .chosen-single {
-
-    height: 40px;
-    margin-bottom: 5px;
-    border: 1px solid #e4e4e4 !important;
+    height: 32px;
 }
 
 #bron_info .CLAIMINFO fieldset .checklistbox {
@@ -5207,7 +5357,7 @@ modal
 
 #basicModalContent button {
 
-    margin-left:0px;
+    margin-left:-4px;
 
 }
 
@@ -5225,7 +5375,6 @@ modal
 #basicModalContent  textinput, 
 #basicModalContent  input.frm-value, 
 #basicModalContent  input.frm-input {
-    height: 40px;
     border: 1px solid #e4e4e4;
     border-radius: 0px;
     color: #858585;
@@ -5235,7 +5384,7 @@ modal
     /* border-radius: 5px; */
     padding: 1px 2px;
     font-size: 13px;
-    /* height: 22px; */
+    height: 22px;
     line-height: 18px;
     width: 100%;
     margin-bottom: 4px;
@@ -5250,10 +5399,7 @@ modal
 }
 
 #basicModalContent  .chosen-container-single .chosen-single {
-
-    height: 40px;
-    margin-bottom: 5px;
-    border: 1px solid #e4e4e4 !important;
+    height: 32px;
 }
 
 
@@ -5587,6 +5733,10 @@ body {}
   margin-bottom: 20px;
 }
 
+.wrapper .samo_container.hotel_stopsale table.std table {
+    margin-bottom: 0;
+}
+
 .wrapper .samo_container .n2 {
   width: 50%;
 }
@@ -5637,6 +5787,10 @@ body {}
   text-align: left;
 }
 
+.wrapper .samo_container .price_legend td {
+    font-size: 12px;
+}
+
 .wrapper .samo_container .price_legend span {
   vertical-align: middle;
   line-height: 30px;
@@ -5682,6 +5836,41 @@ body {}
 
 .wrapper .samo_container .stopsale, .wrapper .samo_container .resultset tr.red_row td a {
   color: #9F4D4D !important;
+}
+
+.wrapper .samo_container .searchmodes  {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrapper .samo_container.search_tour .searchmodes  {
+    width: 60%;
+}
+
+.wrapper .samo_container.search_hotel .searchmodes  {
+    width: 60%;
+}
+
+.wrapper .samo_container.cl_wizard .searchmodes  {
+    width: 60%;
+}
+
+.wrapper .samo_container .searchmodes .panel.searchmode {
+    float: none;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.wrapper .samo_container .searchmodes .panel.searchmode > a {
+    padding: 10px 0;
+}
+
+.wrapper .samo_container .searchmodes .panel.searchmode.searchmode_selected {
+    padding: 10px 0!important;
+    background: white;
+    background-color: white!important;
 }
 
 .red_row td {

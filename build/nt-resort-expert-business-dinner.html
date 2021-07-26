@@ -501,16 +501,16 @@
                   </div>
                   <div class="REEvents__DisplaySwitchButtons">
                     <button v-if="asCalendar" @click="switchToShowAsCalendar" class="REEvents__DisplaySwitchButton">
-                      <img class="REEvents__DisplaySwitchButtonImage" src="../assets/images/re-calendar-active.svg" alt="re-calendar-active">
+                      <img class="REEvents__DisplaySwitchButtonImage" src="./assets/images/re-calendar-active.svg" alt="re-calendar-active">
                     </button>
                     <button v-else @click="switchToShowAsCalendar" class="REEvents__DisplaySwitchButton">
-                      <img class="REEvents__DisplaySwitchButtonImage" src="../assets/images/re-calendar-inactive.svg" alt="re-calendar-inactive">
+                      <img class="REEvents__DisplaySwitchButtonImage" src="./assets/images/re-calendar-inactive.svg" alt="re-calendar-inactive">
                     </button>
                     <button v-if="!asCalendar" @click="switchToShowAsList" class="REEvents__DisplaySwitchButton">
-                      <img class="REEvents__DisplaySwitchButtonImage" src="../assets/images/re-list-active.svg" alt="re-list-active">
+                      <img class="REEvents__DisplaySwitchButtonImage" src="./assets/images/re-list-active.svg" alt="re-list-active">
                     </button>
                     <button v-else @click="switchToShowAsList" class="REEvents__DisplaySwitchButton">
-                      <img class="REEvents__DisplaySwitchButtonImage" src="../assets/images/re-list-inactive.svg" alt="re-list-inactive">
+                      <img class="REEvents__DisplaySwitchButtonImage" src="./assets/images/re-list-inactive.svg" alt="re-list-inactive">
                     </button>
                   </div>
                 </div>
@@ -537,7 +537,7 @@
                   <li v-for="item in itemsToDisplayAsList" class="REEvents__ListItem">  
                     <div class="REEvent__ListItemTop">
                       <div class="REEvent__ListItemNameBlock">
-                        <img class="REEvent__ListItemMantaImage" src="../assets/images/re-list-manta.svg" alt="re-list-manta">
+                        <img class="REEvent__ListItemMantaImage" src="./assets/images/re-list-manta.svg" alt="re-list-manta">
                         <div class="REEvent__ListItemNameContainer">
                           <div class="REEvent__ListItemName">{{ item.expertName }}</div>
                           <div class="REEvent__ListItemExpertSubTitle">Эксперт Направления</div>
