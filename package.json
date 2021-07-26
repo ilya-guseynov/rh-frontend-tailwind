@@ -7,6 +7,7 @@
   "scripts": {
     "tasks": "gulp --tasks",
     "watch": "gulp watch",
+    "watch:samo": "gulp watchsamo",
     "build": "gulp build",
     "build:html": "gulp html",
     "build:styles": "gulp styles",

@@ -235,7 +235,7 @@
 
 @media (min-width: 769px) {
   .HotelPage__TabsContainer--Scroll {
-    margin: 0 0 100px;
+    margin: 0 0 30px;
   } 
 }
 
@@ -712,4 +712,23 @@
   text-align: center;
   color: #FFFFFF;
   margin-bottom: 60px;
+}
+
+.HotelPage__TabsProgressBar {
+  width: 100%;
+  height: 4px;
+  margin-bottom: 70px;
+  background: #E0E0E0;
+  position: relative;
+}
+
+.HotelPage__TabsProgressBarInner {
+  width: 109px;
+  height: 6px;
+  background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E4BD32 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: all .5s;
 }

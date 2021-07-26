@@ -66,6 +66,11 @@ const build = parallel(html, styles, scripts, images, fonts, videos)
 
 const watchFiles = () => watch("./src/**/*", series(build, browserSyncReload))
 
+const watchSamoFiles = () => watch("./src/**/*", series(build, done => {
+  exec("cp ./build/assets/customers.css /home/bitrix/ext_www/search.resort-holiday.com/public/css/customer.css")
+  done()
+}))
+
 const watchSrc = parallel(browserSyncStart, watchFiles)
 
 module.exports.html = html
@@ -76,3 +81,4 @@ module.exports.fonts = fonts
 module.exports.videos = videos
 module.exports.build = build
 module.exports.watch = watchSrc
+module.exports.watchsamo = watchSamoFiles

@@ -2,6 +2,7 @@
   const dataTriggerAttributeName = "hotel-tab-trigger-index";
   const dataAttributeName = "hotel-data";
   const goldBgClass = "HotelPage__TabLink--Active";
+
   
   const attributeNameToQuery = attributeName => `[${attributeName}]`;
   const createQueryForDataById = id => `[${dataAttributeName} = "${id}"]`;
@@ -72,6 +73,8 @@
 
   const datas = document.querySelectorAll(attributeNameToQuery(dataAttributeName));
   const dataTriggers = document.querySelectorAll(attributeNameToQuery(dataTriggerAttributeName));
+  const dataCount = dataTriggers.length;
+  const progressBar = document.querySelector(".HotelPage__TabsProgressBarInner");
 
   datas.forEach(data => hideElement(data));
 
@@ -84,6 +87,11 @@
       });
 
       dataTrigger.classList.add(goldBgClass);
+
+      progressBar.style = `
+        left: ${ ((+dataTrigger.getAttribute(dataTriggerAttributeName) - 1) / dataCount) * 100 }%;
+        width: ${ 1 / dataCount * 100 }%;
+      `;
 
       showElement(
         document.querySelector(
