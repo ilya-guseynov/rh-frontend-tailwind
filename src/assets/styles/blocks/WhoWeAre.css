@@ -59,6 +59,13 @@
 
 .WhoWeAre__SpeakerInfo {}
 
+.WhoWeAre__Speaking {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #999999;
+}
+
 .WhoWeAre__SpeakerName {
   font-weight: 600;
   font-size: 18px;
