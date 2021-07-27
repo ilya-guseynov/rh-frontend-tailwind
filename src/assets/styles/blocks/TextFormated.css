@@ -130,6 +130,12 @@
   width: 65%;
 }
 
+.TextFormated__TableHeading--DarkGreen {
+  background: #2a5d2e;
+  color: white;
+  text-align: center;
+}
+
 .TextFormated__TableHeading--Red {
   background: #F8D6BC;
   text-align: right;

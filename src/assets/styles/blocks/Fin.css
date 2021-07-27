@@ -1,0 +1,55 @@
+.Fin {}
+
+.Fin table {
+    margin-bottom: 100px;
+}
+
+.TextFormated .Fin__Heading {
+    font-weight: bold;
+    font-size: 32px;
+    color: #252D27;
+    margin-bottom: 60px;
+}
+
+.TextFormated td.Fin__BigCell {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 170%;
+    color: #000000;
+    vertical-align: top;
+    padding-top: 30px;
+}
+
+.TextFormated td.Fin__Info {
+    font-weight: bold;
+    font-size: 16px;
+    color: #000000;
+    line-height: 130%;
+    text-align: left;
+}
+
+.TextFormated td.Fin__Descr {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 130%;
+    text-align: right;
+    color: #285C2D;
+}
+
+.Fin__InfoBlock {
+    margin-bottom: 110px;
+}
+
+.Fin__Info {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 180%;
+    color: #252D27;
+}
+
+.Fin__Info a {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 180%;
+    color: #285C2D;
+}
