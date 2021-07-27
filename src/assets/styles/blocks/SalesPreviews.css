@@ -1,0 +1,102 @@
+.SalesPreviews {}
+
+.SalesPreviews__List {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.SalesPreviews__Item {
+    height: 200px;
+    margin-bottom: 40px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.SalesPreviews__ItemLink {
+    position: relative;
+    display: block;
+    height: 100%;
+}
+
+.SalesPreviews__ItemImageContainer {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.SalesPreviews__ItemImage {
+    width: 110%;
+}
+
+.SalesPreviews__ItemName {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 8px 12px;
+    background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E4BD32 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
+    font-weight: bold;
+    font-size: 24px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    transition: all .5s;
+}
+
+.SalesPreviews__ItemLink:hover .SalesPreviews__ItemName {
+    opacity: 0;
+}
+
+.SalesPreviews__ItemInfo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    background: rgba(40, 92, 45, 0.8);
+    transition: all .5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.SalesPreviews__ItemLink:hover .SalesPreviews__ItemInfo {
+    opacity: 1;
+}
+
+.SalesPreviews__ItemDescription {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+    max-width: 550px;
+}
+
+.SalesPreviews__Question {}
+
+.SalesPreviews__Question div {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 130%;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.SalesPreviews__Question span {
+    display: block;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    transform: rotate(90deg);
+}
