@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="RH__Page" lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    @@include("./blocks/head-imports.html")
+
+    <title>RH | Список отелей</title>
+</head>
+
+<body class="RH__Body">
+<div class="RH__Wrapper">
+    @@include("./blocks/header-b2b.html")
+    <main class="RH__Main">
+        <section class="PagePreview PagePreview--ResortExpert" style="background-image: url('./assets/images/news-bg.jpg');">
+            <div class="PagePreview__Inner Container">
+                <h1 class="PagePreview__Title">Список отелей<br><span>Мальдивы</span></h1>
+            </div>
+        </section>
+        <section class="InfoPageContent Container" id="hotel-list-vue">
+            <div v-if="loading">
+                Загрузка
+            </div>
+            <div v-if="!loading" class="InfoPageContent__Aside">
+                <div class="InfoPageContent__AsideContent">
+                    <div class="HotelList__FilterBlock">
+                        <div class="HotelList__FilterBlockTitle">Поиск по названию</div>
+                        <div class="HotelList__FilterBlockTitleInputContainer">
+                            <input class="HotelList__FilterBlockTitleInput" type="text" v-model="currentTitle">
+                            <svg class="HotelList__FilterBlockTitleInputIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.32801 8.32808C7.32801 3.70978 11.0298 0 15.6381 0C17.6023 0 19.491 0.681388 21.0019 1.89274C24.5526 4.84543 25.0059 10.0694 22.0596 13.6278C19.1133 17.1861 13.9005 17.6404 10.3499 14.6877L1.05765 24L0 22.9401L9.29222 13.7035C8.00793 12.1893 7.32801 10.2965 7.32801 8.32808ZM8.83887 8.32808C8.83887 12.1136 11.8607 15.142 15.638 15.142C19.4154 15.142 22.4372 12.1136 22.4372 8.32808C22.4372 4.54259 19.4154 1.5142 15.638 1.5142C11.8607 1.5142 8.83887 4.54259 8.83887 8.32808Z" fill="#999999"/>
+                                <path d="M15.6379 3.02832V4.54252C17.7532 4.54252 19.4153 6.20813 19.4153 8.328H20.9262C20.9262 5.37532 18.5843 3.02832 15.6379 3.02832Z" fill="#999999"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="HotelList__FilterBlock">
+                        <div class="HotelList__FilterBlockTitle">Поиск по категории</div>
+                        <div class="HotelList__GilterCategoryContainer">
+                            <div class="Feedback__CheckboxContainer">
+                                <input class="Feedback__Checkbox" type="checkbox" v-model="currentStarList" value="6" id="stars-6">
+                                <label class="Feedback__CheckboxLabel" for="stars-6">6 stars</label>
+                            </div>
+                            <div class="Feedback__CheckboxContainer">
+                                <input class="Feedback__Checkbox" type="checkbox" v-model="currentStarList" value="5" id="stars-5">
+                                <label class="Feedback__CheckboxLabel" for="stars-5">5 stars</label>
+                            </div>
+                            <div class="Feedback__CheckboxContainer">
+                                <input class="Feedback__Checkbox" type="checkbox" v-model="currentStarList" value="4" id="stars-4">
+                                <label class="Feedback__CheckboxLabel" for="stars-4">4 stars</label>
+                            </div>
+                            <div class="Feedback__CheckboxContainer">
+                                <input class="Feedback__Checkbox" type="checkbox" v-model="currentStarList" value="3" id="stars-3">
+                                <label class="Feedback__CheckboxLabel" for="stars-3">3 stars</label>
+                            </div>
+                            <div class="Feedback__CheckboxContainer">
+                                <input class="Feedback__Checkbox" type="checkbox" v-model="currentStarList" value="2" id="stars-2">
+                                <label class="Feedback__CheckboxLabel" for="stars-2">2 stars</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="HotelList__FilterBlock">
+                        <div class="HotelList__FilterBlockTitle">Поиск по Атоллу</div>
+                        <select class="HotelList__FilterBlockAtollSelect" v-model="currentAtoll">
+                            <option value="" disabled selected>Атолл</option>
+                            <option value="">Все</option>
+                            <option v-for="atoll in atolls" :value="atoll">{{ atoll }}</option>
+                        </select>
+                    </div>
+                    <div class="HotelList__FilterBlock">
+                        <div class="HotelList__FilterBlockTitle">Поиск по Критериям</div>
+                        <div class="HotelList__GilterCategoryContainer">
+                            <div v-for="criteria in criterias" class="Feedback__CheckboxContainer">
+                                <input class="Feedback__Checkbox" type="checkbox" v-model="currentCriteriaList" :value="criteria" :id="criteria">
+                                <label class="Feedback__CheckboxLabel" :for="criteria">{{ criteria }}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div v-if="!loading" class="InfoPageContent__Main ResortExpert__ContentPage">
+                <div class="ResortExpert__BackLinkContainer">
+                    <a class="ResortExpert__BackLink" href="#">
+                        <img class="ResortExpert__BackLinkIcon" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta">
+                        <div class="ResortExpert__BackLinkText">Вернуться на страницу Мальдивы</div>
+                    </a>
+                </div>
+                <div class="ResortExpert__ContentPageText">
+                    <ul class="HotelList__List">
+                        <li class="HotelList__Item" v-for="(hotel, index) in filteredHotels" :key="hotel.ID">
+                            <div class="HotelList__ItemMedia">
+                                <img class="HotelList__ItemImage" :src="hotel.PREVIEW_PICTURE" :alt="hotel.PROPERTY_HOTEL_TITLE">
+                            </div>
+                            <div class="HotelList__ItemInfo">
+                                <a class="HotelList__ItemName" :href="hotel.DETAIL_PAGE_URL">{{ hotel.PROPERTY_HOTEL_TITLE }}</a>
+                                <div class="HotelList__ItemStars"><rh-stars :stars-count="hotel.PROPERTY_STARS_VALUE"></rh-stars></div>
+                                <div class="HotelList__ItemAtoll">{{ hotel.PROPERTY_ATOLL_VALUE }}</div>
+                                <ul class="HotelList__ItemCriteriaList">
+                                    <li class="HotelList__ItemCriteriaItem" v-for="criteria in hotel.PROPERTY_CRITERIA_VALUE">
+                                        <span class="HotelList__ItemCriteriaName">{{ criteria }}</span>
+                                        <span class="HotelList__ItemCriteriaDivider"> | </span>
+                                    </li>
+                                </ul>
+                                <div class="HotelList__ItemDescription">
+                                    <div><b>Трансфер:</b></div>
+                                    <div>- 30 минут на гидросамолете</div>
+                                    <div>- 45 минут на скоростном катере</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <script>
+                  Vue.component("rh-stars", {
+                    name: "rh-stars",
+
+                    props: {
+                      starsCount: {
+                        type: Number,
+                        required: true,
+                      },
+                    },
+
+                    template: `
+                      <div>
+                        {{ starsCount }}
+                        <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M9.5 5.39999L15.2 5.5L10.6 8.89999L12.3 14.5L7.6 11.2L2.9 14.5L4.6 9L0 5.5L5.7 5.39999L7.6 0L9.5 5.39999Z" fill="url(#paint0_linear)"/>
+                          <defs>
+                          <linearGradient id="paint0_linear" x1="2.6652" y1="14.2175" x2="12.3794" y2="2.5605" gradientUnits="userSpaceOnUse">
+                          <stop stop-color="#D5B959"/>
+                          <stop offset="0.1464" stop-color="#EAD070"/>
+                          <stop offset="0.239" stop-color="#F2D978"/>
+                          <stop offset="0.4341" stop-color="#E7CA67"/>
+                          <stop offset="0.8173" stop-color="#CCA436"/>
+                          <stop offset="0.8757" stop-color="#C59B30"/>
+                          </linearGradient>
+                          </defs>
+                        </svg>
+                    </div>
+                    `
+                  });
+
+                  new Vue({
+                    el: "#hotel-list-vue",
+
+                    data: function () {
+                      return {
+                        currentPage: 1,
+                        currentTitle: "",
+                        currentAtoll: "",
+                        currentCriteriaList: [],
+                        currentStarList: [],
+                        atolls: [],
+                        criterias: [],
+                        showPerPage: 8,
+                        hotels: [],
+                        loading: true,
+                      };
+                    },
+
+                    computed: {
+                      filteredHotels: function () {
+                        const hotelsCopy = [ ...this.hotels ];
+                        return hotelsCopy
+                          .filter(
+                            hotel => this.currentTitle === ""
+                              ? true
+                              : hotel.PROPERTY_HOTEL_TITLE.trim().toLowerCase().includes(this.currentTitle.toLowerCase())
+                          )
+                          .filter(
+                            hotel => this.currentAtoll === ""
+                              ? true
+                              : hotel.PROPERTY_ATOLL_VALUE.trim() === this.currentAtoll
+                          )
+                          .filter(
+                            hotel => this.currentStarList.length === 0
+                              ? true
+                              : this.currentStarList.includes(hotel.PROPERTY_STARS_VALUE)
+                          )
+                          .filter(hotel => {
+                            let correct = false;
+
+                            if (this.currentCriteriaList.length === 0) {
+                              correct = true;
+                            }
+
+                            hotel.PROPERTY_CRITERIA_VALUE.forEach(criteria => {
+                              if (this.currentCriteriaList.includes(criteria.trim())) {
+                                correct = true;
+                              }
+                            });
+
+                            return correct;
+                          })
+                          .filter(
+                            (_, index) =>
+                              index < (this.currentPage) * this.showPerPage &&
+                              index >= (this.currentPage - 1) * this.showPerPage
+                          );
+                      },
+                    },
+
+                    mounted: function () {
+                      return fetch("https://dev.resort-holiday.com/api/hotels/index.php?method=get.content")
+                        .then(response => response.json())
+                        .then(data => {
+                          data.elements.forEach(item => {
+                            this.hotels.push(item);
+
+                            item.PROPERTY_CRITERIA_VALUE.forEach(criteria => {
+                              if (!this.criterias.includes(criteria.trim())) {
+                                this.criterias.push(criteria.trim());
+                              }
+                            });
+
+                            if (!this.atolls.includes(item.PROPERTY_ATOLL_VALUE.trim())) {
+                              this.atolls.push(item.PROPERTY_ATOLL_VALUE.trim());
+                            }
+                          });
+
+                          this.loading = false;
+                        });
+                    },
+                  });
+                </script>
+            </div>
+        </section>
+        @@include("./blocks/banner-b2b.html")
+    </main>
+    @@include("./blocks/footer-b2b.html")
+</div>
+
+@@include('./blocks/scripts.html')
+</body>
+
+</html>

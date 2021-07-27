@@ -62,6 +62,10 @@
   text-align: right;
 }
 
+.PagePreview__Title span {
+  font-size: 40px;
+}
+
 @media (max-width: 768px) {
   .PagePreview__Title {
     font-size: 40px;

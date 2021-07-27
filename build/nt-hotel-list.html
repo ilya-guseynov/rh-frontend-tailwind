@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html class="RH__Page" lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./assets/customer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+
+    <title>RH | Список отелей</title>
+</head>
+
+<body class="RH__Body">
+<div class="RH__Wrapper">
+    <header class="Header">
+      <div class="Header__TopSection">
+        <div class="Container Container--Large">
+          <div class="Header__TopSectionInner Header__TopSectionInner--Mobile">
+            <div class="Header__Location Header__Location--TopSection">
+              <img class="Header__LocationIcon" src="./assets/images/icons/near-me-icon.svg" alt="near-me-icon">
+              <div class="Header__LocationText">Москва и МО</div>
+            </div>
+            <div class="Header__Currency Header__Currency--TopSection">
+              <span class="Header__CurrencyTitle">Курс</span>
+              <span class="Header__CurrencyTicker">
+                <span class="Header__CurrencyTickerName">USD</span> <span class="Header__CurrencyTickerValue">74.90</span>
+              </span>
+              <span class="Header__CurrencyTickerDivider">|</span>
+              <span class="Header__CurrencyTicker">
+                <span class="Header__CurrencyTickerName">EUR</span> <span class="Header__CurrencyTickerValue">91.30</span>
+              </span>
+            </div>
+          </div>
+          <div class="Header__TopSectionInner Header__TopSectionInner--Desktop">
+            <div class="Header__Socials">
+              <a class="Header__SocialsLink" href="#">
+                <img class="Header__SocialsIcon" src="./assets/images/icons/instagram-icon.svg" alt="instagram-icon">
+              </a>
+              <a class="Header__SocialsLink" href="#">
+                <img class="Header__SocialsIcon" src="./assets/images/icons/facebook-icon.svg" alt="facebook-icon">
+              </a>
+              <a class="Header__SocialsLink" href="#">
+                <img class="Header__SocialsIcon" src="./assets/images/icons/youtube-icon.svg" alt="youtube-icon">
+              </a>
+            </div>
+            <div class="Header__Navigation">
+              <ul class="Header__NavigationList">
+                <li class="Header__NavigationItem">
+                  <a class="Header__NavigationLink" href="#">
+                    <img class="Header__NavigationIcon" src="./assets/images/icons/gold-manta-icon.svg" alt="gold-manta-icon">
+                    <div class="Header__NavigationLinkText">Club Privé</div>
+                  </a>
+                </li>
+                <li class="Header__NavigationItem">
+                  <a class="Header__NavigationLink" href="#">
+                    <img class="Header__NavigationIcon" src="./assets/images/icons/account-icon.svg" alt="account-icon">
+                    <div class="Header__NavigationLinkText">Личный кабинет агента</div>
+                  </a>
+                </li>
+                <li class="Header__NavigationItem">
+                  <a class="Header__NavigationLink" href="#">
+                    <img class="Header__NavigationIcon" src="./assets/images/icons/telegram-icon.svg" alt="telegram-icon">
+                    <div class="Header__NavigationLinkText">TELEGRAM для агентов</div>
+                  </a>
+                </li>
+                <li class="Header__NavigationItem">
+                  <button class="Header__NavigationLink Feedback__Trigger" href="#">
+                    <img class="Header__NavigationIcon" src="./assets/images/icons/feedback-icon.svg" alt="feedback-icon">
+                    <div class="Header__NavigationLinkText">Обратная связь</div>
+                  </button>
+                </li>
+                <li class="Header__NavigationItem">
+                  <a class="Header__NavigationLink" href="#">
+                    <img class="Header__NavigationIcon" src="./assets/images/icons/move-icon.svg" alt="move-icon">
+                    <div class="Header__NavigationLinkText">Туристам</div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="Header__BottomSection">
+        <div class="Container Container--Large">
+          <div class="Header__BottomSectionInner Header__BottomSectionInner--Mobile">
+            <a class="Header__LogoLink" href="#">
+              <img class="Header__LogoImage" src="./assets/images/logo.svg" alt="logo">
+            </a>
+            <div class="Header__BottomSectionMobileTriggers">
+              <div class="Header__BottomSectionMobileContacts">
+                <button class="Header__BottomSectionContactTrigger Header__BottomSectionContactTrigger--Feedback">
+                  <img class="Header__BottomSectionContactIcon" src="./assets/images/icons/feedback-gold-bottom-icon.svg" alt="feedback">
+                </button>
+                <a class="Header__BottomSectionContactTrigger Header__BottomSectionContactTrigger--Phone" href="#">
+                  <img class="Header__BottomSectionContactIcon" src="./assets/images/icons/phone-icon.svg" alt="feedback">
+                </a>
+              </div>
+              <button class="Header__BottomSectionMobileSidebarTrigger mobile-sidebar-trigger">
+                <img class="Header__BottomSectionMobileSidebarTriggerIcon" src="./assets/images/icons/open-menu-icon.svg" alt="open-menu-icon">
+              </button>
+            </div>
+          </div>
+          <div class="Header__BottomSectionInner Header__BottomSectionInner--Desktop">
+            <div class="Header__BottomSectionDesktopLeft">
+              <a class="Header__LogoLink Header__LogoLink--Desktop" href="#">
+                <img class="Header__LogoImage" src="./assets/images/logo.svg" alt="logo">
+              </a>
+              <div class="Header__BottomSectionContacts">
+                <img class="Header__BottomSectionDesktopContactsIcon" src="./assets/images/icons/gold-phone-icon.svg" alt="phone">
+                <div class="Header__BottomSectionPhones">
+                  <a class="Header__BottomSectionPhoneLink" href="#">+7 495 266-63-77</a>
+                  <a class="Header__BottomSectionPhoneLink" href="#">+7 800 100-19-70</a>
+                </div>
+              </div>
+            </div>
+            <div class="Header__BottomSectionDesktopRight">
+              <div class="Header__Currency Header__Currency--BottomSection">
+                <span class="Header__CurrencyTitle">Курс</span>
+                <span class="Header__CurrencyTicker">
+                  <span class="Header__CurrencyTickerName">USD</span> <span class="Header__CurrencyTickerValue">74.90</span>
+                </span>
+                <span class="Header__CurrencyTickerDivider">|</span>
+                <span class="Header__CurrencyTicker">
+                  <span class="Header__CurrencyTickerName">EUR</span> <span class="Header__CurrencyTickerValue">91.30</span>
+                </span>
+              </div>
+              <div class="Header__Location Header__Location--BottomSection">
+                <img class="Header__LocationIcon" src="./assets/images/icons/near-me-icon.svg" alt="near-me-icon">
+                <div class="Header__LocationText">Москва и МО</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="MobileSidebar">
+        <div class="MobileSidebar__ScreenLock"></div>
+        <div class="MobileSidebar__Content">
+          <div class="MobileSidebar__Inner">
+            <div class="MobileSidebar__FirstContentBlock">
+              <ul class="MobileSidebar__FirstContentList">
+                <li class="MobileSidebar__FirstContentItem">
+                  <a class="MobileSidebar__FirstContentLink" href="#">
+                    <img class="MobileSidebar__FirstContentIcon" src="./assets/images/icons/move-icon.svg" alt="move">
+                    <div class="MobileSidebar__FirstContentText">Туристам</div>
+                  </a>
+                </li>
+                <li class="MobileSidebar__FirstContentItem">
+                  <a class="MobileSidebar__FirstContentLink href="#">
+                    <img class="MobileSidebar__FirstContentIcon" src="./assets/images/icons/account-icon.svg" alt="move">
+                    <div class="MobileSidebar__FirstContentText">Личный кабинет агента</div>
+                  </a>
+                </li>
+                <li class="MobileSidebar__FirstContentItem">
+                  <a class="MobileSidebar__FirstContentLink" href="#">
+                    <img class="MobileSidebar__FirstContentIcon" src="./assets/images/icons/telegram-icon.svg" alt="move">
+                    <div class="MobileSidebar__FirstContentText">TELEGRAM для агентов</div>
+                  </a>
+                </li>
+                <li class="MobileSidebar__FirstContentItem">
+                  <a class="MobileSidebar__FirstContentLink" href="#">
+                    <img class="MobileSidebar__FirstContentIcon" src="./assets/images/icons/feedback-icon.svg" alt="move">
+                    <div class="MobileSidebar__FirstContentText">Обратная связь</div>
+                  </a>
+                </li>
+                <li class="MobileSidebar__FirstContentItem">
+                  <a class="MobileSidebar__FirstContentLink" href="#">
+                    <img class="MobileSidebar__FirstContentIcon" src="./assets/images/icons/gold-manta-icon.svg" alt="move">
+                    <div class="MobileSidebar__FirstContentText">CLUB Privé</div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="MobileSidebar__SecondContentBlock">
+              <ul class="MobileSidebar__SecondContentList">
+                <li class="MobileSidebar__SecondContentItem">
+                  <button class="MobileSidebar__SecondContentSubmenuTrigger">Страны</button>
+                  <ul class="MobileSidebar__SecondContentSubmenu">
+                    <li class="MobileSidebar__SecondContentSubmenuItem">
+                      <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Мальдивы</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="MobileSidebar__SecondContentItem">
+                  <button class="MobileSidebar__SecondContentSubmenuTrigger">О нас</button>
+                  <ul class="MobileSidebar__SecondContentSubmenu">
+                    <li class="MobileSidebar__SecondContentSubmenuItem">
+                      <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Кто мы?</a>
+                    </li>
+                    <li class="MobileSidebar__SecondContentSubmenuItem">
+                      <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Почему мы?</a>
+                    </li>
+                    <li class="MobileSidebar__SecondContentSubmenuItem">
+                      <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Команда</a>
+                    </li>
+                    <li class="MobileSidebar__SecondContentSubmenuItem">
+                      <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Пресс-центр</a>
+                    </li>
+                    <li class="MobileSidebar__SecondContentSubmenuItem">
+                      <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Защита персональных данных</a>
+                    </li>
+                    <li class="MobileSidebar__SecondContentSubmenuItem">
+                      <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Вакансии</a>
+                    </li>
+                    <li class="MobileSidebar__SecondContentSubmenuItem">
+                      <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Контакты</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="MobileSidebar__SecondContentItem">
+                  <button class="MobileSidebar__SecondContentSubmenuTrigger">Агентствам</button>
+                  <ul class="MobileSidebar__SecondContentSubmenu">
+                    <li class="MobileSidebar__SecondContentSubmenuItem">
+                      <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Сотрудничество</a>
+                    </li>
+                    <li class="MobileSidebar__SecondContentSubmenuItem">
+                      <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Акции</a>
+                    </li>
+                    <li class="MobileSidebar__SecondContentSubmenuItem">
+                      <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Resort Expert</a>
+                    </li>
+                    <li class="MobileSidebar__SecondContentSubmenuItem">
+                      <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Club Privé</a>
+                    </li>
+                    <li class="MobileSidebar__SecondContentSubmenuItem">
+                      <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Финансовые гарантии</a>
+                    </li>
+                    <li class="MobileSidebar__SecondContentSubmenuItem">
+                      <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Оплата туров</a>
+                    </li>
+                    <li class="MobileSidebar__SecondContentSubmenuItem">
+                      <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Страхование</a>
+                    </li>
+                    <li class="MobileSidebar__SecondContentSubmenuItem">
+                      <a class="MobileSidebar__SecondContentSubmenuLink" href="#">FIT | MICE</a>
+                    </li>
+                    <li class="MobileSidebar__SecondContentSubmenuItem">
+                      <a class="MobileSidebar__SecondContentSubmenuLink" href="#">Проверить срок действия паспорта</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <button class="MobileSidebar__CloseTrigger">
+          <img class="MobileSidebar__CloseIcon" src="./assets/images/icons/close-icon.svg" alt="close">
+        </button>
+      </div>
+      <div class="Feedback">
+        <div class="Feedback__Screenlock"></div>
+        <div class="Feedback__Content">
+          <div class="Feedback__ContentLeft">
+            <img class="Feedback__LeftLogo" src="./assets/images/logo.svg" alt="logo">
+            <div class="Feedback__LeftCountry">Россия</div>
+            <div class="Feedback__LeftAddress">Москва, Новодмитровская 2, кор. 1<br>Савеловский Сити, башня Goodman</div>
+            <div class="Feedback__LeftPhonesBlock">
+              <img class="Feedback__LeftPhoneIcon" src="./assets/images/icons/gold-phone-icon.svg" alt="phone">
+              <div class="Feedback__LeftPhones">
+                <a class="Feedback__LeftPhone" href="#">+7 495 266-63-77</a>
+                <a class="Feedback__LeftPhone" href="#">+7 800 100-19-70</a>
+              </div>
+            </div>
+            <a class="Feedback__LeftLink" href="#">info@resort-holiday.com</a>
+          </div>
+          <div class="Feedback__ContentRight">
+            <div class="Feedback__RightTitle">
+              <div class="Feedback__RightTitleText">Напишите нам</div>
+              <button class="Feedback__RightTitleClose Feedback__CloseTrigger">
+                <img src="./assets/images/icons/close-icon.svg" alt="close">
+              </button>
+            </div>
+            <form class="Feedback__Form">
+              <input class="Feedback__TextInput" type="text" name="username" placeholder="*Ваше имя">
+              <input class="Feedback__TextInput" type="text" name="useragency" placeholder="*Ваше агентство">
+              <input class="Feedback__TextInput" type="email" name="useremail" placeholder="*Ваш email">
+              <div class="Feedback__CheckboxContainer">
+                <input class="Feedback__Checkbox" type="checkbox" name="want-to-feedback">
+                <label class="Feedback__CheckboxLabel" for="want-to-feedback">Я хочу оставить отзыв</label>
+              </div>
+              <div class="Feedback__CheckboxContainer">
+                <input class="Feedback__Checkbox" type="checkbox" name="want-to-thank">
+                <label class="Feedback__CheckboxLabel" for="want-to-thank">Я хочу оставить благодарность</label>
+              </div>
+              <div class="Feedback__CheckboxContainer">
+                <input class="Feedback__Checkbox" type="checkbox" name="want-to-help">
+                <label class="Feedback__CheckboxLabel" for="want-to-help">Я хочу помочь вам стать лучше</label>
+              </div>
+              <div class="Feedback__CheckboxContainer">
+                <input class="Feedback__Checkbox" type="checkbox" name="want-to-ask">
+                <label class="Feedback__CheckboxLabel" for="want-to-ask">Я хочу задать вопрос, т.к. не нашла / нашел ответ на сайте</label>
+              </div>
+              <div class="Feedback__CheckboxContainer">
+                <input class="Feedback__Checkbox" type="checkbox" name="want-to-ask-by-number">
+                <label class="Feedback__CheckboxLabel" for="want-to-ask-by-number">Я хочу задать вопрос по заявке</label>
+              </div>
+              <div class="Feedback__SevenNumberInputContainer">
+                <div class="Feedback__SevenNumberInputText">№</div>
+                <div class="SevenBg" style="background-image: url('./assets/images/seven-bg.svg');">
+                  <input class="Feedback__SevenNumberInput"  type="number" minlength="7" maxlength="7" max="9999999">
+                </div>
+              </div>
+              <textarea class="Feedback__Textarea" name="usermessage" cols="30" rows="5" placeholder="Введите текст сообщения"></textarea>
+              <button class="Feedback__SubmitButton" type="submit">Отправить</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="Menub2b">
+      <div class="Container">
+        <div class="Menub2b__Inner">
+          <a class="Menub2b__BigSearchTourLink" href="#">
+            Поиск<br>Тура
+          </a>
+          <nav class="Menub2b__Navigation">
+            <ul class="Menub2b__NavigationList">
+              <li class="Menub2b__NavigationItem">
+                <div class="Menub2b__NavigationDropdownTrigger">
+                  <div class="Menub2b__NavigationDropdownTitle">Страны</div>
+                  <img class="Menub2b__NavigationDropdownArrowIcon" src="./assets/images/icons/down-arrow-icon.svg" alt="down-arrow-icon">
+                </div>
+                <div class="Menub2b__NavigationDropdownBlock">
+                  <ul class="Menub2b__NavigationDropdownList">
+                    <li class="Menub2b__NavigationDropdownItem">
+                      <a class="Menub2b__NavigationDropdownLink" href="#">Мальдивы</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="Menub2b__NavigationItem">
+                <div class="Menub2b__NavigationDropdownTrigger">
+                  <div class="Menub2b__NavigationDropdownTitle">О нас</div>
+                  <img class="Menub2b__NavigationDropdownArrowIcon" src="./assets/images/icons/down-arrow-icon.svg" alt="down-arrow-icon">
+                </div>
+                <div class="Menub2b__NavigationDropdownBlock">
+                  <ul class="Menub2b__NavigationDropdownList">
+                    <li class="Menub2b__NavigationDropdownItem">
+                      <a class="Menub2b__NavigationDropdownLink" href="#">Кто мы?</a>
+                    </li>
+                    <li class="Menub2b__NavigationDropdownItem">
+                      <a class="Menub2b__NavigationDropdownLink" href="#">Почему мы?</a>
+                    </li>
+                    <li class="Menub2b__NavigationDropdownItem">
+                      <a class="Menub2b__NavigationDropdownLink" href="#">Команда</a>
+                    </li>
+                    <li class="Menub2b__NavigationDropdownItem">
+                      <a class="Menub2b__NavigationDropdownLink" href="#">Пресс-центр</a>
+                    </li>
+                    <li class="Menub2b__NavigationDropdownItem">
+                      <a class="Menub2b__NavigationDropdownLink" href="#">Защита персональных данных</a>
+                    </li>
+                    <li class="Menub2b__NavigationDropdownItem">
+                      <a class="Menub2b__NavigationDropdownLink" href="#">Вакансии</a>
+                    </li>
+                    <li class="Menub2b__NavigationDropdownItem">
+                      <a class="Menub2b__NavigationDropdownLink" href="#">Контакты</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="Menub2b__NavigationItem">
+                <div class="Menub2b__NavigationDropdownTrigger">
+                  <div class="Menub2b__NavigationDropdownTitle">Агентствам</div>
+                  <img class="Menub2b__NavigationDropdownArrowIcon" src="./assets/images/icons/down-arrow-icon.svg" alt="down-arrow-icon">
+                </div>
+                <div class="Menub2b__NavigationDropdownBlock">
+                  <ul class="Menub2b__NavigationDropdownList">
+                    <li class="Menub2b__NavigationDropdownItem">
+                      <a class="Menub2b__NavigationDropdownLink" href="#">Сотрудничество</a>
+                    </li>
+                    <li class="Menub2b__NavigationDropdownItem">
+                      <a class="Menub2b__NavigationDropdownLink" href="#">Акции</a>
+                    </li>
+                    <li class="Menub2b__NavigationDropdownItem">
+                      <a class="Menub2b__NavigationDropdownLink" href="#">Resort Expert</a>
+                    </li>
+                    <li class="Menub2b__NavigationDropdownItem">
+                      <a class="Menub2b__NavigationDropdownLink" href="#">Club Privé</a>
+                    </li>
+                    <li class="Menub2b__NavigationDropdownItem">
+                      <a class="Menub2b__NavigationDropdownLink" href="#">Финансовые гарантии</a>
+                    </li>
+                    <li class="Menub2b__NavigationDropdownItem">
+                      <a class="Menub2b__NavigationDropdownLink" href="#">Оплата туров</a>
+                    </li>
+                    <li class="Menub2b__NavigationDropdownItem">
+                      <a class="Menub2b__NavigationDropdownLink" href="#">Страхование</a>
+                    </li>
+                    <li class="Menub2b__NavigationDropdownItem">
+                      <a class="Menub2b__NavigationDropdownLink" href="#">FIT | MICE</a>
+                    </li>
+                    <li class="Menub2b__NavigationDropdownItem">
+                      <a class="Menub2b__NavigationDropdownLink" href="#">Проверить срок действия паспорта</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <main class="RH__Main">
+        <section class="PagePreview PagePreview--ResortExpert" style="background-image: url('./assets/images/news-bg.jpg');">
+            <div class="PagePreview__Inner Container">
+                <h1 class="PagePreview__Title">Список отелей<br><span>Мальдивы</span></h1>
+            </div>
+        </section>
+        <section class="InfoPageContent Container" id="hotel-list-vue">
+            <div v-if="loading">
+                Загрузка
+            </div>
+            <div v-if="!loading" class="InfoPageContent__Aside">
+                <div class="InfoPageContent__AsideContent">
+                    <div class="HotelList__FilterBlock">
+                        <div class="HotelList__FilterBlockTitle">Поиск по названию</div>
+                        <div class="HotelList__FilterBlockTitleInputContainer">
+                            <input class="HotelList__FilterBlockTitleInput" type="text" v-model="currentTitle">
+                            <svg class="HotelList__FilterBlockTitleInputIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.32801 8.32808C7.32801 3.70978 11.0298 0 15.6381 0C17.6023 0 19.491 0.681388 21.0019 1.89274C24.5526 4.84543 25.0059 10.0694 22.0596 13.6278C19.1133 17.1861 13.9005 17.6404 10.3499 14.6877L1.05765 24L0 22.9401L9.29222 13.7035C8.00793 12.1893 7.32801 10.2965 7.32801 8.32808ZM8.83887 8.32808C8.83887 12.1136 11.8607 15.142 15.638 15.142C19.4154 15.142 22.4372 12.1136 22.4372 8.32808C22.4372 4.54259 19.4154 1.5142 15.638 1.5142C11.8607 1.5142 8.83887 4.54259 8.83887 8.32808Z" fill="#999999"/>
+                                <path d="M15.6379 3.02832V4.54252C17.7532 4.54252 19.4153 6.20813 19.4153 8.328H20.9262C20.9262 5.37532 18.5843 3.02832 15.6379 3.02832Z" fill="#999999"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="HotelList__FilterBlock">
+                        <div class="HotelList__FilterBlockTitle">Поиск по категории</div>
+                        <div class="HotelList__GilterCategoryContainer">
+                            <div class="Feedback__CheckboxContainer">
+                                <input class="Feedback__Checkbox" type="checkbox" v-model="currentStarList" value="6" id="stars-6">
+                                <label class="Feedback__CheckboxLabel" for="stars-6">6 stars</label>
+                            </div>
+                            <div class="Feedback__CheckboxContainer">
+                                <input class="Feedback__Checkbox" type="checkbox" v-model="currentStarList" value="5" id="stars-5">
+                                <label class="Feedback__CheckboxLabel" for="stars-5">5 stars</label>
+                            </div>
+                            <div class="Feedback__CheckboxContainer">
+                                <input class="Feedback__Checkbox" type="checkbox" v-model="currentStarList" value="4" id="stars-4">
+                                <label class="Feedback__CheckboxLabel" for="stars-4">4 stars</label>
+                            </div>
+                            <div class="Feedback__CheckboxContainer">
+                                <input class="Feedback__Checkbox" type="checkbox" v-model="currentStarList" value="3" id="stars-3">
+                                <label class="Feedback__CheckboxLabel" for="stars-3">3 stars</label>
+                            </div>
+                            <div class="Feedback__CheckboxContainer">
+                                <input class="Feedback__Checkbox" type="checkbox" v-model="currentStarList" value="2" id="stars-2">
+                                <label class="Feedback__CheckboxLabel" for="stars-2">2 stars</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="HotelList__FilterBlock">
+                        <div class="HotelList__FilterBlockTitle">Поиск по Атоллу</div>
+                        <select class="HotelList__FilterBlockAtollSelect" v-model="currentAtoll">
+                            <option value="" disabled selected>Атолл</option>
+                            <option value="">Все</option>
+                            <option v-for="atoll in atolls" :value="atoll">{{ atoll }}</option>
+                        </select>
+                    </div>
+                    <div class="HotelList__FilterBlock">
+                        <div class="HotelList__FilterBlockTitle">Поиск по Критериям</div>
+                        <div class="HotelList__GilterCategoryContainer">
+                            <div v-for="criteria in criterias" class="Feedback__CheckboxContainer">
+                                <input class="Feedback__Checkbox" type="checkbox" v-model="currentCriteriaList" :value="criteria" :id="criteria">
+                                <label class="Feedback__CheckboxLabel" :for="criteria">{{ criteria }}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div v-if="!loading" class="InfoPageContent__Main ResortExpert__ContentPage">
+                <div class="ResortExpert__BackLinkContainer">
+                    <a class="ResortExpert__BackLink" href="#">
+                        <img class="ResortExpert__BackLinkIcon" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta">
+                        <div class="ResortExpert__BackLinkText">Вернуться на страницу Мальдивы</div>
+                    </a>
+                </div>
+                <div class="ResortExpert__ContentPageText">
+                    <ul class="HotelList__List">
+                        <li class="HotelList__Item" v-for="(hotel, index) in filteredHotels" :key="hotel.ID">
+                            <div class="HotelList__ItemMedia">
+                                <img class="HotelList__ItemImage" :src="hotel.PREVIEW_PICTURE" :alt="hotel.PROPERTY_HOTEL_TITLE">
+                            </div>
+                            <div class="HotelList__ItemInfo">
+                                <a class="HotelList__ItemName" :href="hotel.DETAIL_PAGE_URL">{{ hotel.PROPERTY_HOTEL_TITLE }}</a>
+                                <div class="HotelList__ItemStars"><rh-stars :stars-count="hotel.PROPERTY_STARS_VALUE"></rh-stars></div>
+                                <div class="HotelList__ItemAtoll">{{ hotel.PROPERTY_ATOLL_VALUE }}</div>
+                                <ul class="HotelList__ItemCriteriaList">
+                                    <li class="HotelList__ItemCriteriaItem" v-for="criteria in hotel.PROPERTY_CRITERIA_VALUE">
+                                        <span class="HotelList__ItemCriteriaName">{{ criteria }}</span>
+                                        <span class="HotelList__ItemCriteriaDivider"> | </span>
+                                    </li>
+                                </ul>
+                                <div class="HotelList__ItemDescription">
+                                    <div><b>Трансфер:</b></div>
+                                    <div>- 30 минут на гидросамолете</div>
+                                    <div>- 45 минут на скоростном катере</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <script>
+                  Vue.component("rh-stars", {
+                    name: "rh-stars",
+
+                    props: {
+                      starsCount: {
+                        type: Number,
+                        required: true,
+                      },
+                    },
+
+                    template: `
+                      <div>
+                        {{ starsCount }}
+                        <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M9.5 5.39999L15.2 5.5L10.6 8.89999L12.3 14.5L7.6 11.2L2.9 14.5L4.6 9L0 5.5L5.7 5.39999L7.6 0L9.5 5.39999Z" fill="url(#paint0_linear)"/>
+                          <defs>
+                          <linearGradient id="paint0_linear" x1="2.6652" y1="14.2175" x2="12.3794" y2="2.5605" gradientUnits="userSpaceOnUse">
+                          <stop stop-color="#D5B959"/>
+                          <stop offset="0.1464" stop-color="#EAD070"/>
+                          <stop offset="0.239" stop-color="#F2D978"/>
+                          <stop offset="0.4341" stop-color="#E7CA67"/>
+                          <stop offset="0.8173" stop-color="#CCA436"/>
+                          <stop offset="0.8757" stop-color="#C59B30"/>
+                          </linearGradient>
+                          </defs>
+                        </svg>
+                    </div>
+                    `
+                  });
+
+                  new Vue({
+                    el: "#hotel-list-vue",
+
+                    data: function () {
+                      return {
+                        currentPage: 1,
+                        currentTitle: "",
+                        currentAtoll: "",
+                        currentCriteriaList: [],
+                        currentStarList: [],
+                        atolls: [],
+                        criterias: [],
+                        showPerPage: 8,
+                        hotels: [],
+                        loading: true,
+                      };
+                    },
+
+                    computed: {
+                      filteredHotels: function () {
+                        const hotelsCopy = [ ...this.hotels ];
+                        return hotelsCopy
+                          .filter(
+                            hotel => this.currentTitle === ""
+                              ? true
+                              : hotel.PROPERTY_HOTEL_TITLE.trim().toLowerCase().includes(this.currentTitle.toLowerCase())
+                          )
+                          .filter(
+                            hotel => this.currentAtoll === ""
+                              ? true
+                              : hotel.PROPERTY_ATOLL_VALUE.trim() === this.currentAtoll
+                          )
+                          .filter(
+                            hotel => this.currentStarList.length === 0
+                              ? true
+                              : this.currentStarList.includes(hotel.PROPERTY_STARS_VALUE)
+                          )
+                          .filter(hotel => {
+                            let correct = false;
+
+                            if (this.currentCriteriaList.length === 0) {
+                              correct = true;
+                            }
+
+                            hotel.PROPERTY_CRITERIA_VALUE.forEach(criteria => {
+                              if (this.currentCriteriaList.includes(criteria.trim())) {
+                                correct = true;
+                              }
+                            });
+
+                            return correct;
+                          })
+                          .filter(
+                            (_, index) =>
+                              index < (this.currentPage) * this.showPerPage &&
+                              index >= (this.currentPage - 1) * this.showPerPage
+                          );
+                      },
+                    },
+
+                    mounted: function () {
+                      return fetch("https://dev.resort-holiday.com/api/hotels/index.php?method=get.content")
+                        .then(response => response.json())
+                        .then(data => {
+                          data.elements.forEach(item => {
+                            this.hotels.push(item);
+
+                            item.PROPERTY_CRITERIA_VALUE.forEach(criteria => {
+                              if (!this.criterias.includes(criteria.trim())) {
+                                this.criterias.push(criteria.trim());
+                              }
+                            });
+
+                            if (!this.atolls.includes(item.PROPERTY_ATOLL_VALUE.trim())) {
+                              this.atolls.push(item.PROPERTY_ATOLL_VALUE.trim());
+                            }
+                          });
+
+                          this.loading = false;
+                        });
+                    },
+                  });
+                </script>
+            </div>
+        </section>
+        <section class="Banner" style="background-image: url('./assets/images/banner-background.svg');">
+          <div class="Banner__Inner Container">
+            <form class="Banner__Mobile" action="#">
+              <div class="Banner__MobileTextBig">Подпишитесь и узнавайте первыми!</div>
+              <div class="Banner__MobileEmailContainer">
+                <img class="Banner__MobileEmailIcon" src="./assets/images/icons/email-icon.svg" alt="email-icon">
+                <input class="Banner__MobileEmailInput" type="email" name="subscription-email" placeholder="Введите ваш email" required>
+                <button class="Banner__MobileButton" type="submit">
+                  <img class="Banner__MobileSendIcon" src="./assets/images/icons/send-email-icon.svg" alt="send-email-icon">
+                </button>
+              </div>
+              <div class="Banner__MobileTextSmall">Высылаем только важное, новое и интересное</div>
+            </form>
+            <form class="Banner__Desktop" action="#">
+              <div class="Banner__DesktopTextBlock">
+                <div class="Banner__DesktopTextBig">Подпишитесь и узнавайте первыми!</div>
+                <div class="Banner__DesktopTextSmall">Высылаем только важное, новое и интересное</div>
+              </div>
+              <div class="Banner__DesktopEmailBlock">
+                <div class="Banner__DesktopEmailContainer">
+                  <img class="Banner__DesktopEmailIcon" src="./assets/images/icons/email-icon.svg" alt="email-icon">
+                  <input class="Banner__DesktopEmailInput" type="email" name="subscription-email" placeholder="Введите ваш email" required>
+                  <button class="Banner__DesktopSendButton" type="submit">
+                    <img class="Banner__DesktopSendImage" src="./assets/images/icons/send-email-icon.svg" alt="send-email-icon">
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+    </main>
+    <footer class="Footer" style="background-image: url('./assets/images/footer-bg-image.png');">
+      <div class="Footer__BgOver"></div>
+      <div class="Footer__Inner">
+        <div class="Footer__MobileContent">
+          <div class="Footer__MobileContacts Container">
+            <div class="Footer__MobilePhones">
+              <img class="Footer__MobilePhonesIcon" src="./assets/images/icons/gold-phone-icon.svg" alt="phone">
+              <div class="Footer__MobilePhonesList">
+                <a class="Footer__MobilePhonesLink" href="#">+7 495 266-63-77</a>
+                <a class="Footer__MobilePhonesLink" href="#">+7 800 100-19-70</a>
+              </div>
+            </div>
+            <div class="Footer__MobileSocials">
+              <a class="Footer__MobileSocialsLink" href="#">
+                <img class="Footer__MobileSocialsIcon" src="./assets/images/icons/instagram-white-icon.svg" alt="instagram-icon">
+              </a>
+              <a class="Footer__MobileSocialsLink" href="#">
+                <img class="Footer__MobileSocialsIcon" src="./assets/images/icons/facebook-white-icon.svg" alt="facebook-icon">
+              </a>
+              <a class="Footer__MobileSocialsLink" href="#">
+                <img class="Footer__MobileSocialsIcon" src="./assets/images/icons/youtube-white-icon.svg" alt="youtube-icon">
+              </a>
+            </div>
+          </div>
+          <div class="Footer__MobileNavigation Container">
+            <a class="Footer__MobileNavigationLink" href="#">
+              <img class="Footer__MobileNavigationImage" src="./assets/images/icons/move-gold-icon.svg" alt="move">
+              <div class="Footer__MobileNavigationText">Туристам</div>
+            </a>
+            <a class="Footer__MobileNavigationLink" href="#">
+              <img class="Footer__MobileNavigationImage" src="./assets/images/icons/account-gold-icon.svg" alt="account-gold-icon">
+              <div class="Footer__MobileNavigationText">Личный кабинет</div>
+            </a>
+          </div>
+          <div class="Footer__MobileLinks Container">
+            <div class="Footer__MobileLinksLeft">
+              <div class="Footer__MobileLinksBlock">
+                <div class="Footer__MobileLinksTitle">Страны</div>
+                <ul class="Footer__MobileLinksList">
+                  <li class="Footer__MobileLinksItem">
+                    <a class="Footer__MobileLinksLink" href="#">Мальдивы</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="Footer__MobileLinksBlock">
+                <div class="Footer__MobileLinksTitle">Агентствам</div>
+                <ul class="Footer__MobileLinksList">
+                  <li class="Footer__MobileLinksItem">
+                    <a class="Footer__MobileLinksLink" href="#">Сотрудничество</a>
+                  </li>
+                  <li class="Footer__MobileLinksItem">
+                    <a class="Footer__MobileLinksLink" href="#">Акции</a>
+                  </li>
+                  <li class="Footer__MobileLinksItem">
+                    <a class="Footer__MobileLinksLink" href="#">Resort Expert</a>
+                  </li>
+                  <li class="Footer__MobileLinksItem">
+                    <a class="Footer__MobileLinksLink" href="#">Club Privé</a>
+                  </li>
+                  <li class="Footer__MobileLinksItem">
+                    <a class="Footer__MobileLinksLink" href="#">Финансовые гарантии</a>
+                  </li>
+                  <li class="Footer__MobileLinksItem">
+                    <a class="Footer__MobileLinksLink" href="#">Оплата туров</a>
+                  </li>
+                  <li class="Footer__MobileLinksItem">
+                    <a class="Footer__MobileLinksLink" href="#">Страхование</a>
+                  </li>
+                  <li class="Footer__MobileLinksItem">
+                    <a class="Footer__MobileLinksLink" href="#">FIT | MICE</a>
+                  </li>
+                  <li class="Footer__MobileLinksItem">
+                    <a class="Footer__MobileLinksLink" href="#">Проверить срок действия паспорта</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="Footer__MobileLinksRight">
+              <div class="Footer__MobileLinksBlock">
+                <div class="Footer__MobileLinksTitle">О нас</div>
+                <ul class="Footer__MobileLinksList">
+                  <li class="Footer__MobileLinksItem">
+                    <a class="Footer__MobileLinksLink" href="#">Кто мы?</a>
+                  </li>
+                  <li class="Footer__MobileLinksItem">
+                    <a class="Footer__MobileLinksLink" href="#">Почему мы?</a>
+                  </li>
+                  <li class="Footer__MobileLinksItem">
+                    <a class="Footer__MobileLinksLink" href="#">Команда</a>
+                  </li>
+                  <li class="Footer__MobileLinksItem">
+                    <a class="Footer__MobileLinksLink" href="#">Пресс-центр</a>
+                  </li>
+                  <li class="Footer__MobileLinksItem">
+                    <a class="Footer__MobileLinksLink" href="#">Защита персональных данных</a>
+                  </li>
+                  <li class="Footer__MobileLinksItem">
+                    <a class="Footer__MobileLinksLink" href="#">Вакансии</a>
+                  </li>
+                  <li class="Footer__MobileLinksItem">
+                    <a class="Footer__MobileLinksLink" href="#">Контакты</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="Footer__MobileRTO Container">
+            <div class="Footer__MobileRTOInner">
+              <img class="Footer__MobileRTOImage" src="./assets/images/ros-tourism-logo.svg" alt="rostourism">
+              <div class="Footer__MobileRTOText">
+                Мы в реестре туроператоров<br>ООО «Резорт Холидей»<br>РТО ?????????
+              </div>
+            </div>
+          </div>
+          <div class="Footer__MobilePartners Container">
+            <div class="Footer__MobilePartnersTitle">Партнеры</div>
+            <div class="Footer__MobilePartnersList">
+              <a class="Footer__MobilePartnersLink" href="#">
+                <img class="Footer__MobilePartnersImage" src="./assets/images/resort-life-travel-logo.svg" alt="resort-life-travel-logo">
+              </a>
+              <a class="Footer__MobilePartnersLink" href="#">
+                <img class="Footer__MobilePartnersImage" src="./assets/images/sber-logo.svg" alt="sber-logo">
+              </a>
+            </div>
+          </div>
+          <div class="Footer__MobileBottom">
+            <div class="Footer__MobileBottomInner Container">
+              <img class="Footer__MobileBottomLogo" src="./assets/images/logo-white.svg" alt="logo">
+              <div class="Footer__MobileBottomCopyright">© 2021 Resort Holiday | Все права защищены</div>
+            </div>
+          </div>
+        </div>
+        <div class="Footer__DesktopContent Container">
+          <div class="Footer__DesktopTopSection">
+            <a class="Footer__DesktopTopLogoLink" href="#">
+              <img class="Footer__DesktopTopLogoLinkImage" src="./assets/images/logo-white.svg" alt="logo-white">
+            </a>
+            <div class="Footer__DesktopTopLinks">
+              <a class="Footer__DesktopTopLink" href="#">
+                <img class="Footer__DesktopTopLinkIcon" src="./assets/images/icons/move-gold-icon.svg" alt="move">
+                <div class="Footer__DesktopTopLinkText">Туристам</div>
+              </a>
+              <a class="Footer__DesktopTopLink" href="#">
+                <img class="Footer__DesktopTopLinkIcon" src="./assets/images/icons/account-gold-icon.svg" alt="account-gold-icon">
+                <div class="Footer__DesktopTopLinkText">Личный кабинет</div>
+              </a>
+            </div>
+          </div>
+          <div class="Footer__DesktopSectionsDivider"></div>
+          <div class="Footer__DesktopMiddleSection">
+            <div class="Footer__DesktopMiddleLinks">
+              <div class="Footer__DesktopMiddleLinksBlock">
+                <div class="Footer__DesktopMiddleLinksTitle">Страны</div>
+                <ul class="Footer__DesktopMiddleLinksList">
+                  <li class="Footer__DesktopMiddleLinksItem">
+                    <a class="Footer__DesktopMiddleLink" href="#">Мальдивы</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="Footer__DesktopMiddleLinksBlock">
+                <div class="Footer__DesktopMiddleLinksTitle">Агентствам</div>
+                <ul class="Footer__DesktopMiddleLinksList">
+                  <li class="Footer__DesktopMiddleLinksItem">
+                    <a class="Footer__DesktopMiddleLink" href="#">Сотрудничество</a>
+                  </li>
+                  <li class="Footer__DesktopMiddleLinksItem">
+                    <a class="Footer__DesktopMiddleLink" href="#">Акции</a>
+                  </li>
+                  <li class="Footer__DesktopMiddleLinksItem">
+                    <a class="Footer__DesktopMiddleLink" href="#">Resort Expert</a>
+                  </li>
+                  <li class="Footer__DesktopMiddleLinksItem">
+                    <a class="Footer__DesktopMiddleLink" href="#">Club Privé</a>
+                  </li>
+                  <li class="Footer__DesktopMiddleLinksItem">
+                    <a class="Footer__DesktopMiddleLink" href="#">Финансовые гарантии</a>
+                  </li>
+                  <li class="Footer__DesktopMiddleLinksItem">
+                    <a class="Footer__DesktopMiddleLink" href="#">Оплата туров</a>
+                  </li>
+                  <li class="Footer__DesktopMiddleLinksItem">
+                    <a class="Footer__DesktopMiddleLink" href="#">Страхование</a>
+                  </li>
+                  <li class="Footer__DesktopMiddleLinksItem">
+                    <a class="Footer__DesktopMiddleLink" href="#">FIT | MICE</a>
+                  </li>
+                  <li class="Footer__DesktopMiddleLinksItem">
+                    <a class="Footer__DesktopMiddleLink" href="#">Проверить срок действия паспорта</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="Footer__DesktopMiddleLinksBlock">
+                <div class="Footer__DesktopMiddleLinksTitle">О нас</div>
+                <ul class="Footer__DesktopMiddleLinksList">
+                  <li class="Footer__DesktopMiddleLinksItem">
+                    <a class="Footer__DesktopMiddleLink" href="#">Кто мы?</a>
+                  </li>
+                  <li class="Footer__DesktopMiddleLinksItem">
+                    <a class="Footer__DesktopMiddleLink" href="#">Почему мы?</a>
+                  </li>
+                  <li class="Footer__DesktopMiddleLinksItem">
+                    <a class="Footer__DesktopMiddleLink" href="#">Команда</a>
+                  </li>
+                  <li class="Footer__DesktopMiddleLinksItem">
+                    <a class="Footer__DesktopMiddleLink" href="#">Пресс-центр</a>
+                  </li>
+                  <li class="Footer__DesktopMiddleLinksItem">
+                    <a class="Footer__DesktopMiddleLink" href="#">Защита персональных данных</a>
+                  </li>
+                  <li class="Footer__DesktopMiddleLinksItem">
+                    <a class="Footer__DesktopMiddleLink" href="#">Вакансии</a>
+                  </li>
+                  <li class="Footer__DesktopMiddleLinksItem">
+                    <a class="Footer__DesktopMiddleLink" href="#">Контакты</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="Footer__DesktopMiddleContacts">
+              <div class="Footer__DesktopMiddlePhonesBlock">
+                <img class="Footer__DesktopMiddlePhoneIcon" src="./assets/images/icons/gold-phone-icon.svg" alt="phone">
+                <div class="Footer__DesktopMiddlePhones">
+                  <a class="Footer__DesktopMiddlePhone" href="#">+7 495 266-63-77</a>
+                  <a class="Footer__DesktopMiddlePhone" href="#">+7 800 100-19-70</a>
+                </div>
+              </div>
+              <div class="Footer__DesktopMiddleRTO">
+                <img class="Footer__DesktopMiddleRTOImage" src="./assets/images/ros-tourism-logo.svg" alt="rostourism">
+                <div class="Footer__DesktopMiddleRTOText">
+                  Мы в реестре туроператоров<br>ООО «Резорт Холидей»<br>РТО ?????????
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="Footer__DesktopBottomSection">
+            <div class="Footer__DesktopBottomSectionLeft">
+              <div class="Footer__DesktopBottomSectionSocials">
+                <a class="Footer__DesktopBottomSectionSocialLink" href="#">
+                  <img class="Footer__DesktopBottomSectionSocialIcon" src="./assets/images/icons/instagram-white-icon.svg" alt="instagram-icon">
+                </a>
+                <a class="Footer__DesktopBottomSectionSocialLink" href="#">
+                  <img class="Footer__DesktopBottomSectionSocialIcon" src="./assets/images/icons/facebook-white-icon.svg" alt="facebook-icon">
+                </a>
+                <a class="Footer__DesktopBottomSectionSocialLink" href="#">
+                  <img class="Footer__DesktopBottomSectionSocialIcon" src="./assets/images/icons/youtube-white-icon.svg" alt="youtube-icon">
+                </a>
+              </div>
+              <div class="Footer__DesktopBottomSectionCopyright">© 2021 Resort Holiday | Все права защищены</div>
+            </div>
+            <div class="Footer__DesktopBottomSectionRight">
+              <div class="Footer__DesktopBottomSectionPartnersTitle">Партнеры</div>
+              <div class="Footer__DesktopBottomSectionPartners">
+                <a class="Footer__DesktopBottomSectionPartnerLink" href="#">
+                  <img class="Footer__DesktopBottomSectionPartnerImage" src="./assets/images/resort-life-travel-logo.svg" alt="resort-life-travel-logo">
+                </a>
+                <a class="Footer__DesktopBottomSectionPartnerLink" href="#">
+                  <img class="Footer__DesktopBottomSectionPartnerImage" src="./assets/images/sber-logo.svg" alt="sber-logo">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+</div>
+
+<script src="./assets/customer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+</body>
+
+</html>
