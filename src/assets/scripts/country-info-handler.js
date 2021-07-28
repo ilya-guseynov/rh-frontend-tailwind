@@ -76,7 +76,9 @@
     });
   });
 
-  showElement(datas[0]);
-  showElement(dataSections[0]);
-  dataTitles[0].classList.add(goldBgClass);
+  if (datas[0] && dataSections[0] && dataTitles[0]) {
+    showElement(datas[0]);
+    showElement(dataSections[0]);
+    dataTitles[0].classList.add(goldBgClass);
+  }
 })();
