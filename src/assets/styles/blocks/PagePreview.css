@@ -22,7 +22,9 @@
 }
 
 @media (max-width: 768px) {
-  .PagePreview--ResortExpert {
+  .PagePreview {
+    height: 265px;
+    margin-top: -60px;
     margin-bottom: 0;
   }
 }
@@ -68,7 +70,9 @@
 
 @media (max-width: 768px) {
   .PagePreview__Title {
-    font-size: 40px;
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
   }
 }
 
