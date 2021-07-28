@@ -8,6 +8,7 @@
     "tasks": "gulp --tasks",
     "watch": "gulp watch",
     "watch:samo": "gulp watchsamo",
+    "watch:nostat": "gulp watchnostat",
     "build": "gulp build",
     "build:html": "gulp html",
     "build:styles": "gulp styles",
