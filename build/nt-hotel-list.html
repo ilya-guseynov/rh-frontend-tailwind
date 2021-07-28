@@ -93,7 +93,7 @@
             </a>
             <div class="Header__BottomSectionMobileTriggers">
               <div class="Header__BottomSectionMobileContacts">
-                <button class="Header__BottomSectionContactTrigger Header__BottomSectionContactTrigger--Feedback">
+                <button class="Header__BottomSectionContactTrigger Header__BottomSectionContactTrigger--Feedback Feedback__Trigger">
                   <img class="Header__BottomSectionContactIcon" src="./assets/images/icons/feedback-gold-bottom-icon.svg" alt="feedback">
                 </button>
                 <a class="Header__BottomSectionContactTrigger Header__BottomSectionContactTrigger--Phone" href="#">
@@ -430,42 +430,48 @@
                     <div class="HotelList__FilterBlock">
                         <div class="HotelList__FilterBlockTitle">Поиск по категории</div>
                         <div class="HotelList__GilterCategoryContainer">
-                            <div class="Feedback__CheckboxContainer">
-                                <input class="Feedback__Checkbox" type="checkbox" v-model="currentStarList" value="6" id="stars-6">
-                                <label class="Feedback__CheckboxLabel" for="stars-6">6 stars</label>
+                            <div class="HotelList__CheckboxContainer">
+                                <input class="HotelList__Checkbox" type="checkbox" v-model="currentStarList" value="6" id="stars-6">
+                                <label class="HotelList__CheckboxLabel" for="stars-6"><rh-stars :stars-count="6"></rh-stars></label>
                             </div>
-                            <div class="Feedback__CheckboxContainer">
-                                <input class="Feedback__Checkbox" type="checkbox" v-model="currentStarList" value="5" id="stars-5">
-                                <label class="Feedback__CheckboxLabel" for="stars-5">5 stars</label>
+                            <div class="HotelList__CheckboxContainer">
+                                <input class="HotelList__Checkbox" type="checkbox" v-model="currentStarList" value="5" id="stars-5">
+                                <label class="HotelList__CheckboxLabel" for="stars-5"><rh-stars :stars-count="5"></rh-stars></label>
                             </div>
-                            <div class="Feedback__CheckboxContainer">
-                                <input class="Feedback__Checkbox" type="checkbox" v-model="currentStarList" value="4" id="stars-4">
-                                <label class="Feedback__CheckboxLabel" for="stars-4">4 stars</label>
+                            <div class="HotelList__CheckboxContainer">
+                                <input class="HotelList__Checkbox" type="checkbox" v-model="currentStarList" value="4" id="stars-4">
+                                <label class="HotelList__CheckboxLabel" for="stars-4"><rh-stars :stars-count="4"></rh-stars></label>
                             </div>
-                            <div class="Feedback__CheckboxContainer">
-                                <input class="Feedback__Checkbox" type="checkbox" v-model="currentStarList" value="3" id="stars-3">
-                                <label class="Feedback__CheckboxLabel" for="stars-3">3 stars</label>
+                            <div class="HotelList__CheckboxContainer">
+                                <input class="HotelList__Checkbox" type="checkbox" v-model="currentStarList" value="3" id="stars-3">
+                                <label class="HotelList__CheckboxLabel" for="stars-3"><rh-stars :stars-count="3"></rh-stars></label>
                             </div>
-                            <div class="Feedback__CheckboxContainer">
-                                <input class="Feedback__Checkbox" type="checkbox" v-model="currentStarList" value="2" id="stars-2">
-                                <label class="Feedback__CheckboxLabel" for="stars-2">2 stars</label>
+                            <div class="HotelList__CheckboxContainer">
+                                <input class="HotelList__Checkbox" type="checkbox" v-model="currentStarList" value="2" id="stars-2">
+                                <label class="HotelList__CheckboxLabel" for="stars-2"><rh-stars :stars-count="2"></rh-stars></label>
                             </div>
                         </div>
                     </div>
                     <div class="HotelList__FilterBlock">
                         <div class="HotelList__FilterBlockTitle">Поиск по Атоллу</div>
-                        <select class="HotelList__FilterBlockAtollSelect" v-model="currentAtoll">
-                            <option value="" disabled selected>Атолл</option>
-                            <option value="">Все</option>
-                            <option v-for="atoll in atolls" :value="atoll">{{ atoll }}</option>
-                        </select>
+                        <div class="HotelList__FilterBlockTitleInputContainer" :class="{ 'HotelList__FilterBlockTitleInputContainer--ActiveAtoll': showAtolls }" @click="showAtolls = !showAtolls">
+                            <input class="HotelList__FilterBlockTitleInput" v-model="currentAtollInput" type="text" >
+                            <svg class="HotelList__FilterBlockTitleInputIcon" width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.88 0L8 6.18084L14.12 0L16 1.90283L8 10L0 1.90283L1.88 0Z" fill="#999999"/>
+                            </svg>
+                        </div>
+                        <div class="HotelList__Atolls" v-if="showAtolls">
+                            <ul class="HotelList__AtollsList">
+                                <li class="HotelList__AtollsItem" @click="currentAtoll=atoll" v-for="atoll in filteredAtolls">{{ atoll }}</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="HotelList__FilterBlock">
                         <div class="HotelList__FilterBlockTitle">Поиск по Критериям</div>
                         <div class="HotelList__GilterCategoryContainer">
-                            <div v-for="criteria in criterias" class="Feedback__CheckboxContainer">
-                                <input class="Feedback__Checkbox" type="checkbox" v-model="currentCriteriaList" :value="criteria" :id="criteria">
-                                <label class="Feedback__CheckboxLabel" :for="criteria">{{ criteria }}</label>
+                            <div v-for="criteria in criterias" class="HotelList__CheckboxContainer">
+                                <input class="HotelList__Checkbox" type="checkbox" v-model="currentCriteriaList" :value="criteria" :id="criteria">
+                                <label class="HotelList__CheckboxLabel" :for="criteria">{{ criteria }}</label>
                             </div>
                         </div>
                     </div>
@@ -502,6 +508,69 @@
                             </div>
                         </li>
                     </ul>
+                    <div class="HotelList__PageControl">
+                        <div class="HotelPage__PerPageContainer">
+                            <span class="HotelPage__PerPageTitle">Страница: </span>
+                            <select class="HotelPage__PerPageSelect" v-model="showPerPage">
+                                <option value="4">4</option>
+                                <option value="8">8</option>
+                                <option value="12">12</option>
+                            </select>
+                        </div>
+                        <div class="HotelPage__PageNumberContainer">
+                            <button class="HotelPage__PrevPageButton" :disabled="currentPage == 1" @click="currentPage -= 1">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="12" fill="#285C2D"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7744 15.8496C12.8291 15.9043 12.8974 15.9316 12.9726 15.9316C13.0479 15.9316 13.1162 15.9043 13.1709 15.8496C13.2803 15.7402 13.2803 15.5624 13.1709 15.453L9.68376 11.9658L13.1709 8.47863C13.2803 8.36923 13.2803 8.19145 13.1709 8.08205C13.0615 7.97265 12.8838 7.97265 12.7744 8.08205L9.08205 11.7675C8.97265 11.8769 8.97265 12.0547 9.08205 12.1641L12.7744 15.8496Z" fill="url(#paint0_linear)" stroke="url(#paint1_linear)"/>
+                                    <defs>
+                                        <linearGradient id="paint0_linear" x1="6.67245" y1="12.0588" x2="12.4658" y2="12.0242" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#D8BB58"/>
+                                            <stop offset="0.1464" stop-color="#ECD26E"/>
+                                            <stop offset="0.239" stop-color="#F4DB76"/>
+                                            <stop offset="0.4341" stop-color="#E4BD32"/>
+                                            <stop offset="0.8173" stop-color="#CEA53A"/>
+                                            <stop offset="0.8757" stop-color="#C99F33"/>
+                                        </linearGradient>
+                                        <linearGradient id="paint1_linear" x1="6.67245" y1="12.0588" x2="12.4658" y2="12.0242" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#D8BB58"/>
+                                            <stop offset="0.1464" stop-color="#ECD26E"/>
+                                            <stop offset="0.239" stop-color="#F4DB76"/>
+                                            <stop offset="0.4341" stop-color="#E4BD32"/>
+                                            <stop offset="0.8173" stop-color="#CEA53A"/>
+                                            <stop offset="0.8757" stop-color="#C99F33"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <div class="HotelPage__PagerList">
+                                <div class="HotelPage__PagerItem" @click="currentPage = n" v-for="n in pagesCount">{{ n }}</div>
+                            </div>
+                            <button class="HotelPage__NextPageButton" :disabled="currentPage == pagesCount" @click="currentPage += 1">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="12" fill="#285C2D"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.4585 15.8532C11.4061 15.9056 11.3406 15.9318 11.2686 15.9318C11.1965 15.9318 11.131 15.9056 11.0786 15.8532C10.9738 15.7484 10.9738 15.5781 11.0786 15.4733L14.4192 12.1326L11.0786 8.79201C10.9738 8.68721 10.9738 8.5169 11.0786 8.4121C11.1834 8.3073 11.3537 8.3073 11.4585 8.4121L14.9891 11.9427C15.0939 12.0475 15.0939 12.2178 14.9891 12.3226L11.4585 15.8532Z" fill="url(#paint0_linear)" stroke="url(#paint1_linear)"/>
+                                    <defs>
+                                        <linearGradient id="paint0_linear" x1="8.77385" y1="12.2217" x2="14.3148" y2="12.1887" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#D8BB58"/>
+                                            <stop offset="0.1464" stop-color="#ECD26E"/>
+                                            <stop offset="0.239" stop-color="#F4DB76"/>
+                                            <stop offset="0.4341" stop-color="#E4BD32"/>
+                                            <stop offset="0.8173" stop-color="#CEA53A"/>
+                                            <stop offset="0.8757" stop-color="#C99F33"/>
+                                        </linearGradient>
+                                        <linearGradient id="paint1_linear" x1="8.77385" y1="12.2217" x2="14.3148" y2="12.1887" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#D8BB58"/>
+                                            <stop offset="0.1464" stop-color="#ECD26E"/>
+                                            <stop offset="0.239" stop-color="#F4DB76"/>
+                                            <stop offset="0.4341" stop-color="#E4BD32"/>
+                                            <stop offset="0.8173" stop-color="#CEA53A"/>
+                                            <stop offset="0.8757" stop-color="#C99F33"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 <script>
                   Vue.component("rh-stars", {
@@ -516,20 +585,76 @@
 
                     template: `
                       <div>
-                        {{ starsCount }}
-                        <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M9.5 5.39999L15.2 5.5L10.6 8.89999L12.3 14.5L7.6 11.2L2.9 14.5L4.6 9L0 5.5L5.7 5.39999L7.6 0L9.5 5.39999Z" fill="url(#paint0_linear)"/>
-                          <defs>
-                          <linearGradient id="paint0_linear" x1="2.6652" y1="14.2175" x2="12.3794" y2="2.5605" gradientUnits="userSpaceOnUse">
-                          <stop stop-color="#D5B959"/>
-                          <stop offset="0.1464" stop-color="#EAD070"/>
-                          <stop offset="0.239" stop-color="#F2D978"/>
-                          <stop offset="0.4341" stop-color="#E7CA67"/>
-                          <stop offset="0.8173" stop-color="#CCA436"/>
-                          <stop offset="0.8757" stop-color="#C59B30"/>
-                          </linearGradient>
-                          </defs>
-                        </svg>
+                        <div v-if="starsCount < 3" class="GoldText">Guest House</div>
+                        <div v-else class="GoldText">
+                            <svg v-if="starsCount > 2" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M9.5 5.39999L15.2 5.5L10.6 8.89999L12.3 14.5L7.6 11.2L2.9 14.5L4.6 9L0 5.5L5.7 5.39999L7.6 0L9.5 5.39999Z" fill="url(#paint0_linear)"/>
+                              <defs>
+                              <linearGradient id="paint0_linear" x1="2.6652" y1="14.2175" x2="12.3794" y2="2.5605" gradientUnits="userSpaceOnUse">
+                              <stop stop-color="#D5B959"/>
+                              <stop offset="0.1464" stop-color="#EAD070"/>
+                              <stop offset="0.239" stop-color="#F2D978"/>
+                              <stop offset="0.4341" stop-color="#E7CA67"/>
+                              <stop offset="0.8173" stop-color="#CCA436"/>
+                              <stop offset="0.8757" stop-color="#C59B30"/>
+                              </linearGradient>
+                              </defs>
+                            </svg>
+                            <svg v-if="starsCount > 2" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M9.5 5.39999L15.2 5.5L10.6 8.89999L12.3 14.5L7.6 11.2L2.9 14.5L4.6 9L0 5.5L5.7 5.39999L7.6 0L9.5 5.39999Z" fill="url(#paint0_linear)"/>
+                              <defs>
+                              <linearGradient id="paint0_linear" x1="2.6652" y1="14.2175" x2="12.3794" y2="2.5605" gradientUnits="userSpaceOnUse">
+                              <stop stop-color="#D5B959"/>
+                              <stop offset="0.1464" stop-color="#EAD070"/>
+                              <stop offset="0.239" stop-color="#F2D978"/>
+                              <stop offset="0.4341" stop-color="#E7CA67"/>
+                              <stop offset="0.8173" stop-color="#CCA436"/>
+                              <stop offset="0.8757" stop-color="#C59B30"/>
+                              </linearGradient>
+                              </defs>
+                            </svg>
+                            <svg v-if="starsCount > 2" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M9.5 5.39999L15.2 5.5L10.6 8.89999L12.3 14.5L7.6 11.2L2.9 14.5L4.6 9L0 5.5L5.7 5.39999L7.6 0L9.5 5.39999Z" fill="url(#paint0_linear)"/>
+                              <defs>
+                              <linearGradient id="paint0_linear" x1="2.6652" y1="14.2175" x2="12.3794" y2="2.5605" gradientUnits="userSpaceOnUse">
+                              <stop stop-color="#D5B959"/>
+                              <stop offset="0.1464" stop-color="#EAD070"/>
+                              <stop offset="0.239" stop-color="#F2D978"/>
+                              <stop offset="0.4341" stop-color="#E7CA67"/>
+                              <stop offset="0.8173" stop-color="#CCA436"/>
+                              <stop offset="0.8757" stop-color="#C59B30"/>
+                              </linearGradient>
+                              </defs>
+                            </svg>
+                            <svg v-if="starsCount > 3" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M9.5 5.39999L15.2 5.5L10.6 8.89999L12.3 14.5L7.6 11.2L2.9 14.5L4.6 9L0 5.5L5.7 5.39999L7.6 0L9.5 5.39999Z" fill="url(#paint0_linear)"/>
+                              <defs>
+                              <linearGradient id="paint0_linear" x1="2.6652" y1="14.2175" x2="12.3794" y2="2.5605" gradientUnits="userSpaceOnUse">
+                              <stop stop-color="#D5B959"/>
+                              <stop offset="0.1464" stop-color="#EAD070"/>
+                              <stop offset="0.239" stop-color="#F2D978"/>
+                              <stop offset="0.4341" stop-color="#E7CA67"/>
+                              <stop offset="0.8173" stop-color="#CCA436"/>
+                              <stop offset="0.8757" stop-color="#C59B30"/>
+                              </linearGradient>
+                              </defs>
+                            </svg>
+                            <svg v-if="starsCount > 4" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M9.5 5.39999L15.2 5.5L10.6 8.89999L12.3 14.5L7.6 11.2L2.9 14.5L4.6 9L0 5.5L5.7 5.39999L7.6 0L9.5 5.39999Z" fill="url(#paint0_linear)"/>
+                              <defs>
+                              <linearGradient id="paint0_linear" x1="2.6652" y1="14.2175" x2="12.3794" y2="2.5605" gradientUnits="userSpaceOnUse">
+                              <stop stop-color="#D5B959"/>
+                              <stop offset="0.1464" stop-color="#EAD070"/>
+                              <stop offset="0.239" stop-color="#F2D978"/>
+                              <stop offset="0.4341" stop-color="#E7CA67"/>
+                              <stop offset="0.8173" stop-color="#CCA436"/>
+                              <stop offset="0.8757" stop-color="#C59B30"/>
+                              </linearGradient>
+                              </defs>
+                            </svg>
+                            <span class="GoldText" v-if="starsCount > 5">Deluxe</span>
+                        </div>
+
                     </div>
                     `
                   });
@@ -537,10 +662,33 @@
                   new Vue({
                     el: "#hotel-list-vue",
 
+                    watch: {
+                      currentTitle: function() {
+                        this.currentPage = 1;
+                      },
+
+                      currentAtoll: function() {
+                        this.currentPage = 1;
+                      },
+
+                      currentCriteriaList: function() {
+                        this.currentPage = 1;
+                      },
+
+                      currentStarList: function() {
+                        this.currentPage = 1;
+                      },
+
+                      showPerPage: function() {
+                        this.currentPage = 1;
+                      },
+                    },
+
                     data: function () {
                       return {
                         currentPage: 1,
                         currentTitle: "",
+                        currentAtollInput: "",
                         currentAtoll: "",
                         currentCriteriaList: [],
                         currentStarList: [],
@@ -549,10 +697,55 @@
                         showPerPage: 8,
                         hotels: [],
                         loading: true,
+                        showAtolls: false,
                       };
                     },
 
                     computed: {
+                      filteredAtolls: function () {
+                        const atollsCopy = [ ...this.atolls ];
+                        return atollsCopy.filter(
+                          atoll => this.currentAtollInput === ""
+                            ? true
+                            : atoll.trim().toLowerCase().includes(this.currentAtollInput.toLowerCase())
+                        );
+                      },
+
+                      filteredHotelsNoPage: function () {
+                        const hotelsCopy = [ ...this.hotels ];
+                        return hotelsCopy
+                          .filter(
+                            hotel => this.currentTitle === ""
+                              ? true
+                              : hotel.PROPERTY_HOTEL_TITLE.trim().toLowerCase().includes(this.currentTitle.toLowerCase())
+                          )
+                          .filter(
+                            hotel => this.currentAtoll === ""
+                              ? true
+                              : hotel.PROPERTY_ATOLL_VALUE.trim() === this.currentAtoll
+                          )
+                          .filter(
+                            hotel => this.currentStarList.length === 0
+                              ? true
+                              : this.currentStarList.includes(hotel.PROPERTY_STARS_VALUE)
+                          )
+                          .filter(hotel => {
+                            let correct = false;
+
+                            if (this.currentCriteriaList.length === 0) {
+                              correct = true;
+                            }
+
+                            hotel.PROPERTY_CRITERIA_VALUE.forEach(criteria => {
+                              if (this.currentCriteriaList.includes(criteria.trim())) {
+                                correct = true;
+                              }
+                            });
+
+                            return correct;
+                          });
+                      },
+
                       filteredHotels: function () {
                         const hotelsCopy = [ ...this.hotels ];
                         return hotelsCopy
@@ -591,6 +784,10 @@
                               index < (this.currentPage) * this.showPerPage &&
                               index >= (this.currentPage - 1) * this.showPerPage
                           );
+                      },
+
+                      pagesCount: function () {
+                        return Math.ceil(this.filteredHotelsNoPage.length / this.showPerPage);
                       },
                     },
 

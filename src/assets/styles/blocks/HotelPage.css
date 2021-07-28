@@ -17,6 +17,10 @@
   padding-top: 140px;
 }
 
+.HotelPage__NomerTextContainer {
+  width: 100%;
+}
+
 .HotelPage__PhotoSliderScreenLock {
   display: none;
   position: fixed;
