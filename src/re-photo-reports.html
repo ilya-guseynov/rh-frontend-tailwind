@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html class="RH__Page" lang="ru">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    @@include("./blocks/head-imports.html")
+
+    <title>RH | ФОТООТЧЕТЫ</title>
+  </head>
+
+  <body class="RH__Body">
+    <div class="RH__Wrapper">
+      @@include("./blocks/header-b2b.html")
+      <main class="RH__Main">
+        <section class="PagePreview PagePreview--ResortExpert"
+          style="background-image: url('./assets/images/resort-expert-background-image.jpg');">
+          <div class="PagePreview__Inner Container">
+            <h1 class="PagePreview__Title">ФОТООТЧЕТЫ</h1>
+          </div>
+        </section>
+        <section class="InfoPageContent Container">
+          <div class="InfoPageContent__Aside">
+            <div class="InfoPageContent__AsideContent">
+              @@include("./blocks/infopage-aside.html")
+            </div>
+            <div class="InfoPageContent__AsideBorder"></div>
+          </div>
+          <div class="InfoPageContent__Main ResortExpert__ContentPage">
+            <div class="ResortExpert__BackLinkContainer">
+              <a class="ResortExpert__BackLink" href="#">
+                <img class="ResortExpert__BackLinkIcon" src="./assets/images/icons/manta-status-icon-active.svg"
+                  alt="manta">
+                <div class="ResortExpert__BackLinkText">На главную RESORT EXPERT</div>
+              </a>
+            </div>
+            <div class="ResortExpert__ContentPageText PhotoReports" id="photo-reports">
+              <h2 class="PhotoReports__Heading">Фотоотчеты</h2>
+              <div class="REEvents__Month">
+                <div class="REEvents__MonthSwitchButtons">
+                  <a class="REEvents__MonthSwitchButton REEvents__MonthSwithButton--Prev">
+                    <img class="REEvents__MonthSwitchButtonImage" src="./assets/images/to-left-month-arrow.svg" alt="to-left-month-arrow">
+                  </a>
+                  <a class="REEvents__MonthSwitchButton REEvents__MonthSwithButton--Next">
+                    <img class="REEvents__MonthSwitchButtonImage" src="./assets/images/to-right-month-arrow.svg" alt="to-right-month-arrow">
+                  </a>
+                </div>
+                <div class="REEvents__MonthDisplay">Июль  2021</div>
+              </div>
+              <ul class="PhotoReports__List">
+                <li v-show="1 <= showCount" class="PhotoReports__Item" id="photo-el-1">
+                  <div class="PhotoReports__MainPhotoContainer">
+                    <img class="PhotoReports__MainPhoto" src="./assets/images/re-photo-main.jpg" alt="main">
+                  </div>
+                  <div class="PhotoReports__Info">
+                    <img class="PhotoReports__InfoImage" src="./assets/images/re-list-manta.svg" alt="manta">
+                    <div class="PhotoReports__InfoText">
+                      <div class="PhotoReports__InfoTitle">Secret Party</div>
+                      <div class="PhotoReports__InfoDescription">– открытие компании 26 мая 2021 на секретной вечеринке на крыше отеля Арарат Парк Хаят.</div>
+                    </div>
+                  </div>
+                  <div class="HotelPage__NomerPopupPhotoSliderContainer">
+                    <div class="HotelPage__NomerPopupScreenlock"></div>
+                    <div class="HotelPage__NomerPopupPhotoSlider HotelPage__NomerPopupPhotoSlider--Desktop splide">
+                      <div class="HotelPage__NomerPopupPhotoSliderTrack splide__track">
+                        <ul class="HotelPage__NomerPopupPhotoSliderList splide__list">
+                          <li class="HotelPage__NomerPopupPhotoSliderSlide splide__slide">
+                            <img class="HotelPage__NomerPopupPhotoSliderImage" data-splide-lazy="./assets/images/re-photos-demo-1.jpg" alt="slide - 1">
+                          </li>
+                          <li class="HotelPage__NomerPopupPhotoSliderSlide splide__slide">
+                            <img class="HotelPage__NomerPopupPhotoSliderImage" data-splide-lazy="./assets/images/re-photos-demo-2.jpg" alt="slide - 1">
+                          </li>
+                          <li class="HotelPage__NomerPopupPhotoSliderSlide splide__slide">
+                            <img class="HotelPage__NomerPopupPhotoSliderImage" data-splide-lazy="./assets/images/re-photos-demo-3.jpg" alt="slide - 1">
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="PhotoReports__PhotoSlider PhotoReports__PhotoSlider--Base splide">
+                    <div class="PhotoReports__PhotoSliderTrack splide__track">
+                      <ul class="PhotoReports__PhotoSliderList splide__list">
+                        <li class="PhotoReports__PhotoSliderSlide splide__slide">
+                          <img class="PhotoReports__PhotoSliderImage"
+                            data-splide-lazy="./assets/images/re-photos-demo-1.jpg" alt="slide - 1">
+                          <div class="PhotoReports__PhotoInnerShadow"></div>
+                        </li>
+                        <li class="PhotoReports__PhotoSliderSlide splide__slide">
+                          <img class="PhotoReports__PhotoSliderImage"
+                            data-splide-lazy="./assets/images/re-photos-demo-2.jpg" alt="slide - 1">
+                          <div class="PhotoReports__PhotoInnerShadow"></div>
+                        </li>
+                        <li class="PhotoReports__PhotoSliderSlide splide__slide">
+                          <img class="PhotoReports__PhotoSliderImage"
+                            data-splide-lazy="./assets/images/re-photos-demo-3.jpg" alt="slide - 1">
+                          <div class="PhotoReports__PhotoInnerShadow"></div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                      if (document.querySelector("#photo-el-1")) {
+                        const nomer = document.querySelector("#photo-el-1");
+
+                        const splide = new Splide(nomer.querySelector(".PhotoReports__PhotoSlider--Base"), {
+                          type: "loop",
+                          autoWidth: true,
+                          perPage: 5,
+                          perMove: 1,
+                          pagination: false,
+                          lazyLoad: "nearby",
+                          preloadPages: 5,
+                          preloadPages: 5,
+                          arrowPath: "M1.06039 38.9541C2.48267 40.3486 4.77972 40.3486 6.202 38.9541L22.9396 22.4452C24.3535 21.0423 24.3535 18.7767 22.9396 17.3738L6.202 0.864871C4.7552 -0.35721 2.59852 -0.275046 1.2516 1.05347C-0.0953188 2.38199 -0.178623 4.50921 1.06039 5.93624L15.209 19.9275L1.06039 33.8827C-0.353463 35.2856 -0.353463 37.5512 1.06039 38.9541Z"
+                        }).mount();
+
+                        const sliderPopup = new Splide(nomer.querySelector(".HotelPage__NomerPopupPhotoSlider--Desktop"), {
+                          type: "loop",
+                          autoplay: true,
+                          perPage: 1,
+                          perMove: 1,
+                          pagination: false,
+                          lazyLoad: "nearby",
+                          preloadPages: 3,
+                          arrowPath: "M1.06039 38.9541C2.48267 40.3486 4.77972 40.3486 6.202 38.9541L22.9396 22.4452C24.3535 21.0423 24.3535 18.7767 22.9396 17.3738L6.202 0.864871C4.7552 -0.35721 2.59852 -0.275046 1.2516 1.05347C-0.0953188 2.38199 -0.178623 4.50921 1.06039 5.93624L15.209 19.9275L1.06039 33.8827C-0.353463 35.2856 -0.353463 37.5512 1.06039 38.9541Z"
+                        });
+
+                        sliderPopup.sync(splide).mount();
+
+                        splide.on("click", () => {
+                          nomer.querySelector(".HotelPage__NomerPopupPhotoSliderContainer").classList.add("HotelPage__NomerPopupPhotoSliderContainer--ActiveDesktop");
+                        });
+
+                        nomer.querySelector(".HotelPage__NomerPopupScreenlock").addEventListener("click", () => {
+                          nomer.querySelector(".HotelPage__NomerPopupPhotoSliderContainer").classList.remove("HotelPage__NomerPopupPhotoSliderContainer--ActiveMobile", "HotelPage__NomerPopupPhotoSliderContainer--ActiveDesktop");
+                        });
+                      }
+                    });
+                  </script>
+                  <div class="PhotoReports__WatchButtonContainer">
+                    <a class="PhotoReports__WatchButton" href="#">Смотреть</a>
+                  </div>
+                </li>
+                <li v-show="2 <= showCount" class="PhotoReports__Item" id="photo-el-2">
+                  <div class="PhotoReports__MainPhotoContainer">
+                    <img class="PhotoReports__MainPhoto" src="./assets/images/re-photo-main.jpg" alt="main">
+                  </div>
+                  <div class="PhotoReports__Info">
+                    <img class="PhotoReports__InfoImage" src="./assets/images/re-list-manta.svg" alt="manta">
+                    <div class="PhotoReports__InfoText">
+                      <div class="PhotoReports__InfoTitle">Secret Party</div>
+                      <div class="PhotoReports__InfoDescription">– открытие компании 26 мая 2021 на секретной вечеринке на крыше отеля Арарат Парк Хаят.</div>
+                    </div>
+                  </div>
+                  <div class="HotelPage__NomerPopupPhotoSliderContainer">
+                    <div class="HotelPage__NomerPopupScreenlock"></div>
+                    <div class="HotelPage__NomerPopupPhotoSlider HotelPage__NomerPopupPhotoSlider--Desktop splide">
+                      <div class="HotelPage__NomerPopupPhotoSliderTrack splide__track">
+                        <ul class="HotelPage__NomerPopupPhotoSliderList splide__list">
+                          <li class="HotelPage__NomerPopupPhotoSliderSlide splide__slide">
+                            <img class="HotelPage__NomerPopupPhotoSliderImage" data-splide-lazy="./assets/images/re-photos-demo-1.jpg" alt="slide - 1">
+                          </li>
+                          <li class="HotelPage__NomerPopupPhotoSliderSlide splide__slide">
+                            <img class="HotelPage__NomerPopupPhotoSliderImage" data-splide-lazy="./assets/images/re-photos-demo-2.jpg" alt="slide - 1">
+                          </li>
+                          <li class="HotelPage__NomerPopupPhotoSliderSlide splide__slide">
+                            <img class="HotelPage__NomerPopupPhotoSliderImage" data-splide-lazy="./assets/images/re-photos-demo-3.jpg" alt="slide - 1">
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="PhotoReports__PhotoSlider PhotoReports__PhotoSlider--Base splide">
+                    <div class="PhotoReports__PhotoSliderTrack splide__track">
+                      <ul class="PhotoReports__PhotoSliderList splide__list">
+                        <li class="PhotoReports__PhotoSliderSlide splide__slide">
+                          <img class="PhotoReports__PhotoSliderImage"
+                            data-splide-lazy="./assets/images/re-photos-demo-1.jpg" alt="slide - 1">
+                          <div class="PhotoReports__PhotoInnerShadow"></div>
+                        </li>
+                        <li class="PhotoReports__PhotoSliderSlide splide__slide">
+                          <img class="PhotoReports__PhotoSliderImage"
+                            data-splide-lazy="./assets/images/re-photos-demo-2.jpg" alt="slide - 1">
+                          <div class="PhotoReports__PhotoInnerShadow"></div>
+                        </li>
+                        <li class="PhotoReports__PhotoSliderSlide splide__slide">
+                          <img class="PhotoReports__PhotoSliderImage"
+                            data-splide-lazy="./assets/images/re-photos-demo-3.jpg" alt="slide - 1">
+                          <div class="PhotoReports__PhotoInnerShadow"></div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                      if (document.querySelector("#photo-el-2")) {
+                        const nomer = document.querySelector("#photo-el-2");
+
+                        const splide = new Splide(nomer.querySelector(".PhotoReports__PhotoSlider--Base"), {
+                          type: "loop",
+                          autoWidth: true,
+                          perPage: 5,
+                          perMove: 1,
+                          pagination: false,
+                          lazyLoad: "nearby",
+                          preloadPages: 5,
+                          preloadPages: 5,
+                          arrowPath: "M1.06039 38.9541C2.48267 40.3486 4.77972 40.3486 6.202 38.9541L22.9396 22.4452C24.3535 21.0423 24.3535 18.7767 22.9396 17.3738L6.202 0.864871C4.7552 -0.35721 2.59852 -0.275046 1.2516 1.05347C-0.0953188 2.38199 -0.178623 4.50921 1.06039 5.93624L15.209 19.9275L1.06039 33.8827C-0.353463 35.2856 -0.353463 37.5512 1.06039 38.9541Z"
+                        }).mount();
+
+                        const sliderPopup = new Splide(nomer.querySelector(".HotelPage__NomerPopupPhotoSlider--Desktop"), {
+                          type: "loop",
+                          autoplay: true,
+                          perPage: 1,
+                          perMove: 1,
+                          pagination: false,
+                          lazyLoad: "nearby",
+                          preloadPages: 3,
+                          arrowPath: "M1.06039 38.9541C2.48267 40.3486 4.77972 40.3486 6.202 38.9541L22.9396 22.4452C24.3535 21.0423 24.3535 18.7767 22.9396 17.3738L6.202 0.864871C4.7552 -0.35721 2.59852 -0.275046 1.2516 1.05347C-0.0953188 2.38199 -0.178623 4.50921 1.06039 5.93624L15.209 19.9275L1.06039 33.8827C-0.353463 35.2856 -0.353463 37.5512 1.06039 38.9541Z"
+                        });
+
+                        sliderPopup.sync(splide).mount();
+
+                        splide.on("click", () => {
+                          nomer.querySelector(".HotelPage__NomerPopupPhotoSliderContainer").classList.add("HotelPage__NomerPopupPhotoSliderContainer--ActiveDesktop");
+                        });
+
+                        nomer.querySelector(".HotelPage__NomerPopupScreenlock").addEventListener("click", () => {
+                          nomer.querySelector(".HotelPage__NomerPopupPhotoSliderContainer").classList.remove("HotelPage__NomerPopupPhotoSliderContainer--ActiveMobile", "HotelPage__NomerPopupPhotoSliderContainer--ActiveDesktop");
+                        });
+                      }
+                    });
+                  </script>
+                  <div class="PhotoReports__WatchButtonContainer">
+                    <a class="PhotoReports__WatchButton" href="#">Смотреть</a>
+                  </div>
+                </li>
+                <li v-show="3 <= showCount" class="PhotoReports__Item" id="photo-el-3">
+                  <div class="PhotoReports__MainPhotoContainer">
+                    <img class="PhotoReports__MainPhoto" src="./assets/images/re-photo-main.jpg" alt="main">
+                  </div>
+                  <div class="PhotoReports__Info">
+                    <img class="PhotoReports__InfoImage" src="./assets/images/re-list-manta.svg" alt="manta">
+                    <div class="PhotoReports__InfoText">
+                      <div class="PhotoReports__InfoTitle">Secret Party</div>
+                      <div class="PhotoReports__InfoDescription">– открытие компании 26 мая 2021 на секретной вечеринке на крыше отеля Арарат Парк Хаят.</div>
+                    </div>
+                  </div>
+                  <div class="HotelPage__NomerPopupPhotoSliderContainer">
+                    <div class="HotelPage__NomerPopupScreenlock"></div>
+                    <div class="HotelPage__NomerPopupPhotoSlider HotelPage__NomerPopupPhotoSlider--Desktop splide">
+                      <div class="HotelPage__NomerPopupPhotoSliderTrack splide__track">
+                        <ul class="HotelPage__NomerPopupPhotoSliderList splide__list">
+                          <li class="HotelPage__NomerPopupPhotoSliderSlide splide__slide">
+                            <img class="HotelPage__NomerPopupPhotoSliderImage" data-splide-lazy="./assets/images/re-photos-demo-1.jpg" alt="slide - 1">
+                          </li>
+                          <li class="HotelPage__NomerPopupPhotoSliderSlide splide__slide">
+                            <img class="HotelPage__NomerPopupPhotoSliderImage" data-splide-lazy="./assets/images/re-photos-demo-2.jpg" alt="slide - 1">
+                          </li>
+                          <li class="HotelPage__NomerPopupPhotoSliderSlide splide__slide">
+                            <img class="HotelPage__NomerPopupPhotoSliderImage" data-splide-lazy="./assets/images/re-photos-demo-3.jpg" alt="slide - 1">
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="PhotoReports__PhotoSlider PhotoReports__PhotoSlider--Base splide">
+                    <div class="PhotoReports__PhotoSliderTrack splide__track">
+                      <ul class="PhotoReports__PhotoSliderList splide__list">
+                        <li class="PhotoReports__PhotoSliderSlide splide__slide">
+                          <img class="PhotoReports__PhotoSliderImage"
+                            data-splide-lazy="./assets/images/re-photos-demo-1.jpg" alt="slide - 1">
+                          <div class="PhotoReports__PhotoInnerShadow"></div>
+                        </li>
+                        <li class="PhotoReports__PhotoSliderSlide splide__slide">
+                          <img class="PhotoReports__PhotoSliderImage"
+                            data-splide-lazy="./assets/images/re-photos-demo-2.jpg" alt="slide - 1">
+                          <div class="PhotoReports__PhotoInnerShadow"></div>
+                        </li>
+                        <li class="PhotoReports__PhotoSliderSlide splide__slide">
+                          <img class="PhotoReports__PhotoSliderImage"
+                            data-splide-lazy="./assets/images/re-photos-demo-3.jpg" alt="slide - 1">
+                          <div class="PhotoReports__PhotoInnerShadow"></div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                      if (document.querySelector("#photo-el-3")) {
+                        const nomer = document.querySelector("#photo-el-3");
+
+                        const splide = new Splide(nomer.querySelector(".PhotoReports__PhotoSlider--Base"), {
+                          type: "loop",
+                          autoWidth: true,
+                          perPage: 5,
+                          perMove: 1,
+                          pagination: false,
+                          lazyLoad: "nearby",
+                          preloadPages: 5,
+                          preloadPages: 5,
+                          arrowPath: "M1.06039 38.9541C2.48267 40.3486 4.77972 40.3486 6.202 38.9541L22.9396 22.4452C24.3535 21.0423 24.3535 18.7767 22.9396 17.3738L6.202 0.864871C4.7552 -0.35721 2.59852 -0.275046 1.2516 1.05347C-0.0953188 2.38199 -0.178623 4.50921 1.06039 5.93624L15.209 19.9275L1.06039 33.8827C-0.353463 35.2856 -0.353463 37.5512 1.06039 38.9541Z"
+                        }).mount();
+
+                        const sliderPopup = new Splide(nomer.querySelector(".HotelPage__NomerPopupPhotoSlider--Desktop"), {
+                          type: "loop",
+                          autoplay: true,
+                          perPage: 1,
+                          perMove: 1,
+                          pagination: false,
+                          lazyLoad: "nearby",
+                          preloadPages: 3,
+                          arrowPath: "M1.06039 38.9541C2.48267 40.3486 4.77972 40.3486 6.202 38.9541L22.9396 22.4452C24.3535 21.0423 24.3535 18.7767 22.9396 17.3738L6.202 0.864871C4.7552 -0.35721 2.59852 -0.275046 1.2516 1.05347C-0.0953188 2.38199 -0.178623 4.50921 1.06039 5.93624L15.209 19.9275L1.06039 33.8827C-0.353463 35.2856 -0.353463 37.5512 1.06039 38.9541Z"
+                        });
+
+                        sliderPopup.sync(splide).mount();
+
+                        splide.on("click", () => {
+                          nomer.querySelector(".HotelPage__NomerPopupPhotoSliderContainer").classList.add("HotelPage__NomerPopupPhotoSliderContainer--ActiveDesktop");
+                        });
+
+                        nomer.querySelector(".HotelPage__NomerPopupScreenlock").addEventListener("click", () => {
+                          nomer.querySelector(".HotelPage__NomerPopupPhotoSliderContainer").classList.remove("HotelPage__NomerPopupPhotoSliderContainer--ActiveMobile", "HotelPage__NomerPopupPhotoSliderContainer--ActiveDesktop");
+                        });
+                      }
+                    });
+                  </script>
+                  <div class="PhotoReports__WatchButtonContainer">
+                    <a class="PhotoReports__WatchButton" href="#">Смотреть</a>
+                  </div>
+                </li>
+                <li v-show="4 <= showCount" class="PhotoReports__Item" id="photo-el-4">
+                  <div class="PhotoReports__MainPhotoContainer">
+                    <img class="PhotoReports__MainPhoto" src="./assets/images/re-photo-main.jpg" alt="main">
+                  </div>
+                  <div class="PhotoReports__Info">
+                    <img class="PhotoReports__InfoImage" src="./assets/images/re-list-manta.svg" alt="manta">
+                    <div class="PhotoReports__InfoText">
+                      <div class="PhotoReports__InfoTitle">Secret Party</div>
+                      <div class="PhotoReports__InfoDescription">– открытие компании 26 мая 2021 на секретной вечеринке на крыше отеля Арарат Парк Хаят.</div>
+                    </div>
+                  </div>
+                  <div class="HotelPage__NomerPopupPhotoSliderContainer">
+                    <div class="HotelPage__NomerPopupScreenlock"></div>
+                    <div class="HotelPage__NomerPopupPhotoSlider HotelPage__NomerPopupPhotoSlider--Desktop splide">
+                      <div class="HotelPage__NomerPopupPhotoSliderTrack splide__track">
+                        <ul class="HotelPage__NomerPopupPhotoSliderList splide__list">
+                          <li class="HotelPage__NomerPopupPhotoSliderSlide splide__slide">
+                            <img class="HotelPage__NomerPopupPhotoSliderImage" data-splide-lazy="./assets/images/re-photos-demo-1.jpg" alt="slide - 1">
+                          </li>
+                          <li class="HotelPage__NomerPopupPhotoSliderSlide splide__slide">
+                            <img class="HotelPage__NomerPopupPhotoSliderImage" data-splide-lazy="./assets/images/re-photos-demo-2.jpg" alt="slide - 1">
+                          </li>
+                          <li class="HotelPage__NomerPopupPhotoSliderSlide splide__slide">
+                            <img class="HotelPage__NomerPopupPhotoSliderImage" data-splide-lazy="./assets/images/re-photos-demo-3.jpg" alt="slide - 1">
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="PhotoReports__PhotoSlider PhotoReports__PhotoSlider--Base splide">
+                    <div class="PhotoReports__PhotoSliderTrack splide__track">
+                      <ul class="PhotoReports__PhotoSliderList splide__list">
+                        <li class="PhotoReports__PhotoSliderSlide splide__slide">
+                          <img class="PhotoReports__PhotoSliderImage"
+                            data-splide-lazy="./assets/images/re-photos-demo-1.jpg" alt="slide - 1">
+                          <div class="PhotoReports__PhotoInnerShadow"></div>
+                        </li>
+                        <li class="PhotoReports__PhotoSliderSlide splide__slide">
+                          <img class="PhotoReports__PhotoSliderImage"
+                            data-splide-lazy="./assets/images/re-photos-demo-2.jpg" alt="slide - 1">
+                          <div class="PhotoReports__PhotoInnerShadow"></div>
+                        </li>
+                        <li class="PhotoReports__PhotoSliderSlide splide__slide">
+                          <img class="PhotoReports__PhotoSliderImage"
+                            data-splide-lazy="./assets/images/re-photos-demo-3.jpg" alt="slide - 1">
+                          <div class="PhotoReports__PhotoInnerShadow"></div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                      if (document.querySelector("#photo-el-4")) {
+                        const nomer = document.querySelector("#photo-el-4");
+
+                        const splide = new Splide(nomer.querySelector(".PhotoReports__PhotoSlider--Base"), {
+                          type: "loop",
+                          autoWidth: true,
+                          perPage: 5,
+                          perMove: 1,
+                          pagination: false,
+                          lazyLoad: "nearby",
+                          preloadPages: 5,
+                          preloadPages: 5,
+                          arrowPath: "M1.06039 38.9541C2.48267 40.3486 4.77972 40.3486 6.202 38.9541L22.9396 22.4452C24.3535 21.0423 24.3535 18.7767 22.9396 17.3738L6.202 0.864871C4.7552 -0.35721 2.59852 -0.275046 1.2516 1.05347C-0.0953188 2.38199 -0.178623 4.50921 1.06039 5.93624L15.209 19.9275L1.06039 33.8827C-0.353463 35.2856 -0.353463 37.5512 1.06039 38.9541Z"
+                        }).mount();
+
+                        const sliderPopup = new Splide(nomer.querySelector(".HotelPage__NomerPopupPhotoSlider--Desktop"), {
+                          type: "loop",
+                          autoplay: true,
+                          perPage: 1,
+                          perMove: 1,
+                          pagination: false,
+                          lazyLoad: "nearby",
+                          preloadPages: 3,
+                          arrowPath: "M1.06039 38.9541C2.48267 40.3486 4.77972 40.3486 6.202 38.9541L22.9396 22.4452C24.3535 21.0423 24.3535 18.7767 22.9396 17.3738L6.202 0.864871C4.7552 -0.35721 2.59852 -0.275046 1.2516 1.05347C-0.0953188 2.38199 -0.178623 4.50921 1.06039 5.93624L15.209 19.9275L1.06039 33.8827C-0.353463 35.2856 -0.353463 37.5512 1.06039 38.9541Z"
+                        });
+
+                        sliderPopup.sync(splide).mount();
+
+                        splide.on("click", () => {
+                          nomer.querySelector(".HotelPage__NomerPopupPhotoSliderContainer").classList.add("HotelPage__NomerPopupPhotoSliderContainer--ActiveDesktop");
+                        });
+
+                        nomer.querySelector(".HotelPage__NomerPopupScreenlock").addEventListener("click", () => {
+                          nomer.querySelector(".HotelPage__NomerPopupPhotoSliderContainer").classList.remove("HotelPage__NomerPopupPhotoSliderContainer--ActiveMobile", "HotelPage__NomerPopupPhotoSliderContainer--ActiveDesktop");
+                        });
+                      }
+                    });
+                  </script>
+                  <div class="PhotoReports__WatchButtonContainer">
+                    <a class="PhotoReports__WatchButton" href="#">Смотреть</a>
+                  </div>
+                </li>
+              </ul>
+              <button @click="showCount += 1" v-if="elCount > showCount" class="News__FullWidthLink">
+                <div class="News__FullWidthLinkInner">Показать больше</div>
+              </button>
+            </div>
+            <script>
+              new Vue({
+                el: "#photo-reports",
+
+                data: function () {
+                  return {
+                    showCount: 2,
+                    elCount: 0,
+                  };
+                },
+
+                mounted: function () {
+                  const items = document.querySelectorAll(".PhotoReports__Item");
+                  this.elCount = items.length;
+                }
+              });
+            </script>
+          </div>
+        </section>
+        @@include("./blocks/banner-b2b.html")
+      </main>
+      @@include("./blocks/footer-b2b.html")
+    </div>
+
+    @@include('./blocks/scripts.html')
+  </body>
+
+</html>
