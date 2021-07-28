@@ -265,7 +265,6 @@
                     <a class="Feedback__LeftPhone" href="#">+7 800 100-19-70</a>
                   </div>
                 </div>
-                <a class="Feedback__LeftLink" href="#">info@resort-holiday.com</a>
               </div>
               <div class="Feedback__ContentRight">
                 <div class="Feedback__RightTitle">
@@ -279,32 +278,37 @@
                   <input class="Feedback__TextInput" type="text" name="useragency" placeholder="*Ваше агентство">
                   <input class="Feedback__TextInput" type="email" name="useremail" placeholder="*Ваш email">
                   <div class="Feedback__CheckboxContainer">
-                    <input class="Feedback__Checkbox" type="checkbox" name="want-to-feedback">
+                    <input class="Feedback__Checkbox" type="checkbox" name="want-to-feedback" id="want-to-feedback">
                     <label class="Feedback__CheckboxLabel" for="want-to-feedback">Я хочу оставить отзыв</label>
                   </div>
                   <div class="Feedback__CheckboxContainer">
-                    <input class="Feedback__Checkbox" type="checkbox" name="want-to-thank">
+                    <input class="Feedback__Checkbox" type="checkbox" name="want-to-thank" id="want-to-thank">
                     <label class="Feedback__CheckboxLabel" for="want-to-thank">Я хочу оставить благодарность</label>
                   </div>
                   <div class="Feedback__CheckboxContainer">
-                    <input class="Feedback__Checkbox" type="checkbox" name="want-to-help">
+                    <input class="Feedback__Checkbox" type="checkbox" name="want-to-help" id="want-to-help">
                     <label class="Feedback__CheckboxLabel" for="want-to-help">Я хочу помочь вам стать лучше</label>
                   </div>
                   <div class="Feedback__CheckboxContainer">
-                    <input class="Feedback__Checkbox" type="checkbox" name="want-to-ask">
+                    <input class="Feedback__Checkbox" type="checkbox" name="want-to-ask" id="want-to-ask">
                     <label class="Feedback__CheckboxLabel" for="want-to-ask">Я хочу задать вопрос, т.к. не нашла / нашел ответ на сайте</label>
                   </div>
-                  <div class="Feedback__CheckboxContainer">
-                    <input class="Feedback__Checkbox" type="checkbox" name="want-to-ask-by-number">
-                    <label class="Feedback__CheckboxLabel" for="want-to-ask-by-number">Я хочу задать вопрос по заявке</label>
-                  </div>
-                  <div class="Feedback__SevenNumberInputContainer">
-                    <div class="Feedback__SevenNumberInputText">№</div>
-                    <div class="SevenBg" style="background-image: url('./assets/images/seven-bg.svg');">
-                      <input class="Feedback__SevenNumberInput"  type="number" minlength="7" maxlength="7" max="9999999">
+                  <div class="Feedback__Text">Все вопросы по заявкам вы можете отправить из Личного Кабинета агента через кнопку "Отправить сообщение"</div>
+                  <textarea class="Feedback__Textarea" name="usermessage" cols="30" rows="5" placeholder="Введите текст сообщения"></textarea>
+                  <div class="Feedback__FileUpload">
+                    <div class="Feedback__FileUploadInner">
+                      <div class="Feedback__FileUploadInfo">
+                        <div class="Feedback__FileUploadInfoText Feedback__FileUploadInfoText--Big">Прикрепить файл</div>
+                        <div class="Feedback__FileUploadInfoText Feedback__FileUploadInfoText--Small">(не более 5 Мб)</div>
+                      </div>
+                      <label class="Feedback__FileUploadLabel">
+                        <input class="Feedback__FileUploadInput" type="file"/>
+                        <svg class="Feedback__FileUploadIcon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M6.84932 19.9999C5.11416 19.9999 3.379 19.3685 2.00913 18.0157C0.730594 16.753 0 15.0393 0 13.2355C0 11.4317 0.730594 9.71803 2.00913 8.45535L9.13242 1.4204C11.0502 -0.473628 14.2466 -0.473628 16.2557 1.4204C18.2648 3.31442 18.1735 6.47113 16.2557 8.45535L9.77169 14.859C8.49315 16.1216 6.48402 16.1216 5.20548 14.859C3.92694 13.5963 3.92694 11.6121 5.20548 10.3494L10.6849 4.93787C11.0502 4.57711 11.5982 4.57711 11.9635 4.93787C12.3288 5.29864 12.3288 5.83979 11.9635 6.20056L6.48402 11.6121C5.93607 12.1532 5.93607 12.9649 6.48402 13.5061C7.03196 14.0472 7.85388 14.0472 8.40183 13.5061L14.8858 7.10247C15.5251 6.47113 15.7991 5.7496 15.7991 4.84768C15.7991 4.03596 15.4338 3.22423 14.8858 2.59289C13.6073 1.33021 11.5982 1.33021 10.411 2.59289L3.28767 9.62784C2.37443 10.5298 1.82648 11.7924 1.82648 13.1453C1.82648 14.4982 2.37443 15.6707 3.28767 16.6628C5.20548 18.5568 8.40183 18.5568 10.411 16.6628L18.4475 8.72592C18.8128 8.36516 19.3607 8.36516 19.726 8.72592C20.0913 9.08669 20.0913 9.62784 19.726 9.9886L11.6895 17.9255C10.411 19.3685 8.6758 19.9999 6.84932 19.9999Z" fill="#285C2D"/>
+                        </svg>
+                      </label>
                     </div>
                   </div>
-                  <textarea class="Feedback__Textarea" name="usermessage" cols="30" rows="5" placeholder="Введите текст сообщения"></textarea>
                   <button class="Feedback__SubmitButton" type="submit">Отправить</button>
                 </form>
               </div>

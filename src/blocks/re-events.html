@@ -92,53 +92,7 @@
 
     data: function() {
       return {
-        events: [
-          {
-            date: new Date(2021, 6, 2),
-            time: "16:00",
-            expertName: "Анна Володина",
-            type: "Вебинар",
-            title: "Правда и мифы о Мальдивах",
-            country: "Мальдивы",
-            city: "Москва",
-          },
-          {
-            date: new Date(2021, 6, 3),
-            time: "16:00",
-            expertName: "Анна Володина",
-            type: "Вебинар",
-            title: "Правда и мифы о Мальдивах",
-            country: "Мальдивы",
-            city: "Москва",
-          },
-          {
-            date: new Date(2021, 6, 4),
-            time: "16:00",
-            expertName: "Анна Володина",
-            type: "Вебинар",
-            title: "Правда и мифы о Мальдивах",
-            country: "Мальдивы",
-            city: "Москва",
-          },
-          {
-            date: new Date(2021, 6, 10),
-            time: "16:00",
-            expertName: "Анна Володина",
-            type: "Вебинар",
-            title: "Правда и мифы о Мальдивах",
-            country: "Мальдивы",
-            city: "Не Москва",
-          },
-          {
-            date: new Date(2021, 6, 12),
-            time: "16:00",
-            expertName: "Анна Володина",
-            type: "Вебинар",
-            title: "Правда и мифы о Мальдивах",
-            country: "Мальдивы",
-            city: "Не Москва",
-          },
-        ],
+        events: [],
         city: "Город",
         asCalendar: false,
         listShowCount: 3,
@@ -177,7 +131,6 @@
       currentMonthDaysToDisplay() {
         const daysCountInCurrentMonth = new Date(this.currentYearDisplay, this.currentMonthDisplay, 0).getDate();
         const days = [];
-
         for (let dayNumber = 1; dayNumber <= daysCountInCurrentMonth; dayNumber++) {
           const dateToDisplay = new Date(this.currentYearDisplay, this.currentMonthDisplay, dayNumber);
 
@@ -188,11 +141,14 @@
             dayNumber,
           };
 
+
           dayData.hasEvent = false;
           dayData.event = null;
-
           this.events.forEach(e => {
-            if (e.date.toString() === dateToDisplay.toString()) {
+            console.log(e.date.toString() === dateToDisplay.toString(), e.date.getDate(), dateToDisplay.getDate())
+            if (
+              e.date.getDate() === dateToDisplay.getDate()
+            ) {
               dayData.hasEvent = true;
               dayData.event = e;
             }
@@ -289,6 +245,8 @@
       },
 
       switchToNextMonth() {
+        this.listShowCount = 3;
+
         if (this.currentMonthDisplay === 11) {
           this.currentMonthDisplay = 0;
           this.currentYearDisplay += 1;
@@ -298,6 +256,8 @@
       },
 
       switchToPrevMonth() {
+        this.listShowCount = 3;
+
         if (this.currentMonthDisplay === 0) {
           this.currentMonthDisplay = 11;
           this.currentYearDisplay -= 1;
@@ -317,6 +277,29 @@
 
     mounted() {
       this.city = this.cityOptions[0];
+      fetch("https://dev.resort-holiday.com/api/resort_expert/?method=get.content").then((response) => {
+        return response.json();
+      }).then(data => {
+        const events = [];
+
+        data.elements.forEach(function (eventElement) {
+          const event = {
+            date: new Date(eventElement.date.replaceAll(".", "-").split("-").reverse().join("-")),
+            time: eventElement.time,
+            expertName: eventElement.expert_name,
+            type: eventElement.type,
+            description: eventElement.PREVIEW_TEXT,
+            title: eventElement.NAME,
+            price: eventElement.price,
+            city: eventElement.city,
+            country: eventElement.country,
+          };
+
+          events.push(event);
+        });
+
+        this.events = events;
+      });
     },
   });
 </script>

@@ -1,5 +1,13 @@
 .Feedback {}
 
+.Feedback__Text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  color: #999999;
+  margin-bottom: 32px;
+}
+
 .Feedback__Screenlock {
   display: none;
   position: fixed;
@@ -288,4 +296,45 @@ input[type=number] {
   border: none;
   color: #999999;
   background: transparent;
+}
+
+.Feedback__FileUpload {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.Feedback__FileUploadInner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.Feedback__FileUploadInfo {
+  margin-right: 20px;
+}
+
+.Feedback__FileUploadInfoText {
+  font-weight: 500;
+  line-height: 150%;
+  text-align: right;
+  color: #999999;
+}
+
+.Feedback__FileUploadInfoText--Big {
+  font-size: 16px;
+}
+
+.Feedback__FileUploadInfoText--Small {
+  font-size: 14px;
+}
+
+.Feedback__FileUploadLabel {}
+
+.Feedback__FileUploadInput {
+  display: none;
+}
+
+.Feedback__FileUploadIcon {
+  cursor: pointer
 }
