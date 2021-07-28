@@ -53,7 +53,6 @@
 
   datas.forEach(data => hideElement(data));
   dataSections.forEach(dataSection => hideElement(dataSection));
-  dataTitles.forEach(dataTitle => dataTitle.classList.remove(goldBgClass));
 
   dataTriggers.forEach(dataTrigger => {
     dataTrigger.addEventListener("click", () => {
@@ -76,4 +75,8 @@
       )).forEach(dataTitle => dataTitle.classList.add(goldBgClass));
     });
   });
+
+  showElement(datas[0]);
+  showElement(dataSections[0]);
+  dataTitles[0].classList.add(goldBgClass);
 })();
