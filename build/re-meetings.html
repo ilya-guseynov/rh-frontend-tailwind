@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
 
-    <title>RH | Resort Expert</title>
+    <title>RH | ВСТРЕЧИ И ОБЩЕНИЕ</title>
   </head>
 
   <body class="RH__Body">
@@ -408,7 +408,7 @@
       <main class="RH__Main">
         <section class="PagePreview PagePreview--ResortExpert" style="background-image: url('./assets/images/resort-expert-background-image.jpg');">
           <div class="PagePreview__Inner Container">
-            <h1 class="PagePreview__Title">RESORT EXPERT</h1>
+            <h1 class="PagePreview__Title">ВСТРЕЧИ И ОБЩЕНИЕ</h1>
           </div>
         </section>
         <section class="InfoPageContent Container">
@@ -468,72 +468,22 @@
             </div>
             <div class="InfoPageContent__AsideBorder"></div>
           </div>
-          <div class="InfoPageContent__Main">
-            <div class="ResortExpert__Mosaic REMosaic">
-              <div class="REMosaic__Card">
-                <div class="REMosaic__Inner">
-                  <a class="REMosaic__CardLink" href="#">
-                    <img class="REMosaic__CardIcon" src="./assets/images/re-seminars-icon.svg" alt="re-seminars-icon">
-                    <div class="REMosaic__CardTitle">СЕМИНАРЫ ПО ПРОДУКТУ</div>
-                  </a>
-                </div>
-              </div>
-              <div class="REMosaic__Card">
-                <div class="REMosaic__Inner">
-                  <a class="REMosaic__CardLink" href="#">
-                    <img class="REMosaic__CardIcon" src="./assets/images/re-training-icon.svg" alt="re-training-icon">
-                    <div class="REMosaic__CardTitle">ТРЕНИНГИ ПО ПРОДАЖАМ И МАРКЕТИНГУ</div>
-                  </a>
-                </div>
-              </div>
-              <div class="REMosaic__Card">
-                <div class="REMosaic__Inner">
-                  <a class="REMosaic__CardLink" href="#">
-                    <img class="REMosaic__CardIcon" src="./assets/images/re-webinars-icon.svg" alt="re-seminars-icon">
-                    <div class="REMosaic__CardTitle">ВЕБИНАРЫ</div>
-                  </a>
-                </div>
-              </div>
-              <div class="REMosaic__Card">
-                <div class="REMosaic__Inner">
-                  <a class="REMosaic__CardLink" href="#">
-                    <img class="REMosaic__CardIcon" src="./assets/images/re-meetings-icon.svg" alt="re-seminars-icon">
-                    <div class="REMosaic__CardTitle">ВСТРЕЧИ И ОБЩЕНИЕ</div>
-                  </a>
-                </div>
-              </div>
-              <div class="REMosaic__Card">
-                <div class="REMosaic__Inner">
-                  <a class="REMosaic__CardLink" href="#">
-                    <img class="REMosaic__CardIcon" src="./assets/images/re-buisness-dinner-icon.svg" alt="re-seminars-icon">
-                    <div class="REMosaic__CardTitle">БИЗНЕС-ЗАВТРАКИ</div>
-                  </a>
-                </div>
-              </div>
-              <div class="REMosaic__Card">
-                <div class="REMosaic__Inner">
-                  <a class="REMosaic__CardLink" href="#">
-                    <img class="REMosaic__CardIcon" src="./assets/images/re-ad-tours-icon.svg" alt="re-seminars-icon">
-                    <div class="REMosaic__CardTitle">РЕКЛАМНЫЕ ТУРЫ</div>
-                  </a>
-                </div>
-              </div>
-              <div class="REMosaic__Card">
-                <div class="REMosaic__Inner">
-                  <a class="REMosaic__CardLink" href="#">
-                    <img class="REMosaic__CardIcon" src="./assets/images/re-metods-icon.svg" alt="re-seminars-icon">
-                    <div class="REMosaic__CardTitle">УДОБНЫЕ МЕТОДИЧКИ</div>
-                  </a>
-                </div>
-              </div>
-              <div class="REMosaic__Card">
-                <div class="REMosaic__Inner">
-                  <a class="REMosaic__CardLink" href="#">
-                    <img class="REMosaic__CardIcon" src="./assets/images/re-photo-report-icon.svg" alt="re-seminars-icon">
-                    <div class="REMosaic__CardTitle">ФОТООТЧЕТЫ</div>
-                  </a>
-                </div>
-              </div>
+          <div class="InfoPageContent__Main ResortExpert__ContentPage">
+            <div class="ResortExpert__BackLinkContainer">
+              <a class="ResortExpert__BackLink" href="#">
+                <img class="ResortExpert__BackLinkIcon" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta">
+                <div class="ResortExpert__BackLinkText">На главную RESORT EXPERT</div>
+              </a>
+            </div>
+            <div class="ResortExpert__ContentPageText TextFormated">
+              <h2>ВСТРЕЧИ И ОБЩЕНИЕ</h2>
+              <p><b>Иногда нужно переключаться.</b><br>
+                Мы все профессионалы, и в последние 1,5 года просто обязаны держать руку на пульсе 24\7.<br>
+                А еще мы все – личности с разносторонними интересами.<br>
+                Неформальное общение, где можно познакомиться и подружится, потому что вы любите одни и те же книги, одинаково увлекаетесь психологией, любите ландшафтный дизайн или что угодно другое – на наших неформальных мероприятиях мы сможем узнать друг друга с личной стороны, дарить друг другу положительные эмоции, немного отвлечься от туризма (или наоборот, найти решение своих вопросов) и строить бизнес на взаимном уважении, бизнес с человеческим лицом.</p>
+            </div>
+            <div class="TextFormated">
+              <h3>Предстоящие мероприятия</h3>
             </div>
             <div class="REEvents" id="resort-expert-events">
               <div class="REEvents__Controls">
@@ -686,11 +636,13 @@
 
                 computed: {
                   canShowMore() {
-                    return this.listShowCount < this.events.length;
+                    return this.listShowCount < this.events.filter(event => event.date.getMonth() === this.currentMonthDisplay).length;
                   },
 
                   itemsToDisplayAsList() {
-                    return this.events.filter((event, index) => index < this.listShowCount);
+                    return this.events
+                      .filter(event => event.date.getMonth() === this.currentMonthDisplay)
+                      .filter((event, index) => index < this.listShowCount);
                   },
 
                   cityOptions() {

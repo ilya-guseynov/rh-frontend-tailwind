@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
 
-    <title>RH | ВЕБИНАРЫ</title>
+    <title>RH | РЕКЛАМНЫЕ ТУРЫ</title>
   </head>
 
   <body class="RH__Body">
@@ -408,7 +408,7 @@
       <main class="RH__Main">
         <section class="PagePreview PagePreview--ResortExpert" style="background-image: url('./assets/images/resort-expert-background-image.jpg');">
           <div class="PagePreview__Inner Container">
-            <h1 class="PagePreview__Title">ВЕБИНАРЫ</h1>
+            <h1 class="PagePreview__Title">РЕКЛАМНЫЕ ТУРЫ</h1>
           </div>
         </section>
         <section class="InfoPageContent Container">
@@ -475,10 +475,37 @@
                 <div class="ResortExpert__BackLinkText">На главную RESORT EXPERT</div>
               </a>
             </div>
-            <div class="ResortExpert__ContentPageText TextFormated">
-              <h2>ВЕБИНАРЫ</h2>
-              <p>Когда много работы и высокая загрузка – не всегда есть время куда-то ездить, а может вы живете далеко от нашего офиса, как и некоторые из наших спикеров, которых послушать очень полезно. <b>Здесь нам спешат на помощь вебинары, привычный онлайн формат, в котором вы можете участвовать из любой точки земного шара.</b></p>  
-              <p>Все прошедшие вебинары вы можете посмотреть <a href="https://www.youtube.com/channel/UCJUIXZLBia0LZD_e3JDEJXw" target="_blank" rel="noopener noreferrer">здесь</a>.</p>
+            <div class="ResortExpert__ContentPageText TextFormated TextFormated--LightGray">
+              <h2>РЕКЛАМНЫЕ ТУРЫ</h2>
+              <p><b>Иногда нужно переключаться.</b></p>
+              <p>Мы знаем о Мальдивах все и на Мальдивах – всех.</p>
+              <p><b>Поэтому в наших рекламных турах:</b></p>
+              <div class="TextFormated__MantaList">
+                <div class="TextFormated__MantaListItem">
+                  <img class="TextFormated__MantaListImage" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta-active">
+                  <div class="TextFormated__MantaListText">небольшие группы</div>
+                </div>
+                <div class="TextFormated__MantaListItem">
+                  <img class="TextFormated__MantaListImage" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta-active">
+                  <div class="TextFormated__MantaListText">лучшие программы под потребности группы</div>
+                </div>
+                <div class="TextFormated__MantaListItem">
+                  <img class="TextFormated__MantaListImage" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta-active">
+                  <div class="TextFormated__MantaListText">полное сопровождение</div>
+                </div>
+                <div class="TextFormated__MantaListItem">
+                  <img class="TextFormated__MantaListImage" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta-active">
+                  <div class="TextFormated__MantaListText">заранее подготовленные материалы для участников</div>
+                </div>
+                <div class="TextFormated__MantaListItem">
+                  <img class="TextFormated__MantaListImage" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta-active">
+                  <div class="TextFormated__MantaListText">удобная логистика и время на отдых</div>
+                </div>
+                <div class="TextFormated__MantaListItem">
+                  <img class="TextFormated__MantaListImage" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta-active">
+                  <div class="TextFormated__MantaListText">приятные сюрпризы и нужные знакомства.</div>
+                </div>
+              </div>
             </div>
             <div class="TextFormated">
               <h3>Предстоящие мероприятия</h3>
@@ -634,11 +661,13 @@
 
                 computed: {
                   canShowMore() {
-                    return this.listShowCount < this.events.length;
+                    return this.listShowCount < this.events.filter(event => event.date.getMonth() === this.currentMonthDisplay).length;
                   },
 
                   itemsToDisplayAsList() {
-                    return this.events.filter((event, index) => index < this.listShowCount);
+                    return this.events
+                      .filter(event => event.date.getMonth() === this.currentMonthDisplay)
+                      .filter((event, index) => index < this.listShowCount);
                   },
 
                   cityOptions() {

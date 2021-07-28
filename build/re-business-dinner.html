@@ -634,11 +634,13 @@
 
                 computed: {
                   canShowMore() {
-                    return this.listShowCount < this.events.length;
+                    return this.listShowCount < this.events.filter(event => event.date.getMonth() === this.currentMonthDisplay).length;
                   },
 
                   itemsToDisplayAsList() {
-                    return this.events.filter((event, index) => index < this.listShowCount);
+                    return this.events
+                      .filter(event => event.date.getMonth() === this.currentMonthDisplay)
+                      .filter((event, index) => index < this.listShowCount);
                   },
 
                   cityOptions() {

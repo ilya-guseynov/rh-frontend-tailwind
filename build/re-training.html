@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
 
-    <title>RH | СЕМИНАРЫ ПО ПРОДУКТУ</title>
+    <title>RH | ТРЕНИНГИ ПО ПРОДАЖАМ И МАРКЕТИНГУ</title>
   </head>
 
   <body class="RH__Body">
@@ -408,7 +408,7 @@
       <main class="RH__Main">
         <section class="PagePreview PagePreview--ResortExpert" style="background-image: url('./assets/images/resort-expert-background-image.jpg');">
           <div class="PagePreview__Inner Container">
-            <h1 class="PagePreview__Title">СЕМИНАРЫ ПО ПРОДУКТУ</h1>
+            <h1 class="PagePreview__Title">ТРЕНИНГИ ПО ПРОДАЖАМ И МАРКЕТИНГУ</h1>
           </div>
         </section>
         <section class="InfoPageContent Container">
@@ -476,12 +476,9 @@
               </a>
             </div>
             <div class="ResortExpert__ContentPageText TextFormated">
-              <h2>СЕМИНАРЫ ПО ПРОДУКТУ</h2>
-              <p>Полная и свежая информация обо всех направлениях, отельной базе, пляжах, рифах, трансферах и т.д.<br>
-                У нас можно задать любой вопрос по продукту, понять кому из ваших туристов что подойдет, понять что и кому предлагать, узнать все «фишки» отдыха на Мальдивах и убедится, что Мальдивы – это не скучно и для каждого туриста Мальдивам есть что предложить.<br>
-                <b>С нами не стыдно не знать продукт, с нами вы его будете знать лучше, чем после онлайн рекламников.</b></p>
-              <p>Также приглашаем вас в закрытую группу Телеграм только для агентов, где у нас есть фото и видео, которые вы сможете использовать в своих соц.сетях и для презентации продукта, а также неформальное общение профессионалов туротрасли, обсуждения и поддержка.<br> 
-                Для получения приглашения в группу свяжитесь с нами любым удобным способом, указанном на сайте или просто напишите на info@resort-holiday.com с темой письма «Хочу в группу в Телеграм».</p>
+              <h2>ТРЕНИНГИ ПО ПРОДАЖАМ И МАРКЕТИНГУ</h2>
+              <p><b>Приглашенные эксперты, бизнес-игры, прикладные тренинги – вместе с нами, с телефоном в руках, прямо в нашем офисе в удобном кресле вы сделаете свои первые шаги онлайн.</b></p>
+              <p>Например: настроите простой таргет через кабинет FB и узнаете, как пользоваться Business Manager; отстроитесь от конкурентов, найдете сильные стороны своего бизнеса; поймете, нужны ли вам авторские туры, нужен ли вам офис; внедрите платные консультации; узнаете свою целевую аудиторию и сформируете свое УТП; создадите свои видео и фреймы для сториз, напишите контент-план и многое другое!</p>
             </div>
             <div class="TextFormated">
               <h3>Предстоящие мероприятия</h3>
@@ -637,11 +634,13 @@
 
                 computed: {
                   canShowMore() {
-                    return this.listShowCount < this.events.length;
+                    return this.listShowCount < this.events.filter(event => event.date.getMonth() === this.currentMonthDisplay).length;
                   },
 
                   itemsToDisplayAsList() {
-                    return this.events.filter((event, index) => index < this.listShowCount);
+                    return this.events
+                      .filter(event => event.date.getMonth() === this.currentMonthDisplay)
+                      .filter((event, index) => index < this.listShowCount);
                   },
 
                   cityOptions() {

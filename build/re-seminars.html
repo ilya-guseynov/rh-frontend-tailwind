@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
 
-    <title>RH | ВСТРЕЧИ И ОБЩЕНИЕ</title>
+    <title>RH | СЕМИНАРЫ ПО ПРОДУКТУ</title>
   </head>
 
   <body class="RH__Body">
@@ -408,7 +408,7 @@
       <main class="RH__Main">
         <section class="PagePreview PagePreview--ResortExpert" style="background-image: url('./assets/images/resort-expert-background-image.jpg');">
           <div class="PagePreview__Inner Container">
-            <h1 class="PagePreview__Title">ВСТРЕЧИ И ОБЩЕНИЕ</h1>
+            <h1 class="PagePreview__Title">СЕМИНАРЫ ПО ПРОДУКТУ</h1>
           </div>
         </section>
         <section class="InfoPageContent Container">
@@ -476,11 +476,12 @@
               </a>
             </div>
             <div class="ResortExpert__ContentPageText TextFormated">
-              <h2>ВСТРЕЧИ И ОБЩЕНИЕ</h2>
-              <p><b>Иногда нужно переключаться.</b><br>
-                Мы все профессионалы, и в последние 1,5 года просто обязаны держать руку на пульсе 24\7.<br>
-                А еще мы все – личности с разносторонними интересами.<br>
-                Неформальное общение, где можно познакомиться и подружится, потому что вы любите одни и те же книги, одинаково увлекаетесь психологией, любите ландшафтный дизайн или что угодно другое – на наших неформальных мероприятиях мы сможем узнать друг друга с личной стороны, дарить друг другу положительные эмоции, немного отвлечься от туризма (или наоборот, найти решение своих вопросов) и строить бизнес на взаимном уважении, бизнес с человеческим лицом.</p>
+              <h2>СЕМИНАРЫ ПО ПРОДУКТУ</h2>
+              <p>Полная и свежая информация обо всех направлениях, отельной базе, пляжах, рифах, трансферах и т.д.<br>
+                У нас можно задать любой вопрос по продукту, понять кому из ваших туристов что подойдет, понять что и кому предлагать, узнать все «фишки» отдыха на Мальдивах и убедится, что Мальдивы – это не скучно и для каждого туриста Мальдивам есть что предложить.<br>
+                <b>С нами не стыдно не знать продукт, с нами вы его будете знать лучше, чем после онлайн рекламников.</b></p>
+              <p>Также приглашаем вас в закрытую группу Телеграм только для агентов, где у нас есть фото и видео, которые вы сможете использовать в своих соц.сетях и для презентации продукта, а также неформальное общение профессионалов туротрасли, обсуждения и поддержка.<br> 
+                Для получения приглашения в группу свяжитесь с нами любым удобным способом, указанном на сайте или просто напишите на info@resort-holiday.com с темой письма «Хочу в группу в Телеграм».</p>
             </div>
             <div class="TextFormated">
               <h3>Предстоящие мероприятия</h3>
@@ -636,11 +637,13 @@
 
                 computed: {
                   canShowMore() {
-                    return this.listShowCount < this.events.length;
+                    return this.listShowCount < this.events.filter(event => event.date.getMonth() === this.currentMonthDisplay).length;
                   },
 
                   itemsToDisplayAsList() {
-                    return this.events.filter((event, index) => index < this.listShowCount);
+                    return this.events
+                      .filter(event => event.date.getMonth() === this.currentMonthDisplay)
+                      .filter((event, index) => index < this.listShowCount);
                   },
 
                   cityOptions() {
