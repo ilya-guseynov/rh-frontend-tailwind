@@ -14,19 +14,16 @@
 
   /**
    * @param {string | number} id
-   * @returns {void}
    */
    const createQueryForDataById = id => `[${dataAttributeName} = "${id}"]`;
 
   /**
    * @param {string | number} id
-   * @returns {void}
    */
   const createQueryForDataSectionById = id => `[${dataSectionAttributeName} = "${id}"]`;
 
    /**
    * @param {string | number} id
-   * @returns {void}
    */
   const createQueryForDataTitleById = id => `[${dataTitleAttributeName} = "${id}"]`;
 
@@ -50,6 +47,7 @@
   const dataSections = document.querySelectorAll(attributeNameToQuery(dataSectionAttributeName));
   const dataTriggers = document.querySelectorAll(attributeNameToQuery(dataTriggerAttributeName));
   const dataTitles = document.querySelectorAll(attributeNameToQuery(dataTitleAttributeName));
+  const progressBar = document.querySelector(".HotelPage__TabsProgressBarInner");
 
   datas.forEach(data => hideElement(data));
   dataSections.forEach(dataSection => hideElement(dataSection));
@@ -59,6 +57,11 @@
       datas.forEach(data => hideElement(data));
       dataSections.forEach(dataSection => hideElement(dataSection));
       dataTitles.forEach(dataTitle => dataTitle.classList.remove(goldBgClass));
+
+      progressBar.style = `
+        left: ${ ((+dataTrigger.getAttribute(dataTriggerAttributeName) - 1) / (datas.length + 1)) * 100 }%;
+        width: ${ 1 / datas.length * 100 }%;
+      `;
 
       showElement(
         document.querySelector(
@@ -80,5 +83,10 @@
     showElement(datas[0]);
     showElement(dataSections[0]);
     dataTitles[0].classList.add(goldBgClass);
+
+    progressBar.style = `
+        left: 0;
+        width: ${ 1 / datas.length * 100 }%;
+      `;
   }
 })();

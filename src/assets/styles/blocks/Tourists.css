@@ -1,0 +1,340 @@
+.Tourists {}
+
+.Tourists__Text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    color: #999999;
+    margin-bottom: 32px;
+}
+
+.Tourists__Screenlock {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0, .3);
+    z-index: 90;
+}
+
+.Tourists--Active .Tourists__Screenlock {
+    display: block;
+}
+
+.Tourists__Content {
+    display: none;
+    position: fixed;
+    z-index: 91;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 37px 44px 30px;
+}
+
+.Tourists--Active .Tourists__Content {
+    display: flex;
+    width: 70vw;
+    max-width: 1080px;
+}
+
+.Tourists__ContentLeft {
+    display: none;
+    width: 50%;
+}
+
+@media (min-width: 1041px) {
+    .Tourists__ContentLeft {
+        display: block;
+    }
+}
+
+.Tourists__ContentRight {
+    width: 100%;
+}
+
+@media (min-width: 1041px) {
+    .Tourists__ContentRight {
+        width: 50%;
+    }
+}
+
+.Tourists__LeftLogo {
+    margin-bottom: 120px;
+}
+
+.Tourists__LeftCountry {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.Tourists__LeftAddress {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 170%;
+    color: #999999;
+    margin-bottom: 40px;
+}
+
+.Tourists__LeftPhonesBlock {
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.Tourists__LeftPhoneIcon {
+    margin-right: 20px;
+}
+
+.Tourists__LeftPhones {
+    display: flex;
+    flex-direction: column;
+}
+
+.Tourists__LeftPhone {
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #285C2D;
+    text-decoration: none;
+    transition: all .5s;
+}
+
+.Tourists__LeftPhone:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.Tourists__LeftPhone:hover {
+    opacity: .8;
+}
+
+.Tourists__LeftLink {
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: 1px;
+    text-decoration-line: underline;
+    color: #285C2D;
+}
+
+.Tourists__RightTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 45px;
+}
+
+.Tourists__RightTitleText {
+    font-weight: bold;
+    font-size: 32px;
+    color: #202020;
+}
+
+.Tourists__RightTitleClose {
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.Tourists__Form {}
+
+.Tourists__TextInput {
+    width: 100%;
+    display: block;
+    font-weight: 500;
+    font-size: 18px;
+    color: #999999;
+    font-family: inherit;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #999999;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.Tourists__CheckboxContainer {
+    display: flex;
+    align-items: center;
+}
+
+.Tourists__CheckboxContainer:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.Tourists__Checkbox {
+    position: relative;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    margin-right: 25px;
+    display: block;
+    flex-shrink: 0;
+}
+
+.Tourists__Checkbox::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    border: 1px solid #CCCCCC;
+    border-radius: 2px;
+    background-color: white;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.122254);
+    transition: background-color .5s;
+}
+
+.Tourists__Checkbox:checked::before {
+    background-color: #285C2D;
+}
+
+.Tourists__Checkbox:checked::after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 3px;
+    left: 8px;
+}
+
+.Tourists__CheckboxLabel {
+    font-weight: 500;
+    font-size: 16px;
+    color: #999999;
+}
+
+.Tourists__Textarea {
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    font-weight: 500;
+    font-size: 18px;
+    resize: vertical;
+    line-height: 21px;
+    color: #999999;
+    font-family: inherit;
+    margin-bottom: 11px;
+    padding: 11px 20px;
+    outline: none;
+}
+
+.Tourists__SubmitButton {
+    margin: 0;
+    width: 100%;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    font-family: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E9CC65 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
+    transition: all .5s;
+}
+
+.Tourists__SubmitButton:hover {
+    opacity: .8;
+}
+
+.Tourists__SevenNumberInputContainer {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 50px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.Tourists__SevenNumberInputText {
+    font-weight: 500;
+    font-size: 16px;
+    color: #999999;
+    margin-right: 20px;
+}
+
+.SevenBg {
+    background: no-repeat;
+    background-position: left;
+    background-size: contain;
+    width: 250px;
+}
+
+.Tourists__SevenNumberInput {
+    font-size: 20px;
+    letter-spacing: 26px;
+    width: 100%;
+    padding-left: 6px;
+    outline: none;
+    border: none;
+    color: #999999;
+    background: transparent;
+}
+
+.Tourists__FileUpload {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 12px;
+}
+
+.Tourists__FileUploadInner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.Tourists__FileUploadInfo {
+    margin-right: 20px;
+}
+
+.Tourists__FileUploadInfoText {
+    font-weight: 500;
+    line-height: 150%;
+    text-align: right;
+    color: #999999;
+}
+
+.Tourists__FileUploadInfoText--Big {
+    font-size: 16px;
+}
+
+.Tourists__FileUploadInfoText--Small {
+    font-size: 14px;
+}
+
+.Tourists__FileUploadLabel {}
+
+.Tourists__FileUploadInput {
+    display: none;
+}
+
+.Tourists__FileUploadIcon {
+    cursor: pointer
+}

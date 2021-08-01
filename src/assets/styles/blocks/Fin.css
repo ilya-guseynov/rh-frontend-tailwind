@@ -11,6 +11,12 @@
     margin-bottom: 60px;
 }
 
+@media (max-width: 768px) {
+    .TextFormated .Fin__Heading {
+        display: none;
+    }
+}
+
 .TextFormated td.Fin__BigCell {
     font-weight: bold;
     font-size: 16px;
@@ -52,4 +58,48 @@
     font-size: 22px;
     line-height: 180%;
     color: #285C2D;
+}
+
+.Fin__Table--Desktop {}
+
+.Fin__Table--Mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .Fin__Table--Desktop {
+        display: none;
+    }
+
+    .Fin__Table--Mobile {
+        display: table;
+    }
+
+    .TextFormated td.Fin__Info {
+        font-size: 12px;
+        vertical-align: top;
+        padding: 3%;
+    }
+
+    .TextFormated td.Fin__Descr {
+        font-size: 12px;
+        vertical-align: top;
+        padding: 3%;
+    }
+
+    .TextFormated td.Fin__BigCell {
+        font-size: 12px;
+        text-align: center;
+        color: #000000;
+        vertical-align: top;
+        padding-top: 0;
+    }
+
+    .Fin__Info {
+        font-size: 14px;
+    }
+
+    .Fin__Info a {
+        font-size: 14px;
+    }
 }

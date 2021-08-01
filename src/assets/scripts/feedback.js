@@ -1,26 +1,35 @@
 (() => {
-  const feedback = document.querySelector(".Feedback");
-  const feedbackTriggers = document.querySelectorAll(".Feedback__Trigger");
-  const feedbackScreenlock = document.querySelector(".Feedback__Screenlock");
-  const feedbackCloseTrigger = document.querySelector(".Feedback__CloseTrigger");
+  const tourists = document.querySelector(".Tourists");
+  const touristsTriggers = document.querySelectorAll(".Tourists__Trigger");
+  const touristsScreenlock = document.querySelector(".Tourists__Screenlock");
+  const touristsCloseTrigger = document.querySelector(".Tourists__CloseTrigger");
 
-  const feedbackActiveClass = "Feedback--Active";
+  const touristsActiveClass = "Tourists--Active";
 
-  if (!feedback || !feedbackTriggers || !feedbackScreenlock || !feedbackCloseTrigger) {
+  if (!tourists || !touristsTriggers || !touristsScreenlock || !touristsCloseTrigger) {
     return;
   }
 
-  feedbackTriggers.forEach(feedbackTrigger => {
-    feedbackTrigger.addEventListener("click", () => {
-      feedback.classList.add(feedbackActiveClass);
+  touristsTriggers.forEach(touristsTrigger => {
+    touristsTrigger.addEventListener("click", () => {
+      tourists.classList.add(touristsActiveClass);
     });
   });
 
-  feedbackScreenlock.addEventListener("click", () => {
-    feedback.classList.remove(feedbackActiveClass);
+  touristsScreenlock.addEventListener("click", () => {
+    tourists.classList.remove(touristsActiveClass);
   });
 
-  feedbackCloseTrigger.addEventListener("click", () => {
-    feedback.classList.remove(feedbackActiveClass);
+  touristsCloseTrigger.addEventListener("click", () => {
+    tourists.classList.remove(touristsActiveClass);
+  });
+
+  document.querySelectorAll(".Tourists__Checkbox").forEach(checkbox => {
+    checkbox.addEventListener("change", () => {
+      document.querySelectorAll(".Tourists__Checkbox").forEach(checkbox2 => {
+        checkbox2.checked = false;
+      });
+      checkbox.checked = true;
+    });
   });
 })();

@@ -10,7 +10,7 @@
 @media (min-width: 769px) {
   .CountryPage__Mosaic {
     display: block;
-  } 
+  }
 }
 
 .CountryMosaic {}
@@ -24,6 +24,17 @@
 
 .CountryMosaic__Row:not(:last-child) {
   margin-bottom: 20px;
+}
+
+.CountryPage .HotelPage__TabsProgressBar {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 769px) {
+  .CountryPage .HotelPage__TabsProgressBar {
+    display: none;
+  }
 }
 
 .CountryMosaic__Item {

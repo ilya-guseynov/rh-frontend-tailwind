@@ -75,7 +75,7 @@
                   </a>
                 </li>
                 <li class="Header__NavigationItem">
-                  <a class="Header__NavigationLink" href="#">
+                  <a class="Header__NavigationLink Tourists__Trigger">
                     <img class="Header__NavigationIcon" src="./assets/images/icons/move-icon.svg" alt="move-icon">
                     <div class="Header__NavigationLinkText">Туристам</div>
                   </a>
@@ -273,7 +273,7 @@
                 <img src="./assets/images/icons/close-icon.svg" alt="close">
               </button>
             </div>
-            <form class="Feedback__Form">
+            <form class="Feedback__Form" id="feedback-form-vue">
               <input class="Feedback__TextInput" type="text" name="username" placeholder="*Ваше имя">
               <input class="Feedback__TextInput" type="text" name="useragency" placeholder="*Ваше агентство">
               <input class="Feedback__TextInput" type="email" name="useremail" placeholder="*Ваш email">
@@ -328,6 +328,50 @@
             <input class="TelegramForm__TextInput" type="email" name="useremail" placeholder="*Ваш email">
             <button class="TelegramForm__SubmitButton" type="submit">Отправить запрос</button>
           </form>
+        </div>
+      </div>
+      <div class="Tourists">
+        <div class="Tourists__Screenlock"></div>
+        <div class="Tourists__Content"
+             style="background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url('./assets/images/Feedback-bg.jpg')">
+          <div class="Tourists__ContentLeft">
+            <img class="Tourists__LeftLogo" src="./assets/images/logo.svg" alt="logo">
+            <div class="Tourists__LeftCountry">Россия</div>
+            <div class="Tourists__LeftAddress">Москва, Новодмитровская 2, кор. 1<br>Савеловский Сити, башня Goodman</div>
+            <div class="Tourists__LeftPhonesBlock">
+              <img class="Tourists__LeftPhoneIcon" src="./assets/images/icons/gold-phone-icon.svg" alt="phone">
+              <div class="Tourists__LeftPhones">
+                <a class="Tourists__LeftPhone" href="#">+7 495 266-63-77</a>
+                <a class="Tourists__LeftPhone" href="#">+7 800 100-19-70</a>
+              </div>
+            </div>
+          </div>
+          <div class="Tourists__ContentRight">
+            <div class="Tourists__RightTitle">
+              <div class="Tourists__RightTitleText">Оставить заявку на отдых</div>
+              <button class="Tourists__RightTitleClose Tourists__CloseTrigger">
+                <img src="./assets/images/icons/close-icon.svg" alt="close">
+              </button>
+            </div>
+            <form class="Tourists__Form" id="Tourists-form-vue">
+              <input class="Tourists__TextInput" type="text" name="username" placeholder="*Меня зовут">
+              <input class="Tourists__TextInput" type="text" name="useragency" placeholder="*Мой email">
+              <input class="Tourists__TextInput" type="tel" name="usernumber" placeholder="*Мой телефон (+7)">
+              <input class="Tourists__TextInput" type="text" name="userdatas" placeholder="*Хочу поехать в такие даты:">
+              <input class="Tourists__TextInput" type="text" name="userdatas" placeholder="Если с вами едут дети, пожалуйста, напишите, сколько им лет: ">
+              <div class="Tourists__Text">*В поле ниже Вы можете оставить все свои пожелания по отдыху (например: тип питания, тип виллы, тип трансфера, бюджет, что вам нравится на отдыхе, что не нравится, какие услуги вам еще понадобятся, какой-то конкретный отель и т.п.)
+              </div>
+              <textarea class="Tourists__Textarea" name="usermessage" cols="30" rows="5"
+                        placeholder="Введите текст сообщения"></textarea>
+              <div class="Tourists__Text">Наши лучшие менеджеры ответят Вам как можно скорее!
+              </div>
+              <div class="Tourists__CheckboxContainer">
+                <input class="Tourists__Checkbox" type="checkbox" name="want-to-thank" id="want-to-thank">
+                <label class="Tourists__CheckboxLabel" for="want-to-thank">Согласен с <a href="#"><u>Положением об обработке и защите персональных данных</u></a></label>
+              </div>
+              <button class="Tourists__SubmitButton" type="submit">Отправить</button>
+            </form>
+          </div>
         </div>
       </div>
     </header>
@@ -434,7 +478,7 @@
       <section class="InfoPageContent InfoPageContent--NoAside Container">
         <div class="InfoPageContent__Main TextFormated Fin">
           <h1 class="Fin__Heading">Финансовые гарантии:</h1>
-          <table>
+          <table class="Fin__Table--Desktop">
             <tr>
               <th colspan="3" class="TextFormated__TableHeading TextFormated__TableHeading--DarkGreen">ООО "Резорт Холидей"</th>
             </tr>
@@ -472,8 +516,48 @@
               <td class="Fin__Descr">Лицензия</td>
             </tr>
           </table>
+          <table class="Fin__Table--Mobile">
+            <tr>
+              <th colspan="2" class="TextFormated__TableHeading TextFormated__TableHeading--DarkGreen">ООО "Резорт Холидей"</th>
+            </tr>
+            <tr>
+              <td class="Fin__BigCell" colspan="2">Общая информация о Финансовых гарантиях туроператора:</td>
+            </tr>
+            <tr>
+              <td class="Fin__Info">Сфера туроператорской деятельности:  </td>
+              <td class="Fin__Descr">международный выездной</td>
+            </tr>
+            <tr>
+              <td class="Fin__Info">Размер финансового обеспечения:</td>
+              <td class="Fin__Descr">50 000 000 руб.</td>
+            </tr>
+            <tr>
+              <td class="Fin__Info">Способ финансового обеспечения:</td>
+              <td class="Fin__Descr">договор страхования гражданской ответственности туроператора ООО “Резорт Холидей”</td>
+            </tr>
+            <tr>
+              <td class="Fin__Info">Документ:</td>
+              <td class="Fin__Descr">№21/TPL08/000012 от 21.07.2021  </td>
+            </tr>
+            <tr>
+              <td class="Fin__Info">Срок действия финансового обеспечения:</td>
+              <td class="Fin__Descr">с 22.07.2021 по 21.07.2022</td>
+            </tr>
+            <tr>
+              <td class="Fin__Info">Наименование организации, предоставившей финансовое обеспечение:</td>
+              <td class="Fin__Descr">ООО «СТРАХОВАЯ КОМПАНИЯ «АРСЕНАЛЪ»</td>
+            </tr>
+            <tr>
+              <td class="Fin__Info">Адрес (место нахождения) организации, предоставившей финансовое обеспечение:</td>
+              <td class="Fin__Descr">111020, г. Москва, 2-я ул. Синичкина, д. 9а, строение 10</td>
+            </tr>
+            <tr>
+              <td class="Fin__Info">Свидетельство о внесении сведений в единый федеральный реестр туроператоров</td>
+              <td class="Fin__Descr">Лицензия</td>
+            </tr>
+          </table>
           <div class="Fin__InfoBlock">
-            <div class="Fin__Info">РТО тут будет номер РТО</div>
+            <div class="Fin__Info">РТО 022959</div>
             <div class="Fin__Info">Мы в реестре туроператоров <a href="https://tourism.gov.ru/operators/">https://tourism.gov.ru/operators/.</a></div>
             <div class="Fin__Info">Мы в членстве туроператоров в Ассоциации «ТУРПОМОЩЬ» <a href="http://www.tourpom.ru/members">http://www.tourpom.ru/members.</a></div>
           </div>

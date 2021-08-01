@@ -9,6 +9,7 @@
 
 .PagePreview--Prive {
   background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E9CC65 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
+  overflow: hidden;
 }
 
 .PagePreview--Country {
@@ -31,7 +32,7 @@
 
 @media (max-width: 768px) {
   .PagePreview--Country {
-    height: 456px;
+    height: 405px;
     margin-bottom: 0;
   }
 }
@@ -74,6 +75,10 @@
     text-align: center;
     width: 100%;
   }
+
+  .PagePreview--Prive .PagePreview__Title {
+    font-size: 24px;
+  }
 }
 
 .PagePreview--Country .PagePreview__Title {
@@ -96,6 +101,12 @@
   font-size: 80px;
 }
 
+@media (max-width: 768px) {
+  .PagePreview--Prive .PagePreview__Title {
+    font-size: 24px;
+  }
+}
+
 .PagePreview__Manta {
   position: absolute;
   left: -23%;
@@ -104,7 +115,6 @@
 }
 
 .PagePreview__MediaLink {
-  display: block;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -115,8 +125,13 @@
 }
 
 @media (max-width: 768px) {
-  .PagePreview--Country .PagePreview__MediaLink {
-    display: none;
+  .PagePreview__Manta {
+    position: absolute;
+    bottom: -10%;
+    left: -10%;
+    top: auto;
+    width: 40vw;
+    z-index: 1;
   }
 }
 
@@ -154,8 +169,8 @@
 
 @media (max-width: 768px) {
   .PagePreview--Country .PagePreview__HotelLink {
-    display: none;
-  } 
+    margin-bottom: 30px;
+  }
 }
 
 .PagePreview__HotelLinkImageContainer {
@@ -182,3 +197,48 @@
   margin-top: 13px;
   text-decoration: none;
 }
+
+@media (max-width: 768px) {
+  .PagePreview--Country .PagePreview__HotelLinkText {
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+    height: 26px;
+    width: 170px;
+    margin-top: 13px;
+    text-decoration: none;
+  }
+
+  .PagePreview__HotelLinkImageContainer {
+    width: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+  }
+
+  .PagePreview--Country .PagePreview__HotelLinkImage {
+    width: 150%;
+  }
+
+  .PagePreview__MediaImage {
+    width: 20px;
+    margin-right: 7px;
+  }
+
+  .PagePreview__MediaText {
+    height: 20px;
+    min-width: 160px;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .PagePreview__MediaLink:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .PagePreview__CountryContentContainer {
+    padding-top: 140px;
+  }
+}
+
