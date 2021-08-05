@@ -7,10 +7,79 @@
         <img src="./assets/images/icons/close-icon.svg" alt="close">
       </button>
     </div>
-    <form class="TelegramForm__Form">
-      <input class="TelegramForm__TextInput" type="text" name="username" placeholder="*Я работаю в:">
-      <input class="TelegramForm__TextInput" type="email" name="useremail" placeholder="*Ваш email">
+    <form class="TelegramForm__Form" id="telegram-form" @submit.prevent="sendToBackend">
+      <input class="TelegramForm__TextInput" v-model="job" required type="text" placeholder="*Я работаю в:">
+      <input class="TelegramForm__TextInput" v-model="email" required type="email" placeholder="*Ваш email">
       <button class="TelegramForm__SubmitButton" type="submit">Отправить запрос</button>
+      <success-message v-if="showSuccess"></success-message>
     </form>
+    <script>
+      Vue.component("success-message", {
+        name: "success-message",
+
+        template: `
+        <div class="SuccessMessage" >
+          <svg class="SuccessMessage__Icon" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_d)">
+              <rect x="3" y="2" width="36" height="36" rx="18" fill="url(#paint0_linear)"/>
+            </g>
+            <path d="M14.2501 20.6025L18.0911 24.4435L27.6935 14.841" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <filter id="filter0_d" x="0" y="0" width="42" height="42" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset dy="1"/>
+                <feGaussianBlur stdDeviation="1.5"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.122254 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+              </filter>
+              <linearGradient id="paint0_linear" x1="-16.7019" y1="20.4221" x2="32.3324" y2="19.8753" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#D8BB58"/>
+                <stop offset="0.1464" stop-color="#ECD26E"/>
+                <stop offset="0.239" stop-color="#F4DB76"/>
+                <stop offset="0.4341" stop-color="#E4BD32"/>
+                <stop offset="0.8173" stop-color="#CEA53A"/>
+                <stop offset="0.8757" stop-color="#C99F33"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="SuccessMessage__Text1">Спасибо!</div>
+          <div class="SuccessMessage__Text2">Сообщение отправлено</div>
+        </div>
+        `,
+      });
+
+      new Vue({
+        el: "#telegram-form",
+
+        data: function () {
+          return {
+            job: "",
+            email: "",
+            showSuccess: false,
+          };
+        },
+
+        methods: {
+          sendToBackend() {
+            if (this.job === "" && this.email === "") {
+              return;
+            }
+
+            fetch(`https://dev.resort-holiday.com/api/forms/?form[prop][work_place]=${this.job}&type=join_to_tg&form[prop][email]=${this.email}`).then((response) => {
+              this.showSuccess = true;
+              setTimeout(() => {
+                this.showSuccess = false;
+              }, 2000);
+              this.job = "";
+              this.email = "";
+            }).catch(function (error) {
+              console.log("Error to post Telegram form data", error);
+            });
+          },
+        },
+      });
+    </script>
   </div>
 </div>

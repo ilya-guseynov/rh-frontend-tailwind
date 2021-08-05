@@ -31,8 +31,9 @@
 @import "PhotoReports.css";
 @import "TelegramForm.css";
 @import "Tourists.css";
+@import "REForm.css";
 
-
+ 
 .RH__Page {
   font-family: "montserrat", sans-serif !important;
 }

@@ -26,14 +26,18 @@
               <div class="Header__LocationText">Москва и МО</div>
             </div>
             <div class="Header__Currency Header__Currency--TopSection">
-              <span class="Header__CurrencyTitle">Курс</span>
-              <span class="Header__CurrencyTicker">
-                <span class="Header__CurrencyTickerName">USD</span> <span class="Header__CurrencyTickerValue">74.90</span>
-              </span>
-              <span class="Header__CurrencyTickerDivider">|</span>
-              <span class="Header__CurrencyTicker">
-                <span class="Header__CurrencyTickerName">EUR</span> <span class="Header__CurrencyTickerValue">91.30</span>
-              </span>
+              <script
+                src="https://search.resort-holiday.com/currency?samo_action=embed&utf8=✓"
+                charset="utf-8"
+              ></script>
+    <!--          <span class="Header__CurrencyTitle">Курс</span>-->
+    <!--          <span class="Header__CurrencyTicker">-->
+    <!--            <span class="Header__CurrencyTickerName">USD</span> <span class="Header__CurrencyTickerValue">74.90</span>-->
+    <!--          </span>-->
+    <!--          <span class="Header__CurrencyTickerDivider">|</span>-->
+    <!--          <span class="Header__CurrencyTicker">-->
+    <!--            <span class="Header__CurrencyTickerName">EUR</span> <span class="Header__CurrencyTickerValue">91.30</span>-->
+    <!--          </span>-->
             </div>
           </div>
           <div class="Header__TopSectionInner Header__TopSectionInner--Desktop">
@@ -120,14 +124,18 @@
             </div>
             <div class="Header__BottomSectionDesktopRight">
               <div class="Header__Currency Header__Currency--BottomSection">
-                <span class="Header__CurrencyTitle">Курс</span>
-                <span class="Header__CurrencyTicker">
-                  <span class="Header__CurrencyTickerName">USD</span> <span class="Header__CurrencyTickerValue">74.90</span>
-                </span>
-                <span class="Header__CurrencyTickerDivider">|</span>
-                <span class="Header__CurrencyTicker">
-                  <span class="Header__CurrencyTickerName">EUR</span> <span class="Header__CurrencyTickerValue">91.30</span>
-                </span>
+                <script
+                  src="https://search.resort-holiday.com/currency?samo_action=embed&utf8=✓"
+                  charset="utf-8"
+                ></script>
+    <!--            <span class="Header__CurrencyTitle">Курс</span>-->
+    <!--            <span class="Header__CurrencyTicker">-->
+    <!--              <span class="Header__CurrencyTickerName">USD</span> <span class="Header__CurrencyTickerValue">74.90</span>-->
+    <!--            </span>-->
+    <!--            <span class="Header__CurrencyTickerDivider">|</span>-->
+    <!--            <span class="Header__CurrencyTicker">-->
+    <!--              <span class="Header__CurrencyTickerName">EUR</span> <span class="Header__CurrencyTickerValue">91.30</span>-->
+    <!--            </span>-->
               </div>
               <div class="Header__Location Header__Location--BottomSection">
                 <img class="Header__LocationIcon" src="./assets/images/icons/near-me-icon.svg" alt="near-me-icon">
@@ -273,28 +281,28 @@
                 <img src="./assets/images/icons/close-icon.svg" alt="close">
               </button>
             </div>
-            <form class="Feedback__Form" id="feedback-form-vue">
-              <input class="Feedback__TextInput" type="text" name="username" placeholder="*Ваше имя">
-              <input class="Feedback__TextInput" type="text" name="useragency" placeholder="*Ваше агентство">
-              <input class="Feedback__TextInput" type="email" name="useremail" placeholder="*Ваш email">
+            <form class="Feedback__Form" id="feedback-form-vue" @submit.prevent="sendToBackend">
+              <input class="Feedback__TextInput" type="text" v-model="name" required placeholder="*Ваше имя">
+              <input class="Feedback__TextInput" type="text" v-model="agency" required  placeholder="*Ваше агентство">
+              <input class="Feedback__TextInput" type="email" v-model="email" required placeholder="*Ваш email">
               <div class="Feedback__CheckboxContainer">
-                <input class="Feedback__Checkbox" type="checkbox" name="want-to-feedback" id="want-to-feedback">
-                <label class="Feedback__CheckboxLabel" for="want-to-feedback">Я хочу оставить отзыв</label>
+                <input class="Feedback__Checkbox" @click="wantTo = '27'" type="checkbox">
+                <label class="Feedback__CheckboxLabel">Я хочу оставить отзыв</label>
               </div>
               <div class="Feedback__CheckboxContainer">
-                <input class="Feedback__Checkbox" type="checkbox" name="want-to-thank" id="want-to-thank">
-                <label class="Feedback__CheckboxLabel" for="want-to-thank">Я хочу оставить благодарность</label>
+                <input class="Feedback__Checkbox" @click="wantTo = '28'" type="checkbox">
+                <label class="Feedback__CheckboxLabel">Я хочу оставить благодарность</label>
               </div>
               <div class="Feedback__CheckboxContainer">
-                <input class="Feedback__Checkbox" type="checkbox" name="want-to-help" id="want-to-help">
-                <label class="Feedback__CheckboxLabel" for="want-to-help">Я хочу помочь вам стать лучше</label>
+                <input class="Feedback__Checkbox" @click="wantTo = '29'" type="checkbox">
+                <label class="Feedback__CheckboxLabel">Я хочу помочь вам стать лучше</label>
               </div>
               <div class="Feedback__CheckboxContainer">
-                <input class="Feedback__Checkbox" type="checkbox" name="want-to-ask" id="want-to-ask">
-                <label class="Feedback__CheckboxLabel" for="want-to-ask">Я хочу задать вопрос, т.к. не нашла / нашел ответ на сайте</label>
+                <input class="Feedback__Checkbox" @click="wantTo = '30'" type="checkbox">
+                <label class="Feedback__CheckboxLabel">Я хочу задать вопрос, т.к. не нашла / нашел ответ на сайте</label>
               </div>
               <div class="Feedback__Text">Все вопросы по заявкам вы можете отправить из Личного Кабинета агента через кнопку "Отправить сообщение"</div>
-              <textarea class="Feedback__Textarea" name="usermessage" cols="30" rows="5" placeholder="Введите текст сообщения"></textarea>
+              <textarea class="Feedback__Textarea" v-model="message" cols="30" required rows="5" placeholder="Введите текст сообщения"></textarea>
               <div class="Feedback__FileUpload">
                 <div class="Feedback__FileUploadInner">
                   <div class="Feedback__FileUploadInfo">
@@ -302,7 +310,7 @@
                     <div class="Feedback__FileUploadInfoText Feedback__FileUploadInfoText--Small">(не более 5 Мб)</div>
                   </div>
                   <label class="Feedback__FileUploadLabel">
-                    <input class="Feedback__FileUploadInput" type="file"/>
+                    <input class="Feedback__FileUploadInput" type="file" @change="addFile($event)"/>
                     <svg class="Feedback__FileUploadIcon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M6.84932 19.9999C5.11416 19.9999 3.379 19.3685 2.00913 18.0157C0.730594 16.753 0 15.0393 0 13.2355C0 11.4317 0.730594 9.71803 2.00913 8.45535L9.13242 1.4204C11.0502 -0.473628 14.2466 -0.473628 16.2557 1.4204C18.2648 3.31442 18.1735 6.47113 16.2557 8.45535L9.77169 14.859C8.49315 16.1216 6.48402 16.1216 5.20548 14.859C3.92694 13.5963 3.92694 11.6121 5.20548 10.3494L10.6849 4.93787C11.0502 4.57711 11.5982 4.57711 11.9635 4.93787C12.3288 5.29864 12.3288 5.83979 11.9635 6.20056L6.48402 11.6121C5.93607 12.1532 5.93607 12.9649 6.48402 13.5061C7.03196 14.0472 7.85388 14.0472 8.40183 13.5061L14.8858 7.10247C15.5251 6.47113 15.7991 5.7496 15.7991 4.84768C15.7991 4.03596 15.4338 3.22423 14.8858 2.59289C13.6073 1.33021 11.5982 1.33021 10.411 2.59289L3.28767 9.62784C2.37443 10.5298 1.82648 11.7924 1.82648 13.1453C1.82648 14.4982 2.37443 15.6707 3.28767 16.6628C5.20548 18.5568 8.40183 18.5568 10.411 16.6628L18.4475 8.72592C18.8128 8.36516 19.3607 8.36516 19.726 8.72592C20.0913 9.08669 20.0913 9.62784 19.726 9.9886L11.6895 17.9255C10.411 19.3685 8.6758 19.9999 6.84932 19.9999Z" fill="#285C2D"/>
                     </svg>
@@ -310,7 +318,104 @@
                 </div>
               </div>
               <button class="Feedback__SubmitButton" type="submit">Отправить</button>
+              <success-message v-if="showSuccess"></success-message>
             </form>
+            <script>
+              Vue.component("success-message", {
+                name: "success-message",
+
+                template: `
+              <div class="SuccessMessage" >
+                <svg class="SuccessMessage__Icon" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g filter="url(#filter0_d)">
+                    <rect x="3" y="2" width="36" height="36" rx="18" fill="url(#paint0_linear)"/>
+                  </g>
+                  <path d="M14.2501 20.6025L18.0911 24.4435L27.6935 14.841" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <defs>
+                    <filter id="filter0_d" x="0" y="0" width="42" height="42" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feOffset dy="1"/>
+                      <feGaussianBlur stdDeviation="1.5"/>
+                      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.122254 0"/>
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                    </filter>
+                    <linearGradient id="paint0_linear" x1="-16.7019" y1="20.4221" x2="32.3324" y2="19.8753" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#D8BB58"/>
+                      <stop offset="0.1464" stop-color="#ECD26E"/>
+                      <stop offset="0.239" stop-color="#F4DB76"/>
+                      <stop offset="0.4341" stop-color="#E4BD32"/>
+                      <stop offset="0.8173" stop-color="#CEA53A"/>
+                      <stop offset="0.8757" stop-color="#C99F33"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <div class="SuccessMessage__Text1">Спасибо!</div>
+                <div class="SuccessMessage__Text2">Сообщение отправлено</div>
+              </div>
+              `,
+              });
+
+              new Vue({
+                el: "#feedback-form-vue",
+
+                data: function () {
+                  return {
+                    name: "",
+                    email: "",
+                    agency: "",
+                    wantTo: "",
+                    message: "",
+                    showSuccess: false,
+                    file: null,
+                    fileExt: null,
+                  };
+                },
+
+                methods: {
+                  addFile(event) {
+                    const file = event.target.files[0];
+                    if (file.size >  5 * (1024*1024)) {
+                      return;
+                    }
+
+                    var reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.onload =  () => {
+                      this.file = reader.result;
+                      this.fileExt = event.target.value.split('.').pop()
+                    };
+                    reader.onerror = function (error) {
+                      console.log('Error on load file: ', error);
+                    };
+                  },
+
+                  sendToBackend() {
+                    if (!this.wantTo) return;
+                    const dataload = {
+                      "type":"write_to_us",
+                      "client_name": this.name,
+                      "agency": this.agency,
+                      "email": this.email,
+                      "want_to": this.wantTo,
+                      "file": this.file,
+                      "file_ext": this.fileExt,
+                      "message": this.message,
+                    };
+                    fetch(`https://dev.resort-holiday.com/api/forms/?type=write_to_us`, { method: "POST", body: JSON.stringify(dataload) }).then((response) => {
+                      console.log(response)
+                      this.showSuccess = true;
+                      setTimeout(() => {
+                        this.showSuccess = false;
+                      }, 2000);
+                    }).catch(function (error) {
+                      console.log("Error to post Telegram form data", error);
+                    });
+                  },
+                },
+              });
+            </script>
           </div>
         </div>
       </div>
@@ -323,17 +428,86 @@
               <img src="./assets/images/icons/close-icon.svg" alt="close">
             </button>
           </div>
-          <form class="TelegramForm__Form">
-            <input class="TelegramForm__TextInput" type="text" name="username" placeholder="*Я работаю в:">
-            <input class="TelegramForm__TextInput" type="email" name="useremail" placeholder="*Ваш email">
+          <form class="TelegramForm__Form" id="telegram-form" @submit.prevent="sendToBackend">
+            <input class="TelegramForm__TextInput" v-model="job" required type="text" placeholder="*Я работаю в:">
+            <input class="TelegramForm__TextInput" v-model="email" required type="email" placeholder="*Ваш email">
             <button class="TelegramForm__SubmitButton" type="submit">Отправить запрос</button>
+            <success-message v-if="showSuccess"></success-message>
           </form>
+          <script>
+            Vue.component("success-message", {
+              name: "success-message",
+
+              template: `
+              <div class="SuccessMessage" >
+                <svg class="SuccessMessage__Icon" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g filter="url(#filter0_d)">
+                    <rect x="3" y="2" width="36" height="36" rx="18" fill="url(#paint0_linear)"/>
+                  </g>
+                  <path d="M14.2501 20.6025L18.0911 24.4435L27.6935 14.841" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <defs>
+                    <filter id="filter0_d" x="0" y="0" width="42" height="42" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feOffset dy="1"/>
+                      <feGaussianBlur stdDeviation="1.5"/>
+                      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.122254 0"/>
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                    </filter>
+                    <linearGradient id="paint0_linear" x1="-16.7019" y1="20.4221" x2="32.3324" y2="19.8753" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#D8BB58"/>
+                      <stop offset="0.1464" stop-color="#ECD26E"/>
+                      <stop offset="0.239" stop-color="#F4DB76"/>
+                      <stop offset="0.4341" stop-color="#E4BD32"/>
+                      <stop offset="0.8173" stop-color="#CEA53A"/>
+                      <stop offset="0.8757" stop-color="#C99F33"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <div class="SuccessMessage__Text1">Спасибо!</div>
+                <div class="SuccessMessage__Text2">Сообщение отправлено</div>
+              </div>
+              `,
+            });
+
+            new Vue({
+              el: "#telegram-form",
+
+              data: function () {
+                return {
+                  job: "",
+                  email: "",
+                  showSuccess: false,
+                };
+              },
+
+              methods: {
+                sendToBackend() {
+                  if (this.job === "" && this.email === "") {
+                    return;
+                  }
+
+                  fetch(`https://dev.resort-holiday.com/api/forms/?form[prop][work_place]=${this.job}&type=join_to_tg&form[prop][email]=${this.email}`).then((response) => {
+                    this.showSuccess = true;
+                    setTimeout(() => {
+                      this.showSuccess = false;
+                    }, 2000);
+                    this.job = "";
+                    this.email = "";
+                  }).catch(function (error) {
+                    console.log("Error to post Telegram form data", error);
+                  });
+                },
+              },
+            });
+          </script>
         </div>
       </div>
       <div class="Tourists">
         <div class="Tourists__Screenlock"></div>
         <div class="Tourists__Content"
-             style="background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url('./assets/images/Feedback-bg.jpg')">
+             style="background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url('./assets/images/feedback-bg.jpg')">
           <div class="Tourists__ContentLeft">
             <img class="Tourists__LeftLogo" src="./assets/images/logo.svg" alt="logo">
             <div class="Tourists__LeftCountry">Россия</div>
@@ -353,24 +527,159 @@
                 <img src="./assets/images/icons/close-icon.svg" alt="close">
               </button>
             </div>
-            <form class="Tourists__Form" id="Tourists-form-vue">
-              <input class="Tourists__TextInput" type="text" name="username" placeholder="*Меня зовут">
-              <input class="Tourists__TextInput" type="text" name="useragency" placeholder="*Мой email">
-              <input class="Tourists__TextInput" type="tel" name="usernumber" placeholder="*Мой телефон (+7)">
-              <input class="Tourists__TextInput" type="text" name="userdatas" placeholder="*Хочу поехать в такие даты:">
-              <input class="Tourists__TextInput" type="text" name="userdatas" placeholder="Если с вами едут дети, пожалуйста, напишите, сколько им лет: ">
+            <form class="Tourists__Form" id="tourists-form-vue" @submit.prevent="sendToBackend">
+              <input class="Tourists__TextInput" type="text" v-model="name" placeholder="*Меня зовут">
+              <input class="Tourists__TextInput" type="text" v-model="email" placeholder="*Мой email">
+              <input class="Tourists__TextInput" type="tel"  v-model="phone" placeholder="*Мой телефон (+7)">
+              <input class="Tourists__TextInput" type="text" v-model="dates" placeholder="*Хочу поехать в такие даты:">
+              <div class="Tourists__NumbersContainer">
+                <div class="Tourists__NumberBlock">
+                  <div class="Tourists__NumberInfo">*На</div>
+                  <div class="Tourists__NumberInputs">
+                    <div class="Tourists__NumberInputContainer">
+                      <input class="Tourists__NumberInput" type="number" value="0" v-model="nights"><span class="Tourists__NumberLabel">Ночей</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="Tourists__NumberBlock">
+                  <div class="Tourists__NumberInfo">*Поедут</div>
+                  <div class="Tourists__NumberInputs">
+                    <div class="Tourists__NumberInputContainer">
+                      <input class="Tourists__NumberInput" type="number" value="0" v-model="adults"><span class="Tourists__NumberLabel">Взрослых</span>
+                    </div>
+                    <div class="Tourists__NumberInputContainer">
+                      <input class="Tourists__NumberInput" type="number" value="0" v-model="children"><span class="Tourists__NumberLabel">детей</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <input class="Tourists__TextInput" type="text" v-model="childrenAge" placeholder="*Возраст детей (если есть)">
               <div class="Tourists__Text">*В поле ниже Вы можете оставить все свои пожелания по отдыху (например: тип питания, тип виллы, тип трансфера, бюджет, что вам нравится на отдыхе, что не нравится, какие услуги вам еще понадобятся, какой-то конкретный отель и т.п.)
               </div>
-              <textarea class="Tourists__Textarea" name="usermessage" cols="30" rows="5"
-                        placeholder="Введите текст сообщения"></textarea>
+              <textarea class="Tourists__Textarea" cols="30" rows="5" v-model="message" placeholder="Введите текст сообщения"></textarea>
               <div class="Tourists__Text">Наши лучшие менеджеры ответят Вам как можно скорее!
               </div>
               <div class="Tourists__CheckboxContainer">
-                <input class="Tourists__Checkbox" type="checkbox" name="want-to-thank" id="want-to-thank">
-                <label class="Tourists__CheckboxLabel" for="want-to-thank">Согласен с <a href="#"><u>Положением об обработке и защите персональных данных</u></a></label>
+                <input class="Tourists__Checkbox" type="checkbox" v-model="agree">
+                <label class="Tourists__CheckboxLabel">Согласен с <a href="#"><u>Положением об обработке и защите персональных данных</u></a></label>
               </div>
               <button class="Tourists__SubmitButton" type="submit">Отправить</button>
+              <success-message v-if="showSuccess"></success-message>
             </form>
+            <script>
+              Vue.component("success-message", {
+                name: "success-message",
+
+                template: `
+              <div class="SuccessMessage" >
+                <svg class="SuccessMessage__Icon" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g filter="url(#filter0_d)">
+                    <rect x="3" y="2" width="36" height="36" rx="18" fill="url(#paint0_linear)"/>
+                  </g>
+                  <path d="M14.2501 20.6025L18.0911 24.4435L27.6935 14.841" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <defs>
+                    <filter id="filter0_d" x="0" y="0" width="42" height="42" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feOffset dy="1"/>
+                      <feGaussianBlur stdDeviation="1.5"/>
+                      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.122254 0"/>
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                    </filter>
+                    <linearGradient id="paint0_linear" x1="-16.7019" y1="20.4221" x2="32.3324" y2="19.8753" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#D8BB58"/>
+                      <stop offset="0.1464" stop-color="#ECD26E"/>
+                      <stop offset="0.239" stop-color="#F4DB76"/>
+                      <stop offset="0.4341" stop-color="#E4BD32"/>
+                      <stop offset="0.8173" stop-color="#CEA53A"/>
+                      <stop offset="0.8757" stop-color="#C99F33"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <div class="SuccessMessage__Text1">Спасибо!</div>
+                <div class="SuccessMessage__Text2">Сообщение отправлено</div>
+              </div>
+              `,
+              });
+
+              new Vue({
+                el: "#tourists-form-vue",
+
+                data: function () {
+                  return {
+                    name: "",
+                    email: "",
+                    phone: "",
+                    dates: "",
+                    nights: 0,
+                    adults: 0,
+                    children: 0,
+                    childrenAge: "",
+                    message: "",
+                    agree: false,
+                    showSuccess: false,
+                  };
+                },
+
+                watch: {
+                  nights(newValue, prevValue) {
+                    if (+newValue < 100 && +newValue > -1) {
+                      this.nights = newValue;
+                    } else {
+                      this.nights = prevValue;
+                    }
+                  },
+
+                  children(newValue, prevValue) {
+                    if (+newValue < 100 && +newValue > -1) {
+                      this.children = newValue;
+                    } else {
+                      this.children = prevValue;
+                    }
+                  },
+
+                  adults(newValue, prevValue) {
+                    if (+newValue < 100 && +newValue > -1) {
+                      this.adults = newValue;
+                    } else {
+                      this.adults = prevValue;
+                    }
+                  },
+                },
+
+                methods: {
+                  sendToBackend() {
+                    if (!this.agree) return;
+
+                    const dataload = {
+                      name: this.name,
+                      email: this.email,
+                      phone: this.phone,
+                      dates: this.dates,
+                      nights: this.nights,
+                      adults: this.adults,
+                      children: this.children,
+                      childrenAge: this.childrenAge,
+                      message: this.message,
+                      agree: this.agree,
+                    };
+
+                    fetch(`https://dev.resort-holiday.com/api/forms/?type=tourists`, {
+                      method: "POST",
+                      body: JSON.stringify(dataload),
+                    }).then((response) => {
+                       this.showSuccess = true;
+                       setTimeout(() => {
+                         this.showSuccess = false;
+                       }, 2000);
+                     }).catch(function (error) {
+                       console.log("Error to post Tourists form data", error);
+                     });
+                  },
+                },
+              });
+            </script>
           </div>
         </div>
       </div>
@@ -475,6 +784,18 @@
                 <h1 class="PagePreview__Title">Список отелей<br><span>Мальдивы</span></h1>
             </div>
         </section>
+        <svg style="width: 0; height: 0; display: block">
+          <defs>
+            <linearGradient id="paint0_linear" x1="2.6652" y1="14.2175" x2="12.3794" y2="2.5605" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#D5B959"/>
+              <stop offset="0.1464" stop-color="#EAD070"/>
+              <stop offset="0.239" stop-color="#F2D978"/>
+              <stop offset="0.4341" stop-color="#E7CA67"/>
+              <stop offset="0.8173" stop-color="#CCA436"/>
+              <stop offset="0.8757" stop-color="#C59B30"/>
+            </linearGradient>
+          </defs>
+        </svg>
         <section class="InfoPageContent Container" id="hotel-list-vue">
             <div v-if="loading">
                 Загрузка
@@ -542,6 +863,72 @@
                 </div>
             </div>
             <div v-if="!loading" class="InfoPageContent__Main ResortExpert__ContentPage">
+                <div class="HotelList__MobileFilter">
+                  <div class="HotelList__MobileFilterButtonsContainer">
+                    <button class="HotelList__MobileFilterButton" @click="showMobileFilter = !showMobileFilter">
+                      <svg class="HotelList__MobileFilterIcon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.875 0.600098H16.05C17.175 0.600098 18 1.5001 18 2.4751C18 3.5251 17.175 4.3501 16.125 4.3501H15.9L10.95 9.3001V13.8751C10.95 14.1001 10.875 14.2501 10.725 14.4001L8.175 16.9501C7.875 17.2501 7.5 17.2501 7.2 16.9501C7.05 16.8001 6.975 16.6501 6.975 16.5001V9.3001L2.1 4.4251H1.875C0.825 4.4251 0 3.5251 0 2.4751C0 1.5001 0.825 0.600098 1.875 0.600098ZM16.125 3.0001C16.8 3.0001 16.8 1.9501 16.125 1.9501H1.875C1.2 2.0251 1.2 3.0001 1.875 3.0001C6.6 3.0001 11.4 3.0001 16.125 3.0001ZM14.475 3.8251H3.525L8.25 8.5501C8.4 8.7001 8.475 8.8501 8.475 9.0751V14.8501L9.675 13.6501V9.0751C9.675 8.9251 9.75 8.7001 9.9 8.5501L14.475 3.8251Z" fill="url(#paint0_linear)"/>
+                      </svg>
+                      <span class="HotelList__MobileFilterText">Фильтры</span>
+                    </button>
+                  </div>
+                  <div class="HotelList__MobileFilterInner" v-if="showMobileFilter">
+                    <div class="HotelList__FilterBlock">
+                      <div class="HotelList__FilterBlockTitle">Поиск по названию</div>
+                      <div class="HotelList__FilterBlockTitleInputContainer">
+                        <input class="HotelList__FilterBlockTitleInput" type="text" v-model="currentTitle">
+                        <svg class="HotelList__FilterBlockTitleInputIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M7.32801 8.32808C7.32801 3.70978 11.0298 0 15.6381 0C17.6023 0 19.491 0.681388 21.0019 1.89274C24.5526 4.84543 25.0059 10.0694 22.0596 13.6278C19.1133 17.1861 13.9005 17.6404 10.3499 14.6877L1.05765 24L0 22.9401L9.29222 13.7035C8.00793 12.1893 7.32801 10.2965 7.32801 8.32808ZM8.83887 8.32808C8.83887 12.1136 11.8607 15.142 15.638 15.142C19.4154 15.142 22.4372 12.1136 22.4372 8.32808C22.4372 4.54259 19.4154 1.5142 15.638 1.5142C11.8607 1.5142 8.83887 4.54259 8.83887 8.32808Z" fill="#999999"/>
+                          <path d="M15.6379 3.02832V4.54252C17.7532 4.54252 19.4153 6.20813 19.4153 8.328H20.9262C20.9262 5.37532 18.5843 3.02832 15.6379 3.02832Z" fill="#999999"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="HotelList__FilterBlock">
+                      <div class="HotelList__FilterBlockTitle">Поиск по категории</div>
+                      <div class="HotelList__GilterCategoryContainer">
+                        <div class="HotelList__CheckboxContainer">
+                          <input class="HotelList__Checkbox" type="checkbox" v-model="currentStarList" value="6" id="stars-66">
+                          <label class="HotelList__CheckboxLabel" for="stars-66"><rh-stars :stars-count="6"></rh-stars></label>
+                        </div>
+                        <div class="HotelList__CheckboxContainer">
+                          <input class="HotelList__Checkbox" type="checkbox" v-model="currentStarList" value="5" id="stars-55">
+                          <label class="HotelList__CheckboxLabel" for="stars-55"><rh-stars :stars-count="5"></rh-stars></label>
+                        </div>
+                        <div class="HotelList__CheckboxContainer">
+                          <input class="HotelList__Checkbox" type="checkbox" v-model="currentStarList" value="4" id="stars-44">
+                          <label class="HotelList__CheckboxLabel" for="stars-44"><rh-stars :stars-count="4"></rh-stars></label>
+                        </div>
+                        <div class="HotelList__CheckboxContainer">
+                          <input class="HotelList__Checkbox" type="checkbox" v-model="currentStarList" value="3" id="stars-33">
+                          <label class="HotelList__CheckboxLabel" for="stars-33"><rh-stars :stars-count="3"></rh-stars></label>
+                        </div>
+                        <div class="HotelList__CheckboxContainer">
+                          <input class="HotelList__Checkbox" type="checkbox" v-model="currentStarList" value="2" id="stars-22">
+                          <label class="HotelList__CheckboxLabel" for="stars-22"><rh-stars :stars-count="2"></rh-stars></label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="HotelList__FilterBlock">
+                      <div class="HotelList__FilterBlockTitle">Поиск по Атоллу</div>
+                      <div class="HotelList__GilterCategoryContainer">
+                        <div v-for="atoll in atolls" class="HotelList__CheckboxContainer">
+                          <input class="HotelList__Checkbox" type="checkbox" v-model="currentCriteriaList" :value="atoll" :id="atoll">
+                          <label class="HotelList__CheckboxLabel" :for="atoll">{{ atoll }}</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="HotelList__FilterBlock">
+                      <div class="HotelList__FilterBlockTitle">Поиск по Критериям</div>
+                      <div class="HotelList__GilterCategoryContainer">
+                        <div v-for="criteria in criterias" class="HotelList__CheckboxContainer">
+                          <input class="HotelList__Checkbox" type="checkbox" v-model="currentCriteriaList" :value="criteria" :id="criteria">
+                          <label class="HotelList__CheckboxLabel" :for="criteria">{{ criteria }}</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <div class="ResortExpert__BackLinkContainer">
                     <a class="ResortExpert__BackLink" href="#">
                         <img class="ResortExpert__BackLinkIcon" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta">
@@ -564,11 +951,7 @@
                                         <span class="HotelList__ItemCriteriaDivider"> | </span>
                                     </li>
                                 </ul>
-                                <div class="HotelList__ItemDescription">
-                                    <div><b>Трансфер:</b></div>
-                                    <div>- 30 минут на гидросамолете</div>
-                                    <div>- 45 минут на скоростном катере</div>
-                                </div>
+                                <div class="HotelList__ItemDescription" v-html="hotel.PREVIEW_TEXT"></div>
                             </div>
                         </li>
                     </ul>
@@ -653,68 +1036,18 @@
                         <div v-else class="GoldText">
                             <svg v-if="starsCount > 2" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M9.5 5.39999L15.2 5.5L10.6 8.89999L12.3 14.5L7.6 11.2L2.9 14.5L4.6 9L0 5.5L5.7 5.39999L7.6 0L9.5 5.39999Z" fill="url(#paint0_linear)"/>
-                              <defs>
-                              <linearGradient id="paint0_linear" x1="2.6652" y1="14.2175" x2="12.3794" y2="2.5605" gradientUnits="userSpaceOnUse">
-                              <stop stop-color="#D5B959"/>
-                              <stop offset="0.1464" stop-color="#EAD070"/>
-                              <stop offset="0.239" stop-color="#F2D978"/>
-                              <stop offset="0.4341" stop-color="#E7CA67"/>
-                              <stop offset="0.8173" stop-color="#CCA436"/>
-                              <stop offset="0.8757" stop-color="#C59B30"/>
-                              </linearGradient>
-                              </defs>
                             </svg>
                             <svg v-if="starsCount > 2" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M9.5 5.39999L15.2 5.5L10.6 8.89999L12.3 14.5L7.6 11.2L2.9 14.5L4.6 9L0 5.5L5.7 5.39999L7.6 0L9.5 5.39999Z" fill="url(#paint0_linear)"/>
-                              <defs>
-                              <linearGradient id="paint0_linear" x1="2.6652" y1="14.2175" x2="12.3794" y2="2.5605" gradientUnits="userSpaceOnUse">
-                              <stop stop-color="#D5B959"/>
-                              <stop offset="0.1464" stop-color="#EAD070"/>
-                              <stop offset="0.239" stop-color="#F2D978"/>
-                              <stop offset="0.4341" stop-color="#E7CA67"/>
-                              <stop offset="0.8173" stop-color="#CCA436"/>
-                              <stop offset="0.8757" stop-color="#C59B30"/>
-                              </linearGradient>
-                              </defs>
                             </svg>
                             <svg v-if="starsCount > 2" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M9.5 5.39999L15.2 5.5L10.6 8.89999L12.3 14.5L7.6 11.2L2.9 14.5L4.6 9L0 5.5L5.7 5.39999L7.6 0L9.5 5.39999Z" fill="url(#paint0_linear)"/>
-                              <defs>
-                              <linearGradient id="paint0_linear" x1="2.6652" y1="14.2175" x2="12.3794" y2="2.5605" gradientUnits="userSpaceOnUse">
-                              <stop stop-color="#D5B959"/>
-                              <stop offset="0.1464" stop-color="#EAD070"/>
-                              <stop offset="0.239" stop-color="#F2D978"/>
-                              <stop offset="0.4341" stop-color="#E7CA67"/>
-                              <stop offset="0.8173" stop-color="#CCA436"/>
-                              <stop offset="0.8757" stop-color="#C59B30"/>
-                              </linearGradient>
-                              </defs>
                             </svg>
                             <svg v-if="starsCount > 3" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M9.5 5.39999L15.2 5.5L10.6 8.89999L12.3 14.5L7.6 11.2L2.9 14.5L4.6 9L0 5.5L5.7 5.39999L7.6 0L9.5 5.39999Z" fill="url(#paint0_linear)"/>
-                              <defs>
-                              <linearGradient id="paint0_linear" x1="2.6652" y1="14.2175" x2="12.3794" y2="2.5605" gradientUnits="userSpaceOnUse">
-                              <stop stop-color="#D5B959"/>
-                              <stop offset="0.1464" stop-color="#EAD070"/>
-                              <stop offset="0.239" stop-color="#F2D978"/>
-                              <stop offset="0.4341" stop-color="#E7CA67"/>
-                              <stop offset="0.8173" stop-color="#CCA436"/>
-                              <stop offset="0.8757" stop-color="#C59B30"/>
-                              </linearGradient>
-                              </defs>
                             </svg>
                             <svg v-if="starsCount > 4" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M9.5 5.39999L15.2 5.5L10.6 8.89999L12.3 14.5L7.6 11.2L2.9 14.5L4.6 9L0 5.5L5.7 5.39999L7.6 0L9.5 5.39999Z" fill="url(#paint0_linear)"/>
-                              <defs>
-                              <linearGradient id="paint0_linear" x1="2.6652" y1="14.2175" x2="12.3794" y2="2.5605" gradientUnits="userSpaceOnUse">
-                              <stop stop-color="#D5B959"/>
-                              <stop offset="0.1464" stop-color="#EAD070"/>
-                              <stop offset="0.239" stop-color="#F2D978"/>
-                              <stop offset="0.4341" stop-color="#E7CA67"/>
-                              <stop offset="0.8173" stop-color="#CCA436"/>
-                              <stop offset="0.8757" stop-color="#C59B30"/>
-                              </linearGradient>
-                              </defs>
                             </svg>
                             <span class="GoldText" v-if="starsCount > 5">Deluxe</span>
                         </div>
@@ -750,6 +1083,7 @@
 
                     data: function () {
                       return {
+                        showMobileFilter: false,
                         currentPage: 1,
                         currentTitle: "",
                         currentAtollInput: "",
@@ -861,7 +1195,7 @@
                         .then(data => {
                           data.elements.forEach(item => {
                             this.hotels.push(item);
-
+                            console.log(item)
                             item.PROPERTY_CRITERIA_VALUE.forEach(criteria => {
                               if (!this.criterias.includes(criteria.trim())) {
                                 this.criterias.push(criteria.trim());

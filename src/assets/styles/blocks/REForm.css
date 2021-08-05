@@ -1,0 +1,368 @@
+.REForm {}
+
+.REForm__Text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  color: #999999;
+  margin-bottom: 32px;
+}
+
+.REForm__Screenlock {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0,0,0, .3);
+  z-index: 90;
+}
+
+.REForm__Screenlock {
+  display: block;
+}
+
+.REForm__Content {
+  display: none;
+  position: fixed;
+  z-index: 91;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 65px 50px;
+}
+
+
+
+.REForm__Content {
+  display: block;
+  width: 50vw;
+  max-width: 600px;
+}
+
+.REForm__ContentLeft {
+  display: none;
+  width: 50%;
+}
+
+@media (min-width: 1041px) {
+  .REForm__ContentLeft {
+    display: block;
+  }
+}
+
+.REForm__RightTitle {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 45px;
+}
+
+.REForm__RightTitleText {
+  font-weight: bold;
+  font-size: 32px;
+  color: #202020;
+}
+
+.REForm__RightTitleClose {
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+}
+
+.REForm__Form {}
+
+.REForm__TextInput {
+  width: 100%;
+  display: block;
+  font-weight: 500;
+  font-size: 18px;
+  color: #999999;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #999999;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.REForm__SubmitButton {
+  margin: 0;
+  width: 100%;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E9CC65 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
+  transition: all .5s;
+  text-decoration: none;
+}
+
+.REForm__SubmitButton:hover {
+  opacity: .8;
+}
+
+.REForm__SevenNumberInputContainer {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: flex-end;
+  padding-left: 50px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.REForm__SevenNumberInputText {
+  font-weight: 500;
+  font-size: 16px;
+  color: #999999;
+  margin-right: 20px;
+}
+
+.SevenBg {
+  background: no-repeat;
+  background-position: left;
+  background-size: contain;
+  width: 250px;
+}
+
+.REForm__SevenNumberInput {
+  font-size: 20px;
+  letter-spacing: 26px;
+  width: 100%;
+  padding-left: 6px;
+  outline: none;
+  border: none;
+  color: #999999;
+  background: transparent;
+}
+
+.REForm__FileUpload {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.REForm__FileUploadInner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.REForm__FileUploadInfo {
+  margin-right: 20px;
+}
+
+.REForm__FileUploadInfoText {
+  font-weight: 500;
+  line-height: 150%;
+  text-align: right;
+  color: #999999;
+}
+
+.REForm__FileUploadInfoText--Big {
+  font-size: 16px;
+}
+
+.REForm__FileUploadInfoText--Small {
+  font-size: 14px;
+}
+
+.REForm__FileUploadLabel {}
+
+.REForm__FileUploadInput {
+  display: none;
+}
+
+.REForm__FileUploadIcon {
+  cursor: pointer
+}
+
+.SuccessMessage {
+  position: fixed;
+  z-index: 10000000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  width: 410px;
+  height: 133px;
+  text-align: center;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+  justify-content: center;
+}
+
+.SuccessMessage__Icon {}
+
+.SuccessMessage__Text1 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: #285C2D;
+}
+
+.SuccessMessage__Text2 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: #285C2D;
+}
+
+.REForm__LabelBig {
+  font-weight: 500;
+  line-height: 150%;
+  font-size: 18px;
+  color: #000000;
+}
+
+.REForm__LabelSmall {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  color: #979797;
+}
+
+.REForm__TextInputBordered {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #979797;
+  outline: none;
+  margin-bottom: 20px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.REForm__BigInfo {
+  text-align: left;
+  font-weight: bold;
+  font-size: 30px;
+  padding-bottom: 10px;
+  color: #000000;
+  border-bottom: 1px solid #999999;
+  margin-bottom: 30px;
+}
+
+.REForm__MediumInfo {
+  text-align: left;
+  font-weight: bold;
+  font-size: 20px;
+  padding-bottom: 10px;
+  color: #333333;
+  border-bottom: 1px solid #999999;
+  margin-bottom: 30px;
+}
+
+.REForm__SmallInfo {
+  text-align: left;
+  font-weight: 500;
+  font-size: 18px;
+  padding-bottom: 10px;
+  color: #999999;
+  border-bottom: 1px solid #999999;
+  margin-bottom: 30px;
+}
+
+.REEvents__Month {
+  padding-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .REForm__Content {
+    padding: 25px 20px;
+    box-sizing: border-box;
+    width: 90vw;
+  }
+
+  .REForm__RightTitle {
+    margin-bottom: 10px;
+  }
+
+  .REForm__RightTitleText {
+    font-size: 25px;
+  }
+
+  .REForm__TextInputBordered {
+    margin-bottom: 5px;
+    padding: 5px;
+  }
+
+  .REForm__TextInput {
+    margin-bottom: 10px;
+  }
+
+  img.REEvent__ListItemMantaImage {
+    width: 50px;
+    margin-right: 10px;
+  }
+
+  div.REEvent__ListItemBigTitle {
+    font-size: 20px;
+  }
+
+  span.REEvent__ListItemDate {
+    font-size: 12px;
+  }
+
+  span.REEvent__ListItemDay {
+    font-size: 10px;
+  }
+
+  div.REvent__ListItemTimeContainer {
+    font-size: 18px;
+  }
+
+  div.REEvent__ListItemType {
+    font-size: 13px;
+    padding: 13px 34px;
+    margin-bottom: 25px;
+  }
+
+  div.REEvent__ListItemEventBlock {
+    padding-left: 30px;
+  }
+
+  div.REEvent__ListItemName {
+    font-size: 18px;
+  }
+
+  div.REEvent__ListItemExpertSubTitle {
+    font-size: 10px;
+  }
+
+  select.REEvents__CitySelect {
+    padding-right: 0;
+    width: 80px;
+    font-size: 13px;
+  }
+
+  button.REEvents__DisplaySwitchButton:first-child {
+    display: none;
+  }
+
+  div.REEvents__MonthDisplay {
+    font-size: 12px;
+  }
+}

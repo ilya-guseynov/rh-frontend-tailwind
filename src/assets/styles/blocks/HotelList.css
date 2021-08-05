@@ -175,15 +175,15 @@
     height: 20px;
     top: 0;
     left: 0;
-    border: 1px solid #CCCCCC;
+    border:none;
     border-radius: 2px;
-    background-color: white;
+    background: white;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.122254);
     transition: background-color .5s;
 }
 
 .HotelList__Checkbox:checked::before {
-    background-color: #285C2D;
+    background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E9CC65 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
 }
 
 .HotelList__Checkbox:checked::after {
@@ -197,8 +197,8 @@
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
     position: absolute;
-    top: 3px;
-    left: 8px;
+    top: 2px;
+    left: 7px;
 }
 
 .HotelList__CheckboxLabel {
@@ -300,3 +300,80 @@
     border: none;
     outline: none;
 }
+
+.HotelList__MobileFilter {
+    display: none;
+    margin: 0 -20px 30px;
+}
+
+.HotelList__MobileFilterButtonsContainer {
+    margin-bottom: 10px;
+}
+
+.HotelList__MobileFilterButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    background: #285C2D;
+    display: flex;
+    outline: none;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+}
+
+.HotelList__MobileFilterIcon {
+    margin-right: 10px;
+}
+
+.HotelList__MobileFilterText {
+    font-weight: bold;
+    font-size: 12px;
+    color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+    .HotelList__Item {
+        flex-direction: column;
+    }
+
+    .HotelList__ItemMedia {
+        width: 100%;
+        margin-right: 0;
+        height: auto;
+        max-height: 300px;
+        margin-bottom: 25px;
+    }
+
+    .HotelList__ItemImage {
+        width: 100%;
+        height: auto;
+    }
+
+    .HotelPage__PerPageContainer {
+        display: none;
+    }
+
+    .HotelList__PageControl {
+        justify-content: center;;
+    }
+
+    #hotel-list-vue .InfoPageContent__Main {
+        padding-top: 0;
+    }
+
+    .HotelList__FilterBlock {
+        margin-bottom: 10px;
+        padding: 20px 15px;
+    }
+
+    .HotelList__FilterBlockTitleInputContainer {
+        padding: 10px;
+    }
+
+    .HotelList__MobileFilter {
+        display: block;
+    }
+}
+

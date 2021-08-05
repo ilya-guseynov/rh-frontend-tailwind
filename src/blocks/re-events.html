@@ -42,8 +42,7 @@
             <div class="REEvents__CalendarItemDayNumber">{{ dayNumberToZeroNotation(displayDate.dayNumber) }}</div>
           </div>
           <div v-if="displayDate.hasEvent" class="REEvents__CalendarItemEventInfo">
-            <div class="REEvents__CalendarItemEventTime">{{ displayDate.event.time }}</div>
-            <div class="REEvents__CalendarItemEventType">{{ displayDate.event.type }}</div>
+            <calendar-trigger v-for="event in displayDate.events" :event="event"></calendar-trigger>
           </div>
         </div>
         <div v-else style="opacity: 0; height: 100%; width: 100%;">empty</div>
@@ -52,31 +51,13 @@
   </div>
   <div v-else class="REEvents__ListContainer">
     <ul class="REEvents__List">
-      <li v-for="item in itemsToDisplayAsList" class="REEvents__ListItem">  
-        <div class="REEvent__ListItemTop">
-          <div class="REEvent__ListItemNameBlock">
-            <img class="REEvent__ListItemMantaImage" src="./assets/images/re-list-manta.svg" alt="re-list-manta">
-            <div class="REEvent__ListItemNameContainer">
-              <div class="REEvent__ListItemName">{{ item.expertName }}</div>
-              <div class="REEvent__ListItemExpertSubTitle">Эксперт Направления</div>
-            </div>
-          </div>
-          <div class="REEvent__ListItemDateBlock">
-            <div class="REEvent__ListItemDateContainer">
-              <span class="REEvent__ListItemDate">{{ dayNumberToZeroNotation(item.date.getDate()) }}</span>
-              <span class="REEvent__ListItemDay">{{ weekDayNumberoString(item.date.getUTCDay() ) }}</span>
-            </div>
-            <div class="REvent__ListItemTimeContainer">{{ item.time }}</div>
-          </div>
-        </div>
-        <div class="REEvent__ListItemType">{{ item.type }}</div>
-        <div class="REEvent__ListItemEventBlock">
-          <div class="REEvent__ListItemEventCountry">{{ item.country }}</div>
-          <div class="REEvent__ListItemEventTitle">{{ item.title }}</div>
-        </div>
-        <div class="REEvent__ListItemSignupBlock">
-          <button class="REEvent__ListItemSignupButton">Участвовать</button>
-        </div>
+      <li v-for="item in itemsToDisplayAsList" class="REEvents__ListItem">
+        <re-tour-card v-if="item.type_id === '9'" :item="item"></re-tour-card>
+        <re-dinner-card v-if="item.type_id === '8'" :item="item"></re-dinner-card>
+        <re-meet-card v-if="item.type_id === '7'" :item="item"></re-meet-card>
+        <re-webinar-card v-if="item.type_id === '6'" :item="item"></re-webinar-card>
+        <re-training-card v-if="item.type_id === '5'" :item="item"></re-training-card>
+        <re-seminar-card v-if="item.type_id === '4'" :item="item"></re-seminar-card>
       </li>
     </ul>
     <div v-if="canShowMore" class="REEvents__ShowMoreButtonContainer">
@@ -86,6 +67,972 @@
     </div>
   </div>
 </div>
+
+
+<script>
+  Vue.component("success-message", {
+    name: "success-message",
+
+    template: `
+        <div class="SuccessMessage" >
+          <svg class="SuccessMessage__Icon" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_d)">
+              <rect x="3" y="2" width="36" height="36" rx="18" fill="url(#paint0_linear)"/>
+            </g>
+            <path d="M14.2501 20.6025L18.0911 24.4435L27.6935 14.841" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <filter id="filter0_d" x="0" y="0" width="42" height="42" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset dy="1"/>
+                <feGaussianBlur stdDeviation="1.5"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.122254 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+              </filter>
+              <linearGradient id="paint0_linear" x1="-16.7019" y1="20.4221" x2="32.3324" y2="19.8753" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#D8BB58"/>
+                <stop offset="0.1464" stop-color="#ECD26E"/>
+                <stop offset="0.239" stop-color="#F4DB76"/>
+                <stop offset="0.4341" stop-color="#E4BD32"/>
+                <stop offset="0.8173" stop-color="#CEA53A"/>
+                <stop offset="0.8757" stop-color="#C99F33"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="SuccessMessage__Text1">Спасибо!</div>
+          <div class="SuccessMessage__Text2">Сообщение отправлено</div>
+        </div>
+        `,
+  });
+
+  Vue.component("re-form-tour", {
+    name: "re-form-tour",
+
+    data: function () {
+      return {
+        showSuccess: false,
+        file: null,
+        fileExt: null,
+        agree: false,
+        firstName: "",
+        lastName: "",
+        dateBirth: "",
+        pasport: "",
+        email: "",
+        phone: "",
+        agency: "",
+        inn: "",
+      };
+    },
+
+    props: {
+      eventId: String,
+    },
+
+    methods: {
+      sendToBackend() {
+        if (!this.agree) return;
+
+        const payload = {
+          eventId: this.eventId,
+          file: this.file,
+          file_ext: this.fileExt,
+          agree: this.agree,
+          firstName: this.firstName,
+          lastName: this.lastName,
+          dateBirth:this.dateBirth,
+          pasport: this.pasport,
+          email: this.email,
+          phone: this.phone,
+          agency: this.agency,
+          inn: this.inn,
+        };
+
+        fetch(`https://dev.resort-holiday.com/api/forms/?type=promo_tour`, {
+          method: "POST",
+          body: JSON.stringify(payload),
+        }).then((response) => {
+          this.showSuccess = true;
+          setTimeout(() => {
+            this.showSuccess = false;
+          }, 2000);
+        }).catch(function (error) {
+          console.log("Error to post Promo tour form data", error);
+        });
+      },
+
+      addFile(event) {
+        const file = event.target.files[0];
+        if (file.size >  5 * (1024*1024)) {
+          return;
+        }
+
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload =  () => {
+          this.file = reader.result;
+          this.fileExt = event.target.value.split('.').pop()
+        };
+        reader.onerror = function (error) {
+          console.log('Error on load file: ', error);
+        };
+      },
+    },
+
+    template: `
+    <div class="REForm">
+      <div class="REForm__Screenlock"></div>
+      <div class="REForm__Content">
+        <div class="REForm__RightTitle">
+          <div class="REForm__RightTitleText">Заявка</div>
+          <button class="REForm__RightTitleClose REForm__CloseTrigger" @click="$emit('close-form')">
+            <img src="./assets/images/icons/close-icon.svg" alt="close">
+          </button>
+        </div>
+        <form class="REForm__Form" @submit.prevent="sendToBackend">
+          <div class="REForm__LabelBig">*Ваше Имя</div>
+          <div class="REForm__LabelSmall">латиницей, как в загранпаспорте</div>
+          <input class="REForm__TextInputBordered" v-model="firstName" required type="text">
+
+          <div class="REForm__LabelBig">*Ваша Фамилия</div>
+          <div class="REForm__LabelSmall">латиницей, как в загранпаспорте</div>
+          <input class="REForm__TextInputBordered" v-model="lastName" required type="text">
+
+          <div class="REForm__LabelBig">*Дата рождения </div>
+          <input class="REForm__TextInputBordered" v-model="dateBirth" required type="date">
+
+          <div class="REForm__LabelBig">*Загранпаспорт:</div>
+          <div class="REForm__LabelSmall">серия, номер, срок действия: от – до</div>
+          <input class="REForm__TextInputBordered" v-model="pasport" required type="text">
+
+          <input class="REForm__TextInput" required type="email" v-model="email" placeholder="*Ваш рабочий e-mail">
+          <input class="REForm__TextInput"  required type="tel" v-model="phone" placeholder="*+7">
+          <input class="REForm__TextInput"  required type="text" v-model="agency" placeholder="*Название агентства">
+          <input class="REForm__TextInput"  required type="text" v-model="inn" placeholder="*ИНН организации">
+          <div class="Feedback__FileUpload">
+            <div class="Feedback__FileUploadInner">
+              <div class="Feedback__FileUploadInfo">
+                <div class="Feedback__FileUploadInfoText Feedback__FileUploadInfoText--Big">Прикрепить визитку</div>
+                <div class="Feedback__FileUploadInfoText Feedback__FileUploadInfoText--Small">(не более 5 Мб)</div>
+              </div>
+              <label class="Feedback__FileUploadLabel">
+                <input class="Feedback__FileUploadInput" type="file" @change="addFile($event)"/>
+                <svg class="Feedback__FileUploadIcon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M6.84932 19.9999C5.11416 19.9999 3.379 19.3685 2.00913 18.0157C0.730594 16.753 0 15.0393 0 13.2355C0 11.4317 0.730594 9.71803 2.00913 8.45535L9.13242 1.4204C11.0502 -0.473628 14.2466 -0.473628 16.2557 1.4204C18.2648 3.31442 18.1735 6.47113 16.2557 8.45535L9.77169 14.859C8.49315 16.1216 6.48402 16.1216 5.20548 14.859C3.92694 13.5963 3.92694 11.6121 5.20548 10.3494L10.6849 4.93787C11.0502 4.57711 11.5982 4.57711 11.9635 4.93787C12.3288 5.29864 12.3288 5.83979 11.9635 6.20056L6.48402 11.6121C5.93607 12.1532 5.93607 12.9649 6.48402 13.5061C7.03196 14.0472 7.85388 14.0472 8.40183 13.5061L14.8858 7.10247C15.5251 6.47113 15.7991 5.7496 15.7991 4.84768C15.7991 4.03596 15.4338 3.22423 14.8858 2.59289C13.6073 1.33021 11.5982 1.33021 10.411 2.59289L3.28767 9.62784C2.37443 10.5298 1.82648 11.7924 1.82648 13.1453C1.82648 14.4982 2.37443 15.6707 3.28767 16.6628C5.20548 18.5568 8.40183 18.5568 10.411 16.6628L18.4475 8.72592C18.8128 8.36516 19.3607 8.36516 19.726 8.72592C20.0913 9.08669 20.0913 9.62784 19.726 9.9886L11.6895 17.9255C10.411 19.3685 8.6758 19.9999 6.84932 19.9999Z" fill="#285C2D"/>
+                </svg>
+              </label>
+            </div>
+          </div>
+          <div class="Tourists__CheckboxContainer">
+            <input class="Tourists__Checkbox" type="checkbox" v-model="agree">
+            <label class="Tourists__CheckboxLabel">Согласен и принимаю условия участия в рекламных турах</label>
+          </div>
+          <button class="REForm__SubmitButton" type="submit">ЗАБРОНИРОВАТЬ</button>
+          <success-message v-if="showSuccess"></success-message>
+        </form>
+      </div>
+    </div>
+    `,
+  });
+
+  Vue.component("re-form", {
+    name: "re-form",
+
+    data: function () {
+      return {
+        showSuccess: false,
+        agree: false,
+        name: "",
+        email: "",
+        phone: "",
+        agency: "",
+        inn: "",
+      };
+    },
+
+    props: {
+      eventType: String,
+      eventId: String,
+      bigText: String,
+      smallText: String,
+      dateString: String,
+      dayString : String,
+      timeString: String,
+    },
+
+    methods: {
+      sendToBackend() {
+        if (!this.agree) return;
+
+        const payload = {
+          event_type: this.eventType,
+          eventId: this.eventId,
+          agree: this.agree,
+          name: this.name,
+          email: this.email,
+          phone: this.phone,
+          agency: this.agency,
+          inn: this.inn,
+        };
+
+        fetch(`https://dev.resort-holiday.com/api/forms/?type=re_tour`, {
+          method: "POST",
+          body: JSON.stringify(payload),
+        }).then((response) => {
+          this.showSuccess = true;
+          setTimeout(() => {
+            this.showSuccess = false;
+          }, 2000);
+        }).catch(function (error) {
+          console.log("Error to post re tour form data", error);
+        });
+      },
+    },
+
+    template: `
+    <div class="REForm">
+      <div class="REForm__Screenlock"></div>
+      <div class="REForm__Content">
+        <div class="REForm__RightTitle">
+          <div class="REForm__RightTitleText">Регистрация на мероприятия</div>
+          <button class="REForm__RightTitleClose REForm__CloseTrigger" @click="$emit('close-form')">
+            <img src="./assets/images/icons/close-icon.svg" alt="close">
+          </button>
+        </div>
+        <form class="REForm__Form" @submit.prevent="sendToBackend">
+          <div class="REForm__BigInfo">{{ bigText }}</div>
+          <div class="REForm__MediumInfo">{{ smallText }}</div>
+          <div class="REForm__SmallInfo">{{ dateString }} {{ dayString }} {{ timeString }}</div>
+          <input class="REForm__TextInput" required type="text" v-model="name" placeholder="*Ваше имя">
+          <input class="REForm__TextInput" required type="email" v-model="email" placeholder="*Ваш рабочий e-mail">
+          <input class="REForm__TextInput"  required type="tel" v-model="phone" placeholder="*+7">
+          <input class="REForm__TextInput"  required type="text" v-model="agency" placeholder="*Название агентства">
+          <input class="REForm__TextInput"  required type="text" v-model="inn" placeholder="*ИНН организации">
+          <div class="Tourists__CheckboxContainer">
+            <input class="Tourists__Checkbox" type="checkbox" v-model="agree">
+            <label class="Tourists__CheckboxLabel">Я ознакомлен с положениями о конфиденциальности и защите персональных данных</label>
+          </div>
+          <button class="REForm__SubmitButton" type="submit">ПОДАТЬ ЗАЯВКУ</button>
+          <success-message v-if="showSuccess"></success-message>
+        </form>
+      </div>
+    </div>
+    `,
+  });
+</script>
+<script>
+  Vue.component("re-tour-card", {
+    name: "re-tour-card",
+
+    props: {
+      item: Object,
+    },
+
+    data: function () {
+      return {
+        showForm: false,
+      };
+    },
+
+    template: `
+      <div class="REEvent__ListItemInner">
+        <re-form-tour v-if="showForm" :event-id="item.id" @close-form="showForm = false"></re-form-tour>
+        <div class="REEvent__ListItemTop">
+          <div class="REEvent__ListItemNameBlock">
+            <img class="REEvent__ListItemMantaImage" src="./assets/images/re-list-manta.svg" alt="re-list-manta">
+            <div class="REEvent__ListItemNameContainer">
+              <div class="REEvent__ListItemBigTitle">{{ item.big_title_rt }}</div>
+            </div>
+          </div>
+          <div class="REEvent__ListItemDateBlock">
+            <div class="REEvent__ListItemDateContainer">
+              <span class="REEvent__ListItemDay">Даты</span>
+              <span class="REEvent__ListItemDate">{{ item.dates }}</span>
+            </div>
+            <div class="REvent__ListItemTimeContainer">{{ item.price }}</div>
+          </div>
+        </div>
+        <div class="REEvent__ListItemType">{{ item.type_name }}</div>
+        <div class="REEvent__ListItemEventBlock">
+          <div class="REEvent__ListItemEventCountry">{{ item.topic }}</div>
+          <div class="REEvent__ListItemEventTitle">{{ item.short_disc }}</div>
+        </div>
+        <div class="REEvent__ListItemSignupBlock">
+          <button class="REEvent__ListItemSignupButton" @click="showForm = true">{{ item.button_name }}</button>
+        </div>
+      </div>
+    `,
+  });
+
+  Vue.component("re-dinner-card", {
+    name: "re-dinner-card",
+
+    props: {
+      item: Object,
+    },
+
+    data: function () {
+      return {
+        showForm: false,
+      };
+    },
+
+    methods: {
+      dayNumberToZeroNotation(dayNumber) {
+        if (dayNumber < 10) {
+          return `0${ dayNumber }`;
+        } else {
+          return `${ dayNumber }`;
+        }
+      },
+
+      weekDayNumberoString(weekDayNumber) {
+        if (weekDayNumber === 0) {
+          return "Пн";
+        } else if (weekDayNumber === 1) {
+          return "Вт";
+        } else if (weekDayNumber === 2) {
+          return "Ср";
+        } else if (weekDayNumber === 3) {
+          return "Чт";
+        } else if (weekDayNumber === 4) {
+          return "Пт";
+        } else if (weekDayNumber === 5) {
+          return "Сб";
+        } else if (weekDayNumber === 6) {
+          return "Вс";
+        }
+      },
+
+      monthNumberToString(monthNumber) {
+        if (monthNumber > 11 || monthNumber < 0) {
+          return `Месяц номер ${ monthNumber }`;
+        }
+
+        if (monthNumber === 0) {
+          return "Январь";
+        } else if (monthNumber === 1) {
+          return "Февраль";
+        } else if (monthNumber === 2) {
+          return "Март";
+        } else if (monthNumber === 3) {
+          return "Апрель";
+        } else if (monthNumber === 4) {
+          return "Май";
+        } else if (monthNumber === 5) {
+          return "Июнь";
+        } else if (monthNumber === 6) {
+          return "Июль";
+        } else if (monthNumber === 7) {
+          return "Август";
+        } else if (monthNumber === 8) {
+          return "Сентябрь";
+        } else if (monthNumber === 9) {
+          return "Октябрь";
+        } else if (monthNumber === 10) {
+          return "Ноябрь";
+        } else if (monthNumber === 11) {
+          return "Декабрь";
+        }
+      },
+    },
+
+    template: `
+      <div class="REEvent__ListItemInner">
+        <re-form
+          v-if="showForm"
+          :event-type="item.type_id"
+          :event-id="item.id"
+          :big-text="item.big_title_bz"
+          :small-text="item.topic"
+          :date-string="dayNumberToZeroNotation(item.date.getDate()) + ' ' + monthNumberToString(item.date.getMonth())"
+          :day-string="item.city"
+          :time-string="item.time"
+          @close-form="showForm = false"
+        ></re-form>
+        <div class="REEvent__ListItemTop">
+          <div class="REEvent__ListItemNameBlock">
+            <img class="REEvent__ListItemMantaImage" src="./assets/images/re-list-manta.svg" alt="re-list-manta">
+            <div class="REEvent__ListItemNameContainer">
+              <div class="REEvent__ListItemBigTitle">{{ item.big_title_bz }}</div>
+            </div>
+          </div>
+          <div class="REEvent__ListItemDateBlock">
+            <div class="REEvent__ListItemDateContainer">
+              <span class="REEvent__ListItemDate">{{ dayNumberToZeroNotation(item.date.getDate()) }}</span>
+              <span class="REEvent__ListItemDay">{{  weekDayNumberoString(item.date.getDay()) }}</span>
+            </div>
+            <div class="REvent__ListItemTimeContainer">{{ item.time }}</div>
+          </div>
+        </div>
+        <div class="REEvent__ListItemType">{{ item.type_name }}</div>
+        <div class="REEvent__ListItemEventBlock">
+          <div class="REEvent__ListItemEventCountry">{{ item.topic }}</div>
+          <div class="REEvent__ListItemEventTitle">{{ item.short_disc }}</div>
+        </div>
+        <div class="REEvent__ListItemSignupBlock">
+          <button class="REEvent__ListItemSignupButton" @click="showForm = true">{{ item.button_name }}</button>
+        </div>
+      </div>
+    `,
+  });
+
+  Vue.component("re-meet-card", {
+    name: "re-meet-card",
+
+    props: {
+      item: Object,
+    },
+
+    data: function () {
+      return {
+        showForm: false,
+      };
+    },
+
+    methods: {
+      dayNumberToZeroNotation(dayNumber) {
+        if (dayNumber < 10) {
+          return `0${ dayNumber }`;
+        } else {
+          return `${ dayNumber }`;
+        }
+      },
+
+      weekDayNumberoString(weekDayNumber) {
+        if (weekDayNumber === 0) {
+          return "Пн";
+        } else if (weekDayNumber === 1) {
+          return "Вт";
+        } else if (weekDayNumber === 2) {
+          return "Ср";
+        } else if (weekDayNumber === 3) {
+          return "Чт";
+        } else if (weekDayNumber === 4) {
+          return "Пт";
+        } else if (weekDayNumber === 5) {
+          return "Сб";
+        } else if (weekDayNumber === 6) {
+          return "Вс";
+        }
+      },
+
+      monthNumberToString(monthNumber) {
+        if (monthNumber > 11 || monthNumber < 0) {
+          return `Месяц номер ${ monthNumber }`;
+        }
+
+        if (monthNumber === 0) {
+          return "Январь";
+        } else if (monthNumber === 1) {
+          return "Февраль";
+        } else if (monthNumber === 2) {
+          return "Март";
+        } else if (monthNumber === 3) {
+          return "Апрель";
+        } else if (monthNumber === 4) {
+          return "Май";
+        } else if (monthNumber === 5) {
+          return "Июнь";
+        } else if (monthNumber === 6) {
+          return "Июль";
+        } else if (monthNumber === 7) {
+          return "Август";
+        } else if (monthNumber === 8) {
+          return "Сентябрь";
+        } else if (monthNumber === 9) {
+          return "Октябрь";
+        } else if (monthNumber === 10) {
+          return "Ноябрь";
+        } else if (monthNumber === 11) {
+          return "Декабрь";
+        }
+      },
+    },
+
+    template: `
+      <div class="REEvent__ListItemInner">
+        <re-form
+          v-if="showForm"
+          :event-type="item.type_id"
+          :event-id="item.id"
+          :big-text="item.big_title_vio"
+          :small-text="item.topic"
+          :date-string="dayNumberToZeroNotation(item.date.getDate()) + ' ' + monthNumberToString(item.date.getMonth())"
+          :day-string="item.city"
+          :time-string="item.time"
+          @close-form="showForm = false"
+        ></re-form>
+        <div class="REEvent__ListItemTop">
+          <div class="REEvent__ListItemNameBlock">
+            <img class="REEvent__ListItemMantaImage" src="./assets/images/re-list-manta.svg" alt="re-list-manta">
+            <div class="REEvent__ListItemNameContainer">
+              <div class="REEvent__ListItemBigTitle">{{ item.big_title_vio }}</div>
+            </div>
+          </div>
+          <div class="REEvent__ListItemDateBlock">
+            <div class="REEvent__ListItemDateContainer">
+              <span class="REEvent__ListItemDate">{{ dayNumberToZeroNotation(item.date.getDate()) }}</span>
+              <span class="REEvent__ListItemDay">{{  weekDayNumberoString(item.date.getDay()) }}</span>
+            </div>
+            <div class="REvent__ListItemTimeContainer">{{ item.time }}</div>
+          </div>
+        </div>
+        <div class="REEvent__ListItemType">{{ item.type_name }}</div>
+        <div class="REEvent__ListItemEventBlock">
+          <div class="REEvent__ListItemEventCountry">{{ item.topic }}</div>
+          <div class="REEvent__ListItemEventTitle">{{ item.short_disc }}</div>
+        </div>
+        <div class="REEvent__ListItemSignupBlock">
+          <button class="REEvent__ListItemSignupButton" @click="showForm = true">{{ item.button_name }}</button>
+        </div>
+      </div>
+    `,
+  });
+
+  Vue.component("re-webinar-card", {
+    name: "re-webinar-card",
+
+    props: {
+      item: Object,
+    },
+
+    methods: {
+      dayNumberToZeroNotation(dayNumber) {
+        if (dayNumber < 10) {
+          return `0${ dayNumber }`;
+        } else {
+          return `${ dayNumber }`;
+        }
+      },
+
+      weekDayNumberoString(weekDayNumber) {
+        if (weekDayNumber === 0) {
+          return "Пн";
+        } else if (weekDayNumber === 1) {
+          return "Вт";
+        } else if (weekDayNumber === 2) {
+          return "Ср";
+        } else if (weekDayNumber === 3) {
+          return "Чт";
+        } else if (weekDayNumber === 4) {
+          return "Пт";
+        } else if (weekDayNumber === 5) {
+          return "Сб";
+        } else if (weekDayNumber === 6) {
+          return "Вс";
+        }
+      },
+
+      monthNumberToString(monthNumber) {
+        if (monthNumber > 11 || monthNumber < 0) {
+          return `Месяц номер ${ monthNumber }`;
+        }
+
+        if (monthNumber === 0) {
+          return "Январь";
+        } else if (monthNumber === 1) {
+          return "Февраль";
+        } else if (monthNumber === 2) {
+          return "Март";
+        } else if (monthNumber === 3) {
+          return "Апрель";
+        } else if (monthNumber === 4) {
+          return "Май";
+        } else if (monthNumber === 5) {
+          return "Июнь";
+        } else if (monthNumber === 6) {
+          return "Июль";
+        } else if (monthNumber === 7) {
+          return "Август";
+        } else if (monthNumber === 8) {
+          return "Сентябрь";
+        } else if (monthNumber === 9) {
+          return "Октябрь";
+        } else if (monthNumber === 10) {
+          return "Ноябрь";
+        } else if (monthNumber === 11) {
+          return "Декабрь";
+        }
+      },
+    },
+
+    template: `
+      <div class="REEvent__ListItemInner">
+        <div class="REEvent__ListItemTop">
+          <div class="REEvent__ListItemNameBlock">
+            <img class="REEvent__ListItemMantaImage" src="./assets/images/re-list-manta.svg" alt="re-list-manta">
+            <div class="REEvent__ListItemNameContainer">
+              <div class="REEvent__ListItemName">{{ item.speaker_name }}</div>
+              <div class="REEvent__ListItemExpertSubTitle">{{ item.job }}</div>
+            </div>
+          </div>
+          <div class="REEvent__ListItemDateBlock">
+            <div class="REEvent__ListItemDateContainer">
+              <span class="REEvent__ListItemDate">{{ dayNumberToZeroNotation(item.date.getDate()) }}</span>
+              <span class="REEvent__ListItemDay">{{  weekDayNumberoString(item.date.getDay()) }}</span>
+            </div>
+            <div class="REvent__ListItemTimeContainer">{{ item.time }}</div>
+          </div>
+        </div>
+        <div class="REEvent__ListItemType">{{ item.type_name }}</div>
+        <div class="REEvent__ListItemEventBlock">
+          <div class="REEvent__ListItemEventCountry">{{ item.topic }}</div>
+          <div class="REEvent__ListItemEventTitle">{{ item.short_disc }}</div>
+        </div>
+        <div class="REEvent__ListItemSignupBlock">
+          <a :href="item.webinar_link" class="REEvent__ListItemSignupButton">{{ item.button_name }}</a>
+        </div>
+      </div>
+    `,
+  });
+
+  Vue.component("re-training-card", {
+    name: "re-training-card",
+
+    props: {
+      item: Object,
+    },
+
+    data: function () {
+      return {
+        showForm: false,
+      };
+    },
+
+    methods: {
+      dayNumberToZeroNotation(dayNumber) {
+        if (dayNumber < 10) {
+          return `0${ dayNumber }`;
+        } else {
+          return `${ dayNumber }`;
+        }
+      },
+
+      weekDayNumberoString(weekDayNumber) {
+        if (weekDayNumber === 0) {
+          return "Пн";
+        } else if (weekDayNumber === 1) {
+          return "Вт";
+        } else if (weekDayNumber === 2) {
+          return "Ср";
+        } else if (weekDayNumber === 3) {
+          return "Чт";
+        } else if (weekDayNumber === 4) {
+          return "Пт";
+        } else if (weekDayNumber === 5) {
+          return "Сб";
+        } else if (weekDayNumber === 6) {
+          return "Вс";
+        }
+      },
+
+      monthNumberToString(monthNumber) {
+        if (monthNumber > 11 || monthNumber < 0) {
+          return `Месяц номер ${ monthNumber }`;
+        }
+
+        if (monthNumber === 0) {
+          return "Январь";
+        } else if (monthNumber === 1) {
+          return "Февраль";
+        } else if (monthNumber === 2) {
+          return "Март";
+        } else if (monthNumber === 3) {
+          return "Апрель";
+        } else if (monthNumber === 4) {
+          return "Май";
+        } else if (monthNumber === 5) {
+          return "Июнь";
+        } else if (monthNumber === 6) {
+          return "Июль";
+        } else if (monthNumber === 7) {
+          return "Август";
+        } else if (monthNumber === 8) {
+          return "Сентябрь";
+        } else if (monthNumber === 9) {
+          return "Октябрь";
+        } else if (monthNumber === 10) {
+          return "Ноябрь";
+        } else if (monthNumber === 11) {
+          return "Декабрь";
+        }
+      },
+    },
+
+    template: `
+      <div class="REEvent__ListItemInner">
+        <re-form
+          v-if="showForm"
+          :event-type="item.type_id"
+          :event-id="item.id"
+          :big-text="item.speaker_name"
+          :small-text="item.topic"
+          :date-string="dayNumberToZeroNotation(item.date.getDate()) + ' ' + monthNumberToString(item.date.getMonth())"
+          :day-string="item.city"
+          :time-string="item.time"
+          @close-form="showForm = false"
+        ></re-form>
+        <div class="REEvent__ListItemTop">
+          <div class="REEvent__ListItemNameBlock">
+            <img class="REEvent__ListItemMantaImage" src="./assets/images/re-list-manta.svg" alt="re-list-manta">
+            <div class="REEvent__ListItemNameContainer">
+              <div class="REEvent__ListItemName">{{ item.speaker_name }}</div>
+              <div class="REEvent__ListItemExpertSubTitle">{{ item.job }}</div>
+            </div>
+          </div>
+          <div class="REEvent__ListItemDateBlock">
+            <div class="REEvent__ListItemDateContainer">
+              <span class="REEvent__ListItemDate">{{ dayNumberToZeroNotation(item.date.getDate()) }}</span>
+              <span class="REEvent__ListItemDay">{{  weekDayNumberoString(item.date.getDay()) }}</span>
+            </div>
+            <div class="REvent__ListItemTimeContainer">{{ item.time }}</div>
+          </div>
+        </div>
+        <div class="REEvent__ListItemType">{{ item.type_name }}</div>
+        <div class="REEvent__ListItemEventBlock">
+          <div class="REEvent__ListItemEventCountry">{{ item.topic }}</div>
+          <div class="REEvent__ListItemEventTitle">{{ item.short_disc }}</div>
+        </div>
+        <div class="REEvent__ListItemSignupBlock">
+          <button class="REEvent__ListItemSignupButton" @click="showForm = true">{{ item.button_name }}</button>
+        </div>
+      </div>
+    `,
+  });
+
+  Vue.component("re-seminar-card", {
+    name: "re-seminar-card",
+
+    props: {
+      item: Object,
+    },
+
+    data: function () {
+      return {
+        showForm: false,
+      };
+    },
+
+    methods: {
+      dayNumberToZeroNotation(dayNumber) {
+        if (dayNumber < 10) {
+          return `0${ dayNumber }`;
+        } else {
+          return `${ dayNumber }`;
+        }
+      },
+
+      weekDayNumberoString(weekDayNumber) {
+        if (weekDayNumber === 0) {
+          return "Пн";
+        } else if (weekDayNumber === 1) {
+          return "Вт";
+        } else if (weekDayNumber === 2) {
+          return "Ср";
+        } else if (weekDayNumber === 3) {
+          return "Чт";
+        } else if (weekDayNumber === 4) {
+          return "Пт";
+        } else if (weekDayNumber === 5) {
+          return "Сб";
+        } else if (weekDayNumber === 6) {
+          return "Вс";
+        }
+      },
+
+      monthNumberToString(monthNumber) {
+        if (monthNumber > 11 || monthNumber < 0) {
+          return `Месяц номер ${ monthNumber }`;
+        }
+
+        if (monthNumber === 0) {
+          return "Январь";
+        } else if (monthNumber === 1) {
+          return "Февраль";
+        } else if (monthNumber === 2) {
+          return "Март";
+        } else if (monthNumber === 3) {
+          return "Апрель";
+        } else if (monthNumber === 4) {
+          return "Май";
+        } else if (monthNumber === 5) {
+          return "Июнь";
+        } else if (monthNumber === 6) {
+          return "Июль";
+        } else if (monthNumber === 7) {
+          return "Август";
+        } else if (monthNumber === 8) {
+          return "Сентябрь";
+        } else if (monthNumber === 9) {
+          return "Октябрь";
+        } else if (monthNumber === 10) {
+          return "Ноябрь";
+        } else if (monthNumber === 11) {
+          return "Декабрь";
+        }
+      },
+    },
+
+    template: `
+      <div class="REEvent__ListItemInner">
+        <re-form
+          v-if="showForm"
+          :event-type="item.type_id"
+          :event-id="item.id"
+          :big-text="item.speaker_name_sem"
+          :small-text="item.topic"
+          :date-string="dayNumberToZeroNotation(item.date.getDate()) + ' ' + monthNumberToString(item.date.getMonth())"
+          :day-string="item.city"
+          :time-string="item.time"
+          @close-form="showForm = false"
+        ></re-form>
+        <div class="REEvent__ListItemTop">
+          <div class="REEvent__ListItemNameBlock">
+            <img class="REEvent__ListItemMantaImage" src="./assets/images/re-list-manta.svg" alt="re-list-manta">
+            <div class="REEvent__ListItemNameContainer">
+              <div class="REEvent__ListItemName">{{ item.speaker_name_sem }}</div>
+              <div class="REEvent__ListItemExpertSubTitle">{{ item.job_sem }}</div>
+            </div>
+          </div>
+          <div class="REEvent__ListItemDateBlock">
+            <div class="REEvent__ListItemDateContainer">
+              <span class="REEvent__ListItemDate">{{ dayNumberToZeroNotation(item.date.getDate()) }}</span>
+              <span class="REEvent__ListItemDay">{{  weekDayNumberoString(item.date.getDay()) }}</span>
+            </div>
+            <div class="REvent__ListItemTimeContainer">{{ item.time }}</div>
+          </div>
+        </div>
+        <div class="REEvent__ListItemType">{{ item.type_name }}</div>
+        <div class="REEvent__ListItemEventBlock">
+          <div class="REEvent__ListItemEventCountry">{{ item.topic }}</div>
+          <div class="REEvent__ListItemEventTitle">{{ item.short_disc }} </div>
+        </div>
+        <div class="REEvent__ListItemSignupBlock">
+          <button class="REEvent__ListItemSignupButton" @click="showForm = true">{{ item.button_name }}</button>
+        </div>
+      </div>
+    `,
+  });
+</script>
+<script>
+  Vue.component("calendar-trigger", {
+    name: "calendar-trigger",
+
+    props: {
+      event: Object,
+    },
+
+    data: function () {
+      return {
+        showForm: false,
+      };
+    },
+
+    computed: {
+      bigText() {
+        if (this.event.type_id === "8") {
+          return this.event.big_title_bz;
+        } else if (this.event.type_id === "7") {
+          return this.event.big_title_vio;
+        } else if (this.event.type_id === "4") {
+          return this.event.speaker_name_sem;
+        }else {
+          return this.event.speaker_name;
+        }
+      },
+    },
+
+    methods: {
+      help() {
+        console.log("help")
+      },
+
+      dayNumberToZeroNotation(dayNumber) {
+        if (dayNumber < 10) {
+          return `0${ dayNumber }`;
+        } else {
+          return `${ dayNumber }`;
+        }
+      },
+
+      weekDayNumberoString(weekDayNumber) {
+        if (weekDayNumber === 0) {
+          return "Пн";
+        } else if (weekDayNumber === 1) {
+          return "Вт";
+        } else if (weekDayNumber === 2) {
+          return "Ср";
+        } else if (weekDayNumber === 3) {
+          return "Чт";
+        } else if (weekDayNumber === 4) {
+          return "Пт";
+        } else if (weekDayNumber === 5) {
+          return "Сб";
+        } else if (weekDayNumber === 6) {
+          return "Вс";
+        }
+      },
+
+      monthNumberToString(monthNumber) {
+        if (monthNumber > 11 || monthNumber < 0) {
+          return `Месяц номер ${ monthNumber }`;
+        }
+
+        if (monthNumber === 0) {
+          return "Январь";
+        } else if (monthNumber === 1) {
+          return "Февраль";
+        } else if (monthNumber === 2) {
+          return "Март";
+        } else if (monthNumber === 3) {
+          return "Апрель";
+        } else if (monthNumber === 4) {
+          return "Май";
+        } else if (monthNumber === 5) {
+          return "Июнь";
+        } else if (monthNumber === 6) {
+          return "Июль";
+        } else if (monthNumber === 7) {
+          return "Август";
+        } else if (monthNumber === 8) {
+          return "Сентябрь";
+        } else if (monthNumber === 9) {
+          return "Октябрь";
+        } else if (monthNumber === 10) {
+          return "Ноябрь";
+        } else if (monthNumber === 11) {
+          return "Декабрь";
+        }
+      },
+    },
+
+    template: `
+      <div class="REEvents__CalendarFormTrigger" v-if="event.type_id !== '6'">
+        <re-form
+          v-if="showForm"
+          :event-type="event.type_id"
+          :event-id="event.id"
+          :big-text="bigText"
+          :small-text="event.topic"
+          :date-string="dayNumberToZeroNotation(event.date.getDate()) + ' ' + monthNumberToString(event.date.getMonth())"
+          :day-string="event.city"
+          :time-string="event.time"
+          @close-form="showForm = false"
+        ></re-form>
+        <div @click="showForm = true">
+          <div class="REEvents__CalendarItemEventTime">{{ event.time }}</div>
+          <div class="REEvents__CalendarItemEventType">{{ event.type_name }}</div>
+        </div>
+      </div>
+      <a :href="event.webinar_link" class="REEvents__CalendarFormTrigger" v-else>
+        <div class="REEvents__CalendarItemEventTime">{{ event.time }}</div>
+        <div class="REEvents__CalendarItemEventType">{{ event.type_name }}</div>
+      </a>
+    `,
+  });
+</script>
 <script>
   new Vue({
     el: "#resort-expert-events",
@@ -103,12 +1050,13 @@
 
     computed: {
       canShowMore() {
-        return this.listShowCount < this.events.filter(event => event.date.getMonth() === this.currentMonthDisplay).length;
+        return this.listShowCount < this.events.filter(event => event.date.getMonth() === this.currentMonthDisplay).filter(event => event.city === this.city).length;
       },
 
       itemsToDisplayAsList() {
         return this.events
           .filter(event => event.date.getMonth() === this.currentMonthDisplay)
+          .filter(event => event.city === this.city)
           .filter((event, index) => index < this.listShowCount);
       },
 
@@ -143,14 +1091,17 @@
 
 
           dayData.hasEvent = false;
-          dayData.event = null;
+          dayData.events = [];
           this.events.forEach(e => {
-            console.log(e.date.toString() === dateToDisplay.toString(), e.date.getDate(), dateToDisplay.getDate())
             if (
               e.date.getDate() === dateToDisplay.getDate()
+              && e.date.getMonth() === dateToDisplay.getMonth()
+              && e.date.getFullYear() === dateToDisplay.getFullYear()
+              && e.city === this.city
+              && e.type_id !== "9"
             ) {
               dayData.hasEvent = true;
-              dayData.event = e;
+              dayData.events.push(e);
             }
           });
 
@@ -276,7 +1227,6 @@
     },
 
     mounted() {
-      this.city = this.cityOptions[0];
       fetch("https://dev.resort-holiday.com/api/resort_expert/?method=get.content").then((response) => {
         return response.json();
       }).then(data => {
@@ -284,21 +1234,33 @@
 
         data.elements.forEach(function (eventElement) {
           const event = {
-            date: new Date(eventElement.date.replaceAll(".", "-").split("-").reverse().join("-")),
-            time: eventElement.time,
-            expertName: eventElement.expert_name,
-            type: eventElement.type,
-            description: eventElement.PREVIEW_TEXT,
-            title: eventElement.NAME,
+            id: eventElement.ID,
             price: eventElement.price,
+            date: new Date(eventElement.date),
+            time: eventElement.time,
+            dates: eventElement.dates,
+            file: eventElement.file,
+            file_name: eventElement.file_name,
+            webinar_link: eventElement.webinar_link,
             city: eventElement.city,
-            country: eventElement.country,
+            speaker_name: eventElement.speaker_name_web,
+            job: eventElement.job_web,
+            topic: eventElement.topic,
+            short_disc: eventElement.short_disc,
+            button_name: eventElement.button_name,
+            type_name: eventElement.NAME,
+            type_id: eventElement.IBLOCK_SECTION_ID,
+            big_title_rt: eventElement.big_title_rt,
+            big_title_bz: eventElement.big_title_bz,
+            big_title_vio: eventElement.big_title_vio,
+            speaker_name_sem: eventElement.speaker_name_sem,
+            job_sem: eventElement.job_sem,
           };
-
+          // console.log(event)
           events.push(event);
         });
-
         this.events = events;
+        this.city = this.cityOptions[0];
       });
     },
   });

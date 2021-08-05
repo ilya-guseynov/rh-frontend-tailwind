@@ -23,13 +23,4 @@
   touristsCloseTrigger.addEventListener("click", () => {
     tourists.classList.remove(touristsActiveClass);
   });
-
-  document.querySelectorAll(".Tourists__Checkbox").forEach(checkbox => {
-    checkbox.addEventListener("change", () => {
-      document.querySelectorAll(".Tourists__Checkbox").forEach(checkbox2 => {
-        checkbox2.checked = false;
-      });
-      checkbox.checked = true;
-    });
-  });
 })();

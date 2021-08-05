@@ -79,7 +79,7 @@
     font-size: 24px;
     line-height: 150%;
     color: #285C2D;
-    padding: 10px 35px;
+    padding: 0px 35px;
     position: absolute;
     bottom: 0;
     left: 80px;
@@ -114,4 +114,43 @@
     line-height: 150%;
     color: #000000;
     margin-bottom: 35px;
+}
+
+@media (max-width: 768px) {
+    .Sale__Heading {
+        position: relative;
+        padding-top: 25px;
+        align-items: flex-start;
+    }
+
+    .Sale__HeadingDate  {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 16px;
+    }
+
+    .Sale__HeadingTitle {
+        font-size: 16px;
+    }
+
+    .Sale__ConditionItemInner {
+        padding: 20px;
+    }
+
+    .Sale__ConditionHeading {
+        margin-left: 0px;
+    }
+
+    .Sale__ConditionList {
+        margin-left: 0px;
+    }
+
+    .Sale__GreenText {
+        margin-left: 0px;
+    }
+
+    .Sale__BlackText {
+        margin-left: 0px;
+    }
 }

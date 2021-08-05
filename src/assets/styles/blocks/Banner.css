@@ -76,6 +76,7 @@
   width: 100%;
   letter-spacing: -0.118461px;
   color: #868686;
+  font-family: inherit;
 }
 
 .Banner__DesktopSendButton {
@@ -117,6 +118,7 @@
   width: 100%;
   letter-spacing: -0.118461px;
   color: #868686;
+  font-family: inherit;
 }
 
 .Banner__MobileButton {

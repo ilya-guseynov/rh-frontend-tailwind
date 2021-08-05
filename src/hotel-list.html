@@ -19,6 +19,18 @@
                 <h1 class="PagePreview__Title">Список отелей<br><span>Мальдивы</span></h1>
             </div>
         </section>
+        <svg style="width: 0; height: 0; display: block">
+          <defs>
+            <linearGradient id="paint0_linear" x1="2.6652" y1="14.2175" x2="12.3794" y2="2.5605" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#D5B959"/>
+              <stop offset="0.1464" stop-color="#EAD070"/>
+              <stop offset="0.239" stop-color="#F2D978"/>
+              <stop offset="0.4341" stop-color="#E7CA67"/>
+              <stop offset="0.8173" stop-color="#CCA436"/>
+              <stop offset="0.8757" stop-color="#C59B30"/>
+            </linearGradient>
+          </defs>
+        </svg>
         <section class="InfoPageContent Container" id="hotel-list-vue">
             <div v-if="loading">
                 Загрузка
@@ -86,6 +98,72 @@
                 </div>
             </div>
             <div v-if="!loading" class="InfoPageContent__Main ResortExpert__ContentPage">
+                <div class="HotelList__MobileFilter">
+                  <div class="HotelList__MobileFilterButtonsContainer">
+                    <button class="HotelList__MobileFilterButton" @click="showMobileFilter = !showMobileFilter">
+                      <svg class="HotelList__MobileFilterIcon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.875 0.600098H16.05C17.175 0.600098 18 1.5001 18 2.4751C18 3.5251 17.175 4.3501 16.125 4.3501H15.9L10.95 9.3001V13.8751C10.95 14.1001 10.875 14.2501 10.725 14.4001L8.175 16.9501C7.875 17.2501 7.5 17.2501 7.2 16.9501C7.05 16.8001 6.975 16.6501 6.975 16.5001V9.3001L2.1 4.4251H1.875C0.825 4.4251 0 3.5251 0 2.4751C0 1.5001 0.825 0.600098 1.875 0.600098ZM16.125 3.0001C16.8 3.0001 16.8 1.9501 16.125 1.9501H1.875C1.2 2.0251 1.2 3.0001 1.875 3.0001C6.6 3.0001 11.4 3.0001 16.125 3.0001ZM14.475 3.8251H3.525L8.25 8.5501C8.4 8.7001 8.475 8.8501 8.475 9.0751V14.8501L9.675 13.6501V9.0751C9.675 8.9251 9.75 8.7001 9.9 8.5501L14.475 3.8251Z" fill="url(#paint0_linear)"/>
+                      </svg>
+                      <span class="HotelList__MobileFilterText">Фильтры</span>
+                    </button>
+                  </div>
+                  <div class="HotelList__MobileFilterInner" v-if="showMobileFilter">
+                    <div class="HotelList__FilterBlock">
+                      <div class="HotelList__FilterBlockTitle">Поиск по названию</div>
+                      <div class="HotelList__FilterBlockTitleInputContainer">
+                        <input class="HotelList__FilterBlockTitleInput" type="text" v-model="currentTitle">
+                        <svg class="HotelList__FilterBlockTitleInputIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M7.32801 8.32808C7.32801 3.70978 11.0298 0 15.6381 0C17.6023 0 19.491 0.681388 21.0019 1.89274C24.5526 4.84543 25.0059 10.0694 22.0596 13.6278C19.1133 17.1861 13.9005 17.6404 10.3499 14.6877L1.05765 24L0 22.9401L9.29222 13.7035C8.00793 12.1893 7.32801 10.2965 7.32801 8.32808ZM8.83887 8.32808C8.83887 12.1136 11.8607 15.142 15.638 15.142C19.4154 15.142 22.4372 12.1136 22.4372 8.32808C22.4372 4.54259 19.4154 1.5142 15.638 1.5142C11.8607 1.5142 8.83887 4.54259 8.83887 8.32808Z" fill="#999999"/>
+                          <path d="M15.6379 3.02832V4.54252C17.7532 4.54252 19.4153 6.20813 19.4153 8.328H20.9262C20.9262 5.37532 18.5843 3.02832 15.6379 3.02832Z" fill="#999999"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="HotelList__FilterBlock">
+                      <div class="HotelList__FilterBlockTitle">Поиск по категории</div>
+                      <div class="HotelList__GilterCategoryContainer">
+                        <div class="HotelList__CheckboxContainer">
+                          <input class="HotelList__Checkbox" type="checkbox" v-model="currentStarList" value="6" id="stars-66">
+                          <label class="HotelList__CheckboxLabel" for="stars-66"><rh-stars :stars-count="6"></rh-stars></label>
+                        </div>
+                        <div class="HotelList__CheckboxContainer">
+                          <input class="HotelList__Checkbox" type="checkbox" v-model="currentStarList" value="5" id="stars-55">
+                          <label class="HotelList__CheckboxLabel" for="stars-55"><rh-stars :stars-count="5"></rh-stars></label>
+                        </div>
+                        <div class="HotelList__CheckboxContainer">
+                          <input class="HotelList__Checkbox" type="checkbox" v-model="currentStarList" value="4" id="stars-44">
+                          <label class="HotelList__CheckboxLabel" for="stars-44"><rh-stars :stars-count="4"></rh-stars></label>
+                        </div>
+                        <div class="HotelList__CheckboxContainer">
+                          <input class="HotelList__Checkbox" type="checkbox" v-model="currentStarList" value="3" id="stars-33">
+                          <label class="HotelList__CheckboxLabel" for="stars-33"><rh-stars :stars-count="3"></rh-stars></label>
+                        </div>
+                        <div class="HotelList__CheckboxContainer">
+                          <input class="HotelList__Checkbox" type="checkbox" v-model="currentStarList" value="2" id="stars-22">
+                          <label class="HotelList__CheckboxLabel" for="stars-22"><rh-stars :stars-count="2"></rh-stars></label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="HotelList__FilterBlock">
+                      <div class="HotelList__FilterBlockTitle">Поиск по Атоллу</div>
+                      <div class="HotelList__GilterCategoryContainer">
+                        <div v-for="atoll in atolls" class="HotelList__CheckboxContainer">
+                          <input class="HotelList__Checkbox" type="checkbox" v-model="currentCriteriaList" :value="atoll" :id="atoll">
+                          <label class="HotelList__CheckboxLabel" :for="atoll">{{ atoll }}</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="HotelList__FilterBlock">
+                      <div class="HotelList__FilterBlockTitle">Поиск по Критериям</div>
+                      <div class="HotelList__GilterCategoryContainer">
+                        <div v-for="criteria in criterias" class="HotelList__CheckboxContainer">
+                          <input class="HotelList__Checkbox" type="checkbox" v-model="currentCriteriaList" :value="criteria" :id="criteria">
+                          <label class="HotelList__CheckboxLabel" :for="criteria">{{ criteria }}</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <div class="ResortExpert__BackLinkContainer">
                     <a class="ResortExpert__BackLink" href="#">
                         <img class="ResortExpert__BackLinkIcon" src="./assets/images/icons/manta-status-icon-active.svg" alt="manta">
@@ -108,11 +186,7 @@
                                         <span class="HotelList__ItemCriteriaDivider"> | </span>
                                     </li>
                                 </ul>
-                                <div class="HotelList__ItemDescription">
-                                    <div><b>Трансфер:</b></div>
-                                    <div>- 30 минут на гидросамолете</div>
-                                    <div>- 45 минут на скоростном катере</div>
-                                </div>
+                                <div class="HotelList__ItemDescription" v-html="hotel.PREVIEW_TEXT"></div>
                             </div>
                         </li>
                     </ul>
@@ -197,68 +271,18 @@
                         <div v-else class="GoldText">
                             <svg v-if="starsCount > 2" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M9.5 5.39999L15.2 5.5L10.6 8.89999L12.3 14.5L7.6 11.2L2.9 14.5L4.6 9L0 5.5L5.7 5.39999L7.6 0L9.5 5.39999Z" fill="url(#paint0_linear)"/>
-                              <defs>
-                              <linearGradient id="paint0_linear" x1="2.6652" y1="14.2175" x2="12.3794" y2="2.5605" gradientUnits="userSpaceOnUse">
-                              <stop stop-color="#D5B959"/>
-                              <stop offset="0.1464" stop-color="#EAD070"/>
-                              <stop offset="0.239" stop-color="#F2D978"/>
-                              <stop offset="0.4341" stop-color="#E7CA67"/>
-                              <stop offset="0.8173" stop-color="#CCA436"/>
-                              <stop offset="0.8757" stop-color="#C59B30"/>
-                              </linearGradient>
-                              </defs>
                             </svg>
                             <svg v-if="starsCount > 2" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M9.5 5.39999L15.2 5.5L10.6 8.89999L12.3 14.5L7.6 11.2L2.9 14.5L4.6 9L0 5.5L5.7 5.39999L7.6 0L9.5 5.39999Z" fill="url(#paint0_linear)"/>
-                              <defs>
-                              <linearGradient id="paint0_linear" x1="2.6652" y1="14.2175" x2="12.3794" y2="2.5605" gradientUnits="userSpaceOnUse">
-                              <stop stop-color="#D5B959"/>
-                              <stop offset="0.1464" stop-color="#EAD070"/>
-                              <stop offset="0.239" stop-color="#F2D978"/>
-                              <stop offset="0.4341" stop-color="#E7CA67"/>
-                              <stop offset="0.8173" stop-color="#CCA436"/>
-                              <stop offset="0.8757" stop-color="#C59B30"/>
-                              </linearGradient>
-                              </defs>
                             </svg>
                             <svg v-if="starsCount > 2" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M9.5 5.39999L15.2 5.5L10.6 8.89999L12.3 14.5L7.6 11.2L2.9 14.5L4.6 9L0 5.5L5.7 5.39999L7.6 0L9.5 5.39999Z" fill="url(#paint0_linear)"/>
-                              <defs>
-                              <linearGradient id="paint0_linear" x1="2.6652" y1="14.2175" x2="12.3794" y2="2.5605" gradientUnits="userSpaceOnUse">
-                              <stop stop-color="#D5B959"/>
-                              <stop offset="0.1464" stop-color="#EAD070"/>
-                              <stop offset="0.239" stop-color="#F2D978"/>
-                              <stop offset="0.4341" stop-color="#E7CA67"/>
-                              <stop offset="0.8173" stop-color="#CCA436"/>
-                              <stop offset="0.8757" stop-color="#C59B30"/>
-                              </linearGradient>
-                              </defs>
                             </svg>
                             <svg v-if="starsCount > 3" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M9.5 5.39999L15.2 5.5L10.6 8.89999L12.3 14.5L7.6 11.2L2.9 14.5L4.6 9L0 5.5L5.7 5.39999L7.6 0L9.5 5.39999Z" fill="url(#paint0_linear)"/>
-                              <defs>
-                              <linearGradient id="paint0_linear" x1="2.6652" y1="14.2175" x2="12.3794" y2="2.5605" gradientUnits="userSpaceOnUse">
-                              <stop stop-color="#D5B959"/>
-                              <stop offset="0.1464" stop-color="#EAD070"/>
-                              <stop offset="0.239" stop-color="#F2D978"/>
-                              <stop offset="0.4341" stop-color="#E7CA67"/>
-                              <stop offset="0.8173" stop-color="#CCA436"/>
-                              <stop offset="0.8757" stop-color="#C59B30"/>
-                              </linearGradient>
-                              </defs>
                             </svg>
                             <svg v-if="starsCount > 4" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M9.5 5.39999L15.2 5.5L10.6 8.89999L12.3 14.5L7.6 11.2L2.9 14.5L4.6 9L0 5.5L5.7 5.39999L7.6 0L9.5 5.39999Z" fill="url(#paint0_linear)"/>
-                              <defs>
-                              <linearGradient id="paint0_linear" x1="2.6652" y1="14.2175" x2="12.3794" y2="2.5605" gradientUnits="userSpaceOnUse">
-                              <stop stop-color="#D5B959"/>
-                              <stop offset="0.1464" stop-color="#EAD070"/>
-                              <stop offset="0.239" stop-color="#F2D978"/>
-                              <stop offset="0.4341" stop-color="#E7CA67"/>
-                              <stop offset="0.8173" stop-color="#CCA436"/>
-                              <stop offset="0.8757" stop-color="#C59B30"/>
-                              </linearGradient>
-                              </defs>
                             </svg>
                             <span class="GoldText" v-if="starsCount > 5">Deluxe</span>
                         </div>
@@ -294,6 +318,7 @@
 
                     data: function () {
                       return {
+                        showMobileFilter: false,
                         currentPage: 1,
                         currentTitle: "",
                         currentAtollInput: "",
@@ -405,7 +430,7 @@
                         .then(data => {
                           data.elements.forEach(item => {
                             this.hotels.push(item);
-
+                            console.log(item)
                             item.PROPERTY_CRITERIA_VALUE.forEach(criteria => {
                               if (!this.criterias.includes(criteria.trim())) {
                                 this.criterias.push(criteria.trim());
