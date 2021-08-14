@@ -227,3 +227,12 @@ input[type=number] {
     line-height: 22px;
     color: #285C2D;
 }
+
+@media (max-width: 768px) {
+    .TelegramForm--Active div.TelegramForm__Content {
+        width: 90vw;
+        max-height: 90vh;
+        box-sizing: border-box;
+        padding: 30px 20px;
+    }
+}

@@ -12,15 +12,20 @@
 
   telegramTriggers.forEach(telegramTrigger => {
     telegramTrigger.addEventListener("click", () => {
+      setTimeout(() => {
+        document.body.style.overflow = "hidden";
+      }, 100);
       telegram.classList.add(telegramActiveClass);
     });
   });
 
   telegramScreenlock.addEventListener("click", () => {
+    document.body.style.overflow = "auto";
     telegram.classList.remove(telegramActiveClass);
   });
 
   telegramCloseTrigger.addEventListener("click", () => {
+    document.body.style.overflow = "auto";
     telegram.classList.remove(telegramActiveClass);
   });
 })();

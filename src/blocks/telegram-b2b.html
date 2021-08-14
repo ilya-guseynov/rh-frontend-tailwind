@@ -67,7 +67,7 @@
               return;
             }
 
-            fetch(`https://dev.resort-holiday.com/api/forms/?form[prop][work_place]=${this.job}&type=join_to_tg&form[prop][email]=${this.email}`).then((response) => {
+            fetch(`https://dev.resort-holiday.com/api/forms/?form[prop][work_place]=` + this.job + `type=join_to_tg&form[prop][email]=` + this.email).then((response) => {
               this.showSuccess = true;
               setTimeout(() => {
                 this.showSuccess = false;

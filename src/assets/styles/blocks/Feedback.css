@@ -338,3 +338,18 @@ input[type=number] {
 .Feedback__FileUploadIcon {
   cursor: pointer
 }
+
+@media (max-width: 768px) {
+  .Feedback--Active div.Feedback__Content {
+    max-height: 90vh;
+    width: 90vw;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    background-image: none!important;
+    padding: 30px 20px;
+  }
+
+  button.Feedback__SubmitButton {
+    margin-bottom: 20px;
+  }
+}

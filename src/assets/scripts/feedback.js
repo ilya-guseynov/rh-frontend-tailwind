@@ -12,15 +12,20 @@
 
   touristsTriggers.forEach(touristsTrigger => {
     touristsTrigger.addEventListener("click", () => {
+      setTimeout(() => {
+        document.body.style.overflow = "hidden";
+      }, 100);
       tourists.classList.add(touristsActiveClass);
     });
   });
 
   touristsScreenlock.addEventListener("click", () => {
+    document.body.style.overflow = "auto";
     tourists.classList.remove(touristsActiveClass);
   });
 
   touristsCloseTrigger.addEventListener("click", () => {
+    document.body.style.overflow = "auto";
     tourists.classList.remove(touristsActiveClass);
   });
 })();

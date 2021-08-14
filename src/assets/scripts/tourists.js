@@ -12,15 +12,20 @@
 
     feedbackTriggers.forEach(feedbackTrigger => {
         feedbackTrigger.addEventListener("click", () => {
+            setTimeout(() => {
+                document.body.style.overflow = "hidden";
+            }, 100);
             feedback.classList.add(feedbackActiveClass);
         });
     });
 
     feedbackScreenlock.addEventListener("click", () => {
+        document.body.style.overflow = "auto";
         feedback.classList.remove(feedbackActiveClass);
     });
 
     feedbackCloseTrigger.addEventListener("click", () => {
+        document.body.style.overflow = "auto";
         feedback.classList.remove(feedbackActiveClass);
     });
 

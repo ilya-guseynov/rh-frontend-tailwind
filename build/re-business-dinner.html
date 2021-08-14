@@ -152,25 +152,25 @@
               <div class="MobileSidebar__FirstContentBlock">
                 <ul class="MobileSidebar__FirstContentList">
                   <li class="MobileSidebar__FirstContentItem">
-                    <a class="MobileSidebar__FirstContentLink" href="#">
+                    <a class="MobileSidebar__FirstContentLink Tourists__Trigger">
                       <img class="MobileSidebar__FirstContentIcon" src="./assets/images/icons/move-icon.svg" alt="move">
                       <div class="MobileSidebar__FirstContentText">Туристам</div>
                     </a>
                   </li>
                   <li class="MobileSidebar__FirstContentItem">
-                    <a class="MobileSidebar__FirstContentLink href="#">
+                    <a class="MobileSidebar__FirstContentLink" href="#">
                       <img class="MobileSidebar__FirstContentIcon" src="./assets/images/icons/account-icon.svg" alt="move">
                       <div class="MobileSidebar__FirstContentText">Личный кабинет агента</div>
                     </a>
                   </li>
                   <li class="MobileSidebar__FirstContentItem">
-                    <a class="MobileSidebar__FirstContentLink" href="#">
+                    <a class="MobileSidebar__FirstContentLink Telegram__Trigger">
                       <img class="MobileSidebar__FirstContentIcon" src="./assets/images/icons/telegram-icon.svg" alt="move">
                       <div class="MobileSidebar__FirstContentText">TELEGRAM для агентов</div>
                     </a>
                   </li>
                   <li class="MobileSidebar__FirstContentItem">
-                    <a class="MobileSidebar__FirstContentLink" href="#">
+                    <a class="MobileSidebar__FirstContentLink Feedback__Trigger">
                       <img class="MobileSidebar__FirstContentIcon" src="./assets/images/icons/feedback-icon.svg" alt="move">
                       <div class="MobileSidebar__FirstContentText">Обратная связь</div>
                     </a>
@@ -488,7 +488,7 @@
                       return;
                     }
 
-                    fetch(`https://dev.resort-holiday.com/api/forms/?form[prop][work_place]=${this.job}&type=join_to_tg&form[prop][email]=${this.email}`).then((response) => {
+                    fetch(`https://dev.resort-holiday.com/api/forms/?form[prop][work_place]=` + this.job + `type=join_to_tg&form[prop][email]=` + this.email).then((response) => {
                       this.showSuccess = true;
                       setTimeout(() => {
                         this.showSuccess = false;
@@ -2127,19 +2127,19 @@
           </div>
         </section>
         <section class="Banner" style="background-image: url('./assets/images/banner-background.svg');">
-          <div class="Banner__Inner Container">
-            <form class="Banner__Mobile" action="#">
+          <div class="Banner__Inner Container" id="banner-b2b-vue">
+            <form class="Banner__Mobile" @submit.prevent="sendToBackend">
               <div class="Banner__MobileTextBig">Подпишитесь и узнавайте первыми!</div>
               <div class="Banner__MobileEmailContainer">
                 <img class="Banner__MobileEmailIcon" src="./assets/images/icons/email-icon.svg" alt="email-icon">
-                <input class="Banner__MobileEmailInput" type="email" name="subscription-email" placeholder="Введите ваш email" required>
+                <input class="Banner__MobileEmailInput" v-model="email" type="email" name="subscription-email" placeholder="Введите ваш email" required>
                 <button class="Banner__MobileButton" type="submit">
                   <img class="Banner__MobileSendIcon" src="./assets/images/icons/send-email-icon.svg" alt="send-email-icon">
                 </button>
               </div>
               <div class="Banner__MobileTextSmall">Высылаем только важное, новое и интересное</div>
             </form>
-            <form class="Banner__Desktop" action="#">
+            <form class="Banner__Desktop" @submit.prevent="sendToBackend">
               <div class="Banner__DesktopTextBlock">
                 <div class="Banner__DesktopTextBig">Подпишитесь и узнавайте первыми!</div>
                 <div class="Banner__DesktopTextSmall">Высылаем только важное, новое и интересное</div>
@@ -2147,7 +2147,7 @@
               <div class="Banner__DesktopEmailBlock">
                 <div class="Banner__DesktopEmailContainer">
                   <img class="Banner__DesktopEmailIcon" src="./assets/images/icons/email-icon.svg" alt="email-icon">
-                  <input class="Banner__DesktopEmailInput" type="email" name="subscription-email" placeholder="Введите ваш email" required>
+                  <input class="Banner__DesktopEmailInput" v-model="email" type="email" name="subscription-email" placeholder="Введите ваш email" required>
                   <button class="Banner__DesktopSendButton" type="submit">
                     <img class="Banner__DesktopSendImage" src="./assets/images/icons/send-email-icon.svg" alt="send-email-icon">
                   </button>
@@ -2155,6 +2155,77 @@
               </div>
             </form>
           </div>
+          <script>
+            Vue.component("success-message", {
+              name: "success-message",
+
+              template: `
+                <div class="SuccessMessage" >
+                  <svg class="SuccessMessage__Icon" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_d)">
+                      <rect x="3" y="2" width="36" height="36" rx="18" fill="url(#paint0_linear)"/>
+                    </g>
+                    <path d="M14.2501 20.6025L18.0911 24.4435L27.6935 14.841" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <defs>
+                      <filter id="filter0_d" x="0" y="0" width="42" height="42" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dy="1"/>
+                        <feGaussianBlur stdDeviation="1.5"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.122254 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                      </filter>
+                      <linearGradient id="paint0_linear" x1="-16.7019" y1="20.4221" x2="32.3324" y2="19.8753" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#D8BB58"/>
+                        <stop offset="0.1464" stop-color="#ECD26E"/>
+                        <stop offset="0.239" stop-color="#F4DB76"/>
+                        <stop offset="0.4341" stop-color="#E4BD32"/>
+                        <stop offset="0.8173" stop-color="#CEA53A"/>
+                        <stop offset="0.8757" stop-color="#C99F33"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <div class="SuccessMessage__Text1">Спасибо!</div>
+                  <div class="SuccessMessage__Text2">Сообщение отправлено</div>
+                </div>
+                `,
+            });
+
+            new Vue({
+              el: "#banner-b2b-vue",
+
+              data: function () {
+                return {
+                  email: "",
+                };
+              },
+
+              methods: {
+                sendToBackend() {
+                  if (this.email === "") return;
+
+                  const payload = {
+                    email: this.email,
+                    type: "banner-b2b"
+                  };
+
+                  fetch(`https://dev.resort-holiday.com/api/forms/`, {
+                    method: "POST",
+                    body: payload,
+                  }).then((response) => {
+                    this.showSuccess = true;
+                    setTimeout(() => {
+                      this.showSuccess = false;
+                    }, 2000);
+                    this.email = "";
+                  }).catch(function (error) {
+                    console.log("Error to post Banner form data", error);
+                  });
+                },
+              },
+            });
+          </script>
         </section>
       </main>
       <footer class="Footer" style="background-image: url('./assets/images/footer-bg-image.png');">
