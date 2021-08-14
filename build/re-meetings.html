@@ -901,6 +901,7 @@
 
                 props: {
                   eventId: String,
+                  eventName: String,
                 },
 
                 methods: {
@@ -908,6 +909,7 @@
                     if (!this.agree) return;
 
                     const payload = {
+                      event_name: this.eventName,
                       eventId: this.eventId,
                       file: this.file,
                       file_ext: this.fileExt,
@@ -925,7 +927,7 @@
                     fetch(`https://dev.resort-holiday.com/api/forms/?type=promo_tour`, {
                       method: "POST",
                       body: JSON.stringify(payload),
-                    }).then((response) => {
+                    }).then(response => {
                       this.showSuccess = true;
                       setTimeout(() => {
                         this.showSuccess = false;
@@ -1028,6 +1030,7 @@
                 props: {
                   eventType: String,
                   eventId: String,
+                  eventName: String,
                   bigText: String,
                   smallText: String,
                   dateString: String,
@@ -1040,6 +1043,7 @@
                     if (!this.agree) return;
 
                     const payload = {
+                      event_name: this.event_name,
                       event_type: this.eventType,
                       eventId: this.eventId,
                       agree: this.agree,
@@ -1111,7 +1115,7 @@
 
                 template: `
                   <div class="REEvent__ListItemInner">
-                    <re-form-tour v-if="showForm" :event-id="item.id" @close-form="showForm = false"></re-form-tour>
+                    <re-form-tour v-if="showForm" :event-id="item.id" :event-name="item.type_name" @close-form="showForm = false"></re-form-tour>
                     <div class="REEvent__ListItemTop">
                       <div class="REEvent__ListItemNameBlock">
                         <img class="REEvent__ListItemMantaImage" src="./assets/images/re-list-manta.svg" alt="re-list-manta">
@@ -1163,19 +1167,19 @@
                   },
 
                   weekDayNumberoString(weekDayNumber) {
-                    if (weekDayNumber === 0) {
+                    if (weekDayNumber === 1) {
                       return "Пн";
-                    } else if (weekDayNumber === 1) {
-                      return "Вт";
                     } else if (weekDayNumber === 2) {
-                      return "Ср";
+                      return "Вт";
                     } else if (weekDayNumber === 3) {
-                      return "Чт";
+                      return "Ср";
                     } else if (weekDayNumber === 4) {
-                      return "Пт";
+                      return "Чт"
                     } else if (weekDayNumber === 5) {
-                      return "Сб";
+                      return "Пт";
                     } else if (weekDayNumber === 6) {
+                      return "Сб";
+                    } else if (weekDayNumber === 7) {
                       return "Вс";
                     }
                   },
@@ -1224,6 +1228,7 @@
                       :date-string="dayNumberToZeroNotation(item.date.getDate()) + ' ' + monthNumberToString(item.date.getMonth())"
                       :day-string="item.city"
                       :time-string="item.time"
+                      :event-name="item.type_name"
                       @close-form="showForm = false"
                     ></re-form>
                     <div class="REEvent__ListItemTop">
@@ -1277,19 +1282,19 @@
                   },
 
                   weekDayNumberoString(weekDayNumber) {
-                    if (weekDayNumber === 0) {
+                    if (weekDayNumber === 1) {
                       return "Пн";
-                    } else if (weekDayNumber === 1) {
-                      return "Вт";
                     } else if (weekDayNumber === 2) {
-                      return "Ср";
+                      return "Вт";
                     } else if (weekDayNumber === 3) {
-                      return "Чт";
+                      return "Ср";
                     } else if (weekDayNumber === 4) {
-                      return "Пт";
+                      return "Чт";
                     } else if (weekDayNumber === 5) {
-                      return "Сб";
+                      return "Пт";
                     } else if (weekDayNumber === 6) {
+                      return "Сб";
+                    } else if (weekDayNumber === 7) {
                       return "Вс";
                     }
                   },
@@ -1338,6 +1343,7 @@
                       :date-string="dayNumberToZeroNotation(item.date.getDate()) + ' ' + monthNumberToString(item.date.getMonth())"
                       :day-string="item.city"
                       :time-string="item.time"
+                      :event-name="item.type_name"
                       @close-form="showForm = false"
                     ></re-form>
                     <div class="REEvent__ListItemTop">
@@ -1385,19 +1391,19 @@
                   },
 
                   weekDayNumberoString(weekDayNumber) {
-                    if (weekDayNumber === 0) {
+                    if (weekDayNumber === 1) {
                       return "Пн";
-                    } else if (weekDayNumber === 1) {
-                      return "Вт";
                     } else if (weekDayNumber === 2) {
-                      return "Ср";
+                      return "Вт";
                     } else if (weekDayNumber === 3) {
-                      return "Чт";
+                      return "Ср";
                     } else if (weekDayNumber === 4) {
-                      return "Пт";
+                      return "Чт";
                     } else if (weekDayNumber === 5) {
-                      return "Сб";
+                      return "Пт";
                     } else if (weekDayNumber === 6) {
+                      return "Сб";
+                    } else if (weekDayNumber === 7) {
                       return "Вс";
                     }
                   },
@@ -1489,19 +1495,19 @@
                   },
 
                   weekDayNumberoString(weekDayNumber) {
-                    if (weekDayNumber === 0) {
+                    if (weekDayNumber === 1) {
                       return "Пн";
-                    } else if (weekDayNumber === 1) {
-                      return "Вт";
                     } else if (weekDayNumber === 2) {
-                      return "Ср";
+                      return "Вт";
                     } else if (weekDayNumber === 3) {
-                      return "Чт";
+                      return "Ср";
                     } else if (weekDayNumber === 4) {
-                      return "Пт";
+                      return "Чт";
                     } else if (weekDayNumber === 5) {
-                      return "Сб";
+                      return "Пт";
                     } else if (weekDayNumber === 6) {
+                      return "Сб";
+                    } else if (weekDayNumber === 7) {
                       return "Вс";
                     }
                   },
@@ -1550,6 +1556,7 @@
                       :date-string="dayNumberToZeroNotation(item.date.getDate()) + ' ' + monthNumberToString(item.date.getMonth())"
                       :day-string="item.city"
                       :time-string="item.time"
+                      :event-name="item.type_name"
                       @close-form="showForm = false"
                     ></re-form>
                     <div class="REEvent__ListItemTop">
@@ -1604,19 +1611,19 @@
                   },
 
                   weekDayNumberoString(weekDayNumber) {
-                    if (weekDayNumber === 0) {
+                    if (weekDayNumber === 1) {
                       return "Пн";
-                    } else if (weekDayNumber === 1) {
-                      return "Вт";
                     } else if (weekDayNumber === 2) {
-                      return "Ср";
+                      return "Вт";
                     } else if (weekDayNumber === 3) {
-                      return "Чт";
+                      return "Ср";
                     } else if (weekDayNumber === 4) {
-                      return "Пт";
+                      return "Чт";
                     } else if (weekDayNumber === 5) {
-                      return "Сб";
+                      return "Пт";
                     } else if (weekDayNumber === 6) {
+                      return "Сб";
+                    } else if (weekDayNumber === 7) {
                       return "Вс";
                     }
                   },
@@ -1665,6 +1672,7 @@
                       :date-string="dayNumberToZeroNotation(item.date.getDate()) + ' ' + monthNumberToString(item.date.getMonth())"
                       :day-string="item.city"
                       :time-string="item.time"
+                      :event-name="item.type_name"
                       @close-form="showForm = false"
                     ></re-form>
                     <div class="REEvent__ListItemTop">
@@ -1798,6 +1806,7 @@
                       :date-string="dayNumberToZeroNotation(event.date.getDate()) + ' ' + monthNumberToString(event.date.getMonth())"
                       :day-string="event.city"
                       :time-string="event.time"
+                      :event-name="event.type_name"
                       @close-form="showForm = false"
                     ></re-form>
                     <div @click="showForm = true">

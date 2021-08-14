@@ -101,6 +101,7 @@
           :date-string="dayNumberToZeroNotation(event.date.getDate()) + ' ' + monthNumberToString(event.date.getMonth())"
           :day-string="event.city"
           :time-string="event.time"
+          :event-name="event.type_name"
           @close-form="showForm = false"
         ></re-form>
         <div @click="showForm = true">

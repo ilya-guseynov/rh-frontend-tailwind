@@ -21,6 +21,7 @@
 
     props: {
       eventId: String,
+      eventName: String,
     },
 
     methods: {
@@ -28,6 +29,7 @@
         if (!this.agree) return;
 
         const payload = {
+          event_name: this.eventName,
           eventId: this.eventId,
           file: this.file,
           file_ext: this.fileExt,
@@ -45,7 +47,7 @@
         fetch(`https://dev.resort-holiday.com/api/forms/?type=promo_tour`, {
           method: "POST",
           body: JSON.stringify(payload),
-        }).then((response) => {
+        }).then(response => {
           this.showSuccess = true;
           setTimeout(() => {
             this.showSuccess = false;

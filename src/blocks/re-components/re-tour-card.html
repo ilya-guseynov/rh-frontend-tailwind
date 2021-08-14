@@ -14,7 +14,7 @@
 
     template: `
       <div class="REEvent__ListItemInner">
-        <re-form-tour v-if="showForm" :event-id="item.id" @close-form="showForm = false"></re-form-tour>
+        <re-form-tour v-if="showForm" :event-id="item.id" :event-name="item.type_name" @close-form="showForm = false"></re-form-tour>
         <div class="REEvent__ListItemTop">
           <div class="REEvent__ListItemNameBlock">
             <img class="REEvent__ListItemMantaImage" src="./assets/images/re-list-manta.svg" alt="re-list-manta">

@@ -17,6 +17,7 @@
     props: {
       eventType: String,
       eventId: String,
+      eventName: String,
       bigText: String,
       smallText: String,
       dateString: String,
@@ -29,6 +30,7 @@
         if (!this.agree) return;
 
         const payload = {
+          event_name: this.event_name,
           event_type: this.eventType,
           eventId: this.eventId,
           agree: this.agree,
