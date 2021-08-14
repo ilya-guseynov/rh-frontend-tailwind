@@ -1,0 +1,117 @@
+<script>
+  Vue.component("calendar-trigger", {
+    name: "calendar-trigger",
+
+    props: {
+      event: Object,
+    },
+
+    data: function () {
+      return {
+        showForm: false,
+      };
+    },
+
+    computed: {
+      bigText() {
+        if (this.event.type_id === "8") {
+          return this.event.big_title_bz;
+        } else if (this.event.type_id === "7") {
+          return this.event.big_title_vio;
+        } else if (this.event.type_id === "4") {
+          return this.event.speaker_name_sem;
+        }else {
+          return this.event.speaker_name;
+        }
+      },
+    },
+
+    methods: {
+      help() {
+        console.log("help")
+      },
+
+      dayNumberToZeroNotation(dayNumber) {
+        if (dayNumber < 10) {
+          return `0${ dayNumber }`;
+        } else {
+          return `${ dayNumber }`;
+        }
+      },
+
+      weekDayNumberoString(weekDayNumber) {
+        if (weekDayNumber === 0) {
+          return "Пн";
+        } else if (weekDayNumber === 1) {
+          return "Вт";
+        } else if (weekDayNumber === 2) {
+          return "Ср";
+        } else if (weekDayNumber === 3) {
+          return "Чт";
+        } else if (weekDayNumber === 4) {
+          return "Пт";
+        } else if (weekDayNumber === 5) {
+          return "Сб";
+        } else if (weekDayNumber === 6) {
+          return "Вс";
+        }
+      },
+
+      monthNumberToString(monthNumber) {
+        if (monthNumber > 11 || monthNumber < 0) {
+          return `Месяц номер ${ monthNumber }`;
+        }
+
+        if (monthNumber === 0) {
+          return "Январь";
+        } else if (monthNumber === 1) {
+          return "Февраль";
+        } else if (monthNumber === 2) {
+          return "Март";
+        } else if (monthNumber === 3) {
+          return "Апрель";
+        } else if (monthNumber === 4) {
+          return "Май";
+        } else if (monthNumber === 5) {
+          return "Июнь";
+        } else if (monthNumber === 6) {
+          return "Июль";
+        } else if (monthNumber === 7) {
+          return "Август";
+        } else if (monthNumber === 8) {
+          return "Сентябрь";
+        } else if (monthNumber === 9) {
+          return "Октябрь";
+        } else if (monthNumber === 10) {
+          return "Ноябрь";
+        } else if (monthNumber === 11) {
+          return "Декабрь";
+        }
+      },
+    },
+
+    template: `
+      <div class="REEvents__CalendarFormTrigger" v-if="event.type_id !== '6'">
+        <re-form
+          v-if="showForm"
+          :event-type="event.type_id"
+          :event-id="event.id"
+          :big-text="bigText"
+          :small-text="event.topic"
+          :date-string="dayNumberToZeroNotation(event.date.getDate()) + ' ' + monthNumberToString(event.date.getMonth())"
+          :day-string="event.city"
+          :time-string="event.time"
+          @close-form="showForm = false"
+        ></re-form>
+        <div @click="showForm = true">
+          <div class="REEvents__CalendarItemEventTime">{{ event.time }}</div>
+          <div class="REEvents__CalendarItemEventType">{{ event.type_name }}</div>
+        </div>
+      </div>
+      <a :href="event.webinar_link" class="REEvents__CalendarFormTrigger" v-else>
+        <div class="REEvents__CalendarItemEventTime">{{ event.time }}</div>
+        <div class="REEvents__CalendarItemEventType">{{ event.type_name }}</div>
+      </a>
+    `,
+  });
+</script>

@@ -12,7 +12,6 @@
 @import "MobileSidebar.css";
 @import "WhyWe.css";
 @import "MainB2b.css";
-@import "Feedback.css";
 @import "SalesPage.css";
 @import "CountryPage.css";
 @import "HotelPage.css";
@@ -29,11 +28,9 @@
 @import "SalesPreviews.css";
 @import "Sale.css";
 @import "PhotoReports.css";
-@import "TelegramForm.css";
-@import "Tourists.css";
 @import "REForm.css";
+@import "PopupForm.css";
 
- 
 .RH__Page {
   font-family: "montserrat", sans-serif !important;
 }

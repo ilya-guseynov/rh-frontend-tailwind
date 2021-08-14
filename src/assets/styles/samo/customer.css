@@ -1,0 +1,31 @@
+.RH__Page {
+  font-family: "montserrat", sans-serif !important;
+}
+
+.RH__Body {
+  font-family: "montserrat", sans-serif !important;
+  margin: 0;
+}
+
+.RH__Wrapper {
+  min-height: 101vh;
+  position: relative;
+}
+
+.RH__Main {
+  padding-bottom: 550px;
+}
+
+@media (max-width: 768px) {
+  .RH__Main {
+    padding-bottom: 860px;
+  } 
+}
+
+@import url("../blocks/Header.css");
+@import url("../blocks/Footer.css");
+@import url("../blocks/Container.css");
+@import url("../blocks/PopupForm.css");
+@import url("../blocks/MobileSidebar.css");
+ 
+@import url("./CustomSamo.css");

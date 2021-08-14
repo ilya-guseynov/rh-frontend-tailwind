@@ -1,40 +1,33 @@
 (() => {
-    const feedback = document.querySelector(".Feedback");
-    const feedbackTriggers = document.querySelectorAll(".Feedback__Trigger");
-    const feedbackScreenlock = document.querySelector(".Feedback__Screenlock");
-    const feedbackCloseTrigger = document.querySelector(".Feedback__CloseTrigger");
+    const tourists = document.querySelector(".Tourists");
+    const touristsTriggers = document.querySelectorAll(".Tourists__Trigger");
 
-    const feedbackActiveClass = "Feedback--Active";
+    const touristsScreenlock = tourists.querySelector(".PopupForm__Screenlock");
+    const touristsCloseTrigger = tourists.querySelector(".PopupForm__TitleClose");
 
-    if (!feedback || !feedbackTriggers || !feedbackScreenlock || !feedbackCloseTrigger) {
+    const touristsActiveClass = "PopupForm--Active";
+
+    if (!tourists || !touristsTriggers || !touristsScreenlock || !touristsCloseTrigger) {
         return;
     }
 
-    feedbackTriggers.forEach(feedbackTrigger => {
-        feedbackTrigger.addEventListener("click", () => {
-            setTimeout(() => {
-                document.body.style.overflow = "hidden";
-            }, 100);
-            feedback.classList.add(feedbackActiveClass);
+    touristsTriggers.forEach(touristsTrigger => {
+        touristsTrigger.addEventListener("click", () => {
+        setTimeout(() => {
+            document.body.style.overflow = "hidden";
+        }, 100);
+        tourists.classList.add(touristsActiveClass);
         });
     });
 
-    feedbackScreenlock.addEventListener("click", () => {
+    touristsScreenlock.addEventListener("click", () => {
         document.body.style.overflow = "auto";
-        feedback.classList.remove(feedbackActiveClass);
+        tourists.classList.remove(touristsActiveClass);
     });
 
-    feedbackCloseTrigger.addEventListener("click", () => {
+    touristsCloseTrigger.addEventListener("click", () => {
         document.body.style.overflow = "auto";
-        feedback.classList.remove(feedbackActiveClass);
-    });
-
-    document.querySelectorAll(".Feedback__Checkbox").forEach(checkbox => {
-        checkbox.addEventListener("change", () => {
-            document.querySelectorAll(".Feedback__Checkbox").forEach(checkbox2 => {
-                checkbox2.checked = false;
-            });
-            checkbox.checked = true;
-        });
+        tourists.classList.remove(touristsActiveClass);
     });
 })();
+  

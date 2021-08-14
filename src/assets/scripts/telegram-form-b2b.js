@@ -1,14 +1,17 @@
 (() => {
-  const telegram = document.querySelector(".TelegramForm");
+  const telegram = document.querySelector(".Telegram");
   const telegramTriggers = document.querySelectorAll(".Telegram__Trigger");
-  const telegramScreenlock = document.querySelector(".TelegramForm__Screenlock");
-  const telegramCloseTrigger = document.querySelector(".TelegramForm__CloseTrigger");
 
-  const telegramActiveClass = "TelegramForm--Active";
+  const telegramScreenlock = telegram.querySelector(".PopupForm__Screenlock");
+  const telegramCloseTrigger = telegram.querySelector(".PopupForm__TitleClose");
+
+  const telegramActiveClass = "PopupForm--Active";
+  console.log("here");
 
   if (!telegram || !telegramTriggers || !telegramScreenlock || !telegramCloseTrigger) {
     return;
   }
+
 
   telegramTriggers.forEach(telegramTrigger => {
     telegramTrigger.addEventListener("click", () => {

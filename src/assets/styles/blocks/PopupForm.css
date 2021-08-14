@@ -1,6 +1,6 @@
-.Feedback {}
+.PopupForm {}
 
-.Feedback__Text {
+.PopupForm__Text {
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
@@ -8,7 +8,7 @@
   margin-bottom: 32px;
 }
 
-.Feedback__Screenlock {
+.PopupForm__Screenlock {
   display: none;
   position: fixed;
   top: 0;
@@ -19,11 +19,11 @@
   z-index: 90;
 }
 
-.Feedback--Active .Feedback__Screenlock {
+.PopupForm--Active .PopupForm__Screenlock {
   display: block;
 }
 
-.Feedback__Content {
+.PopupForm__Content {
   display: none;
   position: fixed;
   z-index: 91;
@@ -31,48 +31,57 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 37px 44px 30px;
+  padding: 65px 50px;
+  width: 90vw;
+  max-width: 600px;
+  box-sizing: border-box;
+  max-height: 90vh;
+  overflow-y: scroll;
 }
 
-.Feedback--Active .Feedback__Content {
+.PopupForm--Active .PopupForm__Content {
+  display: block;
+}
+
+.PopupForm--Tourists.PopupForm--Active .PopupForm__Content,
+.PopupForm--Feedback.PopupForm--Active .PopupForm__Content {
   display: flex;
-  width: 70vw;
   max-width: 1080px;
 }
 
-.Feedback__ContentLeft {
+.PopupForm__ContentLeft {
   display: none;
   width: 50%;
 }
 
 @media (min-width: 1041px) {
-  .Feedback__ContentLeft {
+  .PopupForm__ContentLeft {
     display: block;
   }
 }
 
-.Feedback__ContentRight {
+.PopupForm__ContentRight {
   width: 100%;
 }
 
 @media (min-width: 1041px) {
-  .Feedback__ContentRight {
+  .PopupForm__ContentRight {
     width: 50%;
   }
 }
 
-.Feedback__LeftLogo {
+.PopupForm__Logo {
   margin-bottom: 120px;
 }
 
-.Feedback__LeftCountry {
+.PopupForm__Country {
   font-weight: 600;
   font-size: 18px;
   text-transform: uppercase;
   color: #000000;
 }
 
-.Feedback__LeftAddress {
+.PopupForm__Address {
   font-weight: 500;
   font-size: 18px;
   line-height: 170%;
@@ -80,22 +89,22 @@
   margin-bottom: 40px;
 }
 
-.Feedback__LeftPhonesBlock {
+.PopupForm__PhonesBlock {
   margin-bottom: 60px;
   display: flex;
   align-items: center;
 }
 
-.Feedback__LeftPhoneIcon {
+.PopupForm__PhoneIcon {
   margin-right: 20px;
 }
 
-.Feedback__LeftPhones {
+.PopupForm__Phones {
   display: flex;
   flex-direction: column;
 }
 
-.Feedback__LeftPhone {
+.PopupForm__Phone {
   font-weight: bold;
   font-size: 30px;
   text-transform: uppercase;
@@ -104,15 +113,15 @@
   transition: all .5s;
 }
 
-.Feedback__LeftPhone:not(:last-child) {
+.PopupForm__Phone:not(:last-child) {
   margin-bottom: 10px;
 }
 
-.Feedback__LeftPhone:hover {
+.PopupForm__Phone:hover {
   opacity: .8;
 }
 
-.Feedback__LeftLink {
+.PopupForm__Link {
   font-weight: 500;
   font-size: 24px;
   letter-spacing: 1px;
@@ -120,30 +129,31 @@
   color: #285C2D;
 }
 
-.Feedback__RightTitle {
+.PopupForm__Title {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   margin-bottom: 45px;
 }
 
-.Feedback__RightTitleText {
+.PopupForm__TitleText {
   font-weight: bold;
   font-size: 32px;
   color: #202020;
 }
 
-.Feedback__RightTitleClose {
+.PopupForm__TitleClose {
   border: none;
   background: none;
   outline: none;
   cursor: pointer;
   padding: 0;
+  display: flex;
 }
 
-.Feedback__Form {}
+.PopupForm__Form {}
 
-.Feedback__TextInput {
+.PopupForm__TextInput {
+  background: transparent;
   width: 100%;
   display: block;
   font-weight: 500;
@@ -154,19 +164,19 @@
   outline: none;
   border-bottom: 1px solid #999999;
   padding-bottom: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
-.Feedback__CheckboxContainer {
+.PopupForm__CheckboxContainer {
   display: flex;
   align-items: center;
 }
 
-.Feedback__CheckboxContainer:not(:last-child) {
+.PopupForm__CheckboxContainer:not(:last-child) {
   margin-bottom: 20px;
 }
 
-.Feedback__Checkbox {
+.PopupForm__Checkbox {
   position: relative;
   cursor: pointer;
   width: 20px;
@@ -177,7 +187,7 @@
   flex-shrink: 0;
 }
 
-.Feedback__Checkbox::before {
+.PopupForm__Checkbox::before {
   content: "";
   display: block;
   position: absolute;
@@ -192,11 +202,11 @@
   transition: background-color .5s;
 }
 
-.Feedback__Checkbox:checked::before {
+.PopupForm__Checkbox:checked::before {
   background-color: #285C2D;
 }
 
-.Feedback__Checkbox:checked::after {
+.PopupForm__Checkbox:checked::after {
   content: "";
   display: block;
   width: 5px;
@@ -211,13 +221,18 @@
   left: 8px;
 }
 
-.Feedback__CheckboxLabel {
+.PopupForm__CheckboxLabel {
   font-weight: 500;
   font-size: 16px;
   color: #999999;
 }
 
-.Feedback__Textarea {
+.PopupForm__CheckboxLabel a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.PopupForm__Textarea {
   width: 100%;
   box-sizing: border-box;
   display: block;
@@ -232,7 +247,48 @@
   outline: none;
 }
 
-.Feedback__SubmitButton {
+.PopupForm__FileUpload {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.PopupForm__FileUploadInner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.PopupForm__FileUploadInfo {
+  margin-right: 20px;
+}
+
+.PopupForm__FileUploadInfoText {
+  font-weight: 500;
+  line-height: 150%;
+  text-align: right;
+  color: #999999;
+}
+
+.PopupForm__FileUploadInfoText--Big {
+  font-size: 16px;
+}
+
+.PopupForm__FileUploadInfoText--Small {
+  font-size: 14px;
+}
+
+.PopupForm__FileUploadLabel {}
+
+.PopupForm__FileUploadInput {
+  display: none;
+}
+
+.PopupForm__FileUploadIcon {
+  cursor: pointer
+}
+
+.PopupForm__SubmitButton {
   margin: 0;
   width: 100%;
   padding: 10px;
@@ -248,108 +304,89 @@
   cursor: pointer;
   background: linear-gradient(89.36deg, #D8BB58 -53.59%, #ECD26E -33.86%, #F4DB76 -21.39%, #E9CC65 4.9%, #CEA53A 56.52%, #C99F33 64.39%);
   transition: all .5s;
+  margin-bottom: 20px;
 }
 
-.Feedback__SubmitButton:hover {
+.PopupForm__SubmitButton:hover {
   opacity: .8;
 }
 
-.Feedback__SevenNumberInputContainer {
-  margin-bottom: 30px;
+.PopupForm__NumbersContainer {
   display: flex;
-  align-items: flex-end;
-  padding-left: 50px;
+  justify-content: space-between;
 }
 
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.PopupForm__NumberBlock {
+  display: flex;
 }
 
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
-.Feedback__SevenNumberInputText {
+.PopupForm__NumberInfo {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 20px;
   color: #999999;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
-.SevenBg {
-  background: no-repeat;
-  background-position: left;
-  background-size: contain;
-  width: 250px;
-}
+.PopupForm__NumberInputs {}
 
-.Feedback__SevenNumberInput {
-  font-size: 20px;
-  letter-spacing: 26px;
-  width: 100%;
-  padding-left: 6px;
-  outline: none;
-  border: none;
-  color: #999999;
-  background: transparent;
-}
-
-.Feedback__FileUpload {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 12px;
-}
-
-.Feedback__FileUploadInner {
+.PopupForm__NumberInputContainer {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  margin-bottom: 10px;
 }
 
-.Feedback__FileUploadInfo {
-  margin-right: 20px;
+.PopupForm__NumberInput {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  background: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.122254);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  margin-right: 10px;
+  font-family: inherit;
 }
 
-.Feedback__FileUploadInfoText {
+.PopupForm__NumberLabel {
   font-weight: 500;
-  line-height: 150%;
-  text-align: right;
+  font-size: 18px;
+  line-height: 20px;
   color: #999999;
 }
 
-.Feedback__FileUploadInfoText--Big {
-  font-size: 16px;
+.PopupForm__MailContainer {}
+
+.PopupForm__MailLink {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+
+  letter-spacing: 1px;
+  text-decoration-line: underline;
+  color: #285C2D;
 }
 
-.Feedback__FileUploadInfoText--Small {
-  font-size: 14px;
-}
-
-.Feedback__FileUploadLabel {}
-
-.Feedback__FileUploadInput {
-  display: none;
-}
-
-.Feedback__FileUploadIcon {
-  cursor: pointer
-}
 
 @media (max-width: 768px) {
-  .Feedback--Active div.Feedback__Content {
-    max-height: 90vh;
-    width: 90vw;
-    box-sizing: border-box;
-    overflow-y: scroll;
+  .PopupForm__Content {
     background-image: none!important;
     padding: 30px 20px;
   }
 
-  button.Feedback__SubmitButton {
-    margin-bottom: 20px;
+  .PopupForm__TitleText {
+    font-size: 25px;
+  }
+
+  .PopupForm__TextInput {
+    margin-bottom: 25px;
+  }
+  
+  .PopupForm__NumbersContainer {
+    flex-direction: column;
   }
 }

@@ -1,0 +1,131 @@
+<script>
+  Vue.component("re-form-tour", {
+    name: "re-form-tour",
+
+    data: function () {
+      return {
+        showSuccess: false,
+        file: null,
+        fileExt: null,
+        agree: false,
+        firstName: "",
+        lastName: "",
+        dateBirth: "",
+        pasport: "",
+        email: "",
+        phone: "",
+        agency: "",
+        inn: "",
+      };
+    },
+
+    props: {
+      eventId: String,
+    },
+
+    methods: {
+      sendToBackend() {
+        if (!this.agree) return;
+
+        const payload = {
+          eventId: this.eventId,
+          file: this.file,
+          file_ext: this.fileExt,
+          agree: this.agree,
+          firstName: this.firstName,
+          lastName: this.lastName,
+          dateBirth:this.dateBirth,
+          pasport: this.pasport,
+          email: this.email,
+          phone: this.phone,
+          agency: this.agency,
+          inn: this.inn,
+        };
+
+        fetch(`https://dev.resort-holiday.com/api/forms/?type=promo_tour`, {
+          method: "POST",
+          body: JSON.stringify(payload),
+        }).then((response) => {
+          this.showSuccess = true;
+          setTimeout(() => {
+            this.showSuccess = false;
+          }, 2000);
+        }).catch(function (error) {
+          console.log("Error to post Promo tour form data", error);
+        });
+      },
+
+      addFile(event) {
+        const file = event.target.files[0];
+        if (file.size >  5 * (1024*1024)) {
+          return;
+        }
+
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload =  () => {
+          this.file = reader.result;
+          this.fileExt = event.target.value.split('.').pop()
+        };
+        reader.onerror = function (error) {
+          console.log('Error on load file: ', error);
+        };
+      },
+    },
+
+    template: `
+      <div class="REForm">
+        <div class="REForm__Screenlock"></div>
+        <div class="REForm__Content">
+          <div class="REForm__RightTitle">
+            <div class="REForm__RightTitleText">Заявка</div>
+            <button class="REForm__RightTitleClose REForm__CloseTrigger" @click="$emit('close-form')">
+              <img src="./assets/images/icons/close-icon.svg" alt="close">
+            </button>
+          </div>
+          <form class="REForm__Form" @submit.prevent="sendToBackend">
+            <div class="REForm__LabelBig">*Ваше Имя</div>
+            <div class="REForm__LabelSmall">латиницей, как в загранпаспорте</div>
+            <input class="REForm__TextInputBordered" v-model="firstName" required type="text">
+
+            <div class="REForm__LabelBig">*Ваша Фамилия</div>
+            <div class="REForm__LabelSmall">латиницей, как в загранпаспорте</div>
+            <input class="REForm__TextInputBordered" v-model="lastName" required type="text">
+
+            <div class="REForm__LabelBig">*Дата рождения </div>
+            <input class="REForm__TextInputBordered" v-model="dateBirth" required type="date">
+
+            <div class="REForm__LabelBig">*Загранпаспорт:</div>
+            <div class="REForm__LabelSmall">серия, номер, срок действия: от – до</div>
+            <input class="REForm__TextInputBordered" v-model="pasport" required type="text">
+
+            <input class="REForm__TextInput" required type="email" v-model="email" placeholder="*Ваш рабочий e-mail">
+            <input class="REForm__TextInput"  required type="tel" v-model="phone" placeholder="*+7">
+            <input class="REForm__TextInput"  required type="text" v-model="agency" placeholder="*Название агентства">
+            <input class="REForm__TextInput"  required type="text" v-model="inn" placeholder="*ИНН организации">
+            <div class="Feedback__FileUpload">
+              <div class="Feedback__FileUploadInner">
+                <div class="Feedback__FileUploadInfo">
+                  <div class="Feedback__FileUploadInfoText Feedback__FileUploadInfoText--Big">Прикрепить визитку</div>
+                  <div class="Feedback__FileUploadInfoText Feedback__FileUploadInfoText--Small">(не более 5 Мб)</div>
+                </div>
+                <label class="Feedback__FileUploadLabel">
+                  <input class="Feedback__FileUploadInput" type="file" @change="addFile($event)"/>
+                  <svg class="Feedback__FileUploadIcon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.84932 19.9999C5.11416 19.9999 3.379 19.3685 2.00913 18.0157C0.730594 16.753 0 15.0393 0 13.2355C0 11.4317 0.730594 9.71803 2.00913 8.45535L9.13242 1.4204C11.0502 -0.473628 14.2466 -0.473628 16.2557 1.4204C18.2648 3.31442 18.1735 6.47113 16.2557 8.45535L9.77169 14.859C8.49315 16.1216 6.48402 16.1216 5.20548 14.859C3.92694 13.5963 3.92694 11.6121 5.20548 10.3494L10.6849 4.93787C11.0502 4.57711 11.5982 4.57711 11.9635 4.93787C12.3288 5.29864 12.3288 5.83979 11.9635 6.20056L6.48402 11.6121C5.93607 12.1532 5.93607 12.9649 6.48402 13.5061C7.03196 14.0472 7.85388 14.0472 8.40183 13.5061L14.8858 7.10247C15.5251 6.47113 15.7991 5.7496 15.7991 4.84768C15.7991 4.03596 15.4338 3.22423 14.8858 2.59289C13.6073 1.33021 11.5982 1.33021 10.411 2.59289L3.28767 9.62784C2.37443 10.5298 1.82648 11.7924 1.82648 13.1453C1.82648 14.4982 2.37443 15.6707 3.28767 16.6628C5.20548 18.5568 8.40183 18.5568 10.411 16.6628L18.4475 8.72592C18.8128 8.36516 19.3607 8.36516 19.726 8.72592C20.0913 9.08669 20.0913 9.62784 19.726 9.9886L11.6895 17.9255C10.411 19.3685 8.6758 19.9999 6.84932 19.9999Z" fill="#285C2D"/>
+                  </svg>
+                </label>
+              </div>
+            </div>
+            <div class="Tourists__CheckboxContainer">
+              <input class="Tourists__Checkbox" type="checkbox" v-model="agree">
+              <label class="Tourists__CheckboxLabel">Согласен и принимаю условия участия в рекламных турах</label>
+            </div>
+            <button class="REForm__SubmitButton" type="submit">ЗАБРОНИРОВАТЬ</button>
+            <success-message v-if="showSuccess"></success-message>
+          </form>
+        </div>
+      </div>
+    `,
+  });
+</script>

@@ -1,0 +1,231 @@
+<script>
+  new Vue({
+    el: "#resort-expert-events",
+
+    data: function() {
+      return {
+        events: [],
+        city: "Город",
+        asCalendar: false,
+        listShowCount: 3,
+        currentMonthDisplay: new Date().getMonth(),
+        currentYearDisplay: new Date().getFullYear(),
+      };
+    },
+
+    computed: {
+      canShowMore() {
+        return this.listShowCount < this.events.filter(event => event.date.getMonth() === this.currentMonthDisplay).filter(event => event.city === this.city).length;
+      },
+
+      itemsToDisplayAsList() {
+        return this.events
+          .filter(event => event.date.getMonth() === this.currentMonthDisplay)
+          .filter(event => event.city === this.city)
+          .filter((event, index) => index < this.listShowCount);
+      },
+
+      cityOptions() {
+        const cities = [];
+
+        for (let event of this.events) {
+          if (cities.indexOf(event.city) < 0) {
+            cities.push(event.city);
+          }
+        }
+
+        return cities;
+      },
+
+      currentMonthAndYearDisplay() {
+        return `${ this.monthNumberToString(this.currentMonthDisplay) } ${ this.currentYearDisplay }`;
+      },
+
+      currentMonthDaysToDisplay() {
+        const daysCountInCurrentMonth = new Date(this.currentYearDisplay, this.currentMonthDisplay, 0).getDate();
+        const days = [];
+        for (let dayNumber = 1; dayNumber <= daysCountInCurrentMonth; dayNumber++) {
+          const dateToDisplay = new Date(this.currentYearDisplay, this.currentMonthDisplay, dayNumber);
+
+          const dayData = {
+            empty: false,
+            id: Math.random().toString(),
+            weekDayNumber: dateToDisplay.getUTCDay(),
+            dayNumber,
+          };
+
+
+          dayData.hasEvent = false;
+          dayData.events = [];
+          this.events.forEach(e => {
+            if (
+              e.date.getDate() === dateToDisplay.getDate()
+              && e.date.getMonth() === dateToDisplay.getMonth()
+              && e.date.getFullYear() === dateToDisplay.getFullYear()
+              && e.city === this.city
+              && e.type_id !== "9"
+            ) {
+              dayData.hasEvent = true;
+              dayData.events.push(e);
+            }
+          });
+
+          days.push(dayData);
+        }
+
+        for (let weekDayNumber = 6; weekDayNumber >= 0; weekDayNumber--) {
+          if (days[0].weekDayNumber > weekDayNumber) {
+            days.unshift({
+              empty: true,
+              id: Math.random().toString(),
+              weekDayNumber: weekDayNumber,
+            });
+          }
+        }
+
+        for (let weekDayNumber = 0; weekDayNumber <= 6; weekDayNumber++) {
+          if (days[days.length - 1].weekDayNumber < weekDayNumber) {
+            days.push({
+              empty: true,
+              id: Math.random().toString(),
+              weekDayNumber: weekDayNumber,
+            });
+          }
+        }
+
+        return days;
+      },
+    },
+
+    methods: {
+      showMore() {
+        this.listShowCount += 1;
+      },
+
+      dayNumberToZeroNotation(dayNumber) {
+        if (dayNumber < 10) {
+          return `0${ dayNumber }`;
+        } else {
+          return `${ dayNumber }`;
+        }
+      },
+
+      weekDayNumberoString(weekDayNumber) {
+        if (weekDayNumber === 0) {
+          return "Пн";
+        } else if (weekDayNumber === 1) {
+          return "Вт";
+        } else if (weekDayNumber === 2) {
+          return "Ср";
+        } else if (weekDayNumber === 3) {
+          return "Чт";
+        } else if (weekDayNumber === 4) {
+          return "Пт";
+        } else if (weekDayNumber === 5) {
+          return "Сб";
+        } else if (weekDayNumber === 6) {
+          return "Вс";
+        }
+      },
+
+      monthNumberToString(monthNumber) {
+        if (monthNumber > 11 || monthNumber < 0) {
+          return `Месяц номер ${ monthNumber }`;
+        }
+
+        if (monthNumber === 0) {
+          return "Январь";
+        } else if (monthNumber === 1) {
+          return "Февраль";
+        } else if (monthNumber === 2) {
+          return "Март";
+        } else if (monthNumber === 3) {
+          return "Апрель";
+        } else if (monthNumber === 4) {
+          return "Май";
+        } else if (monthNumber === 5) {
+          return "Июнь";
+        } else if (monthNumber === 6) {
+          return "Июль";
+        } else if (monthNumber === 7) {
+          return "Август";
+        } else if (monthNumber === 8) {
+          return "Сентябрь";
+        } else if (monthNumber === 9) {
+          return "Октябрь";
+        } else if (monthNumber === 10) {
+          return "Ноябрь";
+        } else if (monthNumber === 11) {
+          return "Декабрь";
+        }
+      },
+
+      switchToNextMonth() {
+        this.listShowCount = 3;
+
+        if (this.currentMonthDisplay === 11) {
+          this.currentMonthDisplay = 0;
+          this.currentYearDisplay += 1;
+        } else {
+          this.currentMonthDisplay += 1;
+        }
+      },
+
+      switchToPrevMonth() {
+        this.listShowCount = 3;
+
+        if (this.currentMonthDisplay === 0) {
+          this.currentMonthDisplay = 11;
+          this.currentYearDisplay -= 1;
+        } else {
+          this.currentMonthDisplay -= 1;
+        }
+      },
+
+      switchToShowAsCalendar() {
+        this.asCalendar = true;
+      },
+
+      switchToShowAsList() {
+        this.asCalendar = false;
+      },
+    },
+
+    mounted() {
+      fetch("https://dev.resort-holiday.com/api/resort_expert/?method=get.content").then((response) => {
+        return response.json();
+      }).then(data => {
+        const events = [];
+
+        data.elements.forEach(function (eventElement) {
+          const event = {
+            id: eventElement.ID,
+            price: eventElement.price,
+            date: new Date(eventElement.date),
+            time: eventElement.time,
+            dates: eventElement.dates,
+            file: eventElement.file,
+            file_name: eventElement.file_name,
+            webinar_link: eventElement.webinar_link,
+            city: eventElement.city,
+            speaker_name: eventElement.speaker_name_web,
+            job: eventElement.job_web,
+            topic: eventElement.topic,
+            short_disc: eventElement.short_disc,
+            button_name: eventElement.button_name,
+            type_name: eventElement.NAME,
+            type_id: eventElement.IBLOCK_SECTION_ID,
+            big_title_rt: eventElement.big_title_rt,
+            big_title_bz: eventElement.big_title_bz,
+            big_title_vio: eventElement.big_title_vio,
+            speaker_name_sem: eventElement.speaker_name_sem,
+            job_sem: eventElement.job_sem,
+          };
+          events.push(event);
+        });
+        this.events = events;
+        this.city = this.cityOptions[0];
+      });
+    },
+  });
+</script>

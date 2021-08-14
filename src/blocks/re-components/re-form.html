@@ -1,0 +1,86 @@
+<script>
+  Vue.component("re-form", {
+    name: "re-form",
+
+    data: function () {
+      return {
+        showSuccess: false,
+        agree: false,
+        name: "",
+        email: "",
+        phone: "",
+        agency: "",
+        inn: "",
+      };
+    },
+
+    props: {
+      eventType: String,
+      eventId: String,
+      bigText: String,
+      smallText: String,
+      dateString: String,
+      dayString : String,
+      timeString: String,
+    },
+
+    methods: {
+      sendToBackend() {
+        if (!this.agree) return;
+
+        const payload = {
+          event_type: this.eventType,
+          eventId: this.eventId,
+          agree: this.agree,
+          name: this.name,
+          email: this.email,
+          phone: this.phone,
+          agency: this.agency,
+          inn: this.inn,
+        };
+
+        fetch(`https://dev.resort-holiday.com/api/forms/?type=re_tour`, {
+          method: "POST",
+          body: JSON.stringify(payload),
+        }).then((response) => {
+          this.showSuccess = true;
+          setTimeout(() => {
+            this.showSuccess = false;
+          }, 2000);
+        }).catch(function (error) {
+          console.log("Error to post re tour form data", error);
+        });
+      },
+    },
+
+    template: `
+      <div class="REForm">
+        <div class="REForm__Screenlock"></div>
+        <div class="REForm__Content">
+          <div class="REForm__RightTitle">
+            <div class="REForm__RightTitleText">Регистрация на мероприятия</div>
+            <button class="REForm__RightTitleClose REForm__CloseTrigger" @click="$emit('close-form')">
+              <img src="./assets/images/icons/close-icon.svg" alt="close">
+            </button>
+          </div>
+          <form class="REForm__Form" @submit.prevent="sendToBackend">
+            <div class="REForm__BigInfo">{{ bigText }}</div>
+            <div class="REForm__MediumInfo">{{ smallText }}</div>
+            <div class="REForm__SmallInfo">{{ dateString }} {{ dayString }} {{ timeString }}</div>
+            <input class="REForm__TextInput" required type="text" v-model="name" placeholder="*Ваше имя">
+            <input class="REForm__TextInput" required type="email" v-model="email" placeholder="*Ваш рабочий e-mail">
+            <input class="REForm__TextInput"  required type="tel" v-model="phone" placeholder="*+7">
+            <input class="REForm__TextInput"  required type="text" v-model="agency" placeholder="*Название агентства">
+            <input class="REForm__TextInput"  required type="text" v-model="inn" placeholder="*ИНН организации">
+            <div class="Tourists__CheckboxContainer">
+              <input class="Tourists__Checkbox" type="checkbox" v-model="agree">
+              <label class="Tourists__CheckboxLabel">Я ознакомлен с положениями о конфиденциальности и защите персональных данных</label>
+            </div>
+            <button class="REForm__SubmitButton" type="submit">ПОДАТЬ ЗАЯВКУ</button>
+            <success-message v-if="showSuccess"></success-message>
+          </form>
+        </div>
+      </div>
+    `,
+  });
+</script>

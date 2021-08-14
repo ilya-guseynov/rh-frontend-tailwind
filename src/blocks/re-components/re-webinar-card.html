@@ -1,0 +1,98 @@
+<script>
+  Vue.component("re-webinar-card", {
+    name: "re-webinar-card",
+
+    props: {
+      item: Object,
+    },
+
+    methods: {
+      dayNumberToZeroNotation(dayNumber) {
+        if (dayNumber < 10) {
+          return `0${ dayNumber }`;
+        } else {
+          return `${ dayNumber }`;
+        }
+      },
+
+      weekDayNumberoString(weekDayNumber) {
+        if (weekDayNumber === 0) {
+          return "Пн";
+        } else if (weekDayNumber === 1) {
+          return "Вт";
+        } else if (weekDayNumber === 2) {
+          return "Ср";
+        } else if (weekDayNumber === 3) {
+          return "Чт";
+        } else if (weekDayNumber === 4) {
+          return "Пт";
+        } else if (weekDayNumber === 5) {
+          return "Сб";
+        } else if (weekDayNumber === 6) {
+          return "Вс";
+        }
+      },
+
+      monthNumberToString(monthNumber) {
+        if (monthNumber > 11 || monthNumber < 0) {
+          return `Месяц номер ${ monthNumber }`;
+        }
+
+        if (monthNumber === 0) {
+          return "Январь";
+        } else if (monthNumber === 1) {
+          return "Февраль";
+        } else if (monthNumber === 2) {
+          return "Март";
+        } else if (monthNumber === 3) {
+          return "Апрель";
+        } else if (monthNumber === 4) {
+          return "Май";
+        } else if (monthNumber === 5) {
+          return "Июнь";
+        } else if (monthNumber === 6) {
+          return "Июль";
+        } else if (monthNumber === 7) {
+          return "Август";
+        } else if (monthNumber === 8) {
+          return "Сентябрь";
+        } else if (monthNumber === 9) {
+          return "Октябрь";
+        } else if (monthNumber === 10) {
+          return "Ноябрь";
+        } else if (monthNumber === 11) {
+          return "Декабрь";
+        }
+      },
+    },
+
+    template: `
+      <div class="REEvent__ListItemInner">
+        <div class="REEvent__ListItemTop">
+          <div class="REEvent__ListItemNameBlock">
+            <img class="REEvent__ListItemMantaImage" src="./assets/images/re-list-manta.svg" alt="re-list-manta">
+            <div class="REEvent__ListItemNameContainer">
+              <div class="REEvent__ListItemName">{{ item.speaker_name }}</div>
+              <div class="REEvent__ListItemExpertSubTitle">{{ item.job }}</div>
+            </div>
+          </div>
+          <div class="REEvent__ListItemDateBlock">
+            <div class="REEvent__ListItemDateContainer">
+              <span class="REEvent__ListItemDate">{{ dayNumberToZeroNotation(item.date.getDate()) }}</span>
+              <span class="REEvent__ListItemDay">{{  weekDayNumberoString(item.date.getDay()) }}</span>
+            </div>
+            <div class="REvent__ListItemTimeContainer">{{ item.time }}</div>
+          </div>
+        </div>
+        <div class="REEvent__ListItemType">{{ item.type_name }}</div>
+        <div class="REEvent__ListItemEventBlock">
+          <div class="REEvent__ListItemEventCountry">{{ item.topic }}</div>
+          <div class="REEvent__ListItemEventTitle">{{ item.short_disc }}</div>
+        </div>
+        <div class="REEvent__ListItemSignupBlock">
+          <a :href="item.webinar_link" class="REEvent__ListItemSignupButton">{{ item.button_name }}</a>
+        </div>
+      </div>
+    `,
+  });
+</script>

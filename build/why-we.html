@@ -12,6 +12,44 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
 
+    <script>
+      Vue.component("success-message", {
+        name: "success-message",
+  
+        template: `
+          <div class="SuccessMessage">
+            <svg class="SuccessMessage__Icon" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g filter="url(#filter0_d)">
+                <rect x="3" y="2" width="36" height="36" rx="18" fill="url(#paint0_linear)"/>
+              </g>
+              <path d="M14.2501 20.6025L18.0911 24.4435L27.6935 14.841" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs>
+                <filter id="filter0_d" x="0" y="0" width="42" height="42" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                  <feOffset dy="1"/>
+                  <feGaussianBlur stdDeviation="1.5"/>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.122254 0"/>
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                </filter>
+                <linearGradient id="paint0_linear" x1="-16.7019" y1="20.4221" x2="32.3324" y2="19.8753" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#D8BB58"/>
+                  <stop offset="0.1464" stop-color="#ECD26E"/>
+                  <stop offset="0.239" stop-color="#F4DB76"/>
+                  <stop offset="0.4341" stop-color="#E4BD32"/>
+                  <stop offset="0.8173" stop-color="#CEA53A"/>
+                  <stop offset="0.8757" stop-color="#C99F33"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="SuccessMessage__Text1">Спасибо!</div>
+            <div class="SuccessMessage__Text2">Сообщение отправлено</div>
+          </div>
+        `,
+      });
+    </script>
+
     <title>RH | Почему мы?</title>
   </head>
 
@@ -30,14 +68,6 @@
                   src="https://search.resort-holiday.com/currency?samo_action=embed&utf8=✓"
                   charset="utf-8"
                 ></script>
-      <!--          <span class="Header__CurrencyTitle">Курс</span>-->
-      <!--          <span class="Header__CurrencyTicker">-->
-      <!--            <span class="Header__CurrencyTickerName">USD</span> <span class="Header__CurrencyTickerValue">74.90</span>-->
-      <!--          </span>-->
-      <!--          <span class="Header__CurrencyTickerDivider">|</span>-->
-      <!--          <span class="Header__CurrencyTicker">-->
-      <!--            <span class="Header__CurrencyTickerName">EUR</span> <span class="Header__CurrencyTickerValue">91.30</span>-->
-      <!--          </span>-->
               </div>
             </div>
             <div class="Header__TopSectionInner Header__TopSectionInner--Desktop">
@@ -128,14 +158,6 @@
                     src="https://search.resort-holiday.com/currency?samo_action=embed&utf8=✓"
                     charset="utf-8"
                   ></script>
-      <!--            <span class="Header__CurrencyTitle">Курс</span>-->
-      <!--            <span class="Header__CurrencyTicker">-->
-      <!--              <span class="Header__CurrencyTickerName">USD</span> <span class="Header__CurrencyTickerValue">74.90</span>-->
-      <!--            </span>-->
-      <!--            <span class="Header__CurrencyTickerDivider">|</span>-->
-      <!--            <span class="Header__CurrencyTicker">-->
-      <!--              <span class="Header__CurrencyTickerName">EUR</span> <span class="Header__CurrencyTickerValue">91.30</span>-->
-      <!--            </span>-->
                 </div>
                 <div class="Header__Location Header__Location--BottomSection">
                   <img class="Header__LocationIcon" src="./assets/images/icons/near-me-icon.svg" alt="near-me-icon">
@@ -259,430 +281,356 @@
             <img class="MobileSidebar__CloseIcon" src="./assets/images/icons/close-icon.svg" alt="close">
           </button>
         </div>
-        <div class="Feedback">
-          <div class="Feedback__Screenlock"></div>
-          <div class="Feedback__Content" style="background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url('./assets/images/feedback-bg.jpg')">
-            <div class="Feedback__ContentLeft">
-              <img class="Feedback__LeftLogo" src="./assets/images/logo.svg" alt="logo">
-              <div class="Feedback__LeftCountry">Россия</div>
-              <div class="Feedback__LeftAddress">Москва, Новодмитровская 2, кор. 1<br>Савеловский Сити, башня Goodman</div>
-              <div class="Feedback__LeftPhonesBlock">
-                <img class="Feedback__LeftPhoneIcon" src="./assets/images/icons/gold-phone-icon.svg" alt="phone">
-                <div class="Feedback__LeftPhones">
-                  <a class="Feedback__LeftPhone" href="#">+7 495 266-63-77</a>
-                  <a class="Feedback__LeftPhone" href="#">+7 800 100-19-70</a>
+        <div class="PopupForm PopupForm--Feedback Feedback" id="feedback-form-vue">
+          <div class="PopupForm__Screenlock"></div>
+          <div class="PopupForm__Content" style="background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url('./assets/images/feedback-bg.jpg')">
+            <div class="PopupForm__ContentLeft">
+              <img class="PopupForm__Logo" src="./assets/images/logo.svg" alt="logo">
+              <div class="PopupForm__Country">Россия</div>
+              <div class="PopupForm__Address">Москва, Новодмитровская 2, кор. 1<br>Савеловский Сити, башня Goodman</div>
+              <div class="PopupForm__PhonesBlock">
+                <img class="PopupForm__PhoneIcon" src="./assets/images/icons/gold-phone-icon.svg" alt="phone">
+                <div class="PopupForm__Phones">
+                  <a class="PopupForm__Phone" href="#">+7 495 266-63-77</a>
+                  <a class="PopupForm__Phone" href="#">+7 800 100-19-70</a>
                 </div>
               </div>
+              <div class="PopupForm__MailContainer">
+                <a class="PopupForm__MailLink" href="#">info@resort-holiday.com</a>
+              </div>
             </div>
-            <div class="Feedback__ContentRight">
-              <div class="Feedback__RightTitle">
-                <div class="Feedback__RightTitleText">Напишите нам</div>
-                <button class="Feedback__RightTitleClose Feedback__CloseTrigger">
+            <div class="PopupForm__ContentRight">
+              <div class="PopupForm__Title">
+                <div class="PopupForm__TitleText">Напишите нам</div>
+                <button class="PopupForm__TitleClose">
                   <img src="./assets/images/icons/close-icon.svg" alt="close">
                 </button>
               </div>
-              <form class="Feedback__Form" id="feedback-form-vue" @submit.prevent="sendToBackend">
-                <input class="Feedback__TextInput" type="text" v-model="name" required placeholder="*Ваше имя">
-                <input class="Feedback__TextInput" type="text" v-model="agency" required  placeholder="*Ваше агентство">
-                <input class="Feedback__TextInput" type="email" v-model="email" required placeholder="*Ваш email">
-                <div class="Feedback__CheckboxContainer">
-                  <input class="Feedback__Checkbox" @click="wantTo = '27'" type="checkbox">
-                  <label class="Feedback__CheckboxLabel">Я хочу оставить отзыв</label>
+              <form class="PopupForm__Form" @submit.prevent="sendToBackend">
+                <input class="PopupForm__TextInput" type="text" v-model="name" required placeholder="*Ваше имя">
+                <input class="PopupForm__TextInput" type="text" v-model="agency" required  placeholder="*Ваше агентство">
+                <input class="PopupForm__TextInput" type="email" v-model="email" required placeholder="*Ваш email">
+                <div class="PopupForm__CheckboxContainer">
+                  <input class="PopupForm__Checkbox" @click="wantTo = '27'" :checked="wantTo === '27'" type="checkbox">
+                  <label class="PopupForm__CheckboxLabel">Я хочу оставить отзыв</label>
                 </div>
-                <div class="Feedback__CheckboxContainer">
-                  <input class="Feedback__Checkbox" @click="wantTo = '28'" type="checkbox">
-                  <label class="Feedback__CheckboxLabel">Я хочу оставить благодарность</label>
+                <div class="PopupForm__CheckboxContainer">
+                  <input class="PopupForm__Checkbox" @click="wantTo = '28'" :checked="wantTo === '28'" type="checkbox">
+                  <label class="PopupForm__CheckboxLabel">Я хочу оставить благодарность</label>
                 </div>
-                <div class="Feedback__CheckboxContainer">
-                  <input class="Feedback__Checkbox" @click="wantTo = '29'" type="checkbox">
-                  <label class="Feedback__CheckboxLabel">Я хочу помочь вам стать лучше</label>
+                <div class="PopupForm__CheckboxContainer">
+                  <input class="PopupForm__Checkbox" @click="wantTo = '29'" :checked="wantTo === '29'" type="checkbox">
+                  <label class="PopupForm__CheckboxLabel">Я хочу помочь вам стать лучше</label>
                 </div>
-                <div class="Feedback__CheckboxContainer">
-                  <input class="Feedback__Checkbox" @click="wantTo = '30'" type="checkbox">
-                  <label class="Feedback__CheckboxLabel">Я хочу задать вопрос, т.к. не нашла / нашел ответ на сайте</label>
+                <div class="PopupForm__CheckboxContainer">
+                  <input class="PopupForm__Checkbox" @click="wantTo = '30'" :checked="wantTo === '30'" type="checkbox">
+                  <label class="PopupForm__CheckboxLabel">Я хочу задать вопрос, т.к. не нашла / нашел ответ на сайте</label>
                 </div>
-                <div class="Feedback__Text">Все вопросы по заявкам вы можете отправить из Личного Кабинета агента через кнопку "Отправить сообщение"</div>
-                <textarea class="Feedback__Textarea" v-model="message" cols="30" required rows="5" placeholder="Введите текст сообщения"></textarea>
-                <div class="Feedback__FileUpload">
-                  <div class="Feedback__FileUploadInner">
-                    <div class="Feedback__FileUploadInfo">
-                      <div class="Feedback__FileUploadInfoText Feedback__FileUploadInfoText--Big">Прикрепить файл</div>
-                      <div class="Feedback__FileUploadInfoText Feedback__FileUploadInfoText--Small">(не более 5 Мб)</div>
+                <div class="PopupForm__Text">Все вопросы по заявкам вы можете отправить из Личного Кабинета агента через кнопку "Отправить сообщение"</div>
+                <textarea class="PopupForm__Textarea" v-model="message" cols="30" required rows="5" placeholder="Введите текст сообщения"></textarea>
+                <div class="PopupForm__FileUpload">
+                  <div class="PopupForm__FileUploadInner">
+                    <div class="PopupForm__FileUploadInfo">
+                      <div class="PopupForm__FileUploadInfoText PopupForm__FileUploadInfoText--Big--Big">Прикрепить файл</div>
+                      <div class="PopupForm__FileUploadInfoText PopupForm__FileUploadInfoText--Small--Small">(не более 5 Мб)</div>
                     </div>
-                    <label class="Feedback__FileUploadLabel">
-                      <input class="Feedback__FileUploadInput" type="file" @change="addFile($event)"/>
-                      <svg class="Feedback__FileUploadIcon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <label class="PopupForm__FileUploadLabel">
+                      <input class="PopupForm__FileUploadInput" type="file" @change="addFile($event)"/>
+                      <svg class="PopupForm__FileUploadIcon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M6.84932 19.9999C5.11416 19.9999 3.379 19.3685 2.00913 18.0157C0.730594 16.753 0 15.0393 0 13.2355C0 11.4317 0.730594 9.71803 2.00913 8.45535L9.13242 1.4204C11.0502 -0.473628 14.2466 -0.473628 16.2557 1.4204C18.2648 3.31442 18.1735 6.47113 16.2557 8.45535L9.77169 14.859C8.49315 16.1216 6.48402 16.1216 5.20548 14.859C3.92694 13.5963 3.92694 11.6121 5.20548 10.3494L10.6849 4.93787C11.0502 4.57711 11.5982 4.57711 11.9635 4.93787C12.3288 5.29864 12.3288 5.83979 11.9635 6.20056L6.48402 11.6121C5.93607 12.1532 5.93607 12.9649 6.48402 13.5061C7.03196 14.0472 7.85388 14.0472 8.40183 13.5061L14.8858 7.10247C15.5251 6.47113 15.7991 5.7496 15.7991 4.84768C15.7991 4.03596 15.4338 3.22423 14.8858 2.59289C13.6073 1.33021 11.5982 1.33021 10.411 2.59289L3.28767 9.62784C2.37443 10.5298 1.82648 11.7924 1.82648 13.1453C1.82648 14.4982 2.37443 15.6707 3.28767 16.6628C5.20548 18.5568 8.40183 18.5568 10.411 16.6628L18.4475 8.72592C18.8128 8.36516 19.3607 8.36516 19.726 8.72592C20.0913 9.08669 20.0913 9.62784 19.726 9.9886L11.6895 17.9255C10.411 19.3685 8.6758 19.9999 6.84932 19.9999Z" fill="#285C2D"/>
                       </svg>
                     </label>
                   </div>
                 </div>
-                <button class="Feedback__SubmitButton" type="submit">Отправить</button>
+                <div class="PopupForm__CheckboxContainer">
+                  <input class="PopupForm__Checkbox" type="checkbox" v-model="agree">
+                  <label class="PopupForm__CheckboxLabel">Согласен с <a href="#"><u>Положением об обработке и защите персональных данных</u></a></label>
+                </div>
+                <button class="PopupForm__SubmitButton" type="submit">Отправить</button>
                 <success-message v-if="showSuccess"></success-message>
               </form>
-              <script>
-                Vue.component("success-message", {
-                  name: "success-message",
-
-                  template: `
-                <div class="SuccessMessage" >
-                  <svg class="SuccessMessage__Icon" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g filter="url(#filter0_d)">
-                      <rect x="3" y="2" width="36" height="36" rx="18" fill="url(#paint0_linear)"/>
-                    </g>
-                    <path d="M14.2501 20.6025L18.0911 24.4435L27.6935 14.841" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <defs>
-                      <filter id="filter0_d" x="0" y="0" width="42" height="42" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                        <feOffset dy="1"/>
-                        <feGaussianBlur stdDeviation="1.5"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.122254 0"/>
-                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-                      </filter>
-                      <linearGradient id="paint0_linear" x1="-16.7019" y1="20.4221" x2="32.3324" y2="19.8753" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#D8BB58"/>
-                        <stop offset="0.1464" stop-color="#ECD26E"/>
-                        <stop offset="0.239" stop-color="#F4DB76"/>
-                        <stop offset="0.4341" stop-color="#E4BD32"/>
-                        <stop offset="0.8173" stop-color="#CEA53A"/>
-                        <stop offset="0.8757" stop-color="#C99F33"/>
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                  <div class="SuccessMessage__Text1">Спасибо!</div>
-                  <div class="SuccessMessage__Text2">Сообщение отправлено</div>
-                </div>
-                `,
-                });
-
-                new Vue({
-                  el: "#feedback-form-vue",
-
-                  data: function () {
-                    return {
-                      name: "",
-                      email: "",
-                      agency: "",
-                      wantTo: "",
-                      message: "",
-                      showSuccess: false,
-                      file: null,
-                      fileExt: null,
-                    };
-                  },
-
-                  methods: {
-                    addFile(event) {
-                      const file = event.target.files[0];
-                      if (file.size >  5 * (1024*1024)) {
-                        return;
-                      }
-
-                      var reader = new FileReader();
-                      reader.readAsDataURL(file);
-                      reader.onload =  () => {
-                        this.file = reader.result;
-                        this.fileExt = event.target.value.split('.').pop()
-                      };
-                      reader.onerror = function (error) {
-                        console.log('Error on load file: ', error);
-                      };
-                    },
-
-                    sendToBackend() {
-                      if (!this.wantTo) return;
-                      const dataload = {
-                        "type":"write_to_us",
-                        "client_name": this.name,
-                        "agency": this.agency,
-                        "email": this.email,
-                        "want_to": this.wantTo,
-                        "file": this.file,
-                        "file_ext": this.fileExt,
-                        "message": this.message,
-                      };
-                      fetch(`https://dev.resort-holiday.com/api/forms/?type=write_to_us`, { method: "POST", body: JSON.stringify(dataload) }).then((response) => {
-                        console.log(response)
-                        this.showSuccess = true;
-                        setTimeout(() => {
-                          this.showSuccess = false;
-                        }, 2000);
-                      }).catch(function (error) {
-                        console.log("Error to post Telegram form data", error);
-                      });
-                    },
-                  },
-                });
-              </script>
             </div>
           </div>
         </div>
-        <div class="TelegramForm">
-          <div class="TelegramForm__Screenlock"></div>
-          <div class="TelegramForm__Content">
-            <div class="TelegramForm__RightTitle">
-              <div class="TelegramForm__RightTitleText">Я работаю в туризме, <br>хочу вступить в закрытую <br>группу Telegram.</div>
-              <button class="TelegramForm__RightTitleClose TelegramForm__CloseTrigger">
+        <script>
+          new Vue({
+            el: "#feedback-form-vue",
+
+            data: function () {
+              return {
+                agree: false,
+                name: "",
+                email: "",
+                agency: "",
+                wantTo: "",
+                message: "",
+                showSuccess: false,
+                file: null,
+                fileExt: null,
+              };
+            },
+
+            methods: {
+              addFile(event) {
+                const file = event.target.files[0];
+                if (file.size >  5 * (1024*1024)) {
+                  return;
+                }
+
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload =  () => {
+                  this.file = reader.result;
+                  this.fileExt = event.target.value.split('.').pop();
+                };
+                reader.onerror = function (error) {
+                  console.log('Error on load file: ', error);
+                };
+              },
+
+              sendToBackend() {
+                if (!this.agree) return;
+                if (!this.wantTo) return;
+        
+                const dataload = {
+                  "type":"write_to_us",
+                  "client_name": this.name,
+                  "agency": this.agency,
+                  "email": this.email,
+                  "want_to": this.wantTo,
+                  "file": this.file,
+                  "file_ext": this.fileExt,
+                  "message": this.message,
+                };
+
+                fetch(`https://dev.resort-holiday.com/api/forms/?type=write_to_us`, { 
+                  method: "POST", body: JSON.stringify(dataload) 
+                }).then(response => {
+                  this.showSuccess = true;
+                  setTimeout(() => {
+                    this.showSuccess = false;
+                  }, 2000);
+                }).catch(function (error) {
+                  console.log("Error to post Telegram form data", error);
+                });
+              },
+            },
+          });
+        </script>
+        <div class="PopupForm PopupForm--Telegram Telegram" id="telegram-form-vue">
+          <div class="PopupForm__Screenlock"></div>
+          <div class="PopupForm__Content">
+            <div class="PopupForm__Title">
+              <div class="PopupForm__TitleText">Я работаю в туризме, <br>хочу вступить в закрытую <br>группу Telegram.</div>
+              <button class="PopupForm__TitleClose">
                 <img src="./assets/images/icons/close-icon.svg" alt="close">
               </button>
             </div>
-            <form class="TelegramForm__Form" id="telegram-form" @submit.prevent="sendToBackend">
-              <input class="TelegramForm__TextInput" v-model="job" required type="text" placeholder="*Я работаю в:">
-              <input class="TelegramForm__TextInput" v-model="email" required type="email" placeholder="*Ваш email">
-              <button class="TelegramForm__SubmitButton" type="submit">Отправить запрос</button>
+            <form class="PopupForm__Form" @submit.prevent="sendToBackend">
+              <input class="PopupForm__TextInput" v-model="job" required type="text" placeholder="*Я работаю в:">
+              <input class="PopupForm__TextInput" v-model="email" required type="email" placeholder="*Ваш email">
+              <div class="PopupForm__CheckboxContainer">
+                <input class="PopupForm__Checkbox" type="checkbox" v-model="agree">
+                <label class="PopupForm__CheckboxLabel">Согласен с <a href="#"><u>Положением об обработке и защите персональных данных</u></a></label>
+              </div>
+              <button class="PopupForm__SubmitButton" type="submit">Отправить запрос</button>
               <success-message v-if="showSuccess"></success-message>
             </form>
-            <script>
-              Vue.component("success-message", {
-                name: "success-message",
-
-                template: `
-                <div class="SuccessMessage" >
-                  <svg class="SuccessMessage__Icon" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g filter="url(#filter0_d)">
-                      <rect x="3" y="2" width="36" height="36" rx="18" fill="url(#paint0_linear)"/>
-                    </g>
-                    <path d="M14.2501 20.6025L18.0911 24.4435L27.6935 14.841" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <defs>
-                      <filter id="filter0_d" x="0" y="0" width="42" height="42" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                        <feOffset dy="1"/>
-                        <feGaussianBlur stdDeviation="1.5"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.122254 0"/>
-                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-                      </filter>
-                      <linearGradient id="paint0_linear" x1="-16.7019" y1="20.4221" x2="32.3324" y2="19.8753" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#D8BB58"/>
-                        <stop offset="0.1464" stop-color="#ECD26E"/>
-                        <stop offset="0.239" stop-color="#F4DB76"/>
-                        <stop offset="0.4341" stop-color="#E4BD32"/>
-                        <stop offset="0.8173" stop-color="#CEA53A"/>
-                        <stop offset="0.8757" stop-color="#C99F33"/>
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                  <div class="SuccessMessage__Text1">Спасибо!</div>
-                  <div class="SuccessMessage__Text2">Сообщение отправлено</div>
-                </div>
-                `,
-              });
-
-              new Vue({
-                el: "#telegram-form",
-
-                data: function () {
-                  return {
-                    job: "",
-                    email: "",
-                    showSuccess: false,
-                  };
-                },
-
-                methods: {
-                  sendToBackend() {
-                    if (this.job === "" && this.email === "") {
-                      return;
-                    }
-
-                    fetch(`https://dev.resort-holiday.com/api/forms/?form[prop][work_place]=` + this.job + `type=join_to_tg&form[prop][email]=` + this.email).then((response) => {
-                      this.showSuccess = true;
-                      setTimeout(() => {
-                        this.showSuccess = false;
-                      }, 2000);
-                      this.job = "";
-                      this.email = "";
-                    }).catch(function (error) {
-                      console.log("Error to post Telegram form data", error);
-                    });
-                  },
-                },
-              });
-            </script>
           </div>
         </div>
-        <div class="Tourists">
-          <div class="Tourists__Screenlock"></div>
-          <div class="Tourists__Content"
-               style="background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url('./assets/images/feedback-bg.jpg')">
-            <div class="Tourists__ContentLeft">
-              <img class="Tourists__LeftLogo" src="./assets/images/logo.svg" alt="logo">
-              <div class="Tourists__LeftCountry">Россия</div>
-              <div class="Tourists__LeftAddress">Москва, Новодмитровская 2, кор. 1<br>Савеловский Сити, башня Goodman</div>
-              <div class="Tourists__LeftPhonesBlock">
-                <img class="Tourists__LeftPhoneIcon" src="./assets/images/icons/gold-phone-icon.svg" alt="phone">
-                <div class="Tourists__LeftPhones">
-                  <a class="Tourists__LeftPhone" href="#">+7 495 266-63-77</a>
-                  <a class="Tourists__LeftPhone" href="#">+7 800 100-19-70</a>
+        <script>
+          new Vue({
+            el: "#telegram-form-vue",
+
+            data: {
+              agree: false, 
+              job: "", 
+              email: "", 
+              showSuccess: false,
+            },
+
+            methods: {
+              sendToBackend() {
+                if (!this.agree) return;
+
+                const payload = {
+                  "work_place": this.job,
+                  "email": this.email,
+                };
+
+                fetch("https://resort-holiday.com/api/forms/?type=join_to_tg", {
+                  method: "POST",
+                  body: JSON.stringify(payload),
+                }).then(response => {
+                  this.showSuccess = true;
+                  setTimeout(() => {
+                    this.showSuccess = false;
+                  }, 2000);
+                  this.job = "";
+                  this.email = "";
+                }).catch(function (error) {
+                  console.log("Error to post Telegram form data", error);
+                });
+              },
+            },
+          });
+        </script>
+        <div class="PopupForm PopupForm--Tourists Tourists" id="tourists-form-vue">
+          <div class="PopupForm__Screenlock"></div>
+          <success-message v-if="showSuccess"></success-message>
+          <div class="PopupForm__Content" style="background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url('./assets/images/feedback-bg.jpg')">
+            <div class="PopupForm__ContentLeft">
+              <img class="PopupForm__Logo" src="./assets/images/logo.svg" alt="logo">
+              <div class="PopupForm__Country">Россия</div>
+              <div class="PopupForm__Address">Москва, Новодмитровская 2, кор. 1<br>Савеловский Сити, башня Goodman</div>
+              <div class="PopupForm__PhonesBlock">
+                <img class="PopupForm__PhoneIcon" src="./assets/images/icons/gold-phone-icon.svg" alt="phone">
+                <div class="PopupForm__Phones">
+                  <a class="PopupForm__Phone" href="#">+7 495 266-63-77</a>
+                  <a class="PopupForm__Phone" href="#">+7 800 100-19-70</a>
                 </div>
               </div>
+              <div class="PopupForm__MailContainer">
+                <a class="PopupForm__MailLink" href="#">info@resort-holiday.com</a>
+              </div>
             </div>
-            <div class="Tourists__ContentRight">
-              <div class="Tourists__RightTitle">
-                <div class="Tourists__RightTitleText">Оставить заявку на отдых</div>
-                <button class="Tourists__RightTitleClose Tourists__CloseTrigger">
+            <div class="PopupForm__ContentRight">
+              <div class="PopupForm__Title">
+                <div class="PopupForm__TitleText">Оставить заявку на отдых</div>
+                <button class="PopupForm__TitleClose">
                   <img src="./assets/images/icons/close-icon.svg" alt="close">
                 </button>
               </div>
-              <form class="Tourists__Form" id="tourists-form-vue" @submit.prevent="sendToBackend">
-                <input class="Tourists__TextInput" type="text" v-model="name" placeholder="*Меня зовут">
-                <input class="Tourists__TextInput" type="text" v-model="email" placeholder="*Мой email">
-                <input class="Tourists__TextInput" type="tel"  v-model="phone" placeholder="*Мой телефон (+7)">
-                <input class="Tourists__TextInput" type="text" v-model="dates" placeholder="*Хочу поехать в такие даты:">
-                <div class="Tourists__NumbersContainer">
-                  <div class="Tourists__NumberBlock">
-                    <div class="Tourists__NumberInfo">*На</div>
-                    <div class="Tourists__NumberInputs">
-                      <div class="Tourists__NumberInputContainer">
-                        <input class="Tourists__NumberInput" type="number" value="0" v-model="nights"><span class="Tourists__NumberLabel">Ночей</span>
+              <form class="PopupForm__Form" @submit.prevent="sendToBackend">
+                <input class="PopupForm__TextInput" type="text" v-model="name" placeholder="*Меня зовут">
+                <input class="PopupForm__TextInput" type="text" v-model="email" placeholder="*Мой email">
+                <input class="PopupForm__TextInput" type="tel"  v-model="phone" placeholder="*Мой телефон (+7)">
+                <input class="PopupForm__TextInput" type="text" v-model="dates" placeholder="*Хочу поехать в такие даты:">
+                <div class="PopupForm__NumbersContainer">
+                  <div class="PopupForm__NumberBlock">
+                    <div class="PopupForm__NumberInfo">*На</div>
+                    <div class="PopupForm__NumberInputs">
+                      <div class="PopupForm__NumberInputContainer">
+                        <input class="PopupForm__NumberInput" type="number" value="0" v-model="nights"><span class="PopupForm__NumberLabel">Ночей</span>
                       </div>
                     </div>
                   </div>
-                  <div class="Tourists__NumberBlock">
-                    <div class="Tourists__NumberInfo">*Поедут</div>
-                    <div class="Tourists__NumberInputs">
-                      <div class="Tourists__NumberInputContainer">
-                        <input class="Tourists__NumberInput" type="number" value="0" v-model="adults"><span class="Tourists__NumberLabel">Взрослых</span>
+                  <div class="PopupForm__NumberBlock">
+                    <div class="PopupForm__NumberInfo">*Поедут</div>
+                    <div class="PopupForm__NumberInputs">
+                      <div class="PopupForm__NumberInputContainer">
+                        <input class="PopupForm__NumberInput" type="number" value="0" v-model="adults"><span class="PopupForm__NumberLabel">Взрослых</span>
                       </div>
-                      <div class="Tourists__NumberInputContainer">
-                        <input class="Tourists__NumberInput" type="number" value="0" v-model="children"><span class="Tourists__NumberLabel">детей</span>
+                      <div class="PopupForm__NumberInputContainer">
+                        <input class="PopupForm__NumberInput" type="number" value="0" v-model="children"><span class="PopupForm__NumberLabel">детей</span>
                       </div>
                     </div>
                   </div>
                 </div>
-                <input class="Tourists__TextInput" type="text" v-model="childrenAge" placeholder="*Возраст детей (если есть)">
-                <div class="Tourists__Text">*В поле ниже Вы можете оставить все свои пожелания по отдыху (например: тип питания, тип виллы, тип трансфера, бюджет, что вам нравится на отдыхе, что не нравится, какие услуги вам еще понадобятся, какой-то конкретный отель и т.п.)
+                <input class="PopupForm__TextInput" type="text" v-model="childrenAge" placeholder="*Возраст детей (если есть)">
+                <div class="PopupForm__Text">*В поле ниже Вы можете оставить все свои пожелания по отдыху (например: тип питания, тип виллы, тип трансфера, бюджет, что вам нравится на отдыхе, что не нравится, какие услуги вам еще понадобятся, какой-то конкретный отель и т.п.)
                 </div>
-                <textarea class="Tourists__Textarea" cols="30" rows="5" v-model="message" placeholder="Введите текст сообщения"></textarea>
-                <div class="Tourists__Text">Наши лучшие менеджеры ответят Вам как можно скорее!
+                <textarea class="PopupForm__Textarea" cols="30" rows="5" v-model="message" placeholder="Введите текст сообщения"></textarea>
+                <div class="PopupForm__Text">Наши лучшие менеджеры ответят Вам как можно скорее!
                 </div>
-                <div class="Tourists__CheckboxContainer">
-                  <input class="Tourists__Checkbox" type="checkbox" v-model="agree">
-                  <label class="Tourists__CheckboxLabel">Согласен с <a href="#"><u>Положением об обработке и защите персональных данных</u></a></label>
+                <div class="PopupForm__CheckboxContainer">
+                  <input class="PopupForm__Checkbox" type="checkbox" v-model="agree">
+                  <label class="PopupForm__CheckboxLabel">Согласен с <a href="#"><u>Положением об обработке и защите персональных данных</u></a></label>
                 </div>
-                <button class="Tourists__SubmitButton" type="submit">Отправить</button>
-                <success-message v-if="showSuccess"></success-message>
+                <button class="PopupForm__SubmitButton" type="submit">Отправить</button>
               </form>
-              <script>
-                Vue.component("success-message", {
-                  name: "success-message",
-
-                  template: `
-                <div class="SuccessMessage" >
-                  <svg class="SuccessMessage__Icon" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g filter="url(#filter0_d)">
-                      <rect x="3" y="2" width="36" height="36" rx="18" fill="url(#paint0_linear)"/>
-                    </g>
-                    <path d="M14.2501 20.6025L18.0911 24.4435L27.6935 14.841" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <defs>
-                      <filter id="filter0_d" x="0" y="0" width="42" height="42" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                        <feOffset dy="1"/>
-                        <feGaussianBlur stdDeviation="1.5"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.122254 0"/>
-                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-                      </filter>
-                      <linearGradient id="paint0_linear" x1="-16.7019" y1="20.4221" x2="32.3324" y2="19.8753" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#D8BB58"/>
-                        <stop offset="0.1464" stop-color="#ECD26E"/>
-                        <stop offset="0.239" stop-color="#F4DB76"/>
-                        <stop offset="0.4341" stop-color="#E4BD32"/>
-                        <stop offset="0.8173" stop-color="#CEA53A"/>
-                        <stop offset="0.8757" stop-color="#C99F33"/>
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                  <div class="SuccessMessage__Text1">Спасибо!</div>
-                  <div class="SuccessMessage__Text2">Сообщение отправлено</div>
-                </div>
-                `,
-                });
-
-                new Vue({
-                  el: "#tourists-form-vue",
-
-                  data: function () {
-                    return {
-                      name: "",
-                      email: "",
-                      phone: "",
-                      dates: "",
-                      nights: 0,
-                      adults: 0,
-                      children: 0,
-                      childrenAge: "",
-                      message: "",
-                      agree: false,
-                      showSuccess: false,
-                    };
-                  },
-
-                  watch: {
-                    nights(newValue, prevValue) {
-                      if (+newValue < 100 && +newValue > -1) {
-                        this.nights = newValue;
-                      } else {
-                        this.nights = prevValue;
-                      }
-                    },
-
-                    children(newValue, prevValue) {
-                      if (+newValue < 100 && +newValue > -1) {
-                        this.children = newValue;
-                      } else {
-                        this.children = prevValue;
-                      }
-                    },
-
-                    adults(newValue, prevValue) {
-                      if (+newValue < 100 && +newValue > -1) {
-                        this.adults = newValue;
-                      } else {
-                        this.adults = prevValue;
-                      }
-                    },
-                  },
-
-                  methods: {
-                    sendToBackend() {
-                      if (!this.agree) return;
-
-                      const dataload = {
-                        name: this.name,
-                        email: this.email,
-                        phone: this.phone,
-                        dates: this.dates,
-                        nights: this.nights,
-                        adults: this.adults,
-                        children: this.children,
-                        childrenAge: this.childrenAge,
-                        message: this.message,
-                        agree: this.agree,
-                      };
-
-                      fetch(`https://dev.resort-holiday.com/api/forms/?type=tourists`, {
-                        method: "POST",
-                        body: JSON.stringify(dataload),
-                      }).then((response) => {
-                         this.showSuccess = true;
-                         setTimeout(() => {
-                           this.showSuccess = false;
-                         }, 2000);
-                       }).catch(function (error) {
-                         console.log("Error to post Tourists form data", error);
-                       });
-                    },
-                  },
-                });
-              </script>
             </div>
           </div>
         </div>
+        <script>
+          new Vue({
+            el: "#tourists-form-vue",
+
+            data: function () {
+              return {
+                name: "",
+                email: "",
+                phone: "",
+                dates: "",
+                nights: 0,
+                adults: 0,
+                children: 0,
+                childrenAge: "",
+                message: "",
+                agree: false,
+                showSuccess: false,
+              };
+            },
+
+            watch: {
+              nights(newValue, prevValue) {
+                if (+newValue < 100 && +newValue > -1) {
+                  this.nights = newValue;
+                } else {
+                  this.nights = prevValue;
+                }
+              },
+
+              children(newValue, prevValue) {
+                if (+newValue < 100 && +newValue > -1) {
+                  this.children = newValue;
+                } else {
+                  this.children = prevValue;
+                }
+              },
+
+              adults(newValue, prevValue) {
+                if (+newValue < 100 && +newValue > -1) {
+                  this.adults = newValue;
+                } else {
+                  this.adults = prevValue;
+                }
+              },
+            },
+
+            methods: {
+              sendToBackend() {
+                if (!this.agree) return;
+
+                const dataload = {
+                  name: this.name,
+                  email: this.email,
+                  phone: this.phone,
+                  dates: this.dates,
+                  nights: this.nights,
+                  adults: this.adults,
+                  children: this.children,
+                  childrenAge: this.childrenAge,
+                  message: this.message,
+                  agree: this.agree,
+                };
+
+                fetch(`https://dev.resort-holiday.com/api/forms/?type=tourists`, {
+                  method: "POST",
+                  body: JSON.stringify(dataload),
+                }).then(response => {
+                  this.showSuccess = true;
+                  setTimeout(() => {
+                    this.showSuccess = false;
+                  }, 2000);
+
+                  this.name = "";
+                  this.email = "";
+                  this.phone = "";
+                  this.dates = "";
+                  this.nights = 0;
+                  this.adults = 0;
+                  this.children = 0;
+                  this.childrenAge = "";
+                  this.message = "";
+                  this.agree = false;
+                }).catch(function (error) {
+                  console.log("Error to post Tourists form data", error);
+                });
+              },
+            },
+          });
+        </script>
       </header>
       <div class="Menub2b">
         <div class="Container">
