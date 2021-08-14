@@ -22,10 +22,11 @@
   } 
 }
 
+@import url("./CustomSamo.css");
+
 @import url("../blocks/Header.css");
 @import url("../blocks/Footer.css");
 @import url("../blocks/Container.css");
 @import url("../blocks/PopupForm.css");
 @import url("../blocks/MobileSidebar.css");
  
-@import url("./CustomSamo.css");
