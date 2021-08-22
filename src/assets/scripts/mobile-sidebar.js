@@ -42,7 +42,6 @@
   };
 
   document.querySelectorAll(".MobileSidebar__FirstContentLink").forEach(link => {
-    console.log("gere")
     link.addEventListener("click", () => {
       if (triggersClassList.includes(link.classList[link.classList.length - 1])) {
         closeSidebar();

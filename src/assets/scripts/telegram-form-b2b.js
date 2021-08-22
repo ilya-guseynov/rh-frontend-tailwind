@@ -6,7 +6,6 @@
   const telegramCloseTrigger = telegram.querySelector(".PopupForm__TitleClose");
 
   const telegramActiveClass = "PopupForm--Active";
-  console.log("here");
 
   if (!telegram || !telegramTriggers || !telegramScreenlock || !telegramCloseTrigger) {
     return;
