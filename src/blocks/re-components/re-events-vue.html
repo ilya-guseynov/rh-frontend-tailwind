@@ -23,7 +23,7 @@
           .filter(event => event.date.getMonth() === this.currentMonthDisplay)
           .filter(event => event.city === this.city)
           .filter((event, index) => index < this.listShowCount)
-          .sort(event => event.date.getDate());
+          .sort((a, b) => a.date.getDate() - b.date.getDate());
       },
 
       cityOptions() {
