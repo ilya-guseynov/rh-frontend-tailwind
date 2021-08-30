@@ -1870,7 +1870,8 @@
                     return this.events
                       .filter(event => event.date.getMonth() === this.currentMonthDisplay)
                       .filter(event => event.city === this.city)
-                      .filter((event, index) => index < this.listShowCount);
+                      .filter((event, index) => index < this.listShowCount)
+                      .sort(event => event.date.getDate());
                   },
 
                   cityOptions() {
