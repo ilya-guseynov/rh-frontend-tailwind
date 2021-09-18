@@ -1483,6 +1483,14 @@
   margin-bottom: 20px;
 }
 
+.HotelPage__TabData.TextFormated ol li:not(:last-child) {
+  margin: 0;
+}
+
+.HotelPage__TabData.TextFormated ul li:not(:last-child) {
+  margin: 0;
+}
+
 .TextFormated .Warning {
   color: red;
 }
